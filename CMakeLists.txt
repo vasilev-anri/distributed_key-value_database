@@ -31,6 +31,8 @@ add_executable(k_v_db
         src/reactor/reactor.cpp
         src/reactor/reactor.h
         src/handlers/event_handler.h
+        src/handlers/udp_handler.cpp
+        src/handlers/udp_handler.h
 )
 
 target_link_libraries(k_v_db PRIVATE kvdb_core)
