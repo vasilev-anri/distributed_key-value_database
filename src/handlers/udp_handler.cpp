@@ -3,18 +3,11 @@
 #include <cerrno>
 #include <cstdio>
 #include <cstring>
-#include <system_error>
 
 #include <sys/epoll.h>
 #include <sys/socket.h>
 
-namespace {
-
-[[noreturn]] void throw_errno(const char* what) {
-    throw std::system_error(errno, std::system_category(), what);
-}
-
-}  // namespace
+#include "utils/error_utils.h"
 
 UDPHandler::UDPHandler(std::uint16_t port, DatagramCallback on_datagram)
     : fd_(::socket(AF_INET6, SOCK_DGRAM | SOCK_NONBLOCK | SOCK_CLOEXEC, 0)),

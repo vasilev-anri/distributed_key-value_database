@@ -33,6 +33,9 @@ add_executable(k_v_db
         src/handlers/event_handler.h
         src/handlers/udp_handler.cpp
         src/handlers/udp_handler.h
+        src/handlers/tcp_listener.cpp
+        src/handlers/tcp_listener.h
+        src/utils/error_utils.h
 )
 
 target_link_libraries(k_v_db PRIVATE kvdb_core)

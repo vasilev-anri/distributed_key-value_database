@@ -3,15 +3,12 @@
 #include <array>
 #include <cerrno>
 #include <stdexcept>
-#include <system_error>
 
 #include <sys/epoll.h>
 
-namespace {
+#include "utils/error_utils.h"
 
-[[noreturn]] void throw_errno(int err, const char* what) {
-    throw std::system_error(err, std::system_category(), what);
-}
+namespace {
 
 epoll_event make_epoll_event(EventHandler* handler, bool want_write) noexcept {
     epoll_event ev{};
