@@ -54,8 +54,9 @@ public:
     // or the output limit is exceeded (then it closes).
     bool send(std::span<const std::byte> data);
 
-    // Closes the connection normally. Pending output is discarded.
-    void close() { close_with({}); }
+    // Closes the connection. Pending output is discarded. The reason is passed
+    // to on_closed (empty = normal close).
+    void close(std::error_code reason = {}) { close_with(reason); }
 
     [[nodiscard]] State state() const noexcept { return state_; }
     [[nodiscard]] bool is_open() const noexcept { return state_ == State::Open; }

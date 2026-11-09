@@ -39,6 +39,8 @@ add_executable(k_v_db
         src/handlers/tcp_connection.cpp
         src/handlers/tcp_connection.h
         src/utils/address.h
+        src/handlers/timer_queue.cpp
+        src/handlers/timer_queue.h
 )
 
 target_link_libraries(k_v_db PRIVATE kvdb_core)
