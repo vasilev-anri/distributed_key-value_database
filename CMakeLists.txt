@@ -36,6 +36,8 @@ add_executable(k_v_db
         src/handlers/tcp_listener.cpp
         src/handlers/tcp_listener.h
         src/utils/error_utils.h
+        src/handlers/tcp_connection.cpp
+        src/handlers/tcp_connection.h
 )
 
 target_link_libraries(k_v_db PRIVATE kvdb_core)
