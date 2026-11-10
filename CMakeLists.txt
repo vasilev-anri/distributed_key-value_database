@@ -41,6 +41,10 @@ add_executable(k_v_db
         src/utils/address.h
         src/handlers/timer_queue.cpp
         src/handlers/timer_queue.h
+        src/handlers/mailbox.cpp
+        src/handlers/mailbox.h
+        src/handlers/signal_handler.cpp
+        src/handlers/signal_handler.h
 )
 
 target_link_libraries(k_v_db PRIVATE kvdb_core)

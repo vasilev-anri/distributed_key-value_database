@@ -1,14 +1,20 @@
 #include <chrono>
+#include <csignal>
 #include <cstddef>
 #include <cstdio>
+#include <cstring>
 #include <memory>
 #include <span>
 #include <string>
 #include <string_view>
 #include <system_error>
+#include <thread>
 
 #include <netinet/in.h>
+#include <unistd.h>
 
+#include "handlers/mailbox.h"
+#include "handlers/signal_handler.h"
 #include "handlers/tcp_connection.h"
 #include "handlers/tcp_listener.h"
 #include "handlers/timer_queue.h"
@@ -84,10 +90,24 @@ void start_outbound_test(Reactor& reactor, TimerQueue& timers, const std::string
 int main() {
     Reactor reactor;
 
+    // ── Signals: Ctrl+C / CLion's Stop -> clean shutdown ────────────────
+    // Must be created before any other thread starts (see SignalHandler).
+    reactor.register_handler(std::make_unique<SignalHandler>(
+        std::initializer_list<int>{SIGINT, SIGTERM},
+        [&reactor](int signo) {
+            std::printf("\nsignal %d (%s): shutting down\n", signo, ::strsignal(signo));
+            reactor.stop();
+        }));
+
     // ── Timers ──────────────────────────────────────────────────────────
     auto timer_queue = std::make_unique<TimerQueue>();
     TimerQueue* timers = timer_queue.get();
     reactor.register_handler(std::move(timer_queue));
+
+    // ── Mailbox: work from other threads ────────────────────────────────
+    auto mailbox_handler = std::make_unique<Mailbox>();
+    Mailbox* mailbox = mailbox_handler.get();
+    reactor.register_handler(std::move(mailbox_handler));
 
     // ── UDP echo on port 9000 ───────────────────────────────────────────
     auto udp = std::make_unique<UDPHandler>(9000);
@@ -136,13 +156,28 @@ int main() {
     heartbeat = timers->schedule_every(1s, [timers, &heartbeat, ticks = 0]() mutable {
         ++ticks;
         std::printf("timer: tick %d\n", ticks);
-        if (ticks == 3) timers->cancel(heartbeat);  // a timer cancelling itself
+        if (ticks == 3) timers->cancel(heartbeat);
     });
 
     // ── Outbound tests ──────────────────────────────────────────────────
     start_outbound_test(reactor, *timers, "::1", 9001, 3s);           // succeeds
     start_outbound_test(reactor, *timers, "::1", 9999, 3s);           // refused
-    start_outbound_test(reactor, *timers, "10.255.255.1", 9001, 3s);  // no answer: times out
+    start_outbound_test(reactor, *timers, "10.255.255.1", 9001, 3s);  // times out
+
+    // ── Mailbox test: a background thread posts work to the reactor ─────
+    // Declared after `reactor`, so it is joined before the reactor is destroyed.
+    std::printf("reactor thread: %d\n", ::gettid());
+    std::jthread worker([mailbox] {
+        for (int i = 1; i <= 3; ++i) {
+            std::this_thread::sleep_for(500ms);
+            const pid_t from = ::gettid();
+            mailbox->post([i, from] {
+                std::printf("mailbox: task %d posted by thread %d, running on thread %d\n",
+                            i, from, ::gettid());
+            });
+        }
+    });
 
     reactor.run();
+    std::puts("reactor stopped, exiting cleanly");
 }
