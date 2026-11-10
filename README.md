@@ -585,15 +585,3 @@ cmp /tmp/in.bin /tmp/out.bin && echo "IDENTICAL"
 - [ ] Desktop app: `PUT` / `GET` / `DELETE` + live cluster view *(separate component)*
 
 ---
-
-## Team
-
-| Member | Responsibility |
-|---|---|
-| Anri Vasilevi | |
-| Chamod Chirantha Dilshan | |
-| Imesh Samaraweera | |
-| Amr Mohamed Henidy Henidy Farh | |
-| Zakria Ibrahim Abukhattala | |
-
-*Course project — Riga Technical University.*
