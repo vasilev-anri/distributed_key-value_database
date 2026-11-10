@@ -1,4 +1,3 @@
-
 cmake_minimum_required(VERSION 4.3)
 project(k_v_db LANGUAGES CXX)
 
@@ -7,6 +6,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
 # ─────────────────────────── Sanitizers ───────────────────────────
+# Before any target, so it applies to everything below.
 option(KVDB_SANITIZE "Build with AddressSanitizer + UBSan" OFF)
 
 if(KVDB_SANITIZE)
@@ -14,40 +14,51 @@ if(KVDB_SANITIZE)
     add_link_options(-fsanitize=address,undefined)
 endif()
 
-# ─────────────────────────── Engine core ──────────────────────────
-add_library(kvdb_core INTERFACE)
+# ─────────────────────────── Dependencies ─────────────────────────
+find_package(Threads REQUIRED)
 
-target_include_directories(kvdb_core INTERFACE
+find_package(PkgConfig REQUIRED)
+pkg_check_modules(OPENDHT REQUIRED IMPORTED_TARGET opendht)
+
+# ─────────────────────────── Engine core ──────────────────────────
+# All engine code, compiled once; every executable links this.
+add_library(kvdb_core STATIC
+        src/reactor/reactor.cpp
+        src/handlers/udp_handler.cpp
+        src/handlers/tcp_listener.cpp
+        src/handlers/tcp_connection.cpp
+        src/handlers/timer_queue.cpp
+        src/handlers/mailbox.cpp
+        src/handlers/signal_handler.cpp
+        src/dht/dht_node.cpp
+)
+
+target_include_directories(kvdb_core PUBLIC
         ${CMAKE_SOURCE_DIR}/src
 )
 
-target_compile_options(kvdb_core INTERFACE
+target_compile_options(kvdb_core PUBLIC
         -Wall -Wextra -Wpedantic
+)
+
+target_link_libraries(kvdb_core PUBLIC
+        Threads::Threads
+        PkgConfig::OPENDHT
 )
 
 # ─────────────────────────── Main executable ──────────────────────
 add_executable(k_v_db
         main.cpp
-        src/reactor/reactor.cpp
-        src/reactor/reactor.h
-        src/handlers/event_handler.h
-        src/handlers/udp_handler.cpp
-        src/handlers/udp_handler.h
-        src/handlers/tcp_listener.cpp
-        src/handlers/tcp_listener.h
-        src/utils/error_utils.h
-        src/handlers/tcp_connection.cpp
-        src/handlers/tcp_connection.h
-        src/utils/address.h
-        src/handlers/timer_queue.cpp
-        src/handlers/timer_queue.h
-        src/handlers/mailbox.cpp
-        src/handlers/mailbox.h
-        src/handlers/signal_handler.cpp
-        src/handlers/signal_handler.h
 )
 
 target_link_libraries(k_v_db PRIVATE kvdb_core)
+
+# ─────────────────────────── Tools ────────────────────────────────
+add_executable(dht_spike
+        tools/dht_spike.cpp
+)
+
+target_link_libraries(dht_spike PRIVATE kvdb_core)
 
 # ─────────────────────────── GoogleTest ────────────────────────────
 include(FetchContent)
