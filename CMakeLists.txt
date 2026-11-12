@@ -31,6 +31,7 @@ add_library(kvdb_core STATIC
         src/handlers/mailbox.cpp
         src/handlers/signal_handler.cpp
         src/dht/dht_node.cpp
+        src/protocol/codec.cpp
 )
 
 target_include_directories(kvdb_core PUBLIC
@@ -76,6 +77,7 @@ enable_testing()
 
 add_executable(unit_tests
         tests/unique_fd_test.cpp
+        tests/protocol_test.cpp
 )
 
 target_link_libraries(unit_tests PRIVATE
