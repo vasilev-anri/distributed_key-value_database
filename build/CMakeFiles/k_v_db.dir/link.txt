@@ -1,0 +1,1 @@
+/usr/bin/g++-14 CMakeFiles/k_v_db.dir/main.cpp.o -o k_v_db  -Wl,-rpath,/usr/local/lib libkvdb_core.a /usr/local/lib/libopendht.so /usr/lib/x86_64-linux-gnu/libfmt.so /usr/lib/x86_64-linux-gnu/libgnutls.so /usr/lib/x86_64-linux-gnu/libjsoncpp.so

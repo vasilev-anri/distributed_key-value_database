@@ -1,0 +1,2460 @@
+Start testing: Nov 15 15:09 EET
+----------------------------------------------------------
+1/91 Testing: UniqueFD.DefaultConstructedIsInvalid
+1/91 Test: UniqueFD.DefaultConstructedIsInvalid
+Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=UniqueFD.DefaultConstructedIsInvalid" "--gtest_also_run_disabled_tests"
+Directory: /home/av/Documents/projects/cpp/k_v_db/build
+"UniqueFD.DefaultConstructedIsInvalid" start time: Nov 15 15:09 EET
+Output:
+----------------------------------------------------------
+Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = UniqueFD.DefaultConstructedIsInvalid
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from UniqueFD
+[ RUN      ] UniqueFD.DefaultConstructedIsInvalid
+[       OK ] UniqueFD.DefaultConstructedIsInvalid (0 ms)
+[----------] 1 test from UniqueFD (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"UniqueFD.DefaultConstructedIsInvalid" end time: Nov 15 15:09 EET
+"UniqueFD.DefaultConstructedIsInvalid" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/91 Testing: UniqueFD.WrapsDescriptor
+2/91 Test: UniqueFD.WrapsDescriptor
+Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=UniqueFD.WrapsDescriptor" "--gtest_also_run_disabled_tests"
+Directory: /home/av/Documents/projects/cpp/k_v_db/build
+"UniqueFD.WrapsDescriptor" start time: Nov 15 15:09 EET
+Output:
+----------------------------------------------------------
+Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = UniqueFD.WrapsDescriptor
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from UniqueFD
+[ RUN      ] UniqueFD.WrapsDescriptor
+[       OK ] UniqueFD.WrapsDescriptor (0 ms)
+[----------] 1 test from UniqueFD (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"UniqueFD.WrapsDescriptor" end time: Nov 15 15:09 EET
+"UniqueFD.WrapsDescriptor" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/91 Testing: UniqueFD.DestructorClosesDescriptor
+3/91 Test: UniqueFD.DestructorClosesDescriptor
+Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=UniqueFD.DestructorClosesDescriptor" "--gtest_also_run_disabled_tests"
+Directory: /home/av/Documents/projects/cpp/k_v_db/build
+"UniqueFD.DestructorClosesDescriptor" start time: Nov 15 15:09 EET
+Output:
+----------------------------------------------------------
+Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = UniqueFD.DestructorClosesDescriptor
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from UniqueFD
+[ RUN      ] UniqueFD.DestructorClosesDescriptor
+[       OK ] UniqueFD.DestructorClosesDescriptor (0 ms)
+[----------] 1 test from UniqueFD (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"UniqueFD.DestructorClosesDescriptor" end time: Nov 15 15:09 EET
+"UniqueFD.DestructorClosesDescriptor" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/91 Testing: UniqueFD.MoveConstructorTransfersOwnership
+4/91 Test: UniqueFD.MoveConstructorTransfersOwnership
+Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=UniqueFD.MoveConstructorTransfersOwnership" "--gtest_also_run_disabled_tests"
+Directory: /home/av/Documents/projects/cpp/k_v_db/build
+"UniqueFD.MoveConstructorTransfersOwnership" start time: Nov 15 15:09 EET
+Output:
+----------------------------------------------------------
+Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = UniqueFD.MoveConstructorTransfersOwnership
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from UniqueFD
+[ RUN      ] UniqueFD.MoveConstructorTransfersOwnership
+[       OK ] UniqueFD.MoveConstructorTransfersOwnership (0 ms)
+[----------] 1 test from UniqueFD (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"UniqueFD.MoveConstructorTransfersOwnership" end time: Nov 15 15:09 EET
+"UniqueFD.MoveConstructorTransfersOwnership" time elapsed: 00:00:00
+----------------------------------------------------------
+
+5/91 Testing: UniqueFD.MoveAssignmentClosesOldAndTakesNew
+5/91 Test: UniqueFD.MoveAssignmentClosesOldAndTakesNew
+Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=UniqueFD.MoveAssignmentClosesOldAndTakesNew" "--gtest_also_run_disabled_tests"
+Directory: /home/av/Documents/projects/cpp/k_v_db/build
+"UniqueFD.MoveAssignmentClosesOldAndTakesNew" start time: Nov 15 15:09 EET
+Output:
+----------------------------------------------------------
+Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = UniqueFD.MoveAssignmentClosesOldAndTakesNew
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from UniqueFD
+[ RUN      ] UniqueFD.MoveAssignmentClosesOldAndTakesNew
+[       OK ] UniqueFD.MoveAssignmentClosesOldAndTakesNew (0 ms)
+[----------] 1 test from UniqueFD (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"UniqueFD.MoveAssignmentClosesOldAndTakesNew" end time: Nov 15 15:09 EET
+"UniqueFD.MoveAssignmentClosesOldAndTakesNew" time elapsed: 00:00:00
+----------------------------------------------------------
+
+6/91 Testing: UniqueFD.SelfMoveAssignmentKeepsDescriptor
+6/91 Test: UniqueFD.SelfMoveAssignmentKeepsDescriptor
+Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=UniqueFD.SelfMoveAssignmentKeepsDescriptor" "--gtest_also_run_disabled_tests"
+Directory: /home/av/Documents/projects/cpp/k_v_db/build
+"UniqueFD.SelfMoveAssignmentKeepsDescriptor" start time: Nov 15 15:09 EET
+Output:
+----------------------------------------------------------
+Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = UniqueFD.SelfMoveAssignmentKeepsDescriptor
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from UniqueFD
+[ RUN      ] UniqueFD.SelfMoveAssignmentKeepsDescriptor
+[       OK ] UniqueFD.SelfMoveAssignmentKeepsDescriptor (0 ms)
+[----------] 1 test from UniqueFD (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"UniqueFD.SelfMoveAssignmentKeepsDescriptor" end time: Nov 15 15:09 EET
+"UniqueFD.SelfMoveAssignmentKeepsDescriptor" time elapsed: 00:00:00
+----------------------------------------------------------
+
+7/91 Testing: UniqueFD.ReleaseGivesUpOwnershipWithoutClosing
+7/91 Test: UniqueFD.ReleaseGivesUpOwnershipWithoutClosing
+Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=UniqueFD.ReleaseGivesUpOwnershipWithoutClosing" "--gtest_also_run_disabled_tests"
+Directory: /home/av/Documents/projects/cpp/k_v_db/build
+"UniqueFD.ReleaseGivesUpOwnershipWithoutClosing" start time: Nov 15 15:09 EET
+Output:
+----------------------------------------------------------
+Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = UniqueFD.ReleaseGivesUpOwnershipWithoutClosing
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from UniqueFD
+[ RUN      ] UniqueFD.ReleaseGivesUpOwnershipWithoutClosing
+[       OK ] UniqueFD.ReleaseGivesUpOwnershipWithoutClosing (0 ms)
+[----------] 1 test from UniqueFD (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"UniqueFD.ReleaseGivesUpOwnershipWithoutClosing" end time: Nov 15 15:09 EET
+"UniqueFD.ReleaseGivesUpOwnershipWithoutClosing" time elapsed: 00:00:00
+----------------------------------------------------------
+
+8/91 Testing: UniqueFD.ResetWithoutArgumentCloses
+8/91 Test: UniqueFD.ResetWithoutArgumentCloses
+Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=UniqueFD.ResetWithoutArgumentCloses" "--gtest_also_run_disabled_tests"
+Directory: /home/av/Documents/projects/cpp/k_v_db/build
+"UniqueFD.ResetWithoutArgumentCloses" start time: Nov 15 15:09 EET
+Output:
+----------------------------------------------------------
+Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = UniqueFD.ResetWithoutArgumentCloses
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from UniqueFD
+[ RUN      ] UniqueFD.ResetWithoutArgumentCloses
+[       OK ] UniqueFD.ResetWithoutArgumentCloses (0 ms)
+[----------] 1 test from UniqueFD (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"UniqueFD.ResetWithoutArgumentCloses" end time: Nov 15 15:09 EET
+"UniqueFD.ResetWithoutArgumentCloses" time elapsed: 00:00:00
+----------------------------------------------------------
+
+9/91 Testing: UniqueFD.ResetWithNewDescriptorClosesOld
+9/91 Test: UniqueFD.ResetWithNewDescriptorClosesOld
+Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=UniqueFD.ResetWithNewDescriptorClosesOld" "--gtest_also_run_disabled_tests"
+Directory: /home/av/Documents/projects/cpp/k_v_db/build
+"UniqueFD.ResetWithNewDescriptorClosesOld" start time: Nov 15 15:09 EET
+Output:
+----------------------------------------------------------
+Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = UniqueFD.ResetWithNewDescriptorClosesOld
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from UniqueFD
+[ RUN      ] UniqueFD.ResetWithNewDescriptorClosesOld
+[       OK ] UniqueFD.ResetWithNewDescriptorClosesOld (0 ms)
+[----------] 1 test from UniqueFD (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"UniqueFD.ResetWithNewDescriptorClosesOld" end time: Nov 15 15:09 EET
+"UniqueFD.ResetWithNewDescriptorClosesOld" time elapsed: 00:00:00
+----------------------------------------------------------
+
+10/91 Testing: UniqueFD.ResetWithSameDescriptorDoesNotClose
+10/91 Test: UniqueFD.ResetWithSameDescriptorDoesNotClose
+Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=UniqueFD.ResetWithSameDescriptorDoesNotClose" "--gtest_also_run_disabled_tests"
+Directory: /home/av/Documents/projects/cpp/k_v_db/build
+"UniqueFD.ResetWithSameDescriptorDoesNotClose" start time: Nov 15 15:09 EET
+Output:
+----------------------------------------------------------
+Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = UniqueFD.ResetWithSameDescriptorDoesNotClose
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from UniqueFD
+[ RUN      ] UniqueFD.ResetWithSameDescriptorDoesNotClose
+[       OK ] UniqueFD.ResetWithSameDescriptorDoesNotClose (0 ms)
+[----------] 1 test from UniqueFD (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"UniqueFD.ResetWithSameDescriptorDoesNotClose" end time: Nov 15 15:09 EET
+"UniqueFD.ResetWithSameDescriptorDoesNotClose" time elapsed: 00:00:00
+----------------------------------------------------------
+
+11/91 Testing: ByteIO.WritesBigEndian
+11/91 Test: ByteIO.WritesBigEndian
+Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=ByteIO.WritesBigEndian" "--gtest_also_run_disabled_tests"
+Directory: /home/av/Documents/projects/cpp/k_v_db/build
+"ByteIO.WritesBigEndian" start time: Nov 15 15:09 EET
+Output:
+----------------------------------------------------------
+Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = ByteIO.WritesBigEndian
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from ByteIO
+[ RUN      ] ByteIO.WritesBigEndian
+[       OK ] ByteIO.WritesBigEndian (0 ms)
+[----------] 1 test from ByteIO (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"ByteIO.WritesBigEndian" end time: Nov 15 15:09 EET
+"ByteIO.WritesBigEndian" time elapsed: 00:00:00
+----------------------------------------------------------
+
+12/91 Testing: ByteIO.ReaderNeverReadsPastEnd
+12/91 Test: ByteIO.ReaderNeverReadsPastEnd
+Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=ByteIO.ReaderNeverReadsPastEnd" "--gtest_also_run_disabled_tests"
+Directory: /home/av/Documents/projects/cpp/k_v_db/build
+"ByteIO.ReaderNeverReadsPastEnd" start time: Nov 15 15:09 EET
+Output:
+----------------------------------------------------------
+Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = ByteIO.ReaderNeverReadsPastEnd
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from ByteIO
+[ RUN      ] ByteIO.ReaderNeverReadsPastEnd
+[       OK ] ByteIO.ReaderNeverReadsPastEnd (0 ms)
+[----------] 1 test from ByteIO (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"ByteIO.ReaderNeverReadsPastEnd" end time: Nov 15 15:09 EET
+"ByteIO.ReaderNeverReadsPastEnd" time elapsed: 00:00:00
+----------------------------------------------------------
+
+13/91 Testing: Codec.HeaderStartsWithMagicAndHasFixedSize
+13/91 Test: Codec.HeaderStartsWithMagicAndHasFixedSize
+Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=Codec.HeaderStartsWithMagicAndHasFixedSize" "--gtest_also_run_disabled_tests"
+Directory: /home/av/Documents/projects/cpp/k_v_db/build
+"Codec.HeaderStartsWithMagicAndHasFixedSize" start time: Nov 15 15:09 EET
+Output:
+----------------------------------------------------------
+Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = Codec.HeaderStartsWithMagicAndHasFixedSize
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Codec
+[ RUN      ] Codec.HeaderStartsWithMagicAndHasFixedSize
+[       OK ] Codec.HeaderStartsWithMagicAndHasFixedSize (0 ms)
+[----------] 1 test from Codec (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Codec.HeaderStartsWithMagicAndHasFixedSize" end time: Nov 15 15:09 EET
+"Codec.HeaderStartsWithMagicAndHasFixedSize" time elapsed: 00:00:00
+----------------------------------------------------------
+
+14/91 Testing: Codec.PutRequestRoundTrip
+14/91 Test: Codec.PutRequestRoundTrip
+Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=Codec.PutRequestRoundTrip" "--gtest_also_run_disabled_tests"
+Directory: /home/av/Documents/projects/cpp/k_v_db/build
+"Codec.PutRequestRoundTrip" start time: Nov 15 15:09 EET
+Output:
+----------------------------------------------------------
+Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = Codec.PutRequestRoundTrip
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Codec
+[ RUN      ] Codec.PutRequestRoundTrip
+[       OK ] Codec.PutRequestRoundTrip (0 ms)
+[----------] 1 test from Codec (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Codec.PutRequestRoundTrip" end time: Nov 15 15:09 EET
+"Codec.PutRequestRoundTrip" time elapsed: 00:00:00
+----------------------------------------------------------
+
+15/91 Testing: Codec.GetResponseWithStatusAndValue
+15/91 Test: Codec.GetResponseWithStatusAndValue
+Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=Codec.GetResponseWithStatusAndValue" "--gtest_also_run_disabled_tests"
+Directory: /home/av/Documents/projects/cpp/k_v_db/build
+"Codec.GetResponseWithStatusAndValue" start time: Nov 15 15:09 EET
+Output:
+----------------------------------------------------------
+Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = Codec.GetResponseWithStatusAndValue
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Codec
+[ RUN      ] Codec.GetResponseWithStatusAndValue
+[       OK ] Codec.GetResponseWithStatusAndValue (0 ms)
+[----------] 1 test from Codec (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Codec.GetResponseWithStatusAndValue" end time: Nov 15 15:09 EET
+"Codec.GetResponseWithStatusAndValue" time elapsed: 00:00:00
+----------------------------------------------------------
+
+16/91 Testing: Codec.NotFoundResponseHasNoPayload
+16/91 Test: Codec.NotFoundResponseHasNoPayload
+Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=Codec.NotFoundResponseHasNoPayload" "--gtest_also_run_disabled_tests"
+Directory: /home/av/Documents/projects/cpp/k_v_db/build
+"Codec.NotFoundResponseHasNoPayload" start time: Nov 15 15:09 EET
+Output:
+----------------------------------------------------------
+Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = Codec.NotFoundResponseHasNoPayload
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Codec
+[ RUN      ] Codec.NotFoundResponseHasNoPayload
+[       OK ] Codec.NotFoundResponseHasNoPayload (0 ms)
+[----------] 1 test from Codec (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Codec.NotFoundResponseHasNoPayload" end time: Nov 15 15:09 EET
+"Codec.NotFoundResponseHasNoPayload" time elapsed: 00:00:00
+----------------------------------------------------------
+
+17/91 Testing: Codec.ForwardedFlagSurvivesRoundTrip
+17/91 Test: Codec.ForwardedFlagSurvivesRoundTrip
+Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=Codec.ForwardedFlagSurvivesRoundTrip" "--gtest_also_run_disabled_tests"
+Directory: /home/av/Documents/projects/cpp/k_v_db/build
+"Codec.ForwardedFlagSurvivesRoundTrip" start time: Nov 15 15:09 EET
+Output:
+----------------------------------------------------------
+Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = Codec.ForwardedFlagSurvivesRoundTrip
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Codec
+[ RUN      ] Codec.ForwardedFlagSurvivesRoundTrip
+[       OK ] Codec.ForwardedFlagSurvivesRoundTrip (0 ms)
+[----------] 1 test from Codec (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Codec.ForwardedFlagSurvivesRoundTrip" end time: Nov 15 15:09 EET
+"Codec.ForwardedFlagSurvivesRoundTrip" time elapsed: 00:00:00
+----------------------------------------------------------
+
+18/91 Testing: Codec.HelloRoundTrip
+18/91 Test: Codec.HelloRoundTrip
+Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=Codec.HelloRoundTrip" "--gtest_also_run_disabled_tests"
+Directory: /home/av/Documents/projects/cpp/k_v_db/build
+"Codec.HelloRoundTrip" start time: Nov 15 15:09 EET
+Output:
+----------------------------------------------------------
+Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = Codec.HelloRoundTrip
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Codec
+[ RUN      ] Codec.HelloRoundTrip
+[       OK ] Codec.HelloRoundTrip (0 ms)
+[----------] 1 test from Codec (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Codec.HelloRoundTrip" end time: Nov 15 15:09 EET
+"Codec.HelloRoundTrip" time elapsed: 00:00:00
+----------------------------------------------------------
+
+19/91 Testing: Codec.LargestPutFitsInOneDatagram
+19/91 Test: Codec.LargestPutFitsInOneDatagram
+Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=Codec.LargestPutFitsInOneDatagram" "--gtest_also_run_disabled_tests"
+Directory: /home/av/Documents/projects/cpp/k_v_db/build
+"Codec.LargestPutFitsInOneDatagram" start time: Nov 15 15:09 EET
+Output:
+----------------------------------------------------------
+Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = Codec.LargestPutFitsInOneDatagram
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Codec
+[ RUN      ] Codec.LargestPutFitsInOneDatagram
+[       OK ] Codec.LargestPutFitsInOneDatagram (0 ms)
+[----------] 1 test from Codec (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Codec.LargestPutFitsInOneDatagram" end time: Nov 15 15:09 EET
+"Codec.LargestPutFitsInOneDatagram" time elapsed: 00:00:00
+----------------------------------------------------------
+
+20/91 Testing: Codec.EncodingOversizedKeyThrows
+20/91 Test: Codec.EncodingOversizedKeyThrows
+Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=Codec.EncodingOversizedKeyThrows" "--gtest_also_run_disabled_tests"
+Directory: /home/av/Documents/projects/cpp/k_v_db/build
+"Codec.EncodingOversizedKeyThrows" start time: Nov 15 15:09 EET
+Output:
+----------------------------------------------------------
+Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = Codec.EncodingOversizedKeyThrows
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Codec
+[ RUN      ] Codec.EncodingOversizedKeyThrows
+[       OK ] Codec.EncodingOversizedKeyThrows (0 ms)
+[----------] 1 test from Codec (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Codec.EncodingOversizedKeyThrows" end time: Nov 15 15:09 EET
+"Codec.EncodingOversizedKeyThrows" time elapsed: 00:00:00
+----------------------------------------------------------
+
+21/91 Testing: Codec.TcpWaitsForEveryMissingByte
+21/91 Test: Codec.TcpWaitsForEveryMissingByte
+Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=Codec.TcpWaitsForEveryMissingByte" "--gtest_also_run_disabled_tests"
+Directory: /home/av/Documents/projects/cpp/k_v_db/build
+"Codec.TcpWaitsForEveryMissingByte" start time: Nov 15 15:09 EET
+Output:
+----------------------------------------------------------
+Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = Codec.TcpWaitsForEveryMissingByte
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Codec
+[ RUN      ] Codec.TcpWaitsForEveryMissingByte
+[       OK ] Codec.TcpWaitsForEveryMissingByte (0 ms)
+[----------] 1 test from Codec (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Codec.TcpWaitsForEveryMissingByte" end time: Nov 15 15:09 EET
+"Codec.TcpWaitsForEveryMissingByte" time elapsed: 00:00:00
+----------------------------------------------------------
+
+22/91 Testing: Codec.TcpParsesTwoMessagesFromOneBuffer
+22/91 Test: Codec.TcpParsesTwoMessagesFromOneBuffer
+Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=Codec.TcpParsesTwoMessagesFromOneBuffer" "--gtest_also_run_disabled_tests"
+Directory: /home/av/Documents/projects/cpp/k_v_db/build
+"Codec.TcpParsesTwoMessagesFromOneBuffer" start time: Nov 15 15:09 EET
+Output:
+----------------------------------------------------------
+Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = Codec.TcpParsesTwoMessagesFromOneBuffer
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Codec
+[ RUN      ] Codec.TcpParsesTwoMessagesFromOneBuffer
+[       OK ] Codec.TcpParsesTwoMessagesFromOneBuffer (0 ms)
+[----------] 1 test from Codec (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Codec.TcpParsesTwoMessagesFromOneBuffer" end time: Nov 15 15:09 EET
+"Codec.TcpParsesTwoMessagesFromOneBuffer" time elapsed: 00:00:00
+----------------------------------------------------------
+
+23/91 Testing: Codec.RejectsBadMagicImmediately
+23/91 Test: Codec.RejectsBadMagicImmediately
+Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=Codec.RejectsBadMagicImmediately" "--gtest_also_run_disabled_tests"
+Directory: /home/av/Documents/projects/cpp/k_v_db/build
+"Codec.RejectsBadMagicImmediately" start time: Nov 15 15:09 EET
+Output:
+----------------------------------------------------------
+Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = Codec.RejectsBadMagicImmediately
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Codec
+[ RUN      ] Codec.RejectsBadMagicImmediately
+[       OK ] Codec.RejectsBadMagicImmediately (0 ms)
+[----------] 1 test from Codec (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Codec.RejectsBadMagicImmediately" end time: Nov 15 15:09 EET
+"Codec.RejectsBadMagicImmediately" time elapsed: 00:00:00
+----------------------------------------------------------
+
+24/91 Testing: Codec.RejectsWrongVersion
+24/91 Test: Codec.RejectsWrongVersion
+Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=Codec.RejectsWrongVersion" "--gtest_also_run_disabled_tests"
+Directory: /home/av/Documents/projects/cpp/k_v_db/build
+"Codec.RejectsWrongVersion" start time: Nov 15 15:09 EET
+Output:
+----------------------------------------------------------
+Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = Codec.RejectsWrongVersion
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Codec
+[ RUN      ] Codec.RejectsWrongVersion
+[       OK ] Codec.RejectsWrongVersion (0 ms)
+[----------] 1 test from Codec (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Codec.RejectsWrongVersion" end time: Nov 15 15:09 EET
+"Codec.RejectsWrongVersion" time elapsed: 00:00:00
+----------------------------------------------------------
+
+25/91 Testing: Codec.RejectsUnknownType
+25/91 Test: Codec.RejectsUnknownType
+Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=Codec.RejectsUnknownType" "--gtest_also_run_disabled_tests"
+Directory: /home/av/Documents/projects/cpp/k_v_db/build
+"Codec.RejectsUnknownType" start time: Nov 15 15:09 EET
+Output:
+----------------------------------------------------------
+Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = Codec.RejectsUnknownType
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Codec
+[ RUN      ] Codec.RejectsUnknownType
+[       OK ] Codec.RejectsUnknownType (0 ms)
+[----------] 1 test from Codec (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Codec.RejectsUnknownType" end time: Nov 15 15:09 EET
+"Codec.RejectsUnknownType" time elapsed: 00:00:00
+----------------------------------------------------------
+
+26/91 Testing: Codec.RejectsInvalidStatus
+26/91 Test: Codec.RejectsInvalidStatus
+Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=Codec.RejectsInvalidStatus" "--gtest_also_run_disabled_tests"
+Directory: /home/av/Documents/projects/cpp/k_v_db/build
+"Codec.RejectsInvalidStatus" start time: Nov 15 15:09 EET
+Output:
+----------------------------------------------------------
+Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = Codec.RejectsInvalidStatus
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Codec
+[ RUN      ] Codec.RejectsInvalidStatus
+[       OK ] Codec.RejectsInvalidStatus (0 ms)
+[----------] 1 test from Codec (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Codec.RejectsInvalidStatus" end time: Nov 15 15:09 EET
+"Codec.RejectsInvalidStatus" time elapsed: 00:00:00
+----------------------------------------------------------
+
+27/91 Testing: Codec.RejectsHugeLengthFromHeaderAlone
+27/91 Test: Codec.RejectsHugeLengthFromHeaderAlone
+Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=Codec.RejectsHugeLengthFromHeaderAlone" "--gtest_also_run_disabled_tests"
+Directory: /home/av/Documents/projects/cpp/k_v_db/build
+"Codec.RejectsHugeLengthFromHeaderAlone" start time: Nov 15 15:09 EET
+Output:
+----------------------------------------------------------
+Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = Codec.RejectsHugeLengthFromHeaderAlone
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Codec
+[ RUN      ] Codec.RejectsHugeLengthFromHeaderAlone
+[       OK ] Codec.RejectsHugeLengthFromHeaderAlone (0 ms)
+[----------] 1 test from Codec (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Codec.RejectsHugeLengthFromHeaderAlone" end time: Nov 15 15:09 EET
+"Codec.RejectsHugeLengthFromHeaderAlone" time elapsed: 00:00:00
+----------------------------------------------------------
+
+28/91 Testing: Codec.DatagramMustNotBeTruncated
+28/91 Test: Codec.DatagramMustNotBeTruncated
+Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=Codec.DatagramMustNotBeTruncated" "--gtest_also_run_disabled_tests"
+Directory: /home/av/Documents/projects/cpp/k_v_db/build
+"Codec.DatagramMustNotBeTruncated" start time: Nov 15 15:09 EET
+Output:
+----------------------------------------------------------
+Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = Codec.DatagramMustNotBeTruncated
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Codec
+[ RUN      ] Codec.DatagramMustNotBeTruncated
+[       OK ] Codec.DatagramMustNotBeTruncated (0 ms)
+[----------] 1 test from Codec (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Codec.DatagramMustNotBeTruncated" end time: Nov 15 15:09 EET
+"Codec.DatagramMustNotBeTruncated" time elapsed: 00:00:00
+----------------------------------------------------------
+
+29/91 Testing: Codec.DatagramMustNotHaveTrailingBytes
+29/91 Test: Codec.DatagramMustNotHaveTrailingBytes
+Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=Codec.DatagramMustNotHaveTrailingBytes" "--gtest_also_run_disabled_tests"
+Directory: /home/av/Documents/projects/cpp/k_v_db/build
+"Codec.DatagramMustNotHaveTrailingBytes" start time: Nov 15 15:09 EET
+Output:
+----------------------------------------------------------
+Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = Codec.DatagramMustNotHaveTrailingBytes
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Codec
+[ RUN      ] Codec.DatagramMustNotHaveTrailingBytes
+[       OK ] Codec.DatagramMustNotHaveTrailingBytes (0 ms)
+[----------] 1 test from Codec (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Codec.DatagramMustNotHaveTrailingBytes" end time: Nov 15 15:09 EET
+"Codec.DatagramMustNotHaveTrailingBytes" time elapsed: 00:00:00
+----------------------------------------------------------
+
+30/91 Testing: Codec.PayloadWithTrailingBytesIsMalformed
+30/91 Test: Codec.PayloadWithTrailingBytesIsMalformed
+Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=Codec.PayloadWithTrailingBytesIsMalformed" "--gtest_also_run_disabled_tests"
+Directory: /home/av/Documents/projects/cpp/k_v_db/build
+"Codec.PayloadWithTrailingBytesIsMalformed" start time: Nov 15 15:09 EET
+Output:
+----------------------------------------------------------
+Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = Codec.PayloadWithTrailingBytesIsMalformed
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Codec
+[ RUN      ] Codec.PayloadWithTrailingBytesIsMalformed
+[       OK ] Codec.PayloadWithTrailingBytesIsMalformed (0 ms)
+[----------] 1 test from Codec (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Codec.PayloadWithTrailingBytesIsMalformed" end time: Nov 15 15:09 EET
+"Codec.PayloadWithTrailingBytesIsMalformed" time elapsed: 00:00:00
+----------------------------------------------------------
+
+31/91 Testing: Codec.PayloadLengthLargerThanDataIsMalformed
+31/91 Test: Codec.PayloadLengthLargerThanDataIsMalformed
+Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=Codec.PayloadLengthLargerThanDataIsMalformed" "--gtest_also_run_disabled_tests"
+Directory: /home/av/Documents/projects/cpp/k_v_db/build
+"Codec.PayloadLengthLargerThanDataIsMalformed" start time: Nov 15 15:09 EET
+Output:
+----------------------------------------------------------
+Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = Codec.PayloadLengthLargerThanDataIsMalformed
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Codec
+[ RUN      ] Codec.PayloadLengthLargerThanDataIsMalformed
+[       OK ] Codec.PayloadLengthLargerThanDataIsMalformed (0 ms)
+[----------] 1 test from Codec (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Codec.PayloadLengthLargerThanDataIsMalformed" end time: Nov 15 15:09 EET
+"Codec.PayloadLengthLargerThanDataIsMalformed" time elapsed: 00:00:00
+----------------------------------------------------------
+
+32/91 Testing: Codec.OversizedKeyIsRejectedWhenDecoding
+32/91 Test: Codec.OversizedKeyIsRejectedWhenDecoding
+Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=Codec.OversizedKeyIsRejectedWhenDecoding" "--gtest_also_run_disabled_tests"
+Directory: /home/av/Documents/projects/cpp/k_v_db/build
+"Codec.OversizedKeyIsRejectedWhenDecoding" start time: Nov 15 15:09 EET
+Output:
+----------------------------------------------------------
+Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = Codec.OversizedKeyIsRejectedWhenDecoding
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Codec
+[ RUN      ] Codec.OversizedKeyIsRejectedWhenDecoding
+[       OK ] Codec.OversizedKeyIsRejectedWhenDecoding (0 ms)
+[----------] 1 test from Codec (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Codec.OversizedKeyIsRejectedWhenDecoding" end time: Nov 15 15:09 EET
+"Codec.OversizedKeyIsRejectedWhenDecoding" time elapsed: 00:00:00
+----------------------------------------------------------
+
+33/91 Testing: KeyValueStore.GetMissingKeyReturnsNothing
+33/91 Test: KeyValueStore.GetMissingKeyReturnsNothing
+Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=KeyValueStore.GetMissingKeyReturnsNothing" "--gtest_also_run_disabled_tests"
+Directory: /home/av/Documents/projects/cpp/k_v_db/build
+"KeyValueStore.GetMissingKeyReturnsNothing" start time: Nov 15 15:09 EET
+Output:
+----------------------------------------------------------
+Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = KeyValueStore.GetMissingKeyReturnsNothing
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from KeyValueStore
+[ RUN      ] KeyValueStore.GetMissingKeyReturnsNothing
+[       OK ] KeyValueStore.GetMissingKeyReturnsNothing (0 ms)
+[----------] 1 test from KeyValueStore (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"KeyValueStore.GetMissingKeyReturnsNothing" end time: Nov 15 15:09 EET
+"KeyValueStore.GetMissingKeyReturnsNothing" time elapsed: 00:00:00
+----------------------------------------------------------
+
+34/91 Testing: KeyValueStore.PutThenGet
+34/91 Test: KeyValueStore.PutThenGet
+Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=KeyValueStore.PutThenGet" "--gtest_also_run_disabled_tests"
+Directory: /home/av/Documents/projects/cpp/k_v_db/build
+"KeyValueStore.PutThenGet" start time: Nov 15 15:09 EET
+Output:
+----------------------------------------------------------
+Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = KeyValueStore.PutThenGet
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from KeyValueStore
+[ RUN      ] KeyValueStore.PutThenGet
+[       OK ] KeyValueStore.PutThenGet (0 ms)
+[----------] 1 test from KeyValueStore (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"KeyValueStore.PutThenGet" end time: Nov 15 15:09 EET
+"KeyValueStore.PutThenGet" time elapsed: 00:00:00
+----------------------------------------------------------
+
+35/91 Testing: KeyValueStore.PutOverwritesExistingValue
+35/91 Test: KeyValueStore.PutOverwritesExistingValue
+Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=KeyValueStore.PutOverwritesExistingValue" "--gtest_also_run_disabled_tests"
+Directory: /home/av/Documents/projects/cpp/k_v_db/build
+"KeyValueStore.PutOverwritesExistingValue" start time: Nov 15 15:09 EET
+Output:
+----------------------------------------------------------
+Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = KeyValueStore.PutOverwritesExistingValue
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from KeyValueStore
+[ RUN      ] KeyValueStore.PutOverwritesExistingValue
+[       OK ] KeyValueStore.PutOverwritesExistingValue (0 ms)
+[----------] 1 test from KeyValueStore (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"KeyValueStore.PutOverwritesExistingValue" end time: Nov 15 15:09 EET
+"KeyValueStore.PutOverwritesExistingValue" time elapsed: 00:00:00
+----------------------------------------------------------
+
+36/91 Testing: KeyValueStore.RemoveReportsWhetherKeyExisted
+36/91 Test: KeyValueStore.RemoveReportsWhetherKeyExisted
+Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=KeyValueStore.RemoveReportsWhetherKeyExisted" "--gtest_also_run_disabled_tests"
+Directory: /home/av/Documents/projects/cpp/k_v_db/build
+"KeyValueStore.RemoveReportsWhetherKeyExisted" start time: Nov 15 15:09 EET
+Output:
+----------------------------------------------------------
+Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = KeyValueStore.RemoveReportsWhetherKeyExisted
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from KeyValueStore
+[ RUN      ] KeyValueStore.RemoveReportsWhetherKeyExisted
+[       OK ] KeyValueStore.RemoveReportsWhetherKeyExisted (0 ms)
+[----------] 1 test from KeyValueStore (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"KeyValueStore.RemoveReportsWhetherKeyExisted" end time: Nov 15 15:09 EET
+"KeyValueStore.RemoveReportsWhetherKeyExisted" time elapsed: 00:00:00
+----------------------------------------------------------
+
+37/91 Testing: KeyValueStore.ValuesMayContainAnyBytes
+37/91 Test: KeyValueStore.ValuesMayContainAnyBytes
+Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=KeyValueStore.ValuesMayContainAnyBytes" "--gtest_also_run_disabled_tests"
+Directory: /home/av/Documents/projects/cpp/k_v_db/build
+"KeyValueStore.ValuesMayContainAnyBytes" start time: Nov 15 15:09 EET
+Output:
+----------------------------------------------------------
+Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = KeyValueStore.ValuesMayContainAnyBytes
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from KeyValueStore
+[ RUN      ] KeyValueStore.ValuesMayContainAnyBytes
+[       OK ] KeyValueStore.ValuesMayContainAnyBytes (0 ms)
+[----------] 1 test from KeyValueStore (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"KeyValueStore.ValuesMayContainAnyBytes" end time: Nov 15 15:09 EET
+"KeyValueStore.ValuesMayContainAnyBytes" time elapsed: 00:00:00
+----------------------------------------------------------
+
+38/91 Testing: RequestHandlerTest.PutThenGetReturnsValue
+38/91 Test: RequestHandlerTest.PutThenGetReturnsValue
+Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=RequestHandlerTest.PutThenGetReturnsValue" "--gtest_also_run_disabled_tests"
+Directory: /home/av/Documents/projects/cpp/k_v_db/build
+"RequestHandlerTest.PutThenGetReturnsValue" start time: Nov 15 15:09 EET
+Output:
+----------------------------------------------------------
+Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = RequestHandlerTest.PutThenGetReturnsValue
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from RequestHandlerTest
+[ RUN      ] RequestHandlerTest.PutThenGetReturnsValue
+[       OK ] RequestHandlerTest.PutThenGetReturnsValue (0 ms)
+[----------] 1 test from RequestHandlerTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"RequestHandlerTest.PutThenGetReturnsValue" end time: Nov 15 15:09 EET
+"RequestHandlerTest.PutThenGetReturnsValue" time elapsed: 00:00:00
+----------------------------------------------------------
+
+39/91 Testing: RequestHandlerTest.ResponseCopiesRequestIdentity
+39/91 Test: RequestHandlerTest.ResponseCopiesRequestIdentity
+Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=RequestHandlerTest.ResponseCopiesRequestIdentity" "--gtest_also_run_disabled_tests"
+Directory: /home/av/Documents/projects/cpp/k_v_db/build
+"RequestHandlerTest.ResponseCopiesRequestIdentity" start time: Nov 15 15:09 EET
+Output:
+----------------------------------------------------------
+Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = RequestHandlerTest.ResponseCopiesRequestIdentity
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from RequestHandlerTest
+[ RUN      ] RequestHandlerTest.ResponseCopiesRequestIdentity
+[       OK ] RequestHandlerTest.ResponseCopiesRequestIdentity (0 ms)
+[----------] 1 test from RequestHandlerTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"RequestHandlerTest.ResponseCopiesRequestIdentity" end time: Nov 15 15:09 EET
+"RequestHandlerTest.ResponseCopiesRequestIdentity" time elapsed: 00:00:00
+----------------------------------------------------------
+
+40/91 Testing: RequestHandlerTest.GetMissingKeyIsNotFound
+40/91 Test: RequestHandlerTest.GetMissingKeyIsNotFound
+Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=RequestHandlerTest.GetMissingKeyIsNotFound" "--gtest_also_run_disabled_tests"
+Directory: /home/av/Documents/projects/cpp/k_v_db/build
+"RequestHandlerTest.GetMissingKeyIsNotFound" start time: Nov 15 15:09 EET
+Output:
+----------------------------------------------------------
+Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = RequestHandlerTest.GetMissingKeyIsNotFound
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from RequestHandlerTest
+[ RUN      ] RequestHandlerTest.GetMissingKeyIsNotFound
+[       OK ] RequestHandlerTest.GetMissingKeyIsNotFound (0 ms)
+[----------] 1 test from RequestHandlerTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"RequestHandlerTest.GetMissingKeyIsNotFound" end time: Nov 15 15:09 EET
+"RequestHandlerTest.GetMissingKeyIsNotFound" time elapsed: 00:00:00
+----------------------------------------------------------
+
+41/91 Testing: RequestHandlerTest.PutOverwrites
+41/91 Test: RequestHandlerTest.PutOverwrites
+Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=RequestHandlerTest.PutOverwrites" "--gtest_also_run_disabled_tests"
+Directory: /home/av/Documents/projects/cpp/k_v_db/build
+"RequestHandlerTest.PutOverwrites" start time: Nov 15 15:09 EET
+Output:
+----------------------------------------------------------
+Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = RequestHandlerTest.PutOverwrites
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from RequestHandlerTest
+[ RUN      ] RequestHandlerTest.PutOverwrites
+[       OK ] RequestHandlerTest.PutOverwrites (0 ms)
+[----------] 1 test from RequestHandlerTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"RequestHandlerTest.PutOverwrites" end time: Nov 15 15:09 EET
+"RequestHandlerTest.PutOverwrites" time elapsed: 00:00:00
+----------------------------------------------------------
+
+42/91 Testing: RequestHandlerTest.DeleteRemovesKey
+42/91 Test: RequestHandlerTest.DeleteRemovesKey
+Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=RequestHandlerTest.DeleteRemovesKey" "--gtest_also_run_disabled_tests"
+Directory: /home/av/Documents/projects/cpp/k_v_db/build
+"RequestHandlerTest.DeleteRemovesKey" start time: Nov 15 15:09 EET
+Output:
+----------------------------------------------------------
+Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = RequestHandlerTest.DeleteRemovesKey
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from RequestHandlerTest
+[ RUN      ] RequestHandlerTest.DeleteRemovesKey
+[       OK ] RequestHandlerTest.DeleteRemovesKey (0 ms)
+[----------] 1 test from RequestHandlerTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"RequestHandlerTest.DeleteRemovesKey" end time: Nov 15 15:09 EET
+"RequestHandlerTest.DeleteRemovesKey" time elapsed: 00:00:00
+----------------------------------------------------------
+
+43/91 Testing: RequestHandlerTest.MalformedPayloadIsInvalidRequest
+43/91 Test: RequestHandlerTest.MalformedPayloadIsInvalidRequest
+Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=RequestHandlerTest.MalformedPayloadIsInvalidRequest" "--gtest_also_run_disabled_tests"
+Directory: /home/av/Documents/projects/cpp/k_v_db/build
+"RequestHandlerTest.MalformedPayloadIsInvalidRequest" start time: Nov 15 15:09 EET
+Output:
+----------------------------------------------------------
+Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = RequestHandlerTest.MalformedPayloadIsInvalidRequest
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from RequestHandlerTest
+[ RUN      ] RequestHandlerTest.MalformedPayloadIsInvalidRequest
+[       OK ] RequestHandlerTest.MalformedPayloadIsInvalidRequest (0 ms)
+[----------] 1 test from RequestHandlerTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"RequestHandlerTest.MalformedPayloadIsInvalidRequest" end time: Nov 15 15:09 EET
+"RequestHandlerTest.MalformedPayloadIsInvalidRequest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+44/91 Testing: RequestHandlerTest.OversizedValueIsReported
+44/91 Test: RequestHandlerTest.OversizedValueIsReported
+Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=RequestHandlerTest.OversizedValueIsReported" "--gtest_also_run_disabled_tests"
+Directory: /home/av/Documents/projects/cpp/k_v_db/build
+"RequestHandlerTest.OversizedValueIsReported" start time: Nov 15 15:09 EET
+Output:
+----------------------------------------------------------
+Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = RequestHandlerTest.OversizedValueIsReported
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from RequestHandlerTest
+[ RUN      ] RequestHandlerTest.OversizedValueIsReported
+[       OK ] RequestHandlerTest.OversizedValueIsReported (0 ms)
+[----------] 1 test from RequestHandlerTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"RequestHandlerTest.OversizedValueIsReported" end time: Nov 15 15:09 EET
+"RequestHandlerTest.OversizedValueIsReported" time elapsed: 00:00:00
+----------------------------------------------------------
+
+45/91 Testing: RequestHandlerTest.NonRequestMessagesAreIgnored
+45/91 Test: RequestHandlerTest.NonRequestMessagesAreIgnored
+Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=RequestHandlerTest.NonRequestMessagesAreIgnored" "--gtest_also_run_disabled_tests"
+Directory: /home/av/Documents/projects/cpp/k_v_db/build
+"RequestHandlerTest.NonRequestMessagesAreIgnored" start time: Nov 15 15:09 EET
+Output:
+----------------------------------------------------------
+Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = RequestHandlerTest.NonRequestMessagesAreIgnored
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from RequestHandlerTest
+[ RUN      ] RequestHandlerTest.NonRequestMessagesAreIgnored
+[       OK ] RequestHandlerTest.NonRequestMessagesAreIgnored (0 ms)
+[----------] 1 test from RequestHandlerTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"RequestHandlerTest.NonRequestMessagesAreIgnored" end time: Nov 15 15:09 EET
+"RequestHandlerTest.NonRequestMessagesAreIgnored" time elapsed: 00:00:00
+----------------------------------------------------------
+
+46/91 Testing: Hash.Fnv1aMatchesReferenceValues
+46/91 Test: Hash.Fnv1aMatchesReferenceValues
+Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=Hash.Fnv1aMatchesReferenceValues" "--gtest_also_run_disabled_tests"
+Directory: /home/av/Documents/projects/cpp/k_v_db/build
+"Hash.Fnv1aMatchesReferenceValues" start time: Nov 15 15:09 EET
+Output:
+----------------------------------------------------------
+Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = Hash.Fnv1aMatchesReferenceValues
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Hash
+[ RUN      ] Hash.Fnv1aMatchesReferenceValues
+[       OK ] Hash.Fnv1aMatchesReferenceValues (0 ms)
+[----------] 1 test from Hash (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Hash.Fnv1aMatchesReferenceValues" end time: Nov 15 15:09 EET
+"Hash.Fnv1aMatchesReferenceValues" time elapsed: 00:00:00
+----------------------------------------------------------
+
+47/91 Testing: Hash.IsDeterministicAndSpreads
+47/91 Test: Hash.IsDeterministicAndSpreads
+Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=Hash.IsDeterministicAndSpreads" "--gtest_also_run_disabled_tests"
+Directory: /home/av/Documents/projects/cpp/k_v_db/build
+"Hash.IsDeterministicAndSpreads" start time: Nov 15 15:09 EET
+Output:
+----------------------------------------------------------
+Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = Hash.IsDeterministicAndSpreads
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Hash
+[ RUN      ] Hash.IsDeterministicAndSpreads
+[       OK ] Hash.IsDeterministicAndSpreads (0 ms)
+[----------] 1 test from Hash (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Hash.IsDeterministicAndSpreads" end time: Nov 15 15:09 EET
+"Hash.IsDeterministicAndSpreads" time elapsed: 00:00:00
+----------------------------------------------------------
+
+48/91 Testing: Membership.NodeIdComesFromCanonicalAddress
+48/91 Test: Membership.NodeIdComesFromCanonicalAddress
+Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=Membership.NodeIdComesFromCanonicalAddress" "--gtest_also_run_disabled_tests"
+Directory: /home/av/Documents/projects/cpp/k_v_db/build
+"Membership.NodeIdComesFromCanonicalAddress" start time: Nov 15 15:09 EET
+Output:
+----------------------------------------------------------
+Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = Membership.NodeIdComesFromCanonicalAddress
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Membership
+[ RUN      ] Membership.NodeIdComesFromCanonicalAddress
+[       OK ] Membership.NodeIdComesFromCanonicalAddress (0 ms)
+[----------] 1 test from Membership (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Membership.NodeIdComesFromCanonicalAddress" end time: Nov 15 15:09 EET
+"Membership.NodeIdComesFromCanonicalAddress" time elapsed: 00:00:00
+----------------------------------------------------------
+
+49/91 Testing: Membership.RejectsDuplicateNodes
+49/91 Test: Membership.RejectsDuplicateNodes
+Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=Membership.RejectsDuplicateNodes" "--gtest_also_run_disabled_tests"
+Directory: /home/av/Documents/projects/cpp/k_v_db/build
+"Membership.RejectsDuplicateNodes" start time: Nov 15 15:09 EET
+Output:
+----------------------------------------------------------
+Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = Membership.RejectsDuplicateNodes
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Membership
+[ RUN      ] Membership.RejectsDuplicateNodes
+[       OK ] Membership.RejectsDuplicateNodes (0 ms)
+[----------] 1 test from Membership (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Membership.RejectsDuplicateNodes" end time: Nov 15 15:09 EET
+"Membership.RejectsDuplicateNodes" time elapsed: 00:00:00
+----------------------------------------------------------
+
+50/91 Testing: Membership.ClosestNodeUsesXorDistance
+50/91 Test: Membership.ClosestNodeUsesXorDistance
+Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=Membership.ClosestNodeUsesXorDistance" "--gtest_also_run_disabled_tests"
+Directory: /home/av/Documents/projects/cpp/k_v_db/build
+"Membership.ClosestNodeUsesXorDistance" start time: Nov 15 15:09 EET
+Output:
+----------------------------------------------------------
+Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = Membership.ClosestNodeUsesXorDistance
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Membership
+[ RUN      ] Membership.ClosestNodeUsesXorDistance
+[       OK ] Membership.ClosestNodeUsesXorDistance (0 ms)
+[----------] 1 test from Membership (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Membership.ClosestNodeUsesXorDistance" end time: Nov 15 15:09 EET
+"Membership.ClosestNodeUsesXorDistance" time elapsed: 00:00:00
+----------------------------------------------------------
+
+51/91 Testing: Membership.AllNodesAgreeOnOwners
+51/91 Test: Membership.AllNodesAgreeOnOwners
+Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=Membership.AllNodesAgreeOnOwners" "--gtest_also_run_disabled_tests"
+Directory: /home/av/Documents/projects/cpp/k_v_db/build
+"Membership.AllNodesAgreeOnOwners" start time: Nov 15 15:09 EET
+Output:
+----------------------------------------------------------
+Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = Membership.AllNodesAgreeOnOwners
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Membership
+[ RUN      ] Membership.AllNodesAgreeOnOwners
+[       OK ] Membership.AllNodesAgreeOnOwners (0 ms)
+[----------] 1 test from Membership (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Membership.AllNodesAgreeOnOwners" end time: Nov 15 15:09 EET
+"Membership.AllNodesAgreeOnOwners" time elapsed: 00:00:00
+----------------------------------------------------------
+
+52/91 Testing: Membership.KeysSpreadOverAllNodes
+52/91 Test: Membership.KeysSpreadOverAllNodes
+Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=Membership.KeysSpreadOverAllNodes" "--gtest_also_run_disabled_tests"
+Directory: /home/av/Documents/projects/cpp/k_v_db/build
+"Membership.KeysSpreadOverAllNodes" start time: Nov 15 15:09 EET
+Output:
+----------------------------------------------------------
+Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = Membership.KeysSpreadOverAllNodes
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Membership
+[ RUN      ] Membership.KeysSpreadOverAllNodes
+[       OK ] Membership.KeysSpreadOverAllNodes (0 ms)
+[----------] 1 test from Membership (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (1 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Membership.KeysSpreadOverAllNodes" end time: Nov 15 15:09 EET
+"Membership.KeysSpreadOverAllNodes" time elapsed: 00:00:00
+----------------------------------------------------------
+
+53/91 Testing: Membership.ReplicaSetIsTheClosestNodesInOrder
+53/91 Test: Membership.ReplicaSetIsTheClosestNodesInOrder
+Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=Membership.ReplicaSetIsTheClosestNodesInOrder" "--gtest_also_run_disabled_tests"
+Directory: /home/av/Documents/projects/cpp/k_v_db/build
+"Membership.ReplicaSetIsTheClosestNodesInOrder" start time: Nov 15 15:09 EET
+Output:
+----------------------------------------------------------
+Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = Membership.ReplicaSetIsTheClosestNodesInOrder
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Membership
+[ RUN      ] Membership.ReplicaSetIsTheClosestNodesInOrder
+[       OK ] Membership.ReplicaSetIsTheClosestNodesInOrder (0 ms)
+[----------] 1 test from Membership (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Membership.ReplicaSetIsTheClosestNodesInOrder" end time: Nov 15 15:09 EET
+"Membership.ReplicaSetIsTheClosestNodesInOrder" time elapsed: 00:00:00
+----------------------------------------------------------
+
+54/91 Testing: Membership.AllNodesAgreeOnReplicaSets
+54/91 Test: Membership.AllNodesAgreeOnReplicaSets
+Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=Membership.AllNodesAgreeOnReplicaSets" "--gtest_also_run_disabled_tests"
+Directory: /home/av/Documents/projects/cpp/k_v_db/build
+"Membership.AllNodesAgreeOnReplicaSets" start time: Nov 15 15:09 EET
+Output:
+----------------------------------------------------------
+Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = Membership.AllNodesAgreeOnReplicaSets
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Membership
+[ RUN      ] Membership.AllNodesAgreeOnReplicaSets
+[       OK ] Membership.AllNodesAgreeOnReplicaSets (0 ms)
+[----------] 1 test from Membership (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Membership.AllNodesAgreeOnReplicaSets" end time: Nov 15 15:09 EET
+"Membership.AllNodesAgreeOnReplicaSets" time elapsed: 00:00:00
+----------------------------------------------------------
+
+55/91 Testing: Membership.SmallClusterHasFewerReplicas
+55/91 Test: Membership.SmallClusterHasFewerReplicas
+Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=Membership.SmallClusterHasFewerReplicas" "--gtest_also_run_disabled_tests"
+Directory: /home/av/Documents/projects/cpp/k_v_db/build
+"Membership.SmallClusterHasFewerReplicas" start time: Nov 15 15:09 EET
+Output:
+----------------------------------------------------------
+Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = Membership.SmallClusterHasFewerReplicas
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Membership
+[ RUN      ] Membership.SmallClusterHasFewerReplicas
+[       OK ] Membership.SmallClusterHasFewerReplicas (0 ms)
+[----------] 1 test from Membership (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Membership.SmallClusterHasFewerReplicas" end time: Nov 15 15:09 EET
+"Membership.SmallClusterHasFewerReplicas" time elapsed: 00:00:00
+----------------------------------------------------------
+
+56/91 Testing: ClusterTest.RequestToOwnerIsHandledLocally
+56/91 Test: ClusterTest.RequestToOwnerIsHandledLocally
+Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=ClusterTest.RequestToOwnerIsHandledLocally" "--gtest_also_run_disabled_tests"
+Directory: /home/av/Documents/projects/cpp/k_v_db/build
+"ClusterTest.RequestToOwnerIsHandledLocally" start time: Nov 15 15:09 EET
+Output:
+----------------------------------------------------------
+Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = ClusterTest.RequestToOwnerIsHandledLocally
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from ClusterTest
+[ RUN      ] ClusterTest.RequestToOwnerIsHandledLocally
+[       OK ] ClusterTest.RequestToOwnerIsHandledLocally (0 ms)
+[----------] 1 test from ClusterTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"ClusterTest.RequestToOwnerIsHandledLocally" end time: Nov 15 15:09 EET
+"ClusterTest.RequestToOwnerIsHandledLocally" time elapsed: 00:00:00
+----------------------------------------------------------
+
+57/91 Testing: ClusterTest.PutThroughNonOwnerLandsOnOwner
+57/91 Test: ClusterTest.PutThroughNonOwnerLandsOnOwner
+Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=ClusterTest.PutThroughNonOwnerLandsOnOwner" "--gtest_also_run_disabled_tests"
+Directory: /home/av/Documents/projects/cpp/k_v_db/build
+"ClusterTest.PutThroughNonOwnerLandsOnOwner" start time: Nov 15 15:09 EET
+Output:
+----------------------------------------------------------
+Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = ClusterTest.PutThroughNonOwnerLandsOnOwner
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from ClusterTest
+[ RUN      ] ClusterTest.PutThroughNonOwnerLandsOnOwner
+[       OK ] ClusterTest.PutThroughNonOwnerLandsOnOwner (0 ms)
+[----------] 1 test from ClusterTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"ClusterTest.PutThroughNonOwnerLandsOnOwner" end time: Nov 15 15:09 EET
+"ClusterTest.PutThroughNonOwnerLandsOnOwner" time elapsed: 00:00:00
+----------------------------------------------------------
+
+58/91 Testing: ClusterTest.AnyNodeCanReadAnyKey
+58/91 Test: ClusterTest.AnyNodeCanReadAnyKey
+Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=ClusterTest.AnyNodeCanReadAnyKey" "--gtest_also_run_disabled_tests"
+Directory: /home/av/Documents/projects/cpp/k_v_db/build
+"ClusterTest.AnyNodeCanReadAnyKey" start time: Nov 15 15:09 EET
+Output:
+----------------------------------------------------------
+Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = ClusterTest.AnyNodeCanReadAnyKey
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from ClusterTest
+[ RUN      ] ClusterTest.AnyNodeCanReadAnyKey
+[       OK ] ClusterTest.AnyNodeCanReadAnyKey (0 ms)
+[----------] 1 test from ClusterTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"ClusterTest.AnyNodeCanReadAnyKey" end time: Nov 15 15:09 EET
+"ClusterTest.AnyNodeCanReadAnyKey" time elapsed: 00:00:00
+----------------------------------------------------------
+
+59/91 Testing: ClusterTest.ForwardedRequestIsNeverForwardedAgain
+59/91 Test: ClusterTest.ForwardedRequestIsNeverForwardedAgain
+Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=ClusterTest.ForwardedRequestIsNeverForwardedAgain" "--gtest_also_run_disabled_tests"
+Directory: /home/av/Documents/projects/cpp/k_v_db/build
+"ClusterTest.ForwardedRequestIsNeverForwardedAgain" start time: Nov 15 15:09 EET
+Output:
+----------------------------------------------------------
+Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = ClusterTest.ForwardedRequestIsNeverForwardedAgain
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from ClusterTest
+[ RUN      ] ClusterTest.ForwardedRequestIsNeverForwardedAgain
+[       OK ] ClusterTest.ForwardedRequestIsNeverForwardedAgain (0 ms)
+[----------] 1 test from ClusterTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"ClusterTest.ForwardedRequestIsNeverForwardedAgain" end time: Nov 15 15:09 EET
+"ClusterTest.ForwardedRequestIsNeverForwardedAgain" time elapsed: 00:00:00
+----------------------------------------------------------
+
+60/91 Testing: ClusterTest.ForwardedWriteToReplicaIsRefused
+60/91 Test: ClusterTest.ForwardedWriteToReplicaIsRefused
+Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=ClusterTest.ForwardedWriteToReplicaIsRefused" "--gtest_also_run_disabled_tests"
+Directory: /home/av/Documents/projects/cpp/k_v_db/build
+"ClusterTest.ForwardedWriteToReplicaIsRefused" start time: Nov 15 15:09 EET
+Output:
+----------------------------------------------------------
+Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = ClusterTest.ForwardedWriteToReplicaIsRefused
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from ClusterTest
+[ RUN      ] ClusterTest.ForwardedWriteToReplicaIsRefused
+[       OK ] ClusterTest.ForwardedWriteToReplicaIsRefused (0 ms)
+[----------] 1 test from ClusterTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"ClusterTest.ForwardedWriteToReplicaIsRefused" end time: Nov 15 15:09 EET
+"ClusterTest.ForwardedWriteToReplicaIsRefused" time elapsed: 00:00:00
+----------------------------------------------------------
+
+61/91 Testing: ClusterTest.ForwardedReadToReplicaIsServed
+61/91 Test: ClusterTest.ForwardedReadToReplicaIsServed
+Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=ClusterTest.ForwardedReadToReplicaIsServed" "--gtest_also_run_disabled_tests"
+Directory: /home/av/Documents/projects/cpp/k_v_db/build
+"ClusterTest.ForwardedReadToReplicaIsServed" start time: Nov 15 15:09 EET
+Output:
+----------------------------------------------------------
+Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = ClusterTest.ForwardedReadToReplicaIsServed
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from ClusterTest
+[ RUN      ] ClusterTest.ForwardedReadToReplicaIsServed
+[       OK ] ClusterTest.ForwardedReadToReplicaIsServed (0 ms)
+[----------] 1 test from ClusterTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"ClusterTest.ForwardedReadToReplicaIsServed" end time: Nov 15 15:09 EET
+"ClusterTest.ForwardedReadToReplicaIsServed" time elapsed: 00:00:00
+----------------------------------------------------------
+
+62/91 Testing: ClusterTest.DeadOwnerGivesUnavailableAfterTimeout
+62/91 Test: ClusterTest.DeadOwnerGivesUnavailableAfterTimeout
+Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=ClusterTest.DeadOwnerGivesUnavailableAfterTimeout" "--gtest_also_run_disabled_tests"
+Directory: /home/av/Documents/projects/cpp/k_v_db/build
+"ClusterTest.DeadOwnerGivesUnavailableAfterTimeout" start time: Nov 15 15:09 EET
+Output:
+----------------------------------------------------------
+Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = ClusterTest.DeadOwnerGivesUnavailableAfterTimeout
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from ClusterTest
+[ RUN      ] ClusterTest.DeadOwnerGivesUnavailableAfterTimeout
+[       OK ] ClusterTest.DeadOwnerGivesUnavailableAfterTimeout (20 ms)
+[----------] 1 test from ClusterTest (20 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (20 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"ClusterTest.DeadOwnerGivesUnavailableAfterTimeout" end time: Nov 15 15:09 EET
+"ClusterTest.DeadOwnerGivesUnavailableAfterTimeout" time elapsed: 00:00:00
+----------------------------------------------------------
+
+63/91 Testing: ClusterTest.ClientRetryIsNotForwardedTwice
+63/91 Test: ClusterTest.ClientRetryIsNotForwardedTwice
+Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=ClusterTest.ClientRetryIsNotForwardedTwice" "--gtest_also_run_disabled_tests"
+Directory: /home/av/Documents/projects/cpp/k_v_db/build
+"ClusterTest.ClientRetryIsNotForwardedTwice" start time: Nov 15 15:09 EET
+Output:
+----------------------------------------------------------
+Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = ClusterTest.ClientRetryIsNotForwardedTwice
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from ClusterTest
+[ RUN      ] ClusterTest.ClientRetryIsNotForwardedTwice
+[       OK ] ClusterTest.ClientRetryIsNotForwardedTwice (0 ms)
+[----------] 1 test from ClusterTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"ClusterTest.ClientRetryIsNotForwardedTwice" end time: Nov 15 15:09 EET
+"ClusterTest.ClientRetryIsNotForwardedTwice" time elapsed: 00:00:00
+----------------------------------------------------------
+
+64/91 Testing: ClusterTest.ResponseFromWrongNodeIsIgnored
+64/91 Test: ClusterTest.ResponseFromWrongNodeIsIgnored
+Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=ClusterTest.ResponseFromWrongNodeIsIgnored" "--gtest_also_run_disabled_tests"
+Directory: /home/av/Documents/projects/cpp/k_v_db/build
+"ClusterTest.ResponseFromWrongNodeIsIgnored" start time: Nov 15 15:09 EET
+Output:
+----------------------------------------------------------
+Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = ClusterTest.ResponseFromWrongNodeIsIgnored
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from ClusterTest
+[ RUN      ] ClusterTest.ResponseFromWrongNodeIsIgnored
+[       OK ] ClusterTest.ResponseFromWrongNodeIsIgnored (0 ms)
+[----------] 1 test from ClusterTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"ClusterTest.ResponseFromWrongNodeIsIgnored" end time: Nov 15 15:09 EET
+"ClusterTest.ResponseFromWrongNodeIsIgnored" time elapsed: 00:00:00
+----------------------------------------------------------
+
+65/91 Testing: ClusterTest.InvalidDatagramsAreDropped
+65/91 Test: ClusterTest.InvalidDatagramsAreDropped
+Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=ClusterTest.InvalidDatagramsAreDropped" "--gtest_also_run_disabled_tests"
+Directory: /home/av/Documents/projects/cpp/k_v_db/build
+"ClusterTest.InvalidDatagramsAreDropped" start time: Nov 15 15:09 EET
+Output:
+----------------------------------------------------------
+Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = ClusterTest.InvalidDatagramsAreDropped
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from ClusterTest
+[ RUN      ] ClusterTest.InvalidDatagramsAreDropped
+[       OK ] ClusterTest.InvalidDatagramsAreDropped (0 ms)
+[----------] 1 test from ClusterTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"ClusterTest.InvalidDatagramsAreDropped" end time: Nov 15 15:09 EET
+"ClusterTest.InvalidDatagramsAreDropped" time elapsed: 00:00:00
+----------------------------------------------------------
+
+66/91 Testing: ClusterTest.PutIsStoredOnPrimaryAndReplica
+66/91 Test: ClusterTest.PutIsStoredOnPrimaryAndReplica
+Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=ClusterTest.PutIsStoredOnPrimaryAndReplica" "--gtest_also_run_disabled_tests"
+Directory: /home/av/Documents/projects/cpp/k_v_db/build
+"ClusterTest.PutIsStoredOnPrimaryAndReplica" start time: Nov 15 15:09 EET
+Output:
+----------------------------------------------------------
+Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = ClusterTest.PutIsStoredOnPrimaryAndReplica
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from ClusterTest
+[ RUN      ] ClusterTest.PutIsStoredOnPrimaryAndReplica
+[       OK ] ClusterTest.PutIsStoredOnPrimaryAndReplica (0 ms)
+[----------] 1 test from ClusterTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"ClusterTest.PutIsStoredOnPrimaryAndReplica" end time: Nov 15 15:09 EET
+"ClusterTest.PutIsStoredOnPrimaryAndReplica" time elapsed: 00:00:00
+----------------------------------------------------------
+
+67/91 Testing: ClusterTest.DeleteRemovesBothCopies
+67/91 Test: ClusterTest.DeleteRemovesBothCopies
+Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=ClusterTest.DeleteRemovesBothCopies" "--gtest_also_run_disabled_tests"
+Directory: /home/av/Documents/projects/cpp/k_v_db/build
+"ClusterTest.DeleteRemovesBothCopies" start time: Nov 15 15:09 EET
+Output:
+----------------------------------------------------------
+Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = ClusterTest.DeleteRemovesBothCopies
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from ClusterTest
+[ RUN      ] ClusterTest.DeleteRemovesBothCopies
+[       OK ] ClusterTest.DeleteRemovesBothCopies (0 ms)
+[----------] 1 test from ClusterTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"ClusterTest.DeleteRemovesBothCopies" end time: Nov 15 15:09 EET
+"ClusterTest.DeleteRemovesBothCopies" time elapsed: 00:00:00
+----------------------------------------------------------
+
+68/91 Testing: ClusterTest.ReadSurvivesDeadPrimary
+68/91 Test: ClusterTest.ReadSurvivesDeadPrimary
+Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=ClusterTest.ReadSurvivesDeadPrimary" "--gtest_also_run_disabled_tests"
+Directory: /home/av/Documents/projects/cpp/k_v_db/build
+"ClusterTest.ReadSurvivesDeadPrimary" start time: Nov 15 15:09 EET
+Output:
+----------------------------------------------------------
+Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = ClusterTest.ReadSurvivesDeadPrimary
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from ClusterTest
+[ RUN      ] ClusterTest.ReadSurvivesDeadPrimary
+[       OK ] ClusterTest.ReadSurvivesDeadPrimary (20 ms)
+[----------] 1 test from ClusterTest (20 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (20 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"ClusterTest.ReadSurvivesDeadPrimary" end time: Nov 15 15:09 EET
+"ClusterTest.ReadSurvivesDeadPrimary" time elapsed: 00:00:00
+----------------------------------------------------------
+
+69/91 Testing: ClusterTest.KnownDeadPrimaryIsSkippedForReads
+69/91 Test: ClusterTest.KnownDeadPrimaryIsSkippedForReads
+Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=ClusterTest.KnownDeadPrimaryIsSkippedForReads" "--gtest_also_run_disabled_tests"
+Directory: /home/av/Documents/projects/cpp/k_v_db/build
+"ClusterTest.KnownDeadPrimaryIsSkippedForReads" start time: Nov 15 15:09 EET
+Output:
+----------------------------------------------------------
+Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = ClusterTest.KnownDeadPrimaryIsSkippedForReads
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from ClusterTest
+[ RUN      ] ClusterTest.KnownDeadPrimaryIsSkippedForReads
+[       OK ] ClusterTest.KnownDeadPrimaryIsSkippedForReads (0 ms)
+[----------] 1 test from ClusterTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"ClusterTest.KnownDeadPrimaryIsSkippedForReads" end time: Nov 15 15:09 EET
+"ClusterTest.KnownDeadPrimaryIsSkippedForReads" time elapsed: 00:00:00
+----------------------------------------------------------
+
+70/91 Testing: ClusterTest.ReplicaAnswersFromItsOwnStoreWhenPrimaryKnownDown
+70/91 Test: ClusterTest.ReplicaAnswersFromItsOwnStoreWhenPrimaryKnownDown
+Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=ClusterTest.ReplicaAnswersFromItsOwnStoreWhenPrimaryKnownDown" "--gtest_also_run_disabled_tests"
+Directory: /home/av/Documents/projects/cpp/k_v_db/build
+"ClusterTest.ReplicaAnswersFromItsOwnStoreWhenPrimaryKnownDown" start time: Nov 15 15:09 EET
+Output:
+----------------------------------------------------------
+Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = ClusterTest.ReplicaAnswersFromItsOwnStoreWhenPrimaryKnownDown
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from ClusterTest
+[ RUN      ] ClusterTest.ReplicaAnswersFromItsOwnStoreWhenPrimaryKnownDown
+[       OK ] ClusterTest.ReplicaAnswersFromItsOwnStoreWhenPrimaryKnownDown (0 ms)
+[----------] 1 test from ClusterTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"ClusterTest.ReplicaAnswersFromItsOwnStoreWhenPrimaryKnownDown" end time: Nov 15 15:09 EET
+"ClusterTest.ReplicaAnswersFromItsOwnStoreWhenPrimaryKnownDown" time elapsed: 00:00:00
+----------------------------------------------------------
+
+71/91 Testing: ClusterTest.WriteToKnownDeadPrimaryFailsFast
+71/91 Test: ClusterTest.WriteToKnownDeadPrimaryFailsFast
+Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=ClusterTest.WriteToKnownDeadPrimaryFailsFast" "--gtest_also_run_disabled_tests"
+Directory: /home/av/Documents/projects/cpp/k_v_db/build
+"ClusterTest.WriteToKnownDeadPrimaryFailsFast" start time: Nov 15 15:09 EET
+Output:
+----------------------------------------------------------
+Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = ClusterTest.WriteToKnownDeadPrimaryFailsFast
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from ClusterTest
+[ RUN      ] ClusterTest.WriteToKnownDeadPrimaryFailsFast
+[       OK ] ClusterTest.WriteToKnownDeadPrimaryFailsFast (0 ms)
+[----------] 1 test from ClusterTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"ClusterTest.WriteToKnownDeadPrimaryFailsFast" end time: Nov 15 15:09 EET
+"ClusterTest.WriteToKnownDeadPrimaryFailsFast" time elapsed: 00:00:00
+----------------------------------------------------------
+
+72/91 Testing: ClusterTest.DisconnectedReplicaGivesReplicationFailed
+72/91 Test: ClusterTest.DisconnectedReplicaGivesReplicationFailed
+Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=ClusterTest.DisconnectedReplicaGivesReplicationFailed" "--gtest_also_run_disabled_tests"
+Directory: /home/av/Documents/projects/cpp/k_v_db/build
+"ClusterTest.DisconnectedReplicaGivesReplicationFailed" start time: Nov 15 15:09 EET
+Output:
+----------------------------------------------------------
+Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = ClusterTest.DisconnectedReplicaGivesReplicationFailed
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from ClusterTest
+[ RUN      ] ClusterTest.DisconnectedReplicaGivesReplicationFailed
+[       OK ] ClusterTest.DisconnectedReplicaGivesReplicationFailed (0 ms)
+[----------] 1 test from ClusterTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"ClusterTest.DisconnectedReplicaGivesReplicationFailed" end time: Nov 15 15:09 EET
+"ClusterTest.DisconnectedReplicaGivesReplicationFailed" time elapsed: 00:00:00
+----------------------------------------------------------
+
+73/91 Testing: ClusterTest.SilentReplicaGivesReplicationFailedAfterTimeout
+73/91 Test: ClusterTest.SilentReplicaGivesReplicationFailedAfterTimeout
+Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=ClusterTest.SilentReplicaGivesReplicationFailedAfterTimeout" "--gtest_also_run_disabled_tests"
+Directory: /home/av/Documents/projects/cpp/k_v_db/build
+"ClusterTest.SilentReplicaGivesReplicationFailedAfterTimeout" start time: Nov 15 15:09 EET
+Output:
+----------------------------------------------------------
+Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = ClusterTest.SilentReplicaGivesReplicationFailedAfterTimeout
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from ClusterTest
+[ RUN      ] ClusterTest.SilentReplicaGivesReplicationFailedAfterTimeout
+[       OK ] ClusterTest.SilentReplicaGivesReplicationFailedAfterTimeout (10 ms)
+[----------] 1 test from ClusterTest (10 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (10 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"ClusterTest.SilentReplicaGivesReplicationFailedAfterTimeout" end time: Nov 15 15:09 EET
+"ClusterTest.SilentReplicaGivesReplicationFailedAfterTimeout" time elapsed: 00:00:00
+----------------------------------------------------------
+
+74/91 Testing: ClusterTest.ReplicaRejectsKeysItIsNotResponsibleFor
+74/91 Test: ClusterTest.ReplicaRejectsKeysItIsNotResponsibleFor
+Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=ClusterTest.ReplicaRejectsKeysItIsNotResponsibleFor" "--gtest_also_run_disabled_tests"
+Directory: /home/av/Documents/projects/cpp/k_v_db/build
+"ClusterTest.ReplicaRejectsKeysItIsNotResponsibleFor" start time: Nov 15 15:09 EET
+Output:
+----------------------------------------------------------
+Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = ClusterTest.ReplicaRejectsKeysItIsNotResponsibleFor
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from ClusterTest
+[ RUN      ] ClusterTest.ReplicaRejectsKeysItIsNotResponsibleFor
+[       OK ] ClusterTest.ReplicaRejectsKeysItIsNotResponsibleFor (0 ms)
+[----------] 1 test from ClusterTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"ClusterTest.ReplicaRejectsKeysItIsNotResponsibleFor" end time: Nov 15 15:09 EET
+"ClusterTest.ReplicaRejectsKeysItIsNotResponsibleFor" time elapsed: 00:00:00
+----------------------------------------------------------
+
+75/91 Testing: ClusterTest.RetriedDeleteGetsTheSameAnswer
+75/91 Test: ClusterTest.RetriedDeleteGetsTheSameAnswer
+Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=ClusterTest.RetriedDeleteGetsTheSameAnswer" "--gtest_also_run_disabled_tests"
+Directory: /home/av/Documents/projects/cpp/k_v_db/build
+"ClusterTest.RetriedDeleteGetsTheSameAnswer" start time: Nov 15 15:09 EET
+Output:
+----------------------------------------------------------
+Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = ClusterTest.RetriedDeleteGetsTheSameAnswer
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from ClusterTest
+[ RUN      ] ClusterTest.RetriedDeleteGetsTheSameAnswer
+[       OK ] ClusterTest.RetriedDeleteGetsTheSameAnswer (0 ms)
+[----------] 1 test from ClusterTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"ClusterTest.RetriedDeleteGetsTheSameAnswer" end time: Nov 15 15:09 EET
+"ClusterTest.RetriedDeleteGetsTheSameAnswer" time elapsed: 00:00:00
+----------------------------------------------------------
+
+76/91 Testing: ClusterTest.RetryWhileReplicatingIsNotExecutedTwice
+76/91 Test: ClusterTest.RetryWhileReplicatingIsNotExecutedTwice
+Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=ClusterTest.RetryWhileReplicatingIsNotExecutedTwice" "--gtest_also_run_disabled_tests"
+Directory: /home/av/Documents/projects/cpp/k_v_db/build
+"ClusterTest.RetryWhileReplicatingIsNotExecutedTwice" start time: Nov 15 15:09 EET
+Output:
+----------------------------------------------------------
+Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = ClusterTest.RetryWhileReplicatingIsNotExecutedTwice
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from ClusterTest
+[ RUN      ] ClusterTest.RetryWhileReplicatingIsNotExecutedTwice
+[       OK ] ClusterTest.RetryWhileReplicatingIsNotExecutedTwice (0 ms)
+[----------] 1 test from ClusterTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"ClusterTest.RetryWhileReplicatingIsNotExecutedTwice" end time: Nov 15 15:09 EET
+"ClusterTest.RetryWhileReplicatingIsNotExecutedTwice" time elapsed: 00:00:00
+----------------------------------------------------------
+
+77/91 Testing: PeerSession.HandshakeEstablishesBothSides
+77/91 Test: PeerSession.HandshakeEstablishesBothSides
+Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=PeerSession.HandshakeEstablishesBothSides" "--gtest_also_run_disabled_tests"
+Directory: /home/av/Documents/projects/cpp/k_v_db/build
+"PeerSession.HandshakeEstablishesBothSides" start time: Nov 15 15:09 EET
+Output:
+----------------------------------------------------------
+Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = PeerSession.HandshakeEstablishesBothSides
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from PeerSession
+[ RUN      ] PeerSession.HandshakeEstablishesBothSides
+[       OK ] PeerSession.HandshakeEstablishesBothSides (0 ms)
+[----------] 1 test from PeerSession (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"PeerSession.HandshakeEstablishesBothSides" end time: Nov 15 15:09 EET
+"PeerSession.HandshakeEstablishesBothSides" time elapsed: 00:00:00
+----------------------------------------------------------
+
+78/91 Testing: PeerSession.MessagesAfterHandshakeAreDelivered
+78/91 Test: PeerSession.MessagesAfterHandshakeAreDelivered
+Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=PeerSession.MessagesAfterHandshakeAreDelivered" "--gtest_also_run_disabled_tests"
+Directory: /home/av/Documents/projects/cpp/k_v_db/build
+"PeerSession.MessagesAfterHandshakeAreDelivered" start time: Nov 15 15:09 EET
+Output:
+----------------------------------------------------------
+Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = PeerSession.MessagesAfterHandshakeAreDelivered
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from PeerSession
+[ RUN      ] PeerSession.MessagesAfterHandshakeAreDelivered
+[       OK ] PeerSession.MessagesAfterHandshakeAreDelivered (0 ms)
+[----------] 1 test from PeerSession (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"PeerSession.MessagesAfterHandshakeAreDelivered" end time: Nov 15 15:09 EET
+"PeerSession.MessagesAfterHandshakeAreDelivered" time elapsed: 00:00:00
+----------------------------------------------------------
+
+79/91 Testing: PeerSession.HelloArrivingByteByByteStillWorks
+79/91 Test: PeerSession.HelloArrivingByteByByteStillWorks
+Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=PeerSession.HelloArrivingByteByByteStillWorks" "--gtest_also_run_disabled_tests"
+Directory: /home/av/Documents/projects/cpp/k_v_db/build
+"PeerSession.HelloArrivingByteByByteStillWorks" start time: Nov 15 15:09 EET
+Output:
+----------------------------------------------------------
+Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = PeerSession.HelloArrivingByteByByteStillWorks
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from PeerSession
+[ RUN      ] PeerSession.HelloArrivingByteByByteStillWorks
+[       OK ] PeerSession.HelloArrivingByteByByteStillWorks (0 ms)
+[----------] 1 test from PeerSession (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"PeerSession.HelloArrivingByteByByteStillWorks" end time: Nov 15 15:09 EET
+"PeerSession.HelloArrivingByteByByteStillWorks" time elapsed: 00:00:00
+----------------------------------------------------------
+
+80/91 Testing: PeerSession.CannotSendBeforeHandshake
+80/91 Test: PeerSession.CannotSendBeforeHandshake
+Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=PeerSession.CannotSendBeforeHandshake" "--gtest_also_run_disabled_tests"
+Directory: /home/av/Documents/projects/cpp/k_v_db/build
+"PeerSession.CannotSendBeforeHandshake" start time: Nov 15 15:09 EET
+Output:
+----------------------------------------------------------
+Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = PeerSession.CannotSendBeforeHandshake
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from PeerSession
+[ RUN      ] PeerSession.CannotSendBeforeHandshake
+[       OK ] PeerSession.CannotSendBeforeHandshake (0 ms)
+[----------] 1 test from PeerSession (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"PeerSession.CannotSendBeforeHandshake" end time: Nov 15 15:09 EET
+"PeerSession.CannotSendBeforeHandshake" time elapsed: 00:00:00
+----------------------------------------------------------
+
+81/91 Testing: PeerSession.UnknownPeerIsRejected
+81/91 Test: PeerSession.UnknownPeerIsRejected
+Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=PeerSession.UnknownPeerIsRejected" "--gtest_also_run_disabled_tests"
+Directory: /home/av/Documents/projects/cpp/k_v_db/build
+"PeerSession.UnknownPeerIsRejected" start time: Nov 15 15:09 EET
+Output:
+----------------------------------------------------------
+Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = PeerSession.UnknownPeerIsRejected
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from PeerSession
+[ RUN      ] PeerSession.UnknownPeerIsRejected
+[       OK ] PeerSession.UnknownPeerIsRejected (0 ms)
+[----------] 1 test from PeerSession (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"PeerSession.UnknownPeerIsRejected" end time: Nov 15 15:09 EET
+"PeerSession.UnknownPeerIsRejected" time elapsed: 00:00:00
+----------------------------------------------------------
+
+82/91 Testing: PeerSession.PeerClaimingOurOwnIdIsRejected
+82/91 Test: PeerSession.PeerClaimingOurOwnIdIsRejected
+Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=PeerSession.PeerClaimingOurOwnIdIsRejected" "--gtest_also_run_disabled_tests"
+Directory: /home/av/Documents/projects/cpp/k_v_db/build
+"PeerSession.PeerClaimingOurOwnIdIsRejected" start time: Nov 15 15:09 EET
+Output:
+----------------------------------------------------------
+Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = PeerSession.PeerClaimingOurOwnIdIsRejected
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from PeerSession
+[ RUN      ] PeerSession.PeerClaimingOurOwnIdIsRejected
+[       OK ] PeerSession.PeerClaimingOurOwnIdIsRejected (0 ms)
+[----------] 1 test from PeerSession (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"PeerSession.PeerClaimingOurOwnIdIsRejected" end time: Nov 15 15:09 EET
+"PeerSession.PeerClaimingOurOwnIdIsRejected" time elapsed: 00:00:00
+----------------------------------------------------------
+
+83/91 Testing: PeerSession.FirstMessageMustBeHello
+83/91 Test: PeerSession.FirstMessageMustBeHello
+Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=PeerSession.FirstMessageMustBeHello" "--gtest_also_run_disabled_tests"
+Directory: /home/av/Documents/projects/cpp/k_v_db/build
+"PeerSession.FirstMessageMustBeHello" start time: Nov 15 15:09 EET
+Output:
+----------------------------------------------------------
+Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = PeerSession.FirstMessageMustBeHello
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from PeerSession
+[ RUN      ] PeerSession.FirstMessageMustBeHello
+[       OK ] PeerSession.FirstMessageMustBeHello (0 ms)
+[----------] 1 test from PeerSession (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"PeerSession.FirstMessageMustBeHello" end time: Nov 15 15:09 EET
+"PeerSession.FirstMessageMustBeHello" time elapsed: 00:00:00
+----------------------------------------------------------
+
+84/91 Testing: PeerSession.WrongNodeAnsweringIsRejected
+84/91 Test: PeerSession.WrongNodeAnsweringIsRejected
+Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=PeerSession.WrongNodeAnsweringIsRejected" "--gtest_also_run_disabled_tests"
+Directory: /home/av/Documents/projects/cpp/k_v_db/build
+"PeerSession.WrongNodeAnsweringIsRejected" start time: Nov 15 15:09 EET
+Output:
+----------------------------------------------------------
+Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = PeerSession.WrongNodeAnsweringIsRejected
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from PeerSession
+[ RUN      ] PeerSession.WrongNodeAnsweringIsRejected
+[       OK ] PeerSession.WrongNodeAnsweringIsRejected (0 ms)
+[----------] 1 test from PeerSession (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"PeerSession.WrongNodeAnsweringIsRejected" end time: Nov 15 15:09 EET
+"PeerSession.WrongNodeAnsweringIsRejected" time elapsed: 00:00:00
+----------------------------------------------------------
+
+85/91 Testing: PeerSession.GarbageClosesTheConnection
+85/91 Test: PeerSession.GarbageClosesTheConnection
+Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=PeerSession.GarbageClosesTheConnection" "--gtest_also_run_disabled_tests"
+Directory: /home/av/Documents/projects/cpp/k_v_db/build
+"PeerSession.GarbageClosesTheConnection" start time: Nov 15 15:09 EET
+Output:
+----------------------------------------------------------
+Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = PeerSession.GarbageClosesTheConnection
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from PeerSession
+[ RUN      ] PeerSession.GarbageClosesTheConnection
+[       OK ] PeerSession.GarbageClosesTheConnection (0 ms)
+[----------] 1 test from PeerSession (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"PeerSession.GarbageClosesTheConnection" end time: Nov 15 15:09 EET
+"PeerSession.GarbageClosesTheConnection" time elapsed: 00:00:00
+----------------------------------------------------------
+
+86/91 Testing: PeerSession.SecondHelloIsAProtocolError
+86/91 Test: PeerSession.SecondHelloIsAProtocolError
+Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=PeerSession.SecondHelloIsAProtocolError" "--gtest_also_run_disabled_tests"
+Directory: /home/av/Documents/projects/cpp/k_v_db/build
+"PeerSession.SecondHelloIsAProtocolError" start time: Nov 15 15:09 EET
+Output:
+----------------------------------------------------------
+Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = PeerSession.SecondHelloIsAProtocolError
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from PeerSession
+[ RUN      ] PeerSession.SecondHelloIsAProtocolError
+[       OK ] PeerSession.SecondHelloIsAProtocolError (0 ms)
+[----------] 1 test from PeerSession (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"PeerSession.SecondHelloIsAProtocolError" end time: Nov 15 15:09 EET
+"PeerSession.SecondHelloIsAProtocolError" time elapsed: 00:00:00
+----------------------------------------------------------
+
+87/91 Testing: PeerSession.NothingIsProcessedAfterClose
+87/91 Test: PeerSession.NothingIsProcessedAfterClose
+Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=PeerSession.NothingIsProcessedAfterClose" "--gtest_also_run_disabled_tests"
+Directory: /home/av/Documents/projects/cpp/k_v_db/build
+"PeerSession.NothingIsProcessedAfterClose" start time: Nov 15 15:09 EET
+Output:
+----------------------------------------------------------
+Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = PeerSession.NothingIsProcessedAfterClose
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from PeerSession
+[ RUN      ] PeerSession.NothingIsProcessedAfterClose
+[       OK ] PeerSession.NothingIsProcessedAfterClose (0 ms)
+[----------] 1 test from PeerSession (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"PeerSession.NothingIsProcessedAfterClose" end time: Nov 15 15:09 EET
+"PeerSession.NothingIsProcessedAfterClose" time elapsed: 00:00:00
+----------------------------------------------------------
+
+88/91 Testing: ResponseCache.FindsWhatWasInserted
+88/91 Test: ResponseCache.FindsWhatWasInserted
+Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=ResponseCache.FindsWhatWasInserted" "--gtest_also_run_disabled_tests"
+Directory: /home/av/Documents/projects/cpp/k_v_db/build
+"ResponseCache.FindsWhatWasInserted" start time: Nov 15 15:09 EET
+Output:
+----------------------------------------------------------
+Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = ResponseCache.FindsWhatWasInserted
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from ResponseCache
+[ RUN      ] ResponseCache.FindsWhatWasInserted
+[       OK ] ResponseCache.FindsWhatWasInserted (0 ms)
+[----------] 1 test from ResponseCache (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"ResponseCache.FindsWhatWasInserted" end time: Nov 15 15:09 EET
+"ResponseCache.FindsWhatWasInserted" time elapsed: 00:00:00
+----------------------------------------------------------
+
+89/91 Testing: ResponseCache.SenderAndRequestIdBothMatter
+89/91 Test: ResponseCache.SenderAndRequestIdBothMatter
+Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=ResponseCache.SenderAndRequestIdBothMatter" "--gtest_also_run_disabled_tests"
+Directory: /home/av/Documents/projects/cpp/k_v_db/build
+"ResponseCache.SenderAndRequestIdBothMatter" start time: Nov 15 15:09 EET
+Output:
+----------------------------------------------------------
+Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = ResponseCache.SenderAndRequestIdBothMatter
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from ResponseCache
+[ RUN      ] ResponseCache.SenderAndRequestIdBothMatter
+[       OK ] ResponseCache.SenderAndRequestIdBothMatter (0 ms)
+[----------] 1 test from ResponseCache (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"ResponseCache.SenderAndRequestIdBothMatter" end time: Nov 15 15:09 EET
+"ResponseCache.SenderAndRequestIdBothMatter" time elapsed: 00:00:00
+----------------------------------------------------------
+
+90/91 Testing: ResponseCache.ForgetsTheOldestWhenFull
+90/91 Test: ResponseCache.ForgetsTheOldestWhenFull
+Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=ResponseCache.ForgetsTheOldestWhenFull" "--gtest_also_run_disabled_tests"
+Directory: /home/av/Documents/projects/cpp/k_v_db/build
+"ResponseCache.ForgetsTheOldestWhenFull" start time: Nov 15 15:09 EET
+Output:
+----------------------------------------------------------
+Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = ResponseCache.ForgetsTheOldestWhenFull
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from ResponseCache
+[ RUN      ] ResponseCache.ForgetsTheOldestWhenFull
+[       OK ] ResponseCache.ForgetsTheOldestWhenFull (0 ms)
+[----------] 1 test from ResponseCache (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"ResponseCache.ForgetsTheOldestWhenFull" end time: Nov 15 15:09 EET
+"ResponseCache.ForgetsTheOldestWhenFull" time elapsed: 00:00:00
+----------------------------------------------------------
+
+91/91 Testing: ResponseCache.ReinsertingDoesNotGrowIt
+91/91 Test: ResponseCache.ReinsertingDoesNotGrowIt
+Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=ResponseCache.ReinsertingDoesNotGrowIt" "--gtest_also_run_disabled_tests"
+Directory: /home/av/Documents/projects/cpp/k_v_db/build
+"ResponseCache.ReinsertingDoesNotGrowIt" start time: Nov 15 15:09 EET
+Output:
+----------------------------------------------------------
+Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = ResponseCache.ReinsertingDoesNotGrowIt
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from ResponseCache
+[ RUN      ] ResponseCache.ReinsertingDoesNotGrowIt
+[       OK ] ResponseCache.ReinsertingDoesNotGrowIt (0 ms)
+[----------] 1 test from ResponseCache (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"ResponseCache.ReinsertingDoesNotGrowIt" end time: Nov 15 15:09 EET
+"ResponseCache.ReinsertingDoesNotGrowIt" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Nov 15 15:09 EET

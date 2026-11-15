@@ -37,6 +37,7 @@
 #include "handlers/tcp_listener.h"
 #include "handlers/timer_queue.h"
 #include "handlers/udp_handler.h"
+#include "node/replicator.h"
 #include "node/request_handler.h"
 #include "node/router.h"
 #include "protocol/protocol.h"
@@ -103,6 +104,8 @@ int main(int argc, char** argv) {
 
     Reactor reactor;
 
+    auto log_line = [](const std::string& line) { std::printf("%s\n", line.c_str()); };
+
     // ── Clean shutdown on Ctrl+C / SIGTERM ──────────────────────────────
     reactor.register_handler(std::make_unique<SignalHandler>(
         std::initializer_list<int>{SIGINT, SIGTERM},
@@ -111,45 +114,59 @@ int main(int argc, char** argv) {
             reactor.stop();
         }));
 
-    // ── Timers (forward timeouts) ───────────────────────────────────────
+    // ── Timers (forward / replication timeouts, reconnects) ────────────
     auto timer_queue = std::make_unique<TimerQueue>();
     TimerQueue* timers = timer_queue.get();
     reactor.register_handler(std::move(timer_queue));
 
-    // ── UDP data channel ────────────────────────────────────────────────
-    auto udp = std::make_unique<UDPHandler>(ntohs(opts->listen.sin6_port));
-    UDPHandler* udp_ptr = udp.get();
-
-    // Router and PeerManager are declared after the reactor: they are
-    // destroyed first, while the TimerQueue they cancel their timers on
-    // still exists.
-    Router router(members, requests, *timers,
-                  [udp_ptr](std::span<const std::byte> data, const sockaddr_in6& to) {
-                      return udp_ptr->send_to(data, to);
-                  });
-    router.set_logger([](const std::string& line) { std::printf("%s\n", line.c_str()); });
-
-    udp->set_on_datagram([&router](std::span<const std::byte> data, const sockaddr_in6& from) {
-        router.on_datagram(data, from);
-    });
-    reactor.register_handler(std::move(udp));
+    // The order of the next declarations matters. They are destroyed in
+    // reverse order, so: Router (uses Replicator) goes first, then Replicator
+    // (sends through PeerManager), then PeerManager; all of them before the
+    // Reactor, which owns the TimerQueue they cancel their timers on.
 
     // ── TCP control channel (same port number as UDP) ───────────────────
     cluster::PeerManager peers(members, reactor, *timers);
-    peers.set_logger([](const std::string& line) { std::printf("%s\n", line.c_str()); });
+    peers.set_logger(log_line);
     peers.set_on_state([&peers, &members](const cluster::NodeEntry& peer,
                                           cluster::PeerManager::PeerState state) {
         std::printf("peer %s: %s  (%zu/%zu peers connected)\n", peer.name.c_str(),
                     cluster::to_string(state), peers.connected_count(),
                     members.nodes().size() - 1);
     });
-    peers.set_on_message([](std::uint64_t peer_id, const protocol::Frame& frame) {
-        // No control messages are used yet beyond the handshake; heartbeats and
-        // replication will be handled here.
+
+    // ── Replication (over the control channel) ──────────────────────────
+    Replicator replicator(members, store, *timers,
+                          [&peers](std::uint64_t peer_id, std::span<const std::byte> message) {
+                              return peers.send(peer_id, message);
+                          });
+    replicator.set_logger(log_line);
+
+    peers.set_on_message([&replicator](std::uint64_t peer_id, const protocol::Frame& frame) {
+        if (replicator.on_message(peer_id, frame)) return;
+        // Heartbeats (PING / PONG) will be handled here next.
         const std::string_view type = protocol::to_string(frame.header.type);
         std::printf("control: %.*s from %016lx (not handled yet)\n",
                     static_cast<int>(type.size()), type.data(), static_cast<unsigned long>(peer_id));
     });
+
+    // ── UDP data channel ────────────────────────────────────────────────
+    auto udp = std::make_unique<UDPHandler>(ntohs(opts->listen.sin6_port));
+    UDPHandler* udp_ptr = udp.get();
+
+    Router router(members, requests, replicator, *timers,
+                  [udp_ptr](std::span<const std::byte> data, const sockaddr_in6& to) {
+                      return udp_ptr->send_to(data, to);
+                  });
+    router.set_logger(log_line);
+    // A peer counts as alive while its control connection is up.
+    router.set_liveness([&peers](std::uint64_t node_id) {
+        return peers.state(node_id) == cluster::PeerManager::PeerState::Connected;
+    });
+
+    udp->set_on_datagram([&router](std::span<const std::byte> data, const sockaddr_in6& from) {
+        router.on_datagram(data, from);
+    });
+    reactor.register_handler(std::move(udp));
 
     reactor.register_handler(std::make_unique<TCPListener>(
         ntohs(opts->listen.sin6_port),
@@ -163,6 +180,7 @@ int main(int argc, char** argv) {
         std::printf("  %016lx  %s%s\n", static_cast<unsigned long>(node.id), node.name.c_str(),
                     members.is_self(node) ? "  (self)" : "");
     }
+    std::printf("replication factor %zu\n", cluster::kReplicationFactor);
 
     peers.start();  // connect to the peers we're responsible for
     reactor.run();

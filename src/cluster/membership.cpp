@@ -1,5 +1,6 @@
 #include "cluster/membership.h"
 
+#include <algorithm>
 #include <stdexcept>
 #include <utility>
 
@@ -37,6 +38,15 @@ void Membership::add(NodeEntry peer) {
 
 const NodeEntry& Membership::owner_of(std::string_view key) const {
     return closest_node(key_hash(key), nodes_);
+}
+
+std::vector<NodeEntry> Membership::replicas_of(std::string_view key, std::size_t count) const {
+    const std::uint64_t key_id = key_hash(key);
+    std::vector<NodeEntry> sorted = nodes_;
+    // Ids are unique, so distances are unique: the order is the same on every node.
+    std::ranges::sort(sorted, {}, [key_id](const NodeEntry& n) { return distance(n.id, key_id); });
+    sorted.resize(std::min(count, sorted.size()));
+    return sorted;
 }
 
 }  // namespace cluster

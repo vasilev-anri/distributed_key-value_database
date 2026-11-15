@@ -1,0 +1,39 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/kvdb_core.dir/src/cluster/membership.cpp.o"
+  "CMakeFiles/kvdb_core.dir/src/cluster/membership.cpp.o.d"
+  "CMakeFiles/kvdb_core.dir/src/cluster/peer_manager.cpp.o"
+  "CMakeFiles/kvdb_core.dir/src/cluster/peer_manager.cpp.o.d"
+  "CMakeFiles/kvdb_core.dir/src/cluster/peer_session.cpp.o"
+  "CMakeFiles/kvdb_core.dir/src/cluster/peer_session.cpp.o.d"
+  "CMakeFiles/kvdb_core.dir/src/dht/dht_node.cpp.o"
+  "CMakeFiles/kvdb_core.dir/src/dht/dht_node.cpp.o.d"
+  "CMakeFiles/kvdb_core.dir/src/handlers/mailbox.cpp.o"
+  "CMakeFiles/kvdb_core.dir/src/handlers/mailbox.cpp.o.d"
+  "CMakeFiles/kvdb_core.dir/src/handlers/signal_handler.cpp.o"
+  "CMakeFiles/kvdb_core.dir/src/handlers/signal_handler.cpp.o.d"
+  "CMakeFiles/kvdb_core.dir/src/handlers/tcp_connection.cpp.o"
+  "CMakeFiles/kvdb_core.dir/src/handlers/tcp_connection.cpp.o.d"
+  "CMakeFiles/kvdb_core.dir/src/handlers/tcp_listener.cpp.o"
+  "CMakeFiles/kvdb_core.dir/src/handlers/tcp_listener.cpp.o.d"
+  "CMakeFiles/kvdb_core.dir/src/handlers/timer_queue.cpp.o"
+  "CMakeFiles/kvdb_core.dir/src/handlers/timer_queue.cpp.o.d"
+  "CMakeFiles/kvdb_core.dir/src/handlers/udp_handler.cpp.o"
+  "CMakeFiles/kvdb_core.dir/src/handlers/udp_handler.cpp.o.d"
+  "CMakeFiles/kvdb_core.dir/src/node/replicator.cpp.o"
+  "CMakeFiles/kvdb_core.dir/src/node/replicator.cpp.o.d"
+  "CMakeFiles/kvdb_core.dir/src/node/request_handler.cpp.o"
+  "CMakeFiles/kvdb_core.dir/src/node/request_handler.cpp.o.d"
+  "CMakeFiles/kvdb_core.dir/src/node/router.cpp.o"
+  "CMakeFiles/kvdb_core.dir/src/node/router.cpp.o.d"
+  "CMakeFiles/kvdb_core.dir/src/protocol/codec.cpp.o"
+  "CMakeFiles/kvdb_core.dir/src/protocol/codec.cpp.o.d"
+  "CMakeFiles/kvdb_core.dir/src/reactor/reactor.cpp.o"
+  "CMakeFiles/kvdb_core.dir/src/reactor/reactor.cpp.o.d"
+  "libkvdb_core.a"
+  "libkvdb_core.pdb"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang CXX)
+  include(CMakeFiles/kvdb_core.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

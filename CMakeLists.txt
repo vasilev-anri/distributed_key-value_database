@@ -34,6 +34,7 @@ add_library(kvdb_core STATIC
         src/protocol/codec.cpp
         src/node/request_handler.cpp
         src/node/router.cpp
+        src/node/replicator.cpp
         src/cluster/membership.cpp
         src/cluster/peer_session.cpp
         src/cluster/peer_manager.cpp
@@ -103,6 +104,7 @@ add_executable(unit_tests
         tests/membership_test.cpp
         tests/router_test.cpp
         tests/peer_session_test.cpp
+        tests/response_cache_test.cpp
 )
 
 target_link_libraries(unit_tests PRIVATE

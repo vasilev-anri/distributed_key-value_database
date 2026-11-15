@@ -6,6 +6,7 @@
 // same nodes computes the same owner, without asking anyone. That is what
 // makes a central directory server unnecessary.
 
+#include <cstddef>
 #include <cstdint>
 #include <span>
 #include <string>
@@ -15,6 +16,10 @@
 #include <netinet/in.h>
 
 namespace cluster {
+
+// How many nodes hold a copy of each key: the primary (the owner) plus
+// kReplicationFactor - 1 replicas.
+inline constexpr std::size_t kReplicationFactor = 2;
 
 struct NodeEntry {
     std::uint64_t id = 0;   // position in the 64-bit key space
@@ -47,8 +52,14 @@ public:
     // All nodes, ourselves included (always first).
     [[nodiscard]] std::span<const NodeEntry> nodes() const noexcept { return nodes_; }
 
-    // The node responsible for `key`.
+    // The node responsible for `key` (its primary).
     [[nodiscard]] const NodeEntry& owner_of(std::string_view key) const;
+
+    // The `count` nodes closest to `key` by XOR distance, closest first:
+    // [0] is the primary (= owner_of(key)), the rest are its replicas.
+    // Fewer than `count` if the cluster is smaller.
+    [[nodiscard]] std::vector<NodeEntry> replicas_of(std::string_view key,
+                                                     std::size_t count = kReplicationFactor) const;
 
     [[nodiscard]] bool is_self(const NodeEntry& node) const noexcept { return node.id == self().id; }
 

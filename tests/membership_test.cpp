@@ -96,3 +96,35 @@ TEST(Membership, KeysSpreadOverAllNodes) {
     // should be (almost) empty.
     for (const auto& [id, n] : count) EXPECT_GT(n, kKeys / 20) << std::hex << id;
 }
+
+TEST(Membership, ReplicaSetIsTheClosestNodesInOrder) {
+    const Membership m = three_nodes("[::1]:9001");
+    for (const char* key : {"student101", "student102", "alice", "bob"}) {
+        const auto set = m.replicas_of(key);
+        ASSERT_EQ(set.size(), kReplicationFactor);
+        EXPECT_EQ(set[0].id, m.owner_of(key).id);  // primary first
+        EXPECT_NE(set[0].id, set[1].id);
+        // The replica is closer to the key than the node left out.
+        const auto all = m.replicas_of(key, 3);
+        EXPECT_EQ(all[1].id, set[1].id);
+        EXPECT_LT(distance(all[1].id, key_hash(key)), distance(all[2].id, key_hash(key)));
+    }
+}
+
+TEST(Membership, AllNodesAgreeOnReplicaSets) {
+    const Membership a = three_nodes("[::1]:9001");
+    const Membership c = three_nodes("[::1]:9003");
+    for (int i = 0; i < 100; ++i) {
+        const std::string key = "key" + std::to_string(i);
+        const auto sa = a.replicas_of(key), sc = c.replicas_of(key);
+        EXPECT_EQ(sa[0].id, sc[0].id);
+        EXPECT_EQ(sa[1].id, sc[1].id);
+    }
+}
+
+TEST(Membership, SmallClusterHasFewerReplicas) {
+    const Membership single(node_at("[::1]:9001"));
+    const auto set = single.replicas_of("anything");
+    ASSERT_EQ(set.size(), 1u);
+    EXPECT_TRUE(single.is_self(set[0]));
+}

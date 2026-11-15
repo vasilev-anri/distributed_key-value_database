@@ -1,0 +1,521 @@
+{
+  "tests": 91,
+  "name": "AllTests",
+  "testsuites": [
+    {
+      "name": "UniqueFD",
+      "tests": 10,
+      "testsuite": [
+        {
+          "name": "DefaultConstructedIsInvalid",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/unique_fd_test.cpp",
+          "line": 35
+        },
+        {
+          "name": "WrapsDescriptor",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/unique_fd_test.cpp",
+          "line": 42
+        },
+        {
+          "name": "DestructorClosesDescriptor",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/unique_fd_test.cpp",
+          "line": 52
+        },
+        {
+          "name": "MoveConstructorTransfersOwnership",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/unique_fd_test.cpp",
+          "line": 63
+        },
+        {
+          "name": "MoveAssignmentClosesOldAndTakesNew",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/unique_fd_test.cpp",
+          "line": 79
+        },
+        {
+          "name": "SelfMoveAssignmentKeepsDescriptor",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/unique_fd_test.cpp",
+          "line": 94
+        },
+        {
+          "name": "ReleaseGivesUpOwnershipWithoutClosing",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/unique_fd_test.cpp",
+          "line": 107
+        },
+        {
+          "name": "ResetWithoutArgumentCloses",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/unique_fd_test.cpp",
+          "line": 124
+        },
+        {
+          "name": "ResetWithNewDescriptorClosesOld",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/unique_fd_test.cpp",
+          "line": 134
+        },
+        {
+          "name": "ResetWithSameDescriptorDoesNotClose",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/unique_fd_test.cpp",
+          "line": 146
+        }
+      ]
+    },
+    {
+      "name": "ByteIO",
+      "tests": 2,
+      "testsuite": [
+        {
+          "name": "WritesBigEndian",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/protocol_test.cpp",
+          "line": 34
+        },
+        {
+          "name": "ReaderNeverReadsPastEnd",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/protocol_test.cpp",
+          "line": 46
+        }
+      ]
+    },
+    {
+      "name": "Codec",
+      "tests": 20,
+      "testsuite": [
+        {
+          "name": "HeaderStartsWithMagicAndHasFixedSize",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/protocol_test.cpp",
+          "line": 57
+        },
+        {
+          "name": "PutRequestRoundTrip",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/protocol_test.cpp",
+          "line": 65
+        },
+        {
+          "name": "GetResponseWithStatusAndValue",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/protocol_test.cpp",
+          "line": 82
+        },
+        {
+          "name": "NotFoundResponseHasNoPayload",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/protocol_test.cpp",
+          "line": 93
+        },
+        {
+          "name": "ForwardedFlagSurvivesRoundTrip",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/protocol_test.cpp",
+          "line": 101
+        },
+        {
+          "name": "HelloRoundTrip",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/protocol_test.cpp",
+          "line": 109
+        },
+        {
+          "name": "LargestPutFitsInOneDatagram",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/protocol_test.cpp",
+          "line": 122
+        },
+        {
+          "name": "EncodingOversizedKeyThrows",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/protocol_test.cpp",
+          "line": 131
+        },
+        {
+          "name": "TcpWaitsForEveryMissingByte",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/protocol_test.cpp",
+          "line": 138
+        },
+        {
+          "name": "TcpParsesTwoMessagesFromOneBuffer",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/protocol_test.cpp",
+          "line": 150
+        },
+        {
+          "name": "RejectsBadMagicImmediately",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/protocol_test.cpp",
+          "line": 164
+        },
+        {
+          "name": "RejectsWrongVersion",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/protocol_test.cpp",
+          "line": 171
+        },
+        {
+          "name": "RejectsUnknownType",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/protocol_test.cpp",
+          "line": 177
+        },
+        {
+          "name": "RejectsInvalidStatus",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/protocol_test.cpp",
+          "line": 183
+        },
+        {
+          "name": "RejectsHugeLengthFromHeaderAlone",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/protocol_test.cpp",
+          "line": 189
+        },
+        {
+          "name": "DatagramMustNotBeTruncated",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/protocol_test.cpp",
+          "line": 199
+        },
+        {
+          "name": "DatagramMustNotHaveTrailingBytes",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/protocol_test.cpp",
+          "line": 206
+        },
+        {
+          "name": "PayloadWithTrailingBytesIsMalformed",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/protocol_test.cpp",
+          "line": 212
+        },
+        {
+          "name": "PayloadLengthLargerThanDataIsMalformed",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/protocol_test.cpp",
+          "line": 218
+        },
+        {
+          "name": "OversizedKeyIsRejectedWhenDecoding",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/protocol_test.cpp",
+          "line": 225
+        }
+      ]
+    },
+    {
+      "name": "KeyValueStore",
+      "tests": 5,
+      "testsuite": [
+        {
+          "name": "GetMissingKeyReturnsNothing",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/kv_store_test.cpp",
+          "line": 7
+        },
+        {
+          "name": "PutThenGet",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/kv_store_test.cpp",
+          "line": 13
+        },
+        {
+          "name": "PutOverwritesExistingValue",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/kv_store_test.cpp",
+          "line": 20
+        },
+        {
+          "name": "RemoveReportsWhetherKeyExisted",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/kv_store_test.cpp",
+          "line": 28
+        },
+        {
+          "name": "ValuesMayContainAnyBytes",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/kv_store_test.cpp",
+          "line": 36
+        }
+      ]
+    },
+    {
+      "name": "RequestHandlerTest",
+      "tests": 8,
+      "testsuite": [
+        {
+          "name": "PutThenGetReturnsValue",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/request_handler_test.cpp",
+          "line": 57
+        },
+        {
+          "name": "ResponseCopiesRequestIdentity",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/request_handler_test.cpp",
+          "line": 71
+        },
+        {
+          "name": "GetMissingKeyIsNotFound",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/request_handler_test.cpp",
+          "line": 82
+        },
+        {
+          "name": "PutOverwrites",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/request_handler_test.cpp",
+          "line": 89
+        },
+        {
+          "name": "DeleteRemovesKey",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/request_handler_test.cpp",
+          "line": 97
+        },
+        {
+          "name": "MalformedPayloadIsInvalidRequest",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/request_handler_test.cpp",
+          "line": 109
+        },
+        {
+          "name": "OversizedValueIsReported",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/request_handler_test.cpp",
+          "line": 116
+        },
+        {
+          "name": "NonRequestMessagesAreIgnored",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/request_handler_test.cpp",
+          "line": 130
+        }
+      ]
+    },
+    {
+      "name": "Hash",
+      "tests": 2,
+      "testsuite": [
+        {
+          "name": "Fnv1aMatchesReferenceValues",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/membership_test.cpp",
+          "line": 30
+        },
+        {
+          "name": "IsDeterministicAndSpreads",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/membership_test.cpp",
+          "line": 38
+        }
+      ]
+    },
+    {
+      "name": "Membership",
+      "tests": 8,
+      "testsuite": [
+        {
+          "name": "NodeIdComesFromCanonicalAddress",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/membership_test.cpp",
+          "line": 47
+        },
+        {
+          "name": "RejectsDuplicateNodes",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/membership_test.cpp",
+          "line": 55
+        },
+        {
+          "name": "ClosestNodeUsesXorDistance",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/membership_test.cpp",
+          "line": 65
+        },
+        {
+          "name": "AllNodesAgreeOnOwners",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/membership_test.cpp",
+          "line": 75
+        },
+        {
+          "name": "KeysSpreadOverAllNodes",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/membership_test.cpp",
+          "line": 88
+        },
+        {
+          "name": "ReplicaSetIsTheClosestNodesInOrder",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/membership_test.cpp",
+          "line": 100
+        },
+        {
+          "name": "AllNodesAgreeOnReplicaSets",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/membership_test.cpp",
+          "line": 114
+        },
+        {
+          "name": "SmallClusterHasFewerReplicas",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/membership_test.cpp",
+          "line": 125
+        }
+      ]
+    },
+    {
+      "name": "ClusterTest",
+      "tests": 21,
+      "testsuite": [
+        {
+          "name": "RequestToOwnerIsHandledLocally",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/router_test.cpp",
+          "line": 229
+        },
+        {
+          "name": "PutThroughNonOwnerLandsOnOwner",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/router_test.cpp",
+          "line": 241
+        },
+        {
+          "name": "AnyNodeCanReadAnyKey",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/router_test.cpp",
+          "line": 256
+        },
+        {
+          "name": "ForwardedRequestIsNeverForwardedAgain",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/router_test.cpp",
+          "line": 268
+        },
+        {
+          "name": "ForwardedWriteToReplicaIsRefused",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/router_test.cpp",
+          "line": 278
+        },
+        {
+          "name": "ForwardedReadToReplicaIsServed",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/router_test.cpp",
+          "line": 288
+        },
+        {
+          "name": "DeadOwnerGivesUnavailableAfterTimeout",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/router_test.cpp",
+          "line": 296
+        },
+        {
+          "name": "ClientRetryIsNotForwardedTwice",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/router_test.cpp",
+          "line": 311
+        },
+        {
+          "name": "ResponseFromWrongNodeIsIgnored",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/router_test.cpp",
+          "line": 326
+        },
+        {
+          "name": "InvalidDatagramsAreDropped",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/router_test.cpp",
+          "line": 342
+        },
+        {
+          "name": "PutIsStoredOnPrimaryAndReplica",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/router_test.cpp",
+          "line": 351
+        },
+        {
+          "name": "DeleteRemovesBothCopies",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/router_test.cpp",
+          "line": 363
+        },
+        {
+          "name": "ReadSurvivesDeadPrimary",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/router_test.cpp",
+          "line": 373
+        },
+        {
+          "name": "KnownDeadPrimaryIsSkippedForReads",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/router_test.cpp",
+          "line": 389
+        },
+        {
+          "name": "ReplicaAnswersFromItsOwnStoreWhenPrimaryKnownDown",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/router_test.cpp",
+          "line": 403
+        },
+        {
+          "name": "WriteToKnownDeadPrimaryFailsFast",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/router_test.cpp",
+          "line": 417
+        },
+        {
+          "name": "DisconnectedReplicaGivesReplicationFailed",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/router_test.cpp",
+          "line": 428
+        },
+        {
+          "name": "SilentReplicaGivesReplicationFailedAfterTimeout",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/router_test.cpp",
+          "line": 438
+        },
+        {
+          "name": "ReplicaRejectsKeysItIsNotResponsibleFor",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/router_test.cpp",
+          "line": 454
+        },
+        {
+          "name": "RetriedDeleteGetsTheSameAnswer",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/router_test.cpp",
+          "line": 470
+        },
+        {
+          "name": "RetryWhileReplicatingIsNotExecutedTwice",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/router_test.cpp",
+          "line": 492
+        }
+      ]
+    },
+    {
+      "name": "PeerSession",
+      "tests": 11,
+      "testsuite": [
+        {
+          "name": "HandshakeEstablishesBothSides",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/peer_session_test.cpp",
+          "line": 56
+        },
+        {
+          "name": "MessagesAfterHandshakeAreDelivered",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/peer_session_test.cpp",
+          "line": 75
+        },
+        {
+          "name": "HelloArrivingByteByByteStillWorks",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/peer_session_test.cpp",
+          "line": 90
+        },
+        {
+          "name": "CannotSendBeforeHandshake",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/peer_session_test.cpp",
+          "line": 106
+        },
+        {
+          "name": "UnknownPeerIsRejected",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/peer_session_test.cpp",
+          "line": 115
+        },
+        {
+          "name": "PeerClaimingOurOwnIdIsRejected",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/peer_session_test.cpp",
+          "line": 127
+        },
+        {
+          "name": "FirstMessageMustBeHello",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/peer_session_test.cpp",
+          "line": 135
+        },
+        {
+          "name": "WrongNodeAnsweringIsRejected",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/peer_session_test.cpp",
+          "line": 143
+        },
+        {
+          "name": "GarbageClosesTheConnection",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/peer_session_test.cpp",
+          "line": 152
+        },
+        {
+          "name": "SecondHelloIsAProtocolError",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/peer_session_test.cpp",
+          "line": 160
+        },
+        {
+          "name": "NothingIsProcessedAfterClose",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/peer_session_test.cpp",
+          "line": 173
+        }
+      ]
+    },
+    {
+      "name": "ResponseCache",
+      "tests": 4,
+      "testsuite": [
+        {
+          "name": "FindsWhatWasInserted",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/response_cache_test.cpp",
+          "line": 12
+        },
+        {
+          "name": "SenderAndRequestIdBothMatter",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/response_cache_test.cpp",
+          "line": 20
+        },
+        {
+          "name": "ForgetsTheOldestWhenFull",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/response_cache_test.cpp",
+          "line": 27
+        },
+        {
+          "name": "ReinsertingDoesNotGrowIt",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/response_cache_test.cpp",
+          "line": 38
+        }
+      ]
+    }
+  ]
+}

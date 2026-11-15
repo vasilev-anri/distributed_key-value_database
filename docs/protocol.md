@@ -126,9 +126,13 @@ and increment `request_id` for each new request.
 client can match each response to its request.
 
 **Retries.** If a client gets no response before its timeout, it resends the
-**same request with the same `request_id`**. Nodes remember recently processed
-`(sender_id, request_id)` pairs and answer a retry with the stored result instead
-of applying the operation twice (duplicate detection).
+**same request with the same `request_id`**. The primary remembers the responses
+to the last 4096 writes it executed, keyed by `(sender_id, request_id)`, and
+answers a retry with the stored response instead of applying the write twice
+(duplicate detection). A retry that arrives while the first attempt is still
+being replicated is ignored: the first attempt's answer is on its way. Writes
+that ended in `REPLICATION_FAILED` are not remembered, so a retry executes them
+again (safe: `PUT` and `DELETE` are idempotent).
 
 **Forwarding.** If the node that receives a request is not the key's owner, it
 forwards the request unchanged — same `sender_id` and `request_id` — to the
@@ -137,6 +141,8 @@ the client. A node **never forwards a message that already has `FORWARDED`
 set**: if it is not the owner either (for example, because membership changed
 a moment ago), it answers `UNAVAILABLE` and the client retries. This prevents
 forwarding loops between nodes that briefly disagree about ownership.
+The one exception: a forwarded `GET` that reaches the key's **replica** is
+answered from the replica's copy (see section 6, replication rules).
 
 ---
 
@@ -158,6 +164,31 @@ Client            Node A (entry)        Node C (primary)       Node D (replica)
 ```
 
 A `PUT` succeeds only when both the primary and the replica have the value.
+
+### Replication rules
+
+- **Replica set:** the `kReplicationFactor = 2` nodes closest to the key by XOR
+  distance. The closest is the **primary**, the second is the **replica**. All
+  nodes compute the same set from the same node list.
+- **Writes** (`PUT`, `DELETE`) are executed only by the primary: it applies the
+  write, sends `REPLICA_PUT` / `REPLICA_DELETE` over the control channel, and
+  answers the client only after `REPLICA_ACK OK`. `DELETE` is replicated even if
+  the key was `NOT_FOUND` on the primary, so both copies end up identical.
+- **Replica side:** applies the write and answers `REPLICA_ACK` with the same
+  `request_id` (the primary's own counter; `sender_id` = node id). It answers
+  `INVALID_REQUEST` and stores nothing if it isn't in the key's replica set.
+- **Replication failure:** if the replica isn't connected, rejects the write, or
+  doesn't ACK within **100 ms**, the client gets `REPLICATION_FAILED`. The
+  primary keeps the value it already applied; the client should retry.
+- **Reads** go to the primary. If it doesn't answer within **200 ms** (the
+  forward timeout), the entry node asks the replica. Nodes whose control
+  connection is down are asked last, so a read for a key whose primary is known
+  to be down goes straight to the replica, or is answered locally if the entry
+  node is the replica.
+- **Writes to a primary known to be down** get `UNAVAILABLE` immediately.
+- **Timeouts:** 100 ms (replica ACK) < 200 ms (forward) and 2 × 200 ms < 500 ms
+  (the client's timeout), so every node in the chain answers before the one
+  waiting for it gives up.
 
 ### Node connection and heartbeats (TCP)
 

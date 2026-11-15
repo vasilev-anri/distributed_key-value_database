@@ -1,0 +1,10 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/av/Documents/projects/cpp/k_v_db/build/cmake_install.cmake",
+		"/home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-build/cmake_install.cmake",
+		"/home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-build/googlemock/cmake_install.cmake",
+		"/home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-build/googletest/cmake_install.cmake"
+	],
+	"Parallel" : false
+}
