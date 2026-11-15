@@ -32,6 +32,7 @@ add_library(kvdb_core STATIC
         src/handlers/signal_handler.cpp
         src/dht/dht_node.cpp
         src/protocol/codec.cpp
+        src/node/request_handler.cpp
 )
 
 target_include_directories(kvdb_core PUBLIC
@@ -47,7 +48,7 @@ target_link_libraries(kvdb_core PUBLIC
         PkgConfig::OPENDHT
 )
 
-# ─────────────────────────── Main executable ──────────────────────
+# ─────────────────────────── Main executable (the node) ───────────
 add_executable(k_v_db
         main.cpp
 )
@@ -55,6 +56,21 @@ add_executable(k_v_db
 target_link_libraries(k_v_db PRIVATE kvdb_core)
 
 # ─────────────────────────── Tools ────────────────────────────────
+# Command-line client
+add_executable(kvcli
+        tools/kvcli.cpp
+)
+
+target_link_libraries(kvcli PRIVATE kvdb_core)
+
+# Foundation demo: echo servers, timers, mailbox, outbound connects
+add_executable(engine_demo
+        tools/engine_demo.cpp
+)
+
+target_link_libraries(engine_demo PRIVATE kvdb_core)
+
+# OpenDHT discovery test with several processes
 add_executable(dht_spike
         tools/dht_spike.cpp
 )
@@ -78,6 +94,8 @@ enable_testing()
 add_executable(unit_tests
         tests/unique_fd_test.cpp
         tests/protocol_test.cpp
+        tests/kv_store_test.cpp
+        tests/request_handler_test.cpp
 )
 
 target_link_libraries(unit_tests PRIVATE
