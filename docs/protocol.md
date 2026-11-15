@@ -175,6 +175,22 @@ Node A                         Node B
 
 A peer that misses several consecutive `PONG`s is considered failed.
 
+### Control channel rules
+
+- **Port:** a node's TCP control channel listens on the **same port number** as
+  its UDP data channel (e.g. `[::1]:9001` for both).
+- **One connection per pair:** only the node with the **lower node id**
+  connects (Node A above); the other only accepts. A node rejects an incoming
+  connection from an unknown node or from a node with a higher id than its own.
+- **Handshake:** the connecting node sends `HELLO` (its node id in `sender_id`,
+  its ports in the payload) as the first message. The accepting node answers
+  `HELLO_ACK` with its own node id. The connecting node checks that this is the
+  node it intended to reach. Any other first message closes the connection.
+- **Timeout:** connect + handshake must complete within 3 seconds.
+- **Reconnects:** if a connection drops, the connecting node retries with
+  backoff (0.25 s, doubling, at most 4 s). If a node reconnects while an old
+  connection to it still exists, the new connection replaces the old one.
+
 ---
 
 ## 7. Versioning

@@ -5,7 +5,8 @@
 //
 //   --listen   this node's address, as other nodes and clients reach it
 //              (default [::1]:9000). The node listens on that port on all
-//              interfaces; the full address also determines the node's id.
+//              interfaces: UDP for data, TCP for the control channel (same
+//              port number). The full address also determines the node's id.
 //   --peer     another node of the cluster (repeat for each one). Every node
 //              must be started with the same set of nodes.
 //
@@ -31,11 +32,14 @@
 #include <netinet/in.h>
 
 #include "cluster/membership.h"
+#include "cluster/peer_manager.h"
 #include "handlers/signal_handler.h"
+#include "handlers/tcp_listener.h"
 #include "handlers/timer_queue.h"
 #include "handlers/udp_handler.h"
 #include "node/request_handler.h"
 #include "node/router.h"
+#include "protocol/protocol.h"
 #include "reactor/reactor.h"
 #include "storage/kv_store.h"
 #include "utils/address.h"
@@ -116,8 +120,9 @@ int main(int argc, char** argv) {
     auto udp = std::make_unique<UDPHandler>(ntohs(opts->listen.sin6_port));
     UDPHandler* udp_ptr = udp.get();
 
-    // Declared after the reactor: destroyed first, while the TimerQueue it
-    // cancels its timers on still exists.
+    // Router and PeerManager are declared after the reactor: they are
+    // destroyed first, while the TimerQueue they cancel their timers on
+    // still exists.
     Router router(members, requests, *timers,
                   [udp_ptr](std::span<const std::byte> data, const sockaddr_in6& to) {
                       return udp_ptr->send_to(data, to);
@@ -129,6 +134,27 @@ int main(int argc, char** argv) {
     });
     reactor.register_handler(std::move(udp));
 
+    // ── TCP control channel (same port number as UDP) ───────────────────
+    cluster::PeerManager peers(members, reactor, *timers);
+    peers.set_logger([](const std::string& line) { std::printf("%s\n", line.c_str()); });
+    peers.set_on_state([&peers, &members](const cluster::NodeEntry& peer,
+                                          cluster::PeerManager::PeerState state) {
+        std::printf("peer %s: %s  (%zu/%zu peers connected)\n", peer.name.c_str(),
+                    cluster::to_string(state), peers.connected_count(),
+                    members.nodes().size() - 1);
+    });
+    peers.set_on_message([](std::uint64_t peer_id, const protocol::Frame& frame) {
+        // No control messages are used yet beyond the handshake; heartbeats and
+        // replication will be handled here.
+        const std::string_view type = protocol::to_string(frame.header.type);
+        std::printf("control: %.*s from %016lx (not handled yet)\n",
+                    static_cast<int>(type.size()), type.data(), static_cast<unsigned long>(peer_id));
+    });
+
+    reactor.register_handler(std::make_unique<TCPListener>(
+        ntohs(opts->listen.sin6_port),
+        [&peers](UniqueFD client, const sockaddr_in6& from) { peers.accept(std::move(client), from); }));
+
     // ── Startup summary ─────────────────────────────────────────────────
     std::printf("k_v_db node %s (id %016lx)\n", members.self().name.c_str(),
                 static_cast<unsigned long>(members.self().id));
@@ -138,6 +164,7 @@ int main(int argc, char** argv) {
                     members.is_self(node) ? "  (self)" : "");
     }
 
+    peers.start();  // connect to the peers we're responsible for
     reactor.run();
     std::printf("stopped cleanly (%zu keys stored on this node)\n", store.size());
 }
