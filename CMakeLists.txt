@@ -33,6 +33,8 @@ add_library(kvdb_core STATIC
         src/dht/dht_node.cpp
         src/protocol/codec.cpp
         src/node/request_handler.cpp
+        src/node/router.cpp
+        src/cluster/membership.cpp
 )
 
 target_include_directories(kvdb_core PUBLIC
@@ -96,6 +98,8 @@ add_executable(unit_tests
         tests/protocol_test.cpp
         tests/kv_store_test.cpp
         tests/request_handler_test.cpp
+        tests/membership_test.cpp
+        tests/router_test.cpp
 )
 
 target_link_libraries(unit_tests PRIVATE

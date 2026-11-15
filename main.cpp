@@ -1,54 +1,95 @@
-// k_v_db — a key-value database node (single node for now, not distributed yet).
+// k_v_db — a key-value database node.
 //
-// Usage: k_v_db [udp_port]        (default port: 9000)
+// Usage:
+//   k_v_db [--listen <endpoint>] [--peer <endpoint>]...
+//
+//   --listen   this node's address, as other nodes and clients reach it
+//              (default [::1]:9000). The node listens on that port on all
+//              interfaces; the full address also determines the node's id.
+//   --peer     another node of the cluster (repeat for each one). Every node
+//              must be started with the same set of nodes.
+//
+//   endpoint:  [::1]:9001  or  127.0.0.1:9001
+//
+// Example, a 3-node cluster on one machine:
+//   k_v_db --listen [::1]:9001 --peer [::1]:9002 --peer [::1]:9003
+//   k_v_db --listen [::1]:9002 --peer [::1]:9001 --peer [::1]:9003
+//   k_v_db --listen [::1]:9003 --peer [::1]:9001 --peer [::1]:9002
 
-#include <charconv>
 #include <csignal>
 #include <cstdint>
 #include <cstdio>
 #include <cstring>
+#include <exception>
 #include <memory>
 #include <optional>
 #include <span>
 #include <string>
 #include <string_view>
+#include <vector>
 
 #include <netinet/in.h>
 
+#include "cluster/membership.h"
 #include "handlers/signal_handler.h"
+#include "handlers/timer_queue.h"
 #include "handlers/udp_handler.h"
 #include "node/request_handler.h"
-#include "protocol/codec.h"
+#include "node/router.h"
 #include "reactor/reactor.h"
 #include "storage/kv_store.h"
 #include "utils/address.h"
 
 namespace {
 
-constexpr std::uint16_t kDefaultPort = 9000;
+struct Options {
+    sockaddr_in6 listen{};
+    std::vector<sockaddr_in6> peers;
+};
 
-std::optional<std::uint16_t> parse_port(std::string_view text) {
-    std::uint16_t port = 0;
-    const auto [end, ec] = std::from_chars(text.data(), text.data() + text.size(), port);
-    if (ec != std::errc{} || end != text.data() + text.size()) return std::nullopt;
-    return port;
+int usage(const char* prog) {
+    std::fprintf(stderr,
+                 "usage: %s [--listen <endpoint>] [--peer <endpoint>]...\n"
+                 "  endpoint: [::1]:9001 or 127.0.0.1:9001\n",
+                 prog);
+    return 2;
+}
+
+// Returns std::nullopt (after printing why) if the arguments are invalid.
+std::optional<Options> parse_args(int argc, char** argv) {
+    Options opts;
+    opts.listen = *make_address("::1", 9000);
+
+    for (int i = 1; i < argc; ++i) {
+        const std::string_view arg = argv[i];
+        if ((arg == "--listen" || arg == "--peer") && i + 1 < argc) {
+            const auto endpoint = parse_endpoint(argv[++i]);
+            if (!endpoint) {
+                std::fprintf(stderr, "invalid endpoint: %s\n", argv[i]);
+                return std::nullopt;
+            }
+            if (arg == "--listen") opts.listen = *endpoint;
+            else opts.peers.push_back(*endpoint);
+        } else {
+            return std::nullopt;
+        }
+    }
+    return opts;
 }
 
 }  // namespace
 
 int main(int argc, char** argv) {
-    std::uint16_t port = kDefaultPort;
-    if (argc > 2) {
-        std::fprintf(stderr, "usage: %s [udp_port]\n", argv[0]);
+    const auto opts = parse_args(argc, argv);
+    if (!opts) return usage(argv[0]);
+
+    // ── Cluster membership (static list for now) ────────────────────────
+    cluster::Membership members(cluster::make_node(opts->listen));
+    try {
+        for (const sockaddr_in6& peer : opts->peers) members.add(cluster::make_node(peer));
+    } catch (const std::exception& e) {
+        std::fprintf(stderr, "error: %s\n", e.what());
         return 2;
-    }
-    if (argc == 2) {
-        const auto parsed = parse_port(argv[1]);
-        if (!parsed) {
-            std::fprintf(stderr, "invalid port: %s\n", argv[1]);
-            return 2;
-        }
-        port = *parsed;
     }
 
     // Declared before the reactor, so they outlive every handler callback
@@ -66,35 +107,37 @@ int main(int argc, char** argv) {
             reactor.stop();
         }));
 
-    // ── UDP data channel: datagram -> codec -> request handler -> reply ─
-    auto udp = std::make_unique<UDPHandler>(port);
+    // ── Timers (forward timeouts) ───────────────────────────────────────
+    auto timer_queue = std::make_unique<TimerQueue>();
+    TimerQueue* timers = timer_queue.get();
+    reactor.register_handler(std::move(timer_queue));
+
+    // ── UDP data channel ────────────────────────────────────────────────
+    auto udp = std::make_unique<UDPHandler>(ntohs(opts->listen.sin6_port));
     UDPHandler* udp_ptr = udp.get();
 
-    udp->set_on_datagram([udp_ptr, &requests](std::span<const std::byte> data,
-                                              const sockaddr_in6& peer) {
-        const auto frame = protocol::parse_datagram(data);
-        if (!frame) {
-            const std::string_view why = protocol::to_string(frame.error());
-            std::printf("%s: dropped invalid datagram (%.*s)\n", to_string(peer).c_str(),
-                        static_cast<int>(why.size()), why.data());
-            return;
-        }
+    // Declared after the reactor: destroyed first, while the TimerQueue it
+    // cancels its timers on still exists.
+    Router router(members, requests, *timers,
+                  [udp_ptr](std::span<const std::byte> data, const sockaddr_in6& to) {
+                      return udp_ptr->send_to(data, to);
+                  });
+    router.set_logger([](const std::string& line) { std::printf("%s\n", line.c_str()); });
 
-        auto response = requests.handle(*frame);
-        if (!response) return;  // not a client request: ignored
-
-        const std::string_view type = protocol::to_string(frame->header.type);
-        const std::string_view status = protocol::to_string(response->status);
-        std::printf("%s: %.*s -> %.*s\n", to_string(peer).c_str(),
-                    static_cast<int>(type.size()), type.data(),
-                    static_cast<int>(status.size()), status.data());
-
-        udp_ptr->send_to(response->message, peer);
+    udp->set_on_datagram([&router](std::span<const std::byte> data, const sockaddr_in6& from) {
+        router.on_datagram(data, from);
     });
-
     reactor.register_handler(std::move(udp));
 
-    std::printf("k_v_db node listening on UDP port %u\n", udp_ptr->local_port());
+    // ── Startup summary ─────────────────────────────────────────────────
+    std::printf("k_v_db node %s (id %016lx)\n", members.self().name.c_str(),
+                static_cast<unsigned long>(members.self().id));
+    std::printf("cluster of %zu node(s):\n", members.nodes().size());
+    for (const cluster::NodeEntry& node : members.nodes()) {
+        std::printf("  %016lx  %s%s\n", static_cast<unsigned long>(node.id), node.name.c_str(),
+                    members.is_self(node) ? "  (self)" : "");
+    }
+
     reactor.run();
-    std::printf("stopped cleanly (%zu keys in store)\n", store.size());
+    std::printf("stopped cleanly (%zu keys stored on this node)\n", store.size());
 }

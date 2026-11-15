@@ -27,6 +27,36 @@ inline std::optional<sockaddr_in6> make_address(const std::string& ip, std::uint
     return std::nullopt;
 }
 
+// Parses an endpoint: "[::1]:9001" (IPv6, brackets required) or
+// "127.0.0.1:9001" (IPv4). Returns std::nullopt if it's not valid.
+inline std::optional<sockaddr_in6> parse_endpoint(const std::string& text) {
+    std::string host;
+    std::string port_text;
+
+    if (!text.empty() && text.front() == '[') {
+        const auto close = text.find(']');
+        if (close == std::string::npos || close + 1 >= text.size() || text[close + 1] != ':')
+            return std::nullopt;
+        host = text.substr(1, close - 1);
+        port_text = text.substr(close + 2);
+    } else {
+        const auto colon = text.rfind(':');
+        if (colon == std::string::npos || text.find(':') != colon) return std::nullopt;  // bare IPv6 needs []
+        host = text.substr(0, colon);
+        port_text = text.substr(colon + 1);
+    }
+
+    if (port_text.empty() || port_text.size() > 5) return std::nullopt;
+    unsigned port = 0;
+    for (const char c : port_text) {
+        if (c < '0' || c > '9') return std::nullopt;
+        port = port * 10 + static_cast<unsigned>(c - '0');
+    }
+    if (port == 0 || port > 65535) return std::nullopt;
+
+    return make_address(host, static_cast<std::uint16_t>(port));
+}
+
 // Formats an address as "[ip]:port" for logs.
 inline std::string to_string(const sockaddr_in6& addr) {
     char buf[INET6_ADDRSTRLEN];
