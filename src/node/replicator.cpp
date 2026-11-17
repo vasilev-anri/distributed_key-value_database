@@ -38,42 +38,46 @@ Replicator::~Replicator() {
     // Pending `done` callbacks are dropped without being called: the node is
     // shutting down and nobody is waiting for an answer anymore.
     for (const auto& [id, p] : pending_) timers_.cancel(p.timer);
+    for (const auto& [peer, sync] : syncs_) timers_.cancel(sync.timer);
 }
 
 void Replicator::log(const std::string& line) {
     if (log_) log_(line);
 }
 
-// ── Primary side ────────────────────────────────────────────────────────
-
-void Replicator::replicate_put(const std::string& key, const std::string& value, DoneFn done) {
-    replicate(key, encode_payload(KeyValuePayload{key, value}), MessageType::ReplicaPut, std::move(done));
+std::vector<std::byte> Replicator::copy_of(const std::string& key, std::uint64_t request_id,
+                                           std::uint8_t flags) const {
+    const KeyValueStore::Entry* e = store_.entry(key);
+    const Header header{.type = e->deleted ? MessageType::ReplicaDelete : MessageType::ReplicaPut,
+                        .flags = flags,
+                        .request_id = request_id,
+                        .sender_id = members_.self().id};
+    if (e->deleted) return encode_message(header, encode_payload(ReplicaDeletePayload{key, e->version}));
+    return encode_message(header, encode_payload(ReplicaPutPayload{key, e->value, e->version}));
 }
 
-void Replicator::replicate_delete(const std::string& key, DoneFn done) {
-    replicate(key, encode_payload(KeyPayload{key}), MessageType::ReplicaDelete, std::move(done));
-}
+// ── Primary side: replicate one write ───────────────────────────────────
 
-void Replicator::replicate(const std::string& key, const std::vector<std::byte>& payload,
-                           MessageType type, DoneFn done) {
+void Replicator::replicate(const std::string& key, DoneFn done) {
     // The replicas: every node of the key's replica set except ourselves.
     std::vector<cluster::NodeEntry> replicas = members_.replicas_of(key);
     std::erase_if(replicas, [this](const cluster::NodeEntry& n) { return members_.is_self(n); });
 
-    if (replicas.empty()) {  // single-node cluster: nothing to wait for
+    if (replicas.empty() || !store_.entry(key)) {  // single-node cluster: nothing to wait for
         done(Status::Ok);
         return;
     }
 
     const std::uint64_t id = next_id_++;
-    const auto message = encode_message({.type = type, .request_id = id, .sender_id = members_.self().id},
-                                        payload);
+    const auto message = copy_of(key, id, 0);
+    const std::string what = std::string(store_.entry(key)->deleted ? "REPLICA_DELETE " : "REPLICA_PUT ") +
+                             printable(key);
 
     // Registered before sending: an ACK may in principle arrive (and finish
     // this replication) before the send loop below completes.
     Pending& p = pending_[id];
     p.done = std::move(done);
-    p.what = std::string(to_string(type)) + " " + printable(key);
+    p.what = what;
     for (const auto& r : replicas) p.waiting.push_back(r.id);
     p.timer = timers_.schedule_after(ack_timeout_, [this, id] {
         const auto it = pending_.find(id);
@@ -86,8 +90,7 @@ void Replicator::replicate(const std::string& key, const std::vector<std::byte>&
 
     for (const auto& replica : replicas) {
         if (!send_(replica.id, message)) {
-            log(std::string(to_string(type)) + " " + printable(key) + ": replica " + replica.name +
-                " is not connected -> REPLICATION_FAILED");
+            log(what + ": replica " + replica.name + " is not connected -> REPLICATION_FAILED");
             finish(id, Status::ReplicationFailed);
             return;
         }
@@ -106,6 +109,62 @@ void Replicator::finish(std::uint64_t id, Status status) {
     p.done(status);
 }
 
+// ── Recovery: send a peer everything it should hold ─────────────────────
+
+void Replicator::sync_to(std::uint64_t peer_id) {
+    // A previous sync to this peer (its connection dropped and came back):
+    // start over, the peer may have lost everything again.
+    if (const auto old = syncs_.find(peer_id); old != syncs_.end()) {
+        timers_.cancel(old->second.timer);
+        syncs_.erase(old);
+    }
+
+    // Snapshot of the keys only: each entry is read when it is sent, so a
+    // write that happens during the sync is sent in its newest version.
+    Sync sync;
+    store_.for_each([&](const std::string& key, const KeyValueStore::Entry&) {
+        for (const auto& n : members_.replicas_of(key)) {
+            if (n.id == peer_id) {
+                sync.keys.push_back(key);
+                break;
+            }
+        }
+    });
+    if (sync.keys.empty()) return;
+
+    syncs_.emplace(peer_id, std::move(sync));
+    send_sync_batch(peer_id);
+}
+
+// One batch per reactor turn, so a large sync doesn't block the node.
+void Replicator::send_sync_batch(std::uint64_t peer_id) {
+    const auto it = syncs_.find(peer_id);
+    if (it == syncs_.end()) return;
+    Sync& sync = it->second;
+    sync.timer = 0;
+
+    const std::size_t end = std::min(sync.next + kSyncBatch, sync.keys.size());
+    for (; sync.next < end; ++sync.next) {
+        // request_id 0 + SYNC flag: the peer applies it and sends no ACK.
+        if (!send_(peer_id, copy_of(sync.keys[sync.next], 0, flags::kSync))) {
+            log("recovery: connection to " + hex_id(peer_id) + " lost after sending " +
+                std::to_string(sync.sent) + " entries, will resend on reconnect");
+            syncs_.erase(it);
+            return;
+        }
+        ++sync.sent;
+    }
+
+    if (sync.next < sync.keys.size()) {
+        sync.timer = timers_.schedule_after(std::chrono::milliseconds(0),
+                                            [this, peer_id] { send_sync_batch(peer_id); });
+        return;
+    }
+
+    log("recovery: sent " + std::to_string(sync.sent) + " entries to " + hex_id(peer_id));
+    syncs_.erase(it);
+}
+
 // ── Messages from peers ─────────────────────────────────────────────────
 
 bool Replicator::on_message(std::uint64_t peer_id, const Frame& frame) {
@@ -122,39 +181,51 @@ bool Replicator::on_message(std::uint64_t peer_id, const Frame& frame) {
     }
 }
 
-// Replica side: apply the primary's write, then confirm.
+// Replica side (and recovery): store the copy if it is newer, then confirm.
 void Replicator::apply(std::uint64_t peer_id, const Frame& frame) {
-    Status status = Status::Ok;
-    std::string what = std::string(to_string(frame.header.type));
+    const bool sync = frame.header.flags & flags::kSync;
 
-    auto is_replica = [this](const std::string& key) {
-        for (const auto& n : members_.replicas_of(key))
-            if (members_.is_self(n)) return true;
-        return false;
-    };
+    std::string key;
+    KeyValueStore::Entry entry;
+    Status status = Status::Ok;
 
     if (frame.header.type == MessageType::ReplicaPut) {
-        auto kv = decode_key_value(frame.payload);
-        if (!kv) {
-            status = Status::InvalidRequest;
+        auto p = decode_replica_put(frame.payload);
+        if (p) {
+            key = std::move(p->key);
+            entry = {std::move(p->value), p->version, false};
         } else {
-            what += " " + printable(kv->key);
-            // Never trust the network: only store keys this node is responsible for.
-            if (!is_replica(kv->key)) status = Status::InvalidRequest;
-            else store_.put(std::move(kv->key), std::move(kv->value));
+            status = Status::InvalidRequest;
         }
     } else {
-        auto k = decode_key(frame.payload);
-        if (!k) {
-            status = Status::InvalidRequest;
+        auto p = decode_replica_delete(frame.payload);
+        if (p) {
+            key = std::move(p->key);
+            entry = {{}, p->version, true};
         } else {
-            what += " " + printable(k->key);
-            if (!is_replica(k->key)) status = Status::InvalidRequest;
-            else store_.remove(k->key);  // deleting a missing key is fine: the result is the same
+            status = Status::InvalidRequest;
         }
     }
 
-    log(what + " from " + hex_id(peer_id) + ": " + std::string(to_string(status)));
+    // Never trust the network: only store keys this node is responsible for.
+    if (status == Status::Ok) {
+        const auto set = members_.replicas_of(key);
+        const bool responsible = std::ranges::any_of(set, [this](const auto& n) { return members_.is_self(n); });
+        if (!responsible) status = Status::InvalidRequest;
+    }
+
+    bool applied = false;
+    if (status == Status::Ok) applied = store_.apply(key, std::move(entry));
+
+    const std::string what = std::string(to_string(frame.header.type)) + " " + printable(key);
+    if (sync) {
+        // Recovery traffic can be large: log only what actually changed.
+        if (applied) log("recovery: " + what + " from " + hex_id(peer_id) + " applied");
+        return;  // no ACK for sync messages
+    }
+
+    log(what + " from " + hex_id(peer_id) + ": " + std::string(to_string(status)) +
+        (status == Status::Ok && !applied ? " (already up to date)" : ""));
     const auto ack = encode_message({.type = MessageType::ReplicaAck,
                                      .status = status,
                                      .request_id = frame.header.request_id,

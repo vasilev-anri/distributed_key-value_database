@@ -81,6 +81,7 @@ inline constexpr std::uint8_t kMaxStatus = std::to_underlying(Status::InternalEr
 
 namespace flags {
 inline constexpr std::uint8_t kForwarded = 0x01;  // already forwarded once: never forward again
+inline constexpr std::uint8_t kSync = 0x02;       // REPLICA_PUT / REPLICA_DELETE sent by recovery: no ACK
 }
 
 // ── Header and frame ────────────────────────────────────────────────────

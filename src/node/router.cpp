@@ -226,14 +226,10 @@ void Router::execute_write(const Frame& frame, const sockaddr_in6& from, const s
         }
     };
 
-    // The payload was already validated by RequestHandler.
-    if (frame.header.type == MessageType::PutRequest) {
-        const auto kv = decode_key_value(frame.payload);
-        replicator_.replicate_put(kv->key, kv->value, std::move(done));
-    } else {
-        const auto k = decode_key(frame.payload);
-        replicator_.replicate_delete(k->key, std::move(done));
-    }
+    // RequestHandler applied the write to the store (a new value, or a
+    // tombstone for DELETE); the replicator copies that entry, version included.
+    const auto key_name = request_key(frame);
+    replicator_.replicate(*key_name, std::move(done));
 }
 
 void Router::forward(const Frame& frame, const sockaddr_in6& client,

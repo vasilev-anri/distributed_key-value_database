@@ -217,6 +217,29 @@ protected:
         ASSERT_GT(client_inbox.size(), answers) << "no answer after the timers fired";
     }
 
+    // Runs timers (and the network) until `done()` is true.
+    template <typename Pred>
+    void run_timers_until(Pred done) {
+        for (int i = 0; i < 100 && !done(); ++i) {
+            pollfd p{.fd = timers.get_fd(), .events = POLLIN, .revents = 0};
+            ASSERT_EQ(::poll(&p, 1, 1000), 1) << "timer never fired";
+            timers.handle_event(EPOLLIN);
+            deliver();
+        }
+        ASSERT_TRUE(done());
+    }
+
+    // A node restarts: same address, empty memory.
+    void restart(std::size_t index) { nodes[index]->store = KeyValueStore{}; }
+
+    // The control connection between two nodes comes (back) up: both sides
+    // sync to each other, as main.cpp does on CONNECTED.
+    void reconnect(std::size_t a, std::size_t b) {
+        nodes[a]->replicator->sync_to(nodes[b]->id());
+        nodes[b]->replicator->sync_to(nodes[a]->id());
+        deliver();
+    }
+
     std::size_t packets_sent_to(std::size_t index) const {
         std::size_t n = 0;
         for (const auto& p : sent) n += same(p.to, nodes[index]->addr);
@@ -457,7 +480,7 @@ TEST_F(ClusterTest, ReplicaRejectsKeysItIsNotResponsibleFor) {
 
     // Node 2 (a genuine peer) claims `outsider` should store a copy.
     const auto msg = encode_message({.type = MessageType::ReplicaPut, .request_id = 9, .sender_id = nodes[2]->id()},
-                                    encode_payload(KeyValuePayload{key, "x"}));
+                                    encode_payload(ReplicaPutPayload{key, "x", 1}));
     nodes[outsider]->replicator->on_message(nodes[2]->id(), *parse_datagram(msg));
 
     EXPECT_EQ(nodes[outsider]->store.size(), 0u);
@@ -503,4 +526,104 @@ TEST_F(ClusterTest, RetryWhileReplicatingIsNotExecutedTwice) {
 
     EXPECT_EQ(control_sent, replication_messages);  // not replicated a second time
     EXPECT_EQ(nodes[2]->router->pending_writes(), 1u);
+}
+
+// ── Recovery ────────────────────────────────────────────────────────────
+
+TEST_F(ClusterTest, RestartedNodeGetsItsKeysBack) {
+    std::vector<std::string> keys;
+    for (int i = 0; i < 30; ++i) keys.push_back("key" + std::to_string(i));
+    for (const auto& k : keys) put(0, k, "v-" + k);
+
+    const std::size_t before = nodes[2]->store.size();
+    ASSERT_GT(before, 0u);
+    restart(2);
+    EXPECT_EQ(nodes[2]->store.size(), 0u);
+
+    reconnect(2, 0);
+    reconnect(2, 1);
+
+    EXPECT_EQ(nodes[2]->store.size(), before);  // everything it held is back
+    for (const auto& k : keys) {
+        for (const auto& n : nodes[0]->members->replicas_of(k)) {
+            EXPECT_EQ(nodes[index_of(n.id)]->store.get(k), "v-" + k) << k;
+        }
+    }
+}
+
+TEST_F(ClusterTest, DivergedCopiesConvergeToTheNewestValue) {
+    const std::string key = key_owned_by(2);
+    const std::size_t replica = replica_index(key);
+    put(2, key, "old");
+
+    nodes[replica]->silent = true;  // the next write never reaches the replica
+    put(2, key, "new");
+    wait_for_timers();
+    ASSERT_EQ(last_response().header.status, Status::ReplicationFailed);
+    ASSERT_EQ(nodes[2]->store.get(key), "new");
+    ASSERT_EQ(nodes[replica]->store.get(key), "old");
+
+    nodes[replica]->silent = false;
+    reconnect(2, replica);  // both sides send their copy: the newer one wins on both
+
+    EXPECT_EQ(nodes[2]->store.get(key), "new");
+    EXPECT_EQ(nodes[replica]->store.get(key), "new");
+}
+
+TEST_F(ClusterTest, DeletedKeyIsNotResurrectedByAnOldCopy) {
+    const std::string key = key_owned_by(2);
+    const std::size_t replica = replica_index(key);
+    put(2, key, "v");
+
+    nodes[replica]->silent = true;
+    del(2, key);  // the primary deletes, the replica never hears of it
+    wait_for_timers();
+    ASSERT_FALSE(nodes[2]->store.get(key));
+    ASSERT_EQ(nodes[replica]->store.get(key), "v");
+
+    nodes[replica]->silent = false;
+    reconnect(2, replica);  // the replica sends "v", the primary sends its tombstone
+
+    EXPECT_FALSE(nodes[2]->store.get(key));
+    EXPECT_FALSE(nodes[replica]->store.get(key));
+}
+
+TEST_F(ClusterTest, LargeSyncIsSentInBatches) {
+    const std::size_t a = 0, b = 1;
+    // Fill node a with keys that node b is also responsible for.
+    std::size_t count = 0;
+    for (int i = 0; count < 3 * Replicator::kSyncBatch; ++i) {
+        const std::string k = "bulk" + std::to_string(i);
+        bool has_a = false, has_b = false;
+        for (const auto& n : nodes[0]->members->replicas_of(k)) {
+            has_a |= n.id == nodes[a]->id();
+            has_b |= n.id == nodes[b]->id();
+        }
+        if (!has_a || !has_b) continue;
+        nodes[a]->store.put(k, "x");
+        ++count;
+    }
+
+    nodes[a]->replicator->sync_to(nodes[b]->id());
+    deliver();
+    EXPECT_EQ(nodes[b]->store.size(), Replicator::kSyncBatch);  // only the first batch so far
+    EXPECT_EQ(nodes[a]->replicator->syncs_running(), 1u);
+
+    run_timers_until([&] { return nodes[a]->replicator->syncs_running() == 0; });
+    EXPECT_EQ(nodes[b]->store.size(), count);
+}
+
+TEST_F(ClusterTest, ReplicationAppliesOnlyNewerVersions) {
+    const std::string key = key_owned_by(2);
+    const std::size_t replica = replica_index(key);
+    put(2, key, "v1");
+    const std::uint64_t v1 = nodes[replica]->store.entry(key)->version;
+
+    // An old copy arriving late (e.g. a delayed sync) changes nothing.
+    const auto stale = encode_message({.type = MessageType::ReplicaPut, .flags = flags::kSync, .sender_id = nodes[2]->id()},
+                                      encode_payload(ReplicaPutPayload{key, "ancient", v1 - 1}));
+    nodes[replica]->replicator->on_message(nodes[2]->id(), *parse_datagram(stale));
+
+    EXPECT_EQ(nodes[replica]->store.get(key), "v1");
+    EXPECT_TRUE(control.empty());  // SYNC messages are never ACKed
 }

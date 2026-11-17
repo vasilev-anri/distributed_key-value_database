@@ -281,3 +281,18 @@ TEST(Codec, StatusWithTruncatedNodeListIsMalformed) {
     bytes.pop_back();
     EXPECT_EQ(decode_status(bytes).error(), DecodeError::Malformed);
 }
+
+TEST(Codec, ReplicaPayloadsCarryTheVersion) {
+    const auto put = decode_replica_put(encode_payload(ReplicaPutPayload{"k", "v", 0x1122334455667788}));
+    ASSERT_TRUE(put.has_value());
+    EXPECT_EQ(put->key, "k");
+    EXPECT_EQ(put->value, "v");
+    EXPECT_EQ(put->version, 0x1122334455667788u);
+
+    const auto del = decode_replica_delete(encode_payload(ReplicaDeletePayload{"k", 42}));
+    ASSERT_TRUE(del.has_value());
+    EXPECT_EQ(del->version, 42u);
+
+    // Without its version a replica message is malformed.
+    EXPECT_FALSE(decode_replica_delete(encode_payload(KeyPayload{"k"})).has_value());
+}

@@ -19,13 +19,24 @@ namespace protocol {
 
 // ── Payloads ────────────────────────────────────────────────────────────
 
-struct KeyPayload {  // GetRequest, DeleteRequest, ReplicaDelete
+struct KeyPayload {  // GetRequest, DeleteRequest, LocateRequest
     std::string key;
 };
 
-struct KeyValuePayload {  // PutRequest, ReplicaPut
+struct KeyValuePayload {  // PutRequest
     std::string key;
     std::string value;
+};
+
+struct ReplicaPutPayload {  // ReplicaPut: a copy of one write, with its version
+    std::string key;
+    std::string value;
+    std::uint64_t version = 0;
+};
+
+struct ReplicaDeletePayload {  // ReplicaDelete: a tombstone, with its version
+    std::string key;
+    std::uint64_t version = 0;
 };
 
 struct ValuePayload {  // GetResponse with status Ok
@@ -89,6 +100,8 @@ try_parse_message(std::span<const std::byte> data);
 [[nodiscard]] std::vector<std::byte> encode_payload(const KeyValuePayload& p);
 [[nodiscard]] std::vector<std::byte> encode_payload(const ValuePayload& p);
 [[nodiscard]] std::vector<std::byte> encode_payload(const HelloPayload& p);
+[[nodiscard]] std::vector<std::byte> encode_payload(const ReplicaPutPayload& p);
+[[nodiscard]] std::vector<std::byte> encode_payload(const ReplicaDeletePayload& p);
 [[nodiscard]] std::vector<std::byte> encode_payload(const StatusPayload& p);
 [[nodiscard]] std::vector<std::byte> encode_payload(const LocatePayload& p);
 
@@ -96,6 +109,8 @@ try_parse_message(std::span<const std::byte> data);
 [[nodiscard]] std::expected<KeyValuePayload, DecodeError> decode_key_value(std::span<const std::byte> payload);
 [[nodiscard]] std::expected<ValuePayload, DecodeError> decode_value(std::span<const std::byte> payload);
 [[nodiscard]] std::expected<HelloPayload, DecodeError> decode_hello(std::span<const std::byte> payload);
+[[nodiscard]] std::expected<ReplicaPutPayload, DecodeError> decode_replica_put(std::span<const std::byte> payload);
+[[nodiscard]] std::expected<ReplicaDeletePayload, DecodeError> decode_replica_delete(std::span<const std::byte> payload);
 [[nodiscard]] std::expected<StatusPayload, DecodeError> decode_status(std::span<const std::byte> payload);
 [[nodiscard]] std::expected<LocatePayload, DecodeError> decode_locate(std::span<const std::byte> payload);
 

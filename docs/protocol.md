@@ -49,7 +49,7 @@ Implementation: `src/protocol/` (`protocol.h`, `codec.h`, `codec.cpp`).
 | 0 | 2 | `magic` | Always `0x4B56` (`"KV"`). Anything else is rejected immediately. |
 | 2 | 1 | `version` | Protocol version, currently `1`. |
 | 3 | 1 | `type` | Message type (section 3). Unknown types are rejected. |
-| 4 | 1 | `flags` | Bit 0 = `FORWARDED` (section 5). Other bits are reserved: sent as 0, ignored on receipt. |
+| 4 | 1 | `flags` | Bit 0 = `FORWARDED` (section 5), bit 1 = `SYNC` (section 6, recovery). Other bits are reserved: sent as 0, ignored on receipt. |
 | 5 | 1 | `status` | Result code in responses and acks (section 4); `0` in requests. |
 | 6 | 2 | `reserved` | Sent as 0, ignored on receipt (room for future versions). |
 | 8 | 8 | `request_id` | Chosen by the original sender; unique per sender. |
@@ -69,9 +69,13 @@ A response's type is the request's type with the high bit set (`type | 0x80`).
 | `0x01` | `PUT` | key, value | Store or overwrite a value. |
 | `0x02` | `GET` | key | Read a value. |
 | `0x03` | `DELETE` | key | Remove a key. |
+| `0x04` | `STATUS` | — | How the node sees the cluster (section 3a). |
+| `0x05` | `LOCATE` | key | Which nodes hold a key (section 3a). |
 | `0x81` | `PUT_RESPONSE` | — | `status` = result. |
 | `0x82` | `GET_RESPONSE` | value *(only if `status = OK`)* | |
 | `0x83` | `DELETE_RESPONSE` | — | `status` = result. |
+| `0x84` | `STATUS_RESPONSE` | status info | Always `status = OK`. |
+| `0x85` | `LOCATE_RESPONSE` | locate info *(only if `status = OK`)* | `KEY_TOO_LARGE` / `INVALID_REQUEST` for a bad key. |
 
 ### TCP control channel — node ↔ node
 
@@ -81,9 +85,9 @@ A response's type is the request's type with the high bit set (`type | 0x80`).
 | `0x11` | `HELLO_ACK` | — | Reply to `HELLO`; `sender_id` = node id. |
 | `0x12` | `PING` | — | Heartbeat. |
 | `0x13` | `PONG` | — | Reply to `PING`, same `request_id`. |
-| `0x20` | `REPLICA_PUT` | key, value | Primary → replica: apply this write. |
-| `0x21` | `REPLICA_DELETE` | key | Primary → replica: apply this delete. |
-| `0x22` | `REPLICA_ACK` | — | Replica → primary, same `request_id`; `status` = result. |
+| `0x20` | `REPLICA_PUT` | key, value, version | A copy of a write: apply it if `version` is newer. |
+| `0x21` | `REPLICA_DELETE` | key, version | A tombstone: apply it if `version` is newer. |
+| `0x22` | `REPLICA_ACK` | — | Replica → primary, same `request_id`; `status` = result. Never sent for `SYNC` messages. |
 
 ### Payload encoding
 
@@ -92,12 +96,52 @@ A response's type is the request's type with the high bit set (`type | 0x80`).
 | key | `u16` length + bytes | 128 bytes |
 | value | `u32` length + bytes | 1024 bytes |
 | udp_port, tcp_port | `u16` each | — |
+| version | `u64` | — |
 
 Keys and values are arbitrary bytes (not necessarily text). A payload must be
 consumed exactly: missing or leftover bytes make the message invalid.
 
 The limits guarantee that the largest `PUT`
 (28 + 2 + 128 + 4 + 1024 = **1186 bytes**) fits in one datagram.
+
+### 3a. Cluster information — `STATUS` and `LOCATE`
+
+For the UI and for `kvcli`. Both are answered **by the node that receives
+them and never forwarded**: each node reports its own view of the cluster.
+To draw the whole cluster, ask every node; nodes may briefly disagree (for
+example, right after a failure one node may already see a peer as down while
+another still sees it as connected).
+
+**Node entry** (used in both responses):
+
+| Field | Encoding | Meaning |
+|---|---|---|
+| id | `u64` | Node id (`key_hash` of its canonical address). |
+| address | `u8` length + bytes, ≤ 64 | Canonical address, e.g. `[::1]:9001`. |
+| state | `u8` | `0` SELF (the answering node), `1` CONNECTED (control link up and answering heartbeats), `2` CONNECTING (trying to reconnect), `3` DISCONNECTED (down, waiting for it to reconnect). Other values are invalid. |
+
+A node list is a `u8` count (at most **16**) followed by that many entries.
+With these limits a response always fits in one datagram
+(28 + 14 + 16 × 74 = 1226 bytes).
+
+**`STATUS_RESPONSE` payload:**
+
+| Field | Encoding | Meaning |
+|---|---|---|
+| node_id | `u64` | The answering node. |
+| key_count | `u32` | Entries stored on it: keys it is primary for plus replica copies. |
+| replication_factor | `u8` | Copies per key (2). |
+| nodes | node list | Every node, the answering node first (state SELF). |
+
+**`LOCATE_RESPONSE` payload** (request payload = key):
+
+| Field | Encoding | Meaning |
+|---|---|---|
+| key_hash | `u64` | The key's position in the id space (FNV-1a 64 + SplitMix64 mix, see `src/cluster/hash.h`). |
+| nodes | node list | The key's replica set, primary first, then the replica. |
+
+The XOR distance from a key to a node is `key_hash XOR node_id`; the primary
+is the node with the smallest distance, the replica the second smallest.
 
 ---
 
@@ -186,9 +230,35 @@ A `PUT` succeeds only when both the primary and the replica have the value.
   to be down goes straight to the replica, or is answered locally if the entry
   node is the replica.
 - **Writes to a primary known to be down** get `UNAVAILABLE` immediately.
+- **Versions:** every entry has a 64-bit version, assigned by the primary when
+  it executes the write: `max(last + 1, unix_ms << 16)` (a hybrid logical
+  clock: always increasing, also across restarts, and never below a version
+  the node has seen). A node applies a `REPLICA_PUT` / `REPLICA_DELETE` only
+  if its version is newer than the entry it has; an older or equal one
+  changes nothing (it still gets `REPLICA_ACK OK`). So copies can arrive
+  twice, late, or out of order.
+- **Tombstones:** `DELETE` doesn't erase the key, it stores a tombstone
+  (deleted, with the delete's version). `GET` treats it as `NOT_FOUND`. The
+  tombstone is what stops an older copy of the key, held by a node that
+  missed the delete, from bringing it back during recovery.
 - **Timeouts:** 100 ms (replica ACK) < 200 ms (forward) and 2 × 200 ms < 500 ms
   (the client's timeout), so every node in the chain answers before the one
   waiting for it gives up.
+
+### Recovery
+
+When a control connection becomes established (at startup, after a node
+restarted, or after it was unreachable), **both** nodes send each other every
+entry, tombstones included, for which the other node is in the key's replica
+set: `REPLICA_PUT` / `REPLICA_DELETE` with `request_id = 0` and the `SYNC`
+flag set. The receiver applies each one if it is newer, and sends no
+`REPLICA_ACK`. Entries are sent in batches of 256 per event-loop turn.
+
+Results: a node that restarted empty gets its keys back from the surviving
+copies within milliseconds of reconnecting; two copies that diverged (for
+example after `REPLICATION_FAILED`) both end up with the newest version; a
+deleted key stays deleted. Until its sync has arrived, a restarted primary may
+briefly answer `NOT_FOUND` for keys it hasn't received yet.
 
 ### Node connection and heartbeats (TCP)
 
@@ -204,7 +274,15 @@ Node A                         Node B
   |<------------------------------|
 ```
 
-A peer that misses several consecutive `PONG`s is considered failed.
+**Heartbeats.** Once the handshake is done, both sides send a `PING` every
+**250 ms** on every control connection, each with a new `request_id`; the
+receiver answers `PONG` with the same `request_id`. A `PONG` to any `PING` we
+sent (even a late one) means the peer is alive. If **4 heartbeat intervals**
+(1 s) pass without any `PONG`, the peer is considered failed and the
+connection is closed; the normal reconnect rules then apply. This detects a
+node that is frozen or overloaded while its TCP connection stays open, which
+TCP alone would never report. `PING` / `PONG` are handled by the connection
+itself and never reach replication or routing logic.
 
 ### Control channel rules
 

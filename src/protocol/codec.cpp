@@ -238,6 +238,41 @@ std::expected<HelloPayload, DecodeError> decode_hello(std::span<const std::byte>
     return finish(r, HelloPayload{*udp, *tcp});
 }
 
+std::vector<std::byte> encode_payload(const ReplicaPutPayload& p) {
+    ByteWriter w;
+    write_key(w, p.key);
+    write_value(w, p.value);
+    w.u64(p.version);
+    return w.take();
+}
+
+std::vector<std::byte> encode_payload(const ReplicaDeletePayload& p) {
+    ByteWriter w;
+    write_key(w, p.key);
+    w.u64(p.version);
+    return w.take();
+}
+
+std::expected<ReplicaPutPayload, DecodeError> decode_replica_put(std::span<const std::byte> payload) {
+    ByteReader r(payload);
+    auto key = read_key(r);
+    if (!key) return std::unexpected(key.error());
+    auto value = read_value(r);
+    if (!value) return std::unexpected(value.error());
+    const auto version = r.u64();
+    if (!version) return std::unexpected(DecodeError::Malformed);
+    return finish(r, ReplicaPutPayload{std::move(*key), std::move(*value), *version});
+}
+
+std::expected<ReplicaDeletePayload, DecodeError> decode_replica_delete(std::span<const std::byte> payload) {
+    ByteReader r(payload);
+    auto key = read_key(r);
+    if (!key) return std::unexpected(key.error());
+    const auto version = r.u64();
+    if (!version) return std::unexpected(DecodeError::Malformed);
+    return finish(r, ReplicaDeletePayload{std::move(*key), *version});
+}
+
 std::vector<std::byte> encode_payload(const StatusPayload& p) {
     ByteWriter w;
     w.u64(p.node_id);

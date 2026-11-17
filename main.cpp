@@ -129,12 +129,6 @@ int run(const Options& opts) {
     // ── TCP control channel (same port number as UDP) ───────────────────
     cluster::PeerManager peers(members, reactor, *timers);
     peers.set_logger(log_line);
-    peers.set_on_state([&peers, &members](const cluster::NodeEntry& peer,
-                                          cluster::PeerManager::PeerState state) {
-        std::printf("peer %s: %s  (%zu/%zu peers connected)\n", peer.name.c_str(),
-                    cluster::to_string(state), peers.connected_count(),
-                    members.nodes().size() - 1);
-    });
 
     // ── Replication (over the control channel) ──────────────────────────
     Replicator replicator(members, store, *timers,
@@ -142,6 +136,18 @@ int run(const Options& opts) {
                               return peers.send(peer_id, message);
                           });
     replicator.set_logger(log_line);
+
+    // Every change of a peer's state is printed. When a peer becomes
+    // CONNECTED -- at startup, or after it restarted or was unreachable --
+    // we send it every entry it is responsible for (recovery). The peer does
+    // the same towards us, so both sides end up with the newest copies.
+    peers.set_on_state([&peers, &members, &replicator](const cluster::NodeEntry& peer,
+                                                       cluster::PeerManager::PeerState state) {
+        std::printf("peer %s: %s  (%zu/%zu peers connected)\n", peer.name.c_str(),
+                    cluster::to_string(state), peers.connected_count(),
+                    members.nodes().size() - 1);
+        if (state == cluster::PeerManager::PeerState::Connected) replicator.sync_to(peer.id);
+    });
 
     peers.set_on_message([&replicator](std::uint64_t peer_id, const protocol::Frame& frame) {
         if (replicator.on_message(peer_id, frame)) return;
