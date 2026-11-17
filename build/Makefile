@@ -860,6 +860,30 @@ tests/router_test.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/tests/router_test.cpp.s
 .PHONY : tests/router_test.cpp.s
 
+tests/tcp_connection_test.o: tests/tcp_connection_test.cpp.o
+.PHONY : tests/tcp_connection_test.o
+
+# target to build an object file
+tests/tcp_connection_test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/tests/tcp_connection_test.cpp.o
+.PHONY : tests/tcp_connection_test.cpp.o
+
+tests/tcp_connection_test.i: tests/tcp_connection_test.cpp.i
+.PHONY : tests/tcp_connection_test.i
+
+# target to preprocess a source file
+tests/tcp_connection_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/tests/tcp_connection_test.cpp.i
+.PHONY : tests/tcp_connection_test.cpp.i
+
+tests/tcp_connection_test.s: tests/tcp_connection_test.cpp.s
+.PHONY : tests/tcp_connection_test.s
+
+# target to generate assembly for a file
+tests/tcp_connection_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/tests/tcp_connection_test.cpp.s
+.PHONY : tests/tcp_connection_test.cpp.s
+
 tests/unique_fd_test.o: tests/unique_fd_test.cpp.o
 .PHONY : tests/unique_fd_test.o
 
@@ -1049,6 +1073,9 @@ help:
 	@echo "... tests/router_test.o"
 	@echo "... tests/router_test.i"
 	@echo "... tests/router_test.s"
+	@echo "... tests/tcp_connection_test.o"
+	@echo "... tests/tcp_connection_test.i"
+	@echo "... tests/tcp_connection_test.s"
 	@echo "... tests/unique_fd_test.o"
 	@echo "... tests/unique_fd_test.i"
 	@echo "... tests/unique_fd_test.s"

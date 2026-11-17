@@ -1,5 +1,5 @@
 {
-  "tests": 91,
+  "tests": 101,
   "name": "AllTests",
   "testsuites": [
     {
@@ -492,6 +492,47 @@
       ]
     },
     {
+      "name": "Heartbeat",
+      "tests": 7,
+      "testsuite": [
+        {
+          "name": "PingIsAnsweredWithPongAndResetsTheCount",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/peer_session_test.cpp",
+          "line": 208
+        },
+        {
+          "name": "PongCarriesThePingsRequestId",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/peer_session_test.cpp",
+          "line": 222
+        },
+        {
+          "name": "SilentPeerIsDeclaredDead",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/peer_session_test.cpp",
+          "line": 240
+        },
+        {
+          "name": "LatePongStillCountsAsAlive",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/peer_session_test.cpp",
+          "line": 252
+        },
+        {
+          "name": "PongForAPingNeverSentIsIgnored",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/peer_session_test.cpp",
+          "line": 265
+        },
+        {
+          "name": "NothingIsSentBeforeTheHandshake",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/peer_session_test.cpp",
+          "line": 272
+        },
+        {
+          "name": "BothSidesCanMonitorEachOther",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/peer_session_test.cpp",
+          "line": 281
+        }
+      ]
+    },
+    {
       "name": "ResponseCache",
       "tests": 4,
       "testsuite": [
@@ -514,6 +555,27 @@
           "name": "ReinsertingDoesNotGrowIt",
           "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/response_cache_test.cpp",
           "line": 38
+        }
+      ]
+    },
+    {
+      "name": "TCPConnection",
+      "tests": 3,
+      "testsuite": [
+        {
+          "name": "DeliversData",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/tcp_connection_test.cpp",
+          "line": 46
+        },
+        {
+          "name": "DataFollowedByFinIsDeliveredThenCloses",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/tcp_connection_test.cpp",
+          "line": 55
+        },
+        {
+          "name": "FinWithoutRdhupFlagIsStillNoticed",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/tcp_connection_test.cpp",
+          "line": 68
         }
       ]
     }

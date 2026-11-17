@@ -143,7 +143,7 @@ int main(int argc, char** argv) {
 
     peers.set_on_message([&replicator](std::uint64_t peer_id, const protocol::Frame& frame) {
         if (replicator.on_message(peer_id, frame)) return;
-        // Heartbeats (PING / PONG) will be handled here next.
+        // PING / PONG never get here: PeerSession answers them itself.
         const std::string_view type = protocol::to_string(frame.header.type);
         std::printf("control: %.*s from %016lx (not handled yet)\n",
                     static_cast<int>(type.size()), type.data(), static_cast<unsigned long>(peer_id));
@@ -158,7 +158,8 @@ int main(int argc, char** argv) {
                       return udp_ptr->send_to(data, to);
                   });
     router.set_logger(log_line);
-    // A peer counts as alive while its control connection is up.
+    // A peer counts as alive while its control connection is up -- which,
+    // thanks to heartbeats, also means it answered within the last second.
     router.set_liveness([&peers](std::uint64_t node_id) {
         return peers.state(node_id) == cluster::PeerManager::PeerState::Connected;
     });
@@ -180,7 +181,10 @@ int main(int argc, char** argv) {
         std::printf("  %016lx  %s%s\n", static_cast<unsigned long>(node.id), node.name.c_str(),
                     members.is_self(node) ? "  (self)" : "");
     }
-    std::printf("replication factor %zu\n", cluster::kReplicationFactor);
+    std::printf("replication factor %zu, heartbeat every %lld ms, peer down after %lld ms\n",
+                cluster::kReplicationFactor,
+                static_cast<long long>(cluster::PeerManager::kHeartbeatInterval.count()),
+                static_cast<long long>(cluster::PeerManager::kFailureTimeout.count()));
 
     peers.start();  // connect to the peers we're responsible for
     reactor.run();

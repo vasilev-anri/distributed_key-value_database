@@ -96,6 +96,8 @@ FetchContent_MakeAvailable(googletest)
 # ─────────────────────────── Unit tests ───────────────────────────
 enable_testing()
 
+
+
 add_executable(unit_tests
         tests/unique_fd_test.cpp
         tests/protocol_test.cpp
@@ -105,6 +107,7 @@ add_executable(unit_tests
         tests/router_test.cpp
         tests/peer_session_test.cpp
         tests/response_cache_test.cpp
+        tests/tcp_connection_test.cpp
 )
 
 target_link_libraries(unit_tests PRIVATE

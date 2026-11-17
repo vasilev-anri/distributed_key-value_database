@@ -781,6 +781,69 @@ set_tests_properties([=[PeerSession.NothingIsProcessedAfterClose]=]
     SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==]
     
 )
+add_test([=[Heartbeat.PingIsAnsweredWithPongAndResetsTheCount]=]  /home/av/Documents/projects/cpp/k_v_db/build/unit_tests [==[--gtest_filter=Heartbeat.PingIsAnsweredWithPongAndResetsTheCount]==] --gtest_also_run_disabled_tests)
+set_tests_properties([=[Heartbeat.PingIsAnsweredWithPongAndResetsTheCount]=]
+  PROPERTIES
+    
+    DEF_SOURCE_LINE [==[/home/av/Documents/projects/cpp/k_v_db/tests/peer_session_test.cpp:208]==]
+    WORKING_DIRECTORY [==[/home/av/Documents/projects/cpp/k_v_db/build]==]
+    SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==]
+    
+)
+add_test([=[Heartbeat.PongCarriesThePingsRequestId]=]  /home/av/Documents/projects/cpp/k_v_db/build/unit_tests [==[--gtest_filter=Heartbeat.PongCarriesThePingsRequestId]==] --gtest_also_run_disabled_tests)
+set_tests_properties([=[Heartbeat.PongCarriesThePingsRequestId]=]
+  PROPERTIES
+    
+    DEF_SOURCE_LINE [==[/home/av/Documents/projects/cpp/k_v_db/tests/peer_session_test.cpp:222]==]
+    WORKING_DIRECTORY [==[/home/av/Documents/projects/cpp/k_v_db/build]==]
+    SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==]
+    
+)
+add_test([=[Heartbeat.SilentPeerIsDeclaredDead]=]  /home/av/Documents/projects/cpp/k_v_db/build/unit_tests [==[--gtest_filter=Heartbeat.SilentPeerIsDeclaredDead]==] --gtest_also_run_disabled_tests)
+set_tests_properties([=[Heartbeat.SilentPeerIsDeclaredDead]=]
+  PROPERTIES
+    
+    DEF_SOURCE_LINE [==[/home/av/Documents/projects/cpp/k_v_db/tests/peer_session_test.cpp:240]==]
+    WORKING_DIRECTORY [==[/home/av/Documents/projects/cpp/k_v_db/build]==]
+    SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==]
+    
+)
+add_test([=[Heartbeat.LatePongStillCountsAsAlive]=]  /home/av/Documents/projects/cpp/k_v_db/build/unit_tests [==[--gtest_filter=Heartbeat.LatePongStillCountsAsAlive]==] --gtest_also_run_disabled_tests)
+set_tests_properties([=[Heartbeat.LatePongStillCountsAsAlive]=]
+  PROPERTIES
+    
+    DEF_SOURCE_LINE [==[/home/av/Documents/projects/cpp/k_v_db/tests/peer_session_test.cpp:252]==]
+    WORKING_DIRECTORY [==[/home/av/Documents/projects/cpp/k_v_db/build]==]
+    SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==]
+    
+)
+add_test([=[Heartbeat.PongForAPingNeverSentIsIgnored]=]  /home/av/Documents/projects/cpp/k_v_db/build/unit_tests [==[--gtest_filter=Heartbeat.PongForAPingNeverSentIsIgnored]==] --gtest_also_run_disabled_tests)
+set_tests_properties([=[Heartbeat.PongForAPingNeverSentIsIgnored]=]
+  PROPERTIES
+    
+    DEF_SOURCE_LINE [==[/home/av/Documents/projects/cpp/k_v_db/tests/peer_session_test.cpp:265]==]
+    WORKING_DIRECTORY [==[/home/av/Documents/projects/cpp/k_v_db/build]==]
+    SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==]
+    
+)
+add_test([=[Heartbeat.NothingIsSentBeforeTheHandshake]=]  /home/av/Documents/projects/cpp/k_v_db/build/unit_tests [==[--gtest_filter=Heartbeat.NothingIsSentBeforeTheHandshake]==] --gtest_also_run_disabled_tests)
+set_tests_properties([=[Heartbeat.NothingIsSentBeforeTheHandshake]=]
+  PROPERTIES
+    
+    DEF_SOURCE_LINE [==[/home/av/Documents/projects/cpp/k_v_db/tests/peer_session_test.cpp:272]==]
+    WORKING_DIRECTORY [==[/home/av/Documents/projects/cpp/k_v_db/build]==]
+    SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==]
+    
+)
+add_test([=[Heartbeat.BothSidesCanMonitorEachOther]=]  /home/av/Documents/projects/cpp/k_v_db/build/unit_tests [==[--gtest_filter=Heartbeat.BothSidesCanMonitorEachOther]==] --gtest_also_run_disabled_tests)
+set_tests_properties([=[Heartbeat.BothSidesCanMonitorEachOther]=]
+  PROPERTIES
+    
+    DEF_SOURCE_LINE [==[/home/av/Documents/projects/cpp/k_v_db/tests/peer_session_test.cpp:281]==]
+    WORKING_DIRECTORY [==[/home/av/Documents/projects/cpp/k_v_db/build]==]
+    SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==]
+    
+)
 add_test([=[ResponseCache.FindsWhatWasInserted]=]  /home/av/Documents/projects/cpp/k_v_db/build/unit_tests [==[--gtest_filter=ResponseCache.FindsWhatWasInserted]==] --gtest_also_run_disabled_tests)
 set_tests_properties([=[ResponseCache.FindsWhatWasInserted]=]
   PROPERTIES
@@ -817,4 +880,31 @@ set_tests_properties([=[ResponseCache.ReinsertingDoesNotGrowIt]=]
     SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==]
     
 )
-set(unit_tests_TESTS [==[UniqueFD.DefaultConstructedIsInvalid]==] [==[UniqueFD.WrapsDescriptor]==] [==[UniqueFD.DestructorClosesDescriptor]==] [==[UniqueFD.MoveConstructorTransfersOwnership]==] [==[UniqueFD.MoveAssignmentClosesOldAndTakesNew]==] [==[UniqueFD.SelfMoveAssignmentKeepsDescriptor]==] [==[UniqueFD.ReleaseGivesUpOwnershipWithoutClosing]==] [==[UniqueFD.ResetWithoutArgumentCloses]==] [==[UniqueFD.ResetWithNewDescriptorClosesOld]==] [==[UniqueFD.ResetWithSameDescriptorDoesNotClose]==] [==[ByteIO.WritesBigEndian]==] [==[ByteIO.ReaderNeverReadsPastEnd]==] [==[Codec.HeaderStartsWithMagicAndHasFixedSize]==] [==[Codec.PutRequestRoundTrip]==] [==[Codec.GetResponseWithStatusAndValue]==] [==[Codec.NotFoundResponseHasNoPayload]==] [==[Codec.ForwardedFlagSurvivesRoundTrip]==] [==[Codec.HelloRoundTrip]==] [==[Codec.LargestPutFitsInOneDatagram]==] [==[Codec.EncodingOversizedKeyThrows]==] [==[Codec.TcpWaitsForEveryMissingByte]==] [==[Codec.TcpParsesTwoMessagesFromOneBuffer]==] [==[Codec.RejectsBadMagicImmediately]==] [==[Codec.RejectsWrongVersion]==] [==[Codec.RejectsUnknownType]==] [==[Codec.RejectsInvalidStatus]==] [==[Codec.RejectsHugeLengthFromHeaderAlone]==] [==[Codec.DatagramMustNotBeTruncated]==] [==[Codec.DatagramMustNotHaveTrailingBytes]==] [==[Codec.PayloadWithTrailingBytesIsMalformed]==] [==[Codec.PayloadLengthLargerThanDataIsMalformed]==] [==[Codec.OversizedKeyIsRejectedWhenDecoding]==] [==[KeyValueStore.GetMissingKeyReturnsNothing]==] [==[KeyValueStore.PutThenGet]==] [==[KeyValueStore.PutOverwritesExistingValue]==] [==[KeyValueStore.RemoveReportsWhetherKeyExisted]==] [==[KeyValueStore.ValuesMayContainAnyBytes]==] [==[RequestHandlerTest.PutThenGetReturnsValue]==] [==[RequestHandlerTest.ResponseCopiesRequestIdentity]==] [==[RequestHandlerTest.GetMissingKeyIsNotFound]==] [==[RequestHandlerTest.PutOverwrites]==] [==[RequestHandlerTest.DeleteRemovesKey]==] [==[RequestHandlerTest.MalformedPayloadIsInvalidRequest]==] [==[RequestHandlerTest.OversizedValueIsReported]==] [==[RequestHandlerTest.NonRequestMessagesAreIgnored]==] [==[Hash.Fnv1aMatchesReferenceValues]==] [==[Hash.IsDeterministicAndSpreads]==] [==[Membership.NodeIdComesFromCanonicalAddress]==] [==[Membership.RejectsDuplicateNodes]==] [==[Membership.ClosestNodeUsesXorDistance]==] [==[Membership.AllNodesAgreeOnOwners]==] [==[Membership.KeysSpreadOverAllNodes]==] [==[Membership.ReplicaSetIsTheClosestNodesInOrder]==] [==[Membership.AllNodesAgreeOnReplicaSets]==] [==[Membership.SmallClusterHasFewerReplicas]==] [==[ClusterTest.RequestToOwnerIsHandledLocally]==] [==[ClusterTest.PutThroughNonOwnerLandsOnOwner]==] [==[ClusterTest.AnyNodeCanReadAnyKey]==] [==[ClusterTest.ForwardedRequestIsNeverForwardedAgain]==] [==[ClusterTest.ForwardedWriteToReplicaIsRefused]==] [==[ClusterTest.ForwardedReadToReplicaIsServed]==] [==[ClusterTest.DeadOwnerGivesUnavailableAfterTimeout]==] [==[ClusterTest.ClientRetryIsNotForwardedTwice]==] [==[ClusterTest.ResponseFromWrongNodeIsIgnored]==] [==[ClusterTest.InvalidDatagramsAreDropped]==] [==[ClusterTest.PutIsStoredOnPrimaryAndReplica]==] [==[ClusterTest.DeleteRemovesBothCopies]==] [==[ClusterTest.ReadSurvivesDeadPrimary]==] [==[ClusterTest.KnownDeadPrimaryIsSkippedForReads]==] [==[ClusterTest.ReplicaAnswersFromItsOwnStoreWhenPrimaryKnownDown]==] [==[ClusterTest.WriteToKnownDeadPrimaryFailsFast]==] [==[ClusterTest.DisconnectedReplicaGivesReplicationFailed]==] [==[ClusterTest.SilentReplicaGivesReplicationFailedAfterTimeout]==] [==[ClusterTest.ReplicaRejectsKeysItIsNotResponsibleFor]==] [==[ClusterTest.RetriedDeleteGetsTheSameAnswer]==] [==[ClusterTest.RetryWhileReplicatingIsNotExecutedTwice]==] [==[PeerSession.HandshakeEstablishesBothSides]==] [==[PeerSession.MessagesAfterHandshakeAreDelivered]==] [==[PeerSession.HelloArrivingByteByByteStillWorks]==] [==[PeerSession.CannotSendBeforeHandshake]==] [==[PeerSession.UnknownPeerIsRejected]==] [==[PeerSession.PeerClaimingOurOwnIdIsRejected]==] [==[PeerSession.FirstMessageMustBeHello]==] [==[PeerSession.WrongNodeAnsweringIsRejected]==] [==[PeerSession.GarbageClosesTheConnection]==] [==[PeerSession.SecondHelloIsAProtocolError]==] [==[PeerSession.NothingIsProcessedAfterClose]==] [==[ResponseCache.FindsWhatWasInserted]==] [==[ResponseCache.SenderAndRequestIdBothMatter]==] [==[ResponseCache.ForgetsTheOldestWhenFull]==] [==[ResponseCache.ReinsertingDoesNotGrowIt]==])
+add_test([=[TCPConnection.DeliversData]=]  /home/av/Documents/projects/cpp/k_v_db/build/unit_tests [==[--gtest_filter=TCPConnection.DeliversData]==] --gtest_also_run_disabled_tests)
+set_tests_properties([=[TCPConnection.DeliversData]=]
+  PROPERTIES
+    
+    DEF_SOURCE_LINE [==[/home/av/Documents/projects/cpp/k_v_db/tests/tcp_connection_test.cpp:46]==]
+    WORKING_DIRECTORY [==[/home/av/Documents/projects/cpp/k_v_db/build]==]
+    SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==]
+    
+)
+add_test([=[TCPConnection.DataFollowedByFinIsDeliveredThenCloses]=]  /home/av/Documents/projects/cpp/k_v_db/build/unit_tests [==[--gtest_filter=TCPConnection.DataFollowedByFinIsDeliveredThenCloses]==] --gtest_also_run_disabled_tests)
+set_tests_properties([=[TCPConnection.DataFollowedByFinIsDeliveredThenCloses]=]
+  PROPERTIES
+    
+    DEF_SOURCE_LINE [==[/home/av/Documents/projects/cpp/k_v_db/tests/tcp_connection_test.cpp:55]==]
+    WORKING_DIRECTORY [==[/home/av/Documents/projects/cpp/k_v_db/build]==]
+    SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==]
+    
+)
+add_test([=[TCPConnection.FinWithoutRdhupFlagIsStillNoticed]=]  /home/av/Documents/projects/cpp/k_v_db/build/unit_tests [==[--gtest_filter=TCPConnection.FinWithoutRdhupFlagIsStillNoticed]==] --gtest_also_run_disabled_tests)
+set_tests_properties([=[TCPConnection.FinWithoutRdhupFlagIsStillNoticed]=]
+  PROPERTIES
+    
+    DEF_SOURCE_LINE [==[/home/av/Documents/projects/cpp/k_v_db/tests/tcp_connection_test.cpp:68]==]
+    WORKING_DIRECTORY [==[/home/av/Documents/projects/cpp/k_v_db/build]==]
+    SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==]
+    
+)
+set(unit_tests_TESTS [==[UniqueFD.DefaultConstructedIsInvalid]==] [==[UniqueFD.WrapsDescriptor]==] [==[UniqueFD.DestructorClosesDescriptor]==] [==[UniqueFD.MoveConstructorTransfersOwnership]==] [==[UniqueFD.MoveAssignmentClosesOldAndTakesNew]==] [==[UniqueFD.SelfMoveAssignmentKeepsDescriptor]==] [==[UniqueFD.ReleaseGivesUpOwnershipWithoutClosing]==] [==[UniqueFD.ResetWithoutArgumentCloses]==] [==[UniqueFD.ResetWithNewDescriptorClosesOld]==] [==[UniqueFD.ResetWithSameDescriptorDoesNotClose]==] [==[ByteIO.WritesBigEndian]==] [==[ByteIO.ReaderNeverReadsPastEnd]==] [==[Codec.HeaderStartsWithMagicAndHasFixedSize]==] [==[Codec.PutRequestRoundTrip]==] [==[Codec.GetResponseWithStatusAndValue]==] [==[Codec.NotFoundResponseHasNoPayload]==] [==[Codec.ForwardedFlagSurvivesRoundTrip]==] [==[Codec.HelloRoundTrip]==] [==[Codec.LargestPutFitsInOneDatagram]==] [==[Codec.EncodingOversizedKeyThrows]==] [==[Codec.TcpWaitsForEveryMissingByte]==] [==[Codec.TcpParsesTwoMessagesFromOneBuffer]==] [==[Codec.RejectsBadMagicImmediately]==] [==[Codec.RejectsWrongVersion]==] [==[Codec.RejectsUnknownType]==] [==[Codec.RejectsInvalidStatus]==] [==[Codec.RejectsHugeLengthFromHeaderAlone]==] [==[Codec.DatagramMustNotBeTruncated]==] [==[Codec.DatagramMustNotHaveTrailingBytes]==] [==[Codec.PayloadWithTrailingBytesIsMalformed]==] [==[Codec.PayloadLengthLargerThanDataIsMalformed]==] [==[Codec.OversizedKeyIsRejectedWhenDecoding]==] [==[KeyValueStore.GetMissingKeyReturnsNothing]==] [==[KeyValueStore.PutThenGet]==] [==[KeyValueStore.PutOverwritesExistingValue]==] [==[KeyValueStore.RemoveReportsWhetherKeyExisted]==] [==[KeyValueStore.ValuesMayContainAnyBytes]==] [==[RequestHandlerTest.PutThenGetReturnsValue]==] [==[RequestHandlerTest.ResponseCopiesRequestIdentity]==] [==[RequestHandlerTest.GetMissingKeyIsNotFound]==] [==[RequestHandlerTest.PutOverwrites]==] [==[RequestHandlerTest.DeleteRemovesKey]==] [==[RequestHandlerTest.MalformedPayloadIsInvalidRequest]==] [==[RequestHandlerTest.OversizedValueIsReported]==] [==[RequestHandlerTest.NonRequestMessagesAreIgnored]==] [==[Hash.Fnv1aMatchesReferenceValues]==] [==[Hash.IsDeterministicAndSpreads]==] [==[Membership.NodeIdComesFromCanonicalAddress]==] [==[Membership.RejectsDuplicateNodes]==] [==[Membership.ClosestNodeUsesXorDistance]==] [==[Membership.AllNodesAgreeOnOwners]==] [==[Membership.KeysSpreadOverAllNodes]==] [==[Membership.ReplicaSetIsTheClosestNodesInOrder]==] [==[Membership.AllNodesAgreeOnReplicaSets]==] [==[Membership.SmallClusterHasFewerReplicas]==] [==[ClusterTest.RequestToOwnerIsHandledLocally]==] [==[ClusterTest.PutThroughNonOwnerLandsOnOwner]==] [==[ClusterTest.AnyNodeCanReadAnyKey]==] [==[ClusterTest.ForwardedRequestIsNeverForwardedAgain]==] [==[ClusterTest.ForwardedWriteToReplicaIsRefused]==] [==[ClusterTest.ForwardedReadToReplicaIsServed]==] [==[ClusterTest.DeadOwnerGivesUnavailableAfterTimeout]==] [==[ClusterTest.ClientRetryIsNotForwardedTwice]==] [==[ClusterTest.ResponseFromWrongNodeIsIgnored]==] [==[ClusterTest.InvalidDatagramsAreDropped]==] [==[ClusterTest.PutIsStoredOnPrimaryAndReplica]==] [==[ClusterTest.DeleteRemovesBothCopies]==] [==[ClusterTest.ReadSurvivesDeadPrimary]==] [==[ClusterTest.KnownDeadPrimaryIsSkippedForReads]==] [==[ClusterTest.ReplicaAnswersFromItsOwnStoreWhenPrimaryKnownDown]==] [==[ClusterTest.WriteToKnownDeadPrimaryFailsFast]==] [==[ClusterTest.DisconnectedReplicaGivesReplicationFailed]==] [==[ClusterTest.SilentReplicaGivesReplicationFailedAfterTimeout]==] [==[ClusterTest.ReplicaRejectsKeysItIsNotResponsibleFor]==] [==[ClusterTest.RetriedDeleteGetsTheSameAnswer]==] [==[ClusterTest.RetryWhileReplicatingIsNotExecutedTwice]==] [==[PeerSession.HandshakeEstablishesBothSides]==] [==[PeerSession.MessagesAfterHandshakeAreDelivered]==] [==[PeerSession.HelloArrivingByteByByteStillWorks]==] [==[PeerSession.CannotSendBeforeHandshake]==] [==[PeerSession.UnknownPeerIsRejected]==] [==[PeerSession.PeerClaimingOurOwnIdIsRejected]==] [==[PeerSession.FirstMessageMustBeHello]==] [==[PeerSession.WrongNodeAnsweringIsRejected]==] [==[PeerSession.GarbageClosesTheConnection]==] [==[PeerSession.SecondHelloIsAProtocolError]==] [==[PeerSession.NothingIsProcessedAfterClose]==] [==[Heartbeat.PingIsAnsweredWithPongAndResetsTheCount]==] [==[Heartbeat.PongCarriesThePingsRequestId]==] [==[Heartbeat.SilentPeerIsDeclaredDead]==] [==[Heartbeat.LatePongStillCountsAsAlive]==] [==[Heartbeat.PongForAPingNeverSentIsIgnored]==] [==[Heartbeat.NothingIsSentBeforeTheHandshake]==] [==[Heartbeat.BothSidesCanMonitorEachOther]==] [==[ResponseCache.FindsWhatWasInserted]==] [==[ResponseCache.SenderAndRequestIdBothMatter]==] [==[ResponseCache.ForgetsTheOldestWhenFull]==] [==[ResponseCache.ReinsertingDoesNotGrowIt]==] [==[TCPConnection.DeliversData]==] [==[TCPConnection.DataFollowedByFinIsDeliveredThenCloses]==] [==[TCPConnection.FinWithoutRdhupFlagIsStillNoticed]==])

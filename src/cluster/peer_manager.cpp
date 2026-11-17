@@ -41,6 +41,7 @@ PeerManager::~PeerManager() {
     for (const auto& [id, peer] : peers_) timers_.cancel(peer.reconnect_timer);
     for (const auto& link : links_) timers_.cancel(link->handshake_timer);
     timers_.cancel(gc_timer_);
+    timers_.cancel(heartbeat_timer_);
 }
 
 void PeerManager::log(const std::string& line) {
@@ -59,6 +60,20 @@ void PeerManager::start() {
     for (auto& [id, peer] : peers_) {
         if (peer.we_connect) connect(id);
     }
+    if (heartbeat_timer_ == 0)
+        heartbeat_timer_ = timers_.schedule_every(kHeartbeatInterval, [this] { send_heartbeats(); });
+}
+
+// One heartbeat round over every connection. A session that has missed too
+// many PONGs closes itself, which ends up in on_link_closed() and removes it
+// from links_ -- so iterate over a copy of the pointers, not links_ itself.
+// (Closed Links stay alive in the graveyard until after this event.)
+void PeerManager::send_heartbeats() {
+    std::vector<Link*> links;
+    links.reserve(links_.size());
+    for (const auto& link : links_) links.push_back(link.get());
+
+    for (Link* link : links) link->session->heartbeat();
 }
 
 void PeerManager::connect(std::uint64_t peer_id) {
@@ -135,6 +150,18 @@ void PeerManager::on_established(Link* link, std::uint64_t peer_id) {
     timers_.cancel(link->handshake_timer);
     link->handshake_timer = 0;
 
+    // A stale connection: the peer sent HELLO but closed its side before we
+    // even answered. That happens when we were frozen or overloaded: the
+    // kernel kept accepting the peer's reconnect attempts into the listen
+    // backlog, and each one timed out on the peer's side. Accepting it would
+    // replace a good connection with a dead one, so drop it quietly.
+    if (link->session->role() == PeerSession::Role::Inbound && link->conn->peer_finished()) {
+        log("control: dropped stale connection from " + node(peer_id)->name +
+            " (the peer had already given up on it)");
+        link->conn->close(std::make_error_code(std::errc::connection_aborted));
+        return;
+    }
+
     Peer& peer = peers_.at(peer_id);
 
     // The peer reconnected while we still had an old connection to it (e.g. it
@@ -162,7 +189,10 @@ void PeerManager::on_link_closed(Link* link, std::error_code reason) {
     if (it != peers_.end() && it->second.link == link) {
         Peer& peer = it->second;
         peer.link = nullptr;
-        const std::string why = reason ? reason.message() : "closed by peer";
+        std::string why = reason ? reason.message() : "closed by peer";
+        if (peer.state == PeerState::Connected && reason == std::errc::timed_out) {
+            why = "no heartbeat for " + std::to_string(kFailureTimeout.count()) + " ms";
+        }
 
         if (peer.state == PeerState::Connected) {
             log("control: lost connection to " + node(peer_id)->name + ": " + why);

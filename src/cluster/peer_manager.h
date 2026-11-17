@@ -10,6 +10,11 @@
 // (0.25 s, 0.5 s, 1 s ... up to 4 s). When one the peer initiated drops,
 // we simply wait for the peer to reconnect.
 //
+// Failure detection: every kHeartbeatInterval each established connection
+// sends a PING (see PeerSession). A peer that stops answering for
+// kHeartbeatInterval * PeerSession::kMaxMissedPongs (1 s) is disconnected,
+// so CONNECTED always means "connected AND answering".
+//
 // This is wiring code: it creates TCPConnections and registers them with the
 // reactor. The protocol itself lives in PeerSession.
 
@@ -51,6 +56,9 @@ public:
     static constexpr std::chrono::milliseconds kHandshakeTimeout{3000};
     static constexpr std::chrono::milliseconds kMinBackoff{250};
     static constexpr std::chrono::milliseconds kMaxBackoff{4000};
+    static constexpr std::chrono::milliseconds kHeartbeatInterval{250};
+    static constexpr std::chrono::milliseconds kFailureTimeout =
+        kHeartbeatInterval * PeerSession::kMaxMissedPongs;
 
     PeerManager(Membership& members, Reactor& reactor, TimerQueue& timers);
     ~PeerManager();
@@ -103,6 +111,7 @@ private:
     void schedule_reconnect(Peer& peer);
     void set_state(Peer& peer, PeerState state);
     void collect_garbage();
+    void send_heartbeats();
     [[nodiscard]] const NodeEntry* node(std::uint64_t id) const;
     void log(const std::string& line);
 
@@ -115,6 +124,7 @@ private:
     std::vector<std::unique_ptr<Link>> links_;    // every live connection
     std::vector<std::unique_ptr<Link>> graveyard_;  // closed, destroyed after the current event
     TimerQueue::TimerId gc_timer_ = 0;
+    TimerQueue::TimerId heartbeat_timer_ = 0;
 
     StateCallback on_state_;
     MessageCallback on_message_;

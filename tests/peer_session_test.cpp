@@ -80,11 +80,11 @@ TEST(PeerSession, MessagesAfterHandshakeAreDelivered) {
     pump(low, in);
     pump(high, out);
 
-    EXPECT_TRUE(out.send(message(MessageType::Ping, kLowId)));
+    EXPECT_TRUE(out.send(message(MessageType::ReplicaDelete, kLowId)));
     EXPECT_TRUE(out.send(message(MessageType::ReplicaAck, kLowId)));
     pump(low, in);  // two messages in one chunk
 
-    EXPECT_EQ(high.messages, (std::vector<MessageType>{MessageType::Ping, MessageType::ReplicaAck}));
+    EXPECT_EQ(high.messages, (std::vector<MessageType>{MessageType::ReplicaDelete, MessageType::ReplicaAck}));
 }
 
 TEST(PeerSession, HelloArrivingByteByByteStillWorks) {
@@ -182,4 +182,112 @@ TEST(PeerSession, NothingIsProcessedAfterClose) {
 
     EXPECT_TRUE(high.closed);
     EXPECT_FALSE(high.established);
+}
+
+// ── Heartbeats ──────────────────────────────────────────────────────────
+
+namespace {
+
+// Two sessions with the handshake done, and their sides cleared.
+struct Pair {
+    Side low, high;
+    PeerSession out = PeerSession::outbound({kLowId, 9001, 9001}, kHighId, callbacks(low));
+    PeerSession in = PeerSession::inbound({kHighId, 9002, 9002}, callbacks(high));
+
+    Pair() {
+        out.on_connected();
+        pump(low, in);
+        pump(high, out);
+        low.outbox.clear();
+        high.outbox.clear();
+    }
+};
+
+}  // namespace
+
+TEST(Heartbeat, PingIsAnsweredWithPongAndResetsTheCount) {
+    Pair p;
+    p.out.heartbeat();  // low sends PING
+    EXPECT_EQ(p.out.unanswered_pings(), 1);
+
+    pump(p.low, p.in);   // high answers PONG
+    pump(p.high, p.out); // low receives it
+    EXPECT_EQ(p.out.unanswered_pings(), 0);
+
+    // Neither side saw PING / PONG as an ordinary message.
+    EXPECT_TRUE(p.low.messages.empty());
+    EXPECT_TRUE(p.high.messages.empty());
+}
+
+TEST(Heartbeat, PongCarriesThePingsRequestId) {
+    Pair p;
+    p.out.heartbeat();
+    p.out.heartbeat();
+    pump(p.low, p.in);
+
+    // Two PONGs, request ids 1 and 2, from high's node id.
+    std::span<const std::byte> rest = p.high.outbox;
+    for (std::uint64_t expected : {1u, 2u}) {
+        const auto frame = try_parse_message(rest);
+        ASSERT_TRUE(frame && *frame);
+        EXPECT_EQ((*frame)->header.type, MessageType::Pong);
+        EXPECT_EQ((*frame)->header.request_id, expected);
+        EXPECT_EQ((*frame)->header.sender_id, kHighId);
+        rest = rest.subspan((*frame)->size);
+    }
+}
+
+TEST(Heartbeat, SilentPeerIsDeclaredDead) {
+    Pair p;  // high never gets to answer: we don't pump
+    for (int i = 0; i < PeerSession::kMaxMissedPongs; ++i) {
+        p.out.heartbeat();
+        EXPECT_FALSE(p.low.closed) << "closed too early, after " << i + 1 << " pings";
+    }
+    p.out.heartbeat();  // the oldest unanswered PING is now kMaxMissedPongs intervals old
+
+    ASSERT_TRUE(p.low.closed);
+    EXPECT_EQ(*p.low.closed, std::make_error_code(std::errc::timed_out));
+}
+
+TEST(Heartbeat, LatePongStillCountsAsAlive) {
+    Pair p;
+    p.out.heartbeat();
+    p.out.heartbeat();
+    p.out.heartbeat();  // 3 unanswered...
+    pump(p.low, p.in);  // ...high answers all three at once (e.g. after a short stall)
+    pump(p.high, p.out);
+
+    EXPECT_EQ(p.out.unanswered_pings(), 0);
+    for (int i = 0; i < PeerSession::kMaxMissedPongs; ++i) p.out.heartbeat();
+    EXPECT_FALSE(p.low.closed);
+}
+
+TEST(Heartbeat, PongForAPingNeverSentIsIgnored) {
+    Pair p;
+    p.out.heartbeat();
+    p.out.on_data(encode_message({.type = MessageType::Pong, .request_id = 99, .sender_id = kHighId}));
+    EXPECT_EQ(p.out.unanswered_pings(), 1);
+}
+
+TEST(Heartbeat, NothingIsSentBeforeTheHandshake) {
+    Side low;
+    auto out = PeerSession::outbound({kLowId, 9001, 9001}, kHighId, callbacks(low));
+    out.heartbeat();
+    EXPECT_TRUE(low.outbox.empty());
+    for (int i = 0; i < 10; ++i) out.heartbeat();
+    EXPECT_FALSE(low.closed);  // the handshake has its own timeout
+}
+
+TEST(Heartbeat, BothSidesCanMonitorEachOther) {
+    Pair p;
+    for (int round = 0; round < 10; ++round) {
+        p.out.heartbeat();
+        p.in.heartbeat();
+        pump(p.low, p.in);
+        pump(p.high, p.out);
+    }
+    EXPECT_FALSE(p.low.closed);
+    EXPECT_FALSE(p.high.closed);
+    EXPECT_EQ(p.out.unanswered_pings(), 0);
+    EXPECT_EQ(p.in.unanswered_pings(), 0);
 }

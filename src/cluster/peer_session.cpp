@@ -96,6 +96,10 @@ void PeerSession::handle(const Frame& frame) {
                 close(protocol_error());  // the handshake happens once
                 return;
             }
+            if (type == MessageType::Ping || type == MessageType::Pong) {
+                handle_heartbeat(frame);
+                return;
+            }
             if (cb_.message) cb_.message(peer_id_, frame);
             return;
         }
@@ -104,6 +108,42 @@ void PeerSession::handle(const Frame& frame) {
         case State::Closed:
             return;
     }
+}
+
+// ── Heartbeats ──────────────────────────────────────────────────────────
+
+void PeerSession::heartbeat() {
+    if (state_ != State::Established) return;
+
+    // Each call is one interval. If even the oldest of the last
+    // kMaxMissedPongs PINGs is still unanswered, the peer is gone.
+    if (unanswered_ >= kMaxMissedPongs) {
+        close(std::make_error_code(std::errc::timed_out));
+        return;
+    }
+
+    const auto ping = encode_message({.type = MessageType::Ping,
+                                      .request_id = ++last_ping_id_,
+                                      .sender_id = self_.node_id});
+    ++unanswered_;
+    if (!cb_.send(ping)) close(std::make_error_code(std::errc::broken_pipe));
+}
+
+void PeerSession::handle_heartbeat(const Frame& frame) {
+    if (frame.header.type == MessageType::Ping) {
+        // Answer with the same request_id, so the peer knows which PING it was.
+        const auto pong = encode_message({.type = MessageType::Pong,
+                                          .request_id = frame.header.request_id,
+                                          .sender_id = self_.node_id});
+        if (!cb_.send(pong)) close(std::make_error_code(std::errc::broken_pipe));
+        return;
+    }
+
+    // PONG: an answer to any PING we actually sent proves the peer is alive
+    // (PONGs to older PINGs may arrive late; that's fine). A PONG for a PING
+    // we never sent is ignored.
+    const std::uint64_t id = frame.header.request_id;
+    if (id != 0 && id <= last_ping_id_) unanswered_ = 0;
 }
 
 bool PeerSession::send(std::span<const std::byte> message) {
