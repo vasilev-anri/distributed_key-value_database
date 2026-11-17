@@ -240,10 +240,24 @@ CMakeFiles/kvdb_core.dir/src/node/replicator.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/kvdb_core.dir/src/node/replicator.cpp.s"
 	/usr/bin/g++-14 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/av/Documents/projects/cpp/k_v_db/src/node/replicator.cpp -o CMakeFiles/kvdb_core.dir/src/node/replicator.cpp.s
 
+CMakeFiles/kvdb_core.dir/src/node/status_service.cpp.o: CMakeFiles/kvdb_core.dir/flags.make
+CMakeFiles/kvdb_core.dir/src/node/status_service.cpp.o: /home/av/Documents/projects/cpp/k_v_db/src/node/status_service.cpp
+CMakeFiles/kvdb_core.dir/src/node/status_service.cpp.o: CMakeFiles/kvdb_core.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/av/Documents/projects/cpp/k_v_db/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/kvdb_core.dir/src/node/status_service.cpp.o"
+	/usr/bin/g++-14 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/kvdb_core.dir/src/node/status_service.cpp.o -MF CMakeFiles/kvdb_core.dir/src/node/status_service.cpp.o.d -o CMakeFiles/kvdb_core.dir/src/node/status_service.cpp.o -c /home/av/Documents/projects/cpp/k_v_db/src/node/status_service.cpp
+
+CMakeFiles/kvdb_core.dir/src/node/status_service.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/kvdb_core.dir/src/node/status_service.cpp.i"
+	/usr/bin/g++-14 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/av/Documents/projects/cpp/k_v_db/src/node/status_service.cpp > CMakeFiles/kvdb_core.dir/src/node/status_service.cpp.i
+
+CMakeFiles/kvdb_core.dir/src/node/status_service.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/kvdb_core.dir/src/node/status_service.cpp.s"
+	/usr/bin/g++-14 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/av/Documents/projects/cpp/k_v_db/src/node/status_service.cpp -o CMakeFiles/kvdb_core.dir/src/node/status_service.cpp.s
+
 CMakeFiles/kvdb_core.dir/src/cluster/membership.cpp.o: CMakeFiles/kvdb_core.dir/flags.make
 CMakeFiles/kvdb_core.dir/src/cluster/membership.cpp.o: /home/av/Documents/projects/cpp/k_v_db/src/cluster/membership.cpp
 CMakeFiles/kvdb_core.dir/src/cluster/membership.cpp.o: CMakeFiles/kvdb_core.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/av/Documents/projects/cpp/k_v_db/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/kvdb_core.dir/src/cluster/membership.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/av/Documents/projects/cpp/k_v_db/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/kvdb_core.dir/src/cluster/membership.cpp.o"
 	/usr/bin/g++-14 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/kvdb_core.dir/src/cluster/membership.cpp.o -MF CMakeFiles/kvdb_core.dir/src/cluster/membership.cpp.o.d -o CMakeFiles/kvdb_core.dir/src/cluster/membership.cpp.o -c /home/av/Documents/projects/cpp/k_v_db/src/cluster/membership.cpp
 
 CMakeFiles/kvdb_core.dir/src/cluster/membership.cpp.i: cmake_force
@@ -257,7 +271,7 @@ CMakeFiles/kvdb_core.dir/src/cluster/membership.cpp.s: cmake_force
 CMakeFiles/kvdb_core.dir/src/cluster/peer_session.cpp.o: CMakeFiles/kvdb_core.dir/flags.make
 CMakeFiles/kvdb_core.dir/src/cluster/peer_session.cpp.o: /home/av/Documents/projects/cpp/k_v_db/src/cluster/peer_session.cpp
 CMakeFiles/kvdb_core.dir/src/cluster/peer_session.cpp.o: CMakeFiles/kvdb_core.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/av/Documents/projects/cpp/k_v_db/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/kvdb_core.dir/src/cluster/peer_session.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/av/Documents/projects/cpp/k_v_db/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/kvdb_core.dir/src/cluster/peer_session.cpp.o"
 	/usr/bin/g++-14 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/kvdb_core.dir/src/cluster/peer_session.cpp.o -MF CMakeFiles/kvdb_core.dir/src/cluster/peer_session.cpp.o.d -o CMakeFiles/kvdb_core.dir/src/cluster/peer_session.cpp.o -c /home/av/Documents/projects/cpp/k_v_db/src/cluster/peer_session.cpp
 
 CMakeFiles/kvdb_core.dir/src/cluster/peer_session.cpp.i: cmake_force
@@ -271,7 +285,7 @@ CMakeFiles/kvdb_core.dir/src/cluster/peer_session.cpp.s: cmake_force
 CMakeFiles/kvdb_core.dir/src/cluster/peer_manager.cpp.o: CMakeFiles/kvdb_core.dir/flags.make
 CMakeFiles/kvdb_core.dir/src/cluster/peer_manager.cpp.o: /home/av/Documents/projects/cpp/k_v_db/src/cluster/peer_manager.cpp
 CMakeFiles/kvdb_core.dir/src/cluster/peer_manager.cpp.o: CMakeFiles/kvdb_core.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/av/Documents/projects/cpp/k_v_db/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/kvdb_core.dir/src/cluster/peer_manager.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/av/Documents/projects/cpp/k_v_db/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/kvdb_core.dir/src/cluster/peer_manager.cpp.o"
 	/usr/bin/g++-14 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/kvdb_core.dir/src/cluster/peer_manager.cpp.o -MF CMakeFiles/kvdb_core.dir/src/cluster/peer_manager.cpp.o.d -o CMakeFiles/kvdb_core.dir/src/cluster/peer_manager.cpp.o -c /home/av/Documents/projects/cpp/k_v_db/src/cluster/peer_manager.cpp
 
 CMakeFiles/kvdb_core.dir/src/cluster/peer_manager.cpp.i: cmake_force
@@ -296,6 +310,7 @@ kvdb_core_OBJECTS = \
 "CMakeFiles/kvdb_core.dir/src/node/request_handler.cpp.o" \
 "CMakeFiles/kvdb_core.dir/src/node/router.cpp.o" \
 "CMakeFiles/kvdb_core.dir/src/node/replicator.cpp.o" \
+"CMakeFiles/kvdb_core.dir/src/node/status_service.cpp.o" \
 "CMakeFiles/kvdb_core.dir/src/cluster/membership.cpp.o" \
 "CMakeFiles/kvdb_core.dir/src/cluster/peer_session.cpp.o" \
 "CMakeFiles/kvdb_core.dir/src/cluster/peer_manager.cpp.o"
@@ -315,12 +330,13 @@ libkvdb_core.a: CMakeFiles/kvdb_core.dir/src/protocol/codec.cpp.o
 libkvdb_core.a: CMakeFiles/kvdb_core.dir/src/node/request_handler.cpp.o
 libkvdb_core.a: CMakeFiles/kvdb_core.dir/src/node/router.cpp.o
 libkvdb_core.a: CMakeFiles/kvdb_core.dir/src/node/replicator.cpp.o
+libkvdb_core.a: CMakeFiles/kvdb_core.dir/src/node/status_service.cpp.o
 libkvdb_core.a: CMakeFiles/kvdb_core.dir/src/cluster/membership.cpp.o
 libkvdb_core.a: CMakeFiles/kvdb_core.dir/src/cluster/peer_session.cpp.o
 libkvdb_core.a: CMakeFiles/kvdb_core.dir/src/cluster/peer_manager.cpp.o
 libkvdb_core.a: CMakeFiles/kvdb_core.dir/build.make
 libkvdb_core.a: CMakeFiles/kvdb_core.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/av/Documents/projects/cpp/k_v_db/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Linking CXX static library libkvdb_core.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/av/Documents/projects/cpp/k_v_db/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Linking CXX static library libkvdb_core.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/kvdb_core.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/kvdb_core.dir/link.txt --verbose=$(VERBOSE)
 

@@ -1,5 +1,5 @@
 {
-  "tests": 101,
+  "tests": 110,
   "name": "AllTests",
   "testsuites": [
     {
@@ -76,7 +76,7 @@
     },
     {
       "name": "Codec",
-      "tests": 20,
+      "tests": 25,
       "testsuite": [
         {
           "name": "HeaderStartsWithMagicAndHasFixedSize",
@@ -177,6 +177,31 @@
           "name": "OversizedKeyIsRejectedWhenDecoding",
           "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/protocol_test.cpp",
           "line": 225
+        },
+        {
+          "name": "StatusRoundTrip",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/protocol_test.cpp",
+          "line": 234
+        },
+        {
+          "name": "LocateRoundTrip",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/protocol_test.cpp",
+          "line": 249
+        },
+        {
+          "name": "LargestStatusFitsInOneDatagram",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/protocol_test.cpp",
+          "line": 259
+        },
+        {
+          "name": "StatusWithInvalidNodeStateIsMalformed",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/protocol_test.cpp",
+          "line": 271
+        },
+        {
+          "name": "StatusWithTruncatedNodeListIsMalformed",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/protocol_test.cpp",
+          "line": 278
         }
       ]
     },
@@ -576,6 +601,32 @@
           "name": "FinWithoutRdhupFlagIsStillNoticed",
           "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/tcp_connection_test.cpp",
           "line": 68
+        }
+      ]
+    },
+    {
+      "name": "StatusServiceTest",
+      "tests": 4,
+      "testsuite": [
+        {
+          "name": "StatusDescribesEveryNode",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/status_service_test.cpp",
+          "line": 48
+        },
+        {
+          "name": "LocateReturnsTheReplicaSetPrimaryFirst",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/status_service_test.cpp",
+          "line": 69
+        },
+        {
+          "name": "LocateWithOversizedKeyIsRejected",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/status_service_test.cpp",
+          "line": 86
+        },
+        {
+          "name": "OtherMessagesAreLeftToTheRouter",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/status_service_test.cpp",
+          "line": 95
         }
       ]
     }

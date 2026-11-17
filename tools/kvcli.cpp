@@ -4,6 +4,8 @@
 //   kvcli <host> <port> put <key> <value>
 //   kvcli <host> <port> get <key>
 //   kvcli <host> <port> delete <key>
+//   kvcli <host> <port> status          how this node sees the cluster
+//   kvcli <host> <port> locate <key>    which nodes hold the key
 //
 // Exit codes: 0 = OK, 1 = the node answered with an error status (e.g. NOT_FOUND),
 //             2 = usage error or no answer from the node.
@@ -42,8 +44,10 @@ int usage(const char* prog) {
                  "usage:\n"
                  "  %s <host> <port> put <key> <value>\n"
                  "  %s <host> <port> get <key>\n"
-                 "  %s <host> <port> delete <key>\n",
-                 prog, prog, prog);
+                 "  %s <host> <port> delete <key>\n"
+                 "  %s <host> <port> status\n"
+                 "  %s <host> <port> locate <key>\n",
+                 prog, prog, prog, prog, prog);
     return 2;
 }
 
@@ -59,11 +63,43 @@ void print(std::string_view text) {
     std::fputc('\n', stdout);
 }
 
+std::string hex_id(std::uint64_t id) {
+    char buf[17];
+    std::snprintf(buf, sizeof buf, "%016llx", static_cast<unsigned long long>(id));
+    return buf;
+}
+
+void print_node(const char* role, const NodeStatus& n) {
+    std::printf("  %-8s %s  %-24s %s\n", role, hex_id(n.id).c_str(), n.address.c_str(),
+                std::string(to_string(n.state)).c_str());
+}
+
+int malformed() {
+    std::fprintf(stderr, "error: malformed response from node\n");
+    return 2;
+}
+
 // Prints the node's answer and returns the exit code.
 int print_result(MessageType request_type, const Frame& response) {
     if (response.header.status != Status::Ok) {
         print(to_string(response.header.status));
         return 1;
+    }
+    if (request_type == MessageType::StatusRequest) {
+        const auto st = decode_status(response.payload);
+        if (!st) return malformed();
+        std::printf("node %s: %u keys stored, replication factor %u\n", hex_id(st->node_id).c_str(),
+                    st->key_count, static_cast<unsigned>(st->replication_factor));
+        for (const NodeStatus& n : st->nodes) print_node("", n);
+        return 0;
+    }
+    if (request_type == MessageType::LocateRequest) {
+        const auto loc = decode_locate(response.payload);
+        if (!loc) return malformed();
+        std::printf("key hash %s\n", hex_id(loc->key_hash).c_str());
+        for (std::size_t i = 0; i < loc->nodes.size(); ++i)
+            print_node(i == 0 ? "primary" : "replica", loc->nodes[i]);
+        return 0;
     }
     if (request_type == MessageType::GetRequest) {
         const auto value = decode_value(response.payload);
@@ -81,7 +117,7 @@ int print_result(MessageType request_type, const Frame& response) {
 }  // namespace
 
 int main(int argc, char** argv) {
-    if (argc < 5) return usage(argv[0]);
+    if (argc < 4) return usage(argv[0]);
 
     const auto port = parse_port(argv[2]);
     if (!port) return usage(argv[0]);
@@ -106,6 +142,11 @@ int main(int argc, char** argv) {
             payload = encode_payload(KeyPayload{argv[4]});
         } else if (command == "delete" && argc == 5) {
             type = MessageType::DeleteRequest;
+            payload = encode_payload(KeyPayload{argv[4]});
+        } else if (command == "status" && argc == 4) {
+            type = MessageType::StatusRequest;  // no payload
+        } else if (command == "locate" && argc == 5) {
+            type = MessageType::LocateRequest;
             payload = encode_payload(KeyPayload{argv[4]});
         } else {
             return usage(argv[0]);

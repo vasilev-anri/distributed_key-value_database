@@ -35,6 +35,7 @@ add_library(kvdb_core STATIC
         src/node/request_handler.cpp
         src/node/router.cpp
         src/node/replicator.cpp
+        src/node/status_service.cpp
         src/cluster/membership.cpp
         src/cluster/peer_session.cpp
         src/cluster/peer_manager.cpp
@@ -96,8 +97,6 @@ FetchContent_MakeAvailable(googletest)
 # ─────────────────────────── Unit tests ───────────────────────────
 enable_testing()
 
-
-
 add_executable(unit_tests
         tests/unique_fd_test.cpp
         tests/protocol_test.cpp
@@ -108,6 +107,7 @@ add_executable(unit_tests
         tests/peer_session_test.cpp
         tests/response_cache_test.cpp
         tests/tcp_connection_test.cpp
+        tests/status_service_test.cpp
 )
 
 target_link_libraries(unit_tests PRIVATE

@@ -644,6 +644,30 @@ src/node/router.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/kvdb_core.dir/build.make CMakeFiles/kvdb_core.dir/src/node/router.cpp.s
 .PHONY : src/node/router.cpp.s
 
+src/node/status_service.o: src/node/status_service.cpp.o
+.PHONY : src/node/status_service.o
+
+# target to build an object file
+src/node/status_service.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/kvdb_core.dir/build.make CMakeFiles/kvdb_core.dir/src/node/status_service.cpp.o
+.PHONY : src/node/status_service.cpp.o
+
+src/node/status_service.i: src/node/status_service.cpp.i
+.PHONY : src/node/status_service.i
+
+# target to preprocess a source file
+src/node/status_service.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/kvdb_core.dir/build.make CMakeFiles/kvdb_core.dir/src/node/status_service.cpp.i
+.PHONY : src/node/status_service.cpp.i
+
+src/node/status_service.s: src/node/status_service.cpp.s
+.PHONY : src/node/status_service.s
+
+# target to generate assembly for a file
+src/node/status_service.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/kvdb_core.dir/build.make CMakeFiles/kvdb_core.dir/src/node/status_service.cpp.s
+.PHONY : src/node/status_service.cpp.s
+
 src/protocol/codec.o: src/protocol/codec.cpp.o
 .PHONY : src/protocol/codec.o
 
@@ -860,6 +884,30 @@ tests/router_test.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/tests/router_test.cpp.s
 .PHONY : tests/router_test.cpp.s
 
+tests/status_service_test.o: tests/status_service_test.cpp.o
+.PHONY : tests/status_service_test.o
+
+# target to build an object file
+tests/status_service_test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/tests/status_service_test.cpp.o
+.PHONY : tests/status_service_test.cpp.o
+
+tests/status_service_test.i: tests/status_service_test.cpp.i
+.PHONY : tests/status_service_test.i
+
+# target to preprocess a source file
+tests/status_service_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/tests/status_service_test.cpp.i
+.PHONY : tests/status_service_test.cpp.i
+
+tests/status_service_test.s: tests/status_service_test.cpp.s
+.PHONY : tests/status_service_test.s
+
+# target to generate assembly for a file
+tests/status_service_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/tests/status_service_test.cpp.s
+.PHONY : tests/status_service_test.cpp.s
+
 tests/tcp_connection_test.o: tests/tcp_connection_test.cpp.o
 .PHONY : tests/tcp_connection_test.o
 
@@ -1046,6 +1094,9 @@ help:
 	@echo "... src/node/router.o"
 	@echo "... src/node/router.i"
 	@echo "... src/node/router.s"
+	@echo "... src/node/status_service.o"
+	@echo "... src/node/status_service.i"
+	@echo "... src/node/status_service.s"
 	@echo "... src/protocol/codec.o"
 	@echo "... src/protocol/codec.i"
 	@echo "... src/protocol/codec.s"
@@ -1073,6 +1124,9 @@ help:
 	@echo "... tests/router_test.o"
 	@echo "... tests/router_test.i"
 	@echo "... tests/router_test.s"
+	@echo "... tests/status_service_test.o"
+	@echo "... tests/status_service_test.i"
+	@echo "... tests/status_service_test.s"
 	@echo "... tests/tcp_connection_test.o"
 	@echo "... tests/tcp_connection_test.i"
 	@echo "... tests/tcp_connection_test.s"

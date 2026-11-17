@@ -21,6 +21,12 @@ inline constexpr std::size_t kHeaderSize = 28;
 inline constexpr std::size_t kMaxDatagramSize = 1232;
 
 inline constexpr std::size_t kMaxKeySize = 128;
+
+// STATUS / LOCATE responses: a node's address as text ("[::1]:9001") is at
+// most 64 bytes, and a response lists at most 16 nodes, so it always fits in
+// one datagram: 28 + 14 + 16 * (8 + 1 + 64 + 1) = 1226 <= 1232.
+inline constexpr std::size_t kMaxAddressSize = 64;
+inline constexpr std::size_t kMaxStatusNodes = 16;
 inline constexpr std::size_t kMaxValueSize = 1024;
 
 // Upper bound for any single message's payload (mainly TCP). Checked from the
@@ -34,9 +40,13 @@ enum class MessageType : std::uint8_t {
     PutRequest = 0x01,
     GetRequest = 0x02,
     DeleteRequest = 0x03,
+    StatusRequest = 0x04,  // answered by the node asked, never forwarded
+    LocateRequest = 0x05,  // answered by the node asked, never forwarded
     PutResponse = 0x81,
     GetResponse = 0x82,
     DeleteResponse = 0x83,
+    StatusResponse = 0x84,
+    LocateResponse = 0x85,
 
     // TCP control channel (node <-> node).
     Hello = 0x10,

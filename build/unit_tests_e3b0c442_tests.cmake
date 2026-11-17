@@ -286,6 +286,51 @@ set_tests_properties([=[Codec.OversizedKeyIsRejectedWhenDecoding]=]
     SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==]
     
 )
+add_test([=[Codec.StatusRoundTrip]=]  /home/av/Documents/projects/cpp/k_v_db/build/unit_tests [==[--gtest_filter=Codec.StatusRoundTrip]==] --gtest_also_run_disabled_tests)
+set_tests_properties([=[Codec.StatusRoundTrip]=]
+  PROPERTIES
+    
+    DEF_SOURCE_LINE [==[/home/av/Documents/projects/cpp/k_v_db/tests/protocol_test.cpp:234]==]
+    WORKING_DIRECTORY [==[/home/av/Documents/projects/cpp/k_v_db/build]==]
+    SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==]
+    
+)
+add_test([=[Codec.LocateRoundTrip]=]  /home/av/Documents/projects/cpp/k_v_db/build/unit_tests [==[--gtest_filter=Codec.LocateRoundTrip]==] --gtest_also_run_disabled_tests)
+set_tests_properties([=[Codec.LocateRoundTrip]=]
+  PROPERTIES
+    
+    DEF_SOURCE_LINE [==[/home/av/Documents/projects/cpp/k_v_db/tests/protocol_test.cpp:249]==]
+    WORKING_DIRECTORY [==[/home/av/Documents/projects/cpp/k_v_db/build]==]
+    SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==]
+    
+)
+add_test([=[Codec.LargestStatusFitsInOneDatagram]=]  /home/av/Documents/projects/cpp/k_v_db/build/unit_tests [==[--gtest_filter=Codec.LargestStatusFitsInOneDatagram]==] --gtest_also_run_disabled_tests)
+set_tests_properties([=[Codec.LargestStatusFitsInOneDatagram]=]
+  PROPERTIES
+    
+    DEF_SOURCE_LINE [==[/home/av/Documents/projects/cpp/k_v_db/tests/protocol_test.cpp:259]==]
+    WORKING_DIRECTORY [==[/home/av/Documents/projects/cpp/k_v_db/build]==]
+    SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==]
+    
+)
+add_test([=[Codec.StatusWithInvalidNodeStateIsMalformed]=]  /home/av/Documents/projects/cpp/k_v_db/build/unit_tests [==[--gtest_filter=Codec.StatusWithInvalidNodeStateIsMalformed]==] --gtest_also_run_disabled_tests)
+set_tests_properties([=[Codec.StatusWithInvalidNodeStateIsMalformed]=]
+  PROPERTIES
+    
+    DEF_SOURCE_LINE [==[/home/av/Documents/projects/cpp/k_v_db/tests/protocol_test.cpp:271]==]
+    WORKING_DIRECTORY [==[/home/av/Documents/projects/cpp/k_v_db/build]==]
+    SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==]
+    
+)
+add_test([=[Codec.StatusWithTruncatedNodeListIsMalformed]=]  /home/av/Documents/projects/cpp/k_v_db/build/unit_tests [==[--gtest_filter=Codec.StatusWithTruncatedNodeListIsMalformed]==] --gtest_also_run_disabled_tests)
+set_tests_properties([=[Codec.StatusWithTruncatedNodeListIsMalformed]=]
+  PROPERTIES
+    
+    DEF_SOURCE_LINE [==[/home/av/Documents/projects/cpp/k_v_db/tests/protocol_test.cpp:278]==]
+    WORKING_DIRECTORY [==[/home/av/Documents/projects/cpp/k_v_db/build]==]
+    SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==]
+    
+)
 add_test([=[KeyValueStore.GetMissingKeyReturnsNothing]=]  /home/av/Documents/projects/cpp/k_v_db/build/unit_tests [==[--gtest_filter=KeyValueStore.GetMissingKeyReturnsNothing]==] --gtest_also_run_disabled_tests)
 set_tests_properties([=[KeyValueStore.GetMissingKeyReturnsNothing]=]
   PROPERTIES
@@ -907,4 +952,40 @@ set_tests_properties([=[TCPConnection.FinWithoutRdhupFlagIsStillNoticed]=]
     SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==]
     
 )
-set(unit_tests_TESTS [==[UniqueFD.DefaultConstructedIsInvalid]==] [==[UniqueFD.WrapsDescriptor]==] [==[UniqueFD.DestructorClosesDescriptor]==] [==[UniqueFD.MoveConstructorTransfersOwnership]==] [==[UniqueFD.MoveAssignmentClosesOldAndTakesNew]==] [==[UniqueFD.SelfMoveAssignmentKeepsDescriptor]==] [==[UniqueFD.ReleaseGivesUpOwnershipWithoutClosing]==] [==[UniqueFD.ResetWithoutArgumentCloses]==] [==[UniqueFD.ResetWithNewDescriptorClosesOld]==] [==[UniqueFD.ResetWithSameDescriptorDoesNotClose]==] [==[ByteIO.WritesBigEndian]==] [==[ByteIO.ReaderNeverReadsPastEnd]==] [==[Codec.HeaderStartsWithMagicAndHasFixedSize]==] [==[Codec.PutRequestRoundTrip]==] [==[Codec.GetResponseWithStatusAndValue]==] [==[Codec.NotFoundResponseHasNoPayload]==] [==[Codec.ForwardedFlagSurvivesRoundTrip]==] [==[Codec.HelloRoundTrip]==] [==[Codec.LargestPutFitsInOneDatagram]==] [==[Codec.EncodingOversizedKeyThrows]==] [==[Codec.TcpWaitsForEveryMissingByte]==] [==[Codec.TcpParsesTwoMessagesFromOneBuffer]==] [==[Codec.RejectsBadMagicImmediately]==] [==[Codec.RejectsWrongVersion]==] [==[Codec.RejectsUnknownType]==] [==[Codec.RejectsInvalidStatus]==] [==[Codec.RejectsHugeLengthFromHeaderAlone]==] [==[Codec.DatagramMustNotBeTruncated]==] [==[Codec.DatagramMustNotHaveTrailingBytes]==] [==[Codec.PayloadWithTrailingBytesIsMalformed]==] [==[Codec.PayloadLengthLargerThanDataIsMalformed]==] [==[Codec.OversizedKeyIsRejectedWhenDecoding]==] [==[KeyValueStore.GetMissingKeyReturnsNothing]==] [==[KeyValueStore.PutThenGet]==] [==[KeyValueStore.PutOverwritesExistingValue]==] [==[KeyValueStore.RemoveReportsWhetherKeyExisted]==] [==[KeyValueStore.ValuesMayContainAnyBytes]==] [==[RequestHandlerTest.PutThenGetReturnsValue]==] [==[RequestHandlerTest.ResponseCopiesRequestIdentity]==] [==[RequestHandlerTest.GetMissingKeyIsNotFound]==] [==[RequestHandlerTest.PutOverwrites]==] [==[RequestHandlerTest.DeleteRemovesKey]==] [==[RequestHandlerTest.MalformedPayloadIsInvalidRequest]==] [==[RequestHandlerTest.OversizedValueIsReported]==] [==[RequestHandlerTest.NonRequestMessagesAreIgnored]==] [==[Hash.Fnv1aMatchesReferenceValues]==] [==[Hash.IsDeterministicAndSpreads]==] [==[Membership.NodeIdComesFromCanonicalAddress]==] [==[Membership.RejectsDuplicateNodes]==] [==[Membership.ClosestNodeUsesXorDistance]==] [==[Membership.AllNodesAgreeOnOwners]==] [==[Membership.KeysSpreadOverAllNodes]==] [==[Membership.ReplicaSetIsTheClosestNodesInOrder]==] [==[Membership.AllNodesAgreeOnReplicaSets]==] [==[Membership.SmallClusterHasFewerReplicas]==] [==[ClusterTest.RequestToOwnerIsHandledLocally]==] [==[ClusterTest.PutThroughNonOwnerLandsOnOwner]==] [==[ClusterTest.AnyNodeCanReadAnyKey]==] [==[ClusterTest.ForwardedRequestIsNeverForwardedAgain]==] [==[ClusterTest.ForwardedWriteToReplicaIsRefused]==] [==[ClusterTest.ForwardedReadToReplicaIsServed]==] [==[ClusterTest.DeadOwnerGivesUnavailableAfterTimeout]==] [==[ClusterTest.ClientRetryIsNotForwardedTwice]==] [==[ClusterTest.ResponseFromWrongNodeIsIgnored]==] [==[ClusterTest.InvalidDatagramsAreDropped]==] [==[ClusterTest.PutIsStoredOnPrimaryAndReplica]==] [==[ClusterTest.DeleteRemovesBothCopies]==] [==[ClusterTest.ReadSurvivesDeadPrimary]==] [==[ClusterTest.KnownDeadPrimaryIsSkippedForReads]==] [==[ClusterTest.ReplicaAnswersFromItsOwnStoreWhenPrimaryKnownDown]==] [==[ClusterTest.WriteToKnownDeadPrimaryFailsFast]==] [==[ClusterTest.DisconnectedReplicaGivesReplicationFailed]==] [==[ClusterTest.SilentReplicaGivesReplicationFailedAfterTimeout]==] [==[ClusterTest.ReplicaRejectsKeysItIsNotResponsibleFor]==] [==[ClusterTest.RetriedDeleteGetsTheSameAnswer]==] [==[ClusterTest.RetryWhileReplicatingIsNotExecutedTwice]==] [==[PeerSession.HandshakeEstablishesBothSides]==] [==[PeerSession.MessagesAfterHandshakeAreDelivered]==] [==[PeerSession.HelloArrivingByteByByteStillWorks]==] [==[PeerSession.CannotSendBeforeHandshake]==] [==[PeerSession.UnknownPeerIsRejected]==] [==[PeerSession.PeerClaimingOurOwnIdIsRejected]==] [==[PeerSession.FirstMessageMustBeHello]==] [==[PeerSession.WrongNodeAnsweringIsRejected]==] [==[PeerSession.GarbageClosesTheConnection]==] [==[PeerSession.SecondHelloIsAProtocolError]==] [==[PeerSession.NothingIsProcessedAfterClose]==] [==[Heartbeat.PingIsAnsweredWithPongAndResetsTheCount]==] [==[Heartbeat.PongCarriesThePingsRequestId]==] [==[Heartbeat.SilentPeerIsDeclaredDead]==] [==[Heartbeat.LatePongStillCountsAsAlive]==] [==[Heartbeat.PongForAPingNeverSentIsIgnored]==] [==[Heartbeat.NothingIsSentBeforeTheHandshake]==] [==[Heartbeat.BothSidesCanMonitorEachOther]==] [==[ResponseCache.FindsWhatWasInserted]==] [==[ResponseCache.SenderAndRequestIdBothMatter]==] [==[ResponseCache.ForgetsTheOldestWhenFull]==] [==[ResponseCache.ReinsertingDoesNotGrowIt]==] [==[TCPConnection.DeliversData]==] [==[TCPConnection.DataFollowedByFinIsDeliveredThenCloses]==] [==[TCPConnection.FinWithoutRdhupFlagIsStillNoticed]==])
+add_test([=[StatusServiceTest.StatusDescribesEveryNode]=]  /home/av/Documents/projects/cpp/k_v_db/build/unit_tests [==[--gtest_filter=StatusServiceTest.StatusDescribesEveryNode]==] --gtest_also_run_disabled_tests)
+set_tests_properties([=[StatusServiceTest.StatusDescribesEveryNode]=]
+  PROPERTIES
+    
+    DEF_SOURCE_LINE [==[/home/av/Documents/projects/cpp/k_v_db/tests/status_service_test.cpp:48]==]
+    WORKING_DIRECTORY [==[/home/av/Documents/projects/cpp/k_v_db/build]==]
+    SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==]
+    
+)
+add_test([=[StatusServiceTest.LocateReturnsTheReplicaSetPrimaryFirst]=]  /home/av/Documents/projects/cpp/k_v_db/build/unit_tests [==[--gtest_filter=StatusServiceTest.LocateReturnsTheReplicaSetPrimaryFirst]==] --gtest_also_run_disabled_tests)
+set_tests_properties([=[StatusServiceTest.LocateReturnsTheReplicaSetPrimaryFirst]=]
+  PROPERTIES
+    
+    DEF_SOURCE_LINE [==[/home/av/Documents/projects/cpp/k_v_db/tests/status_service_test.cpp:69]==]
+    WORKING_DIRECTORY [==[/home/av/Documents/projects/cpp/k_v_db/build]==]
+    SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==]
+    
+)
+add_test([=[StatusServiceTest.LocateWithOversizedKeyIsRejected]=]  /home/av/Documents/projects/cpp/k_v_db/build/unit_tests [==[--gtest_filter=StatusServiceTest.LocateWithOversizedKeyIsRejected]==] --gtest_also_run_disabled_tests)
+set_tests_properties([=[StatusServiceTest.LocateWithOversizedKeyIsRejected]=]
+  PROPERTIES
+    
+    DEF_SOURCE_LINE [==[/home/av/Documents/projects/cpp/k_v_db/tests/status_service_test.cpp:86]==]
+    WORKING_DIRECTORY [==[/home/av/Documents/projects/cpp/k_v_db/build]==]
+    SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==]
+    
+)
+add_test([=[StatusServiceTest.OtherMessagesAreLeftToTheRouter]=]  /home/av/Documents/projects/cpp/k_v_db/build/unit_tests [==[--gtest_filter=StatusServiceTest.OtherMessagesAreLeftToTheRouter]==] --gtest_also_run_disabled_tests)
+set_tests_properties([=[StatusServiceTest.OtherMessagesAreLeftToTheRouter]=]
+  PROPERTIES
+    
+    DEF_SOURCE_LINE [==[/home/av/Documents/projects/cpp/k_v_db/tests/status_service_test.cpp:95]==]
+    WORKING_DIRECTORY [==[/home/av/Documents/projects/cpp/k_v_db/build]==]
+    SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==]
+    
+)
+set(unit_tests_TESTS [==[UniqueFD.DefaultConstructedIsInvalid]==] [==[UniqueFD.WrapsDescriptor]==] [==[UniqueFD.DestructorClosesDescriptor]==] [==[UniqueFD.MoveConstructorTransfersOwnership]==] [==[UniqueFD.MoveAssignmentClosesOldAndTakesNew]==] [==[UniqueFD.SelfMoveAssignmentKeepsDescriptor]==] [==[UniqueFD.ReleaseGivesUpOwnershipWithoutClosing]==] [==[UniqueFD.ResetWithoutArgumentCloses]==] [==[UniqueFD.ResetWithNewDescriptorClosesOld]==] [==[UniqueFD.ResetWithSameDescriptorDoesNotClose]==] [==[ByteIO.WritesBigEndian]==] [==[ByteIO.ReaderNeverReadsPastEnd]==] [==[Codec.HeaderStartsWithMagicAndHasFixedSize]==] [==[Codec.PutRequestRoundTrip]==] [==[Codec.GetResponseWithStatusAndValue]==] [==[Codec.NotFoundResponseHasNoPayload]==] [==[Codec.ForwardedFlagSurvivesRoundTrip]==] [==[Codec.HelloRoundTrip]==] [==[Codec.LargestPutFitsInOneDatagram]==] [==[Codec.EncodingOversizedKeyThrows]==] [==[Codec.TcpWaitsForEveryMissingByte]==] [==[Codec.TcpParsesTwoMessagesFromOneBuffer]==] [==[Codec.RejectsBadMagicImmediately]==] [==[Codec.RejectsWrongVersion]==] [==[Codec.RejectsUnknownType]==] [==[Codec.RejectsInvalidStatus]==] [==[Codec.RejectsHugeLengthFromHeaderAlone]==] [==[Codec.DatagramMustNotBeTruncated]==] [==[Codec.DatagramMustNotHaveTrailingBytes]==] [==[Codec.PayloadWithTrailingBytesIsMalformed]==] [==[Codec.PayloadLengthLargerThanDataIsMalformed]==] [==[Codec.OversizedKeyIsRejectedWhenDecoding]==] [==[Codec.StatusRoundTrip]==] [==[Codec.LocateRoundTrip]==] [==[Codec.LargestStatusFitsInOneDatagram]==] [==[Codec.StatusWithInvalidNodeStateIsMalformed]==] [==[Codec.StatusWithTruncatedNodeListIsMalformed]==] [==[KeyValueStore.GetMissingKeyReturnsNothing]==] [==[KeyValueStore.PutThenGet]==] [==[KeyValueStore.PutOverwritesExistingValue]==] [==[KeyValueStore.RemoveReportsWhetherKeyExisted]==] [==[KeyValueStore.ValuesMayContainAnyBytes]==] [==[RequestHandlerTest.PutThenGetReturnsValue]==] [==[RequestHandlerTest.ResponseCopiesRequestIdentity]==] [==[RequestHandlerTest.GetMissingKeyIsNotFound]==] [==[RequestHandlerTest.PutOverwrites]==] [==[RequestHandlerTest.DeleteRemovesKey]==] [==[RequestHandlerTest.MalformedPayloadIsInvalidRequest]==] [==[RequestHandlerTest.OversizedValueIsReported]==] [==[RequestHandlerTest.NonRequestMessagesAreIgnored]==] [==[Hash.Fnv1aMatchesReferenceValues]==] [==[Hash.IsDeterministicAndSpreads]==] [==[Membership.NodeIdComesFromCanonicalAddress]==] [==[Membership.RejectsDuplicateNodes]==] [==[Membership.ClosestNodeUsesXorDistance]==] [==[Membership.AllNodesAgreeOnOwners]==] [==[Membership.KeysSpreadOverAllNodes]==] [==[Membership.ReplicaSetIsTheClosestNodesInOrder]==] [==[Membership.AllNodesAgreeOnReplicaSets]==] [==[Membership.SmallClusterHasFewerReplicas]==] [==[ClusterTest.RequestToOwnerIsHandledLocally]==] [==[ClusterTest.PutThroughNonOwnerLandsOnOwner]==] [==[ClusterTest.AnyNodeCanReadAnyKey]==] [==[ClusterTest.ForwardedRequestIsNeverForwardedAgain]==] [==[ClusterTest.ForwardedWriteToReplicaIsRefused]==] [==[ClusterTest.ForwardedReadToReplicaIsServed]==] [==[ClusterTest.DeadOwnerGivesUnavailableAfterTimeout]==] [==[ClusterTest.ClientRetryIsNotForwardedTwice]==] [==[ClusterTest.ResponseFromWrongNodeIsIgnored]==] [==[ClusterTest.InvalidDatagramsAreDropped]==] [==[ClusterTest.PutIsStoredOnPrimaryAndReplica]==] [==[ClusterTest.DeleteRemovesBothCopies]==] [==[ClusterTest.ReadSurvivesDeadPrimary]==] [==[ClusterTest.KnownDeadPrimaryIsSkippedForReads]==] [==[ClusterTest.ReplicaAnswersFromItsOwnStoreWhenPrimaryKnownDown]==] [==[ClusterTest.WriteToKnownDeadPrimaryFailsFast]==] [==[ClusterTest.DisconnectedReplicaGivesReplicationFailed]==] [==[ClusterTest.SilentReplicaGivesReplicationFailedAfterTimeout]==] [==[ClusterTest.ReplicaRejectsKeysItIsNotResponsibleFor]==] [==[ClusterTest.RetriedDeleteGetsTheSameAnswer]==] [==[ClusterTest.RetryWhileReplicatingIsNotExecutedTwice]==] [==[PeerSession.HandshakeEstablishesBothSides]==] [==[PeerSession.MessagesAfterHandshakeAreDelivered]==] [==[PeerSession.HelloArrivingByteByByteStillWorks]==] [==[PeerSession.CannotSendBeforeHandshake]==] [==[PeerSession.UnknownPeerIsRejected]==] [==[PeerSession.PeerClaimingOurOwnIdIsRejected]==] [==[PeerSession.FirstMessageMustBeHello]==] [==[PeerSession.WrongNodeAnsweringIsRejected]==] [==[PeerSession.GarbageClosesTheConnection]==] [==[PeerSession.SecondHelloIsAProtocolError]==] [==[PeerSession.NothingIsProcessedAfterClose]==] [==[Heartbeat.PingIsAnsweredWithPongAndResetsTheCount]==] [==[Heartbeat.PongCarriesThePingsRequestId]==] [==[Heartbeat.SilentPeerIsDeclaredDead]==] [==[Heartbeat.LatePongStillCountsAsAlive]==] [==[Heartbeat.PongForAPingNeverSentIsIgnored]==] [==[Heartbeat.NothingIsSentBeforeTheHandshake]==] [==[Heartbeat.BothSidesCanMonitorEachOther]==] [==[ResponseCache.FindsWhatWasInserted]==] [==[ResponseCache.SenderAndRequestIdBothMatter]==] [==[ResponseCache.ForgetsTheOldestWhenFull]==] [==[ResponseCache.ReinsertingDoesNotGrowIt]==] [==[TCPConnection.DeliversData]==] [==[TCPConnection.DataFollowedByFinIsDeliveredThenCloses]==] [==[TCPConnection.FinWithoutRdhupFlagIsStillNoticed]==] [==[StatusServiceTest.StatusDescribesEveryNode]==] [==[StatusServiceTest.LocateReturnsTheReplicaSetPrimaryFirst]==] [==[StatusServiceTest.LocateWithOversizedKeyIsRejected]==] [==[StatusServiceTest.OtherMessagesAreLeftToTheRouter]==])

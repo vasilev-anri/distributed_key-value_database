@@ -25,6 +25,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/kvdb_core.dir/src/node/request_handler.cpp.o.d"
   "CMakeFiles/kvdb_core.dir/src/node/router.cpp.o"
   "CMakeFiles/kvdb_core.dir/src/node/router.cpp.o.d"
+  "CMakeFiles/kvdb_core.dir/src/node/status_service.cpp.o"
+  "CMakeFiles/kvdb_core.dir/src/node/status_service.cpp.o.d"
   "CMakeFiles/kvdb_core.dir/src/protocol/codec.cpp.o"
   "CMakeFiles/kvdb_core.dir/src/protocol/codec.cpp.o.d"
   "CMakeFiles/kvdb_core.dir/src/reactor/reactor.cpp.o"

@@ -13,6 +13,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/unit_tests.dir/tests/response_cache_test.cpp.o.d"
   "CMakeFiles/unit_tests.dir/tests/router_test.cpp.o"
   "CMakeFiles/unit_tests.dir/tests/router_test.cpp.o.d"
+  "CMakeFiles/unit_tests.dir/tests/status_service_test.cpp.o"
+  "CMakeFiles/unit_tests.dir/tests/status_service_test.cpp.o.d"
   "CMakeFiles/unit_tests.dir/tests/tcp_connection_test.cpp.o"
   "CMakeFiles/unit_tests.dir/tests/tcp_connection_test.cpp.o.d"
   "CMakeFiles/unit_tests.dir/tests/unique_fd_test.cpp.o"

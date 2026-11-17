@@ -15,6 +15,8 @@ CMakeFiles/k_v_db.dir/main.cpp.o
  /home/av/Documents/projects/cpp/k_v_db/src/node/request_handler.h
  /home/av/Documents/projects/cpp/k_v_db/src/node/response_cache.h
  /home/av/Documents/projects/cpp/k_v_db/src/node/router.h
+ /home/av/Documents/projects/cpp/k_v_db/src/node/status_service.h
+ /home/av/Documents/projects/cpp/k_v_db/src/protocol/codec.h
  /home/av/Documents/projects/cpp/k_v_db/src/protocol/protocol.h
  /home/av/Documents/projects/cpp/k_v_db/src/reactor/reactor.h
  /home/av/Documents/projects/cpp/k_v_db/src/storage/kv_store.h
@@ -161,6 +163,7 @@ CMakeFiles/k_v_db.dir/main.cpp.o
  /usr/include/c++/14/debug/debug.h
  /usr/include/c++/14/deque
  /usr/include/c++/14/exception
+ /usr/include/c++/14/expected
  /usr/include/c++/14/ext/aligned_buffer.h
  /usr/include/c++/14/ext/alloc_traits.h
  /usr/include/c++/14/ext/atomicity.h

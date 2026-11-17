@@ -14,6 +14,8 @@ CMakeFiles/k_v_db.dir/main.cpp.o: /home/av/Documents/projects/cpp/k_v_db/main.cp
   /home/av/Documents/projects/cpp/k_v_db/src/node/request_handler.h \
   /home/av/Documents/projects/cpp/k_v_db/src/node/response_cache.h \
   /home/av/Documents/projects/cpp/k_v_db/src/node/router.h \
+  /home/av/Documents/projects/cpp/k_v_db/src/node/status_service.h \
+  /home/av/Documents/projects/cpp/k_v_db/src/protocol/codec.h \
   /home/av/Documents/projects/cpp/k_v_db/src/protocol/protocol.h \
   /home/av/Documents/projects/cpp/k_v_db/src/reactor/reactor.h \
   /home/av/Documents/projects/cpp/k_v_db/src/storage/kv_store.h \
@@ -160,6 +162,7 @@ CMakeFiles/k_v_db.dir/main.cpp.o: /home/av/Documents/projects/cpp/k_v_db/main.cp
   /usr/include/c++/14/debug/debug.h \
   /usr/include/c++/14/deque \
   /usr/include/c++/14/exception \
+  /usr/include/c++/14/expected \
   /usr/include/c++/14/ext/aligned_buffer.h \
   /usr/include/c++/14/ext/alloc_traits.h \
   /usr/include/c++/14/ext/atomicity.h \
@@ -392,8 +395,6 @@ CMakeFiles/k_v_db.dir/main.cpp.o: /home/av/Documents/projects/cpp/k_v_db/main.cp
 
 /usr/include/x86_64-linux-gnu/c++/14/bits/gthr-default.h:
 
-/usr/include/x86_64-linux-gnu/c++/14/bits/error_constants.h:
-
 /usr/include/x86_64-linux-gnu/c++/14/bits/ctype_base.h:
 
 /usr/include/x86_64-linux-gnu/c++/14/bits/c++allocator.h:
@@ -501,6 +502,8 @@ CMakeFiles/k_v_db.dir/main.cpp.o: /home/av/Documents/projects/cpp/k_v_db/main.cp
 /usr/include/x86_64-linux-gnu/bits/select.h:
 
 /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h:
+
+/usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h:
 
 /usr/include/c++/14/bits/uses_allocator_args.h:
 
@@ -626,9 +629,15 @@ CMakeFiles/k_v_db.dir/main.cpp.o: /home/av/Documents/projects/cpp/k_v_db/main.cp
 
 /usr/include/linux/posix_types.h:
 
+/usr/include/x86_64-linux-gnu/bits/posix2_lim.h:
+
+/usr/include/c++/14/bits/ios_base.h:
+
 /usr/include/c++/14/bits/invoke.h:
 
 /usr/include/c++/14/bits/hashtable.h:
+
+/usr/include/c++/14/expected:
 
 /usr/include/x86_64-linux-gnu/bits/waitflags.h:
 
@@ -640,21 +649,15 @@ CMakeFiles/k_v_db.dir/main.cpp.o: /home/av/Documents/projects/cpp/k_v_db/main.cp
 
 /usr/include/x86_64-linux-gnu/asm/posix_types.h:
 
-/usr/include/c++/14/backward/binders.h:
-
-/usr/include/c++/14/bits/range_access.h:
-
-/usr/include/x86_64-linux-gnu/c++/14/bits/gthr.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct_tm.h:
-
-/usr/include/c++/14/bits/chrono_io.h:
-
 /usr/include/c++/14/array:
 
 /home/av/Documents/projects/cpp/k_v_db/src/handlers/tcp_listener.h:
 
 /usr/include/asm-generic/socket.h:
+
+/usr/include/x86_64-linux-gnu/bits/posix_opt.h:
+
+/usr/include/c++/14/bits/streambuf.tcc:
 
 /usr/include/c++/14/ios:
 
@@ -678,11 +681,17 @@ CMakeFiles/k_v_db.dir/main.cpp.o: /home/av/Documents/projects/cpp/k_v_db/main.cp
 
 /usr/include/c++/14/bits/quoted_string.h:
 
+/home/av/Documents/projects/cpp/k_v_db/src/protocol/codec.h:
+
 /usr/include/c++/14/bits/stringfwd.h:
 
 /usr/include/asm-generic/posix_types.h:
 
 /usr/include/stdc-predef.h:
+
+/home/av/Documents/projects/cpp/k_v_db/src/protocol/protocol.h:
+
+/usr/include/linux/errno.h:
 
 /usr/include/c++/14/bits/stl_iterator_base_types.h:
 
@@ -696,11 +705,23 @@ CMakeFiles/k_v_db.dir/main.cpp.o: /home/av/Documents/projects/cpp/k_v_db/main.cp
 
 /usr/include/c++/14/bits/allocator.h:
 
-/home/av/Documents/projects/cpp/k_v_db/src/protocol/protocol.h:
+/usr/include/x86_64-linux-gnu/c++/14/bits/error_constants.h:
 
-/usr/include/linux/errno.h:
+/home/av/Documents/projects/cpp/k_v_db/src/node/status_service.h:
 
-/usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h:
+/usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
+
+/usr/include/c++/14/bits/unicode-data.h:
+
+/usr/include/c++/14/locale:
+
+/usr/include/x86_64-linux-gnu/bits/wctype-wchar.h:
+
+/usr/include/c++/14/bits/deque.tcc:
+
+/usr/include/c++/14/bits/exception_defines.h:
+
+/usr/include/x86_64-linux-gnu/bits/locale.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h:
 
@@ -718,10 +739,6 @@ CMakeFiles/k_v_db.dir/main.cpp.o: /home/av/Documents/projects/cpp/k_v_db/main.cp
 
 /usr/include/stdint.h:
 
-/usr/include/c++/14/bits/ios_base.h:
-
-/usr/include/x86_64-linux-gnu/bits/posix2_lim.h:
-
 /usr/include/c++/14/bits/requires_hosted.h:
 
 /home/av/Documents/projects/cpp/k_v_db/src/cluster/peer_session.h:
@@ -729,6 +746,20 @@ CMakeFiles/k_v_db.dir/main.cpp.o: /home/av/Documents/projects/cpp/k_v_db/main.cp
 /usr/include/c++/14/bits/ranges_base.h:
 
 /home/av/Documents/projects/cpp/k_v_db/src/node/response_cache.h:
+
+/usr/include/c++/14/bits/functexcept.h:
+
+/usr/include/pthread.h:
+
+/usr/include/c++/14/bits/ostream.tcc:
+
+/usr/include/c++/14/ext/aligned_buffer.h:
+
+/usr/include/c++/14/bits/align.h:
+
+/usr/include/c++/14/bits/concept_check.h:
+
+/usr/include/c++/14/bits/cpp_type_traits.h:
 
 /usr/include/c++/14/bits/stl_raw_storage_iter.h:
 
@@ -762,13 +793,19 @@ CMakeFiles/k_v_db.dir/main.cpp.o: /home/av/Documents/projects/cpp/k_v_db/main.cp
 
 /usr/include/unistd.h:
 
-/usr/include/c++/14/bits/string_view.tcc:
-
-/usr/include/c++/14/streambuf:
-
 /usr/include/c++/14/bits/chrono.h:
 
 /usr/include/c++/14/bit:
+
+/usr/include/c++/14/backward/binders.h:
+
+/usr/include/c++/14/bits/range_access.h:
+
+/usr/include/x86_64-linux-gnu/c++/14/bits/gthr.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_tm.h:
+
+/usr/include/c++/14/bits/chrono_io.h:
 
 /usr/include/c++/14/bits/stl_pair.h:
 
@@ -848,16 +885,6 @@ CMakeFiles/k_v_db.dir/main.cpp.o: /home/av/Documents/projects/cpp/k_v_db/main.cp
 
 /usr/include/c++/14/bits/basic_string.h:
 
-/usr/include/c++/14/bits/cpp_type_traits.h:
-
-/usr/include/c++/14/bits/ostream.tcc:
-
-/usr/include/c++/14/ext/aligned_buffer.h:
-
-/usr/include/c++/14/bits/align.h:
-
-/usr/include/c++/14/bits/concept_check.h:
-
 /usr/include/c++/14/bits/cxxabi_init_exception.h:
 
 /usr/include/x86_64-linux-gnu/bits/syscall.h:
@@ -880,23 +907,15 @@ CMakeFiles/k_v_db.dir/main.cpp.o: /home/av/Documents/projects/cpp/k_v_db/main.cp
 
 /usr/include/c++/14/cctype:
 
-/usr/include/x86_64-linux-gnu/bits/wctype-wchar.h:
+/usr/include/c++/14/bits/string_view.tcc:
 
-/usr/include/c++/14/bits/deque.tcc:
-
-/usr/include/c++/14/bits/exception_defines.h:
-
-/usr/include/x86_64-linux-gnu/bits/locale.h:
-
-/usr/include/c++/14/bits/functexcept.h:
-
-/usr/include/pthread.h:
+/usr/include/c++/14/streambuf:
 
 /usr/include/c++/14/bits/unicode.h:
 
-/usr/include/c++/14/bits/stl_deque.h:
-
 /usr/include/c++/14/bits/move_only_function.h:
+
+/usr/include/c++/14/bits/stl_deque.h:
 
 /usr/include/c++/14/bits/unique_ptr.h:
 
@@ -995,16 +1014,6 @@ CMakeFiles/k_v_db.dir/main.cpp.o: /home/av/Documents/projects/cpp/k_v_db/main.cp
 /usr/include/c++/14/limits:
 
 /usr/include/c++/14/iomanip:
-
-/usr/include/c++/14/bits/streambuf.tcc:
-
-/usr/include/x86_64-linux-gnu/bits/posix_opt.h:
-
-/usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
-
-/usr/include/c++/14/bits/unicode-data.h:
-
-/usr/include/c++/14/locale:
 
 /usr/include/c++/14/bits/stl_function.h:
 

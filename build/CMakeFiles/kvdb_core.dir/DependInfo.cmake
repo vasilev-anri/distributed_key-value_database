@@ -21,6 +21,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/av/Documents/projects/cpp/k_v_db/src/node/replicator.cpp" "CMakeFiles/kvdb_core.dir/src/node/replicator.cpp.o" "gcc" "CMakeFiles/kvdb_core.dir/src/node/replicator.cpp.o.d"
   "/home/av/Documents/projects/cpp/k_v_db/src/node/request_handler.cpp" "CMakeFiles/kvdb_core.dir/src/node/request_handler.cpp.o" "gcc" "CMakeFiles/kvdb_core.dir/src/node/request_handler.cpp.o.d"
   "/home/av/Documents/projects/cpp/k_v_db/src/node/router.cpp" "CMakeFiles/kvdb_core.dir/src/node/router.cpp.o" "gcc" "CMakeFiles/kvdb_core.dir/src/node/router.cpp.o.d"
+  "/home/av/Documents/projects/cpp/k_v_db/src/node/status_service.cpp" "CMakeFiles/kvdb_core.dir/src/node/status_service.cpp.o" "gcc" "CMakeFiles/kvdb_core.dir/src/node/status_service.cpp.o.d"
   "/home/av/Documents/projects/cpp/k_v_db/src/protocol/codec.cpp" "CMakeFiles/kvdb_core.dir/src/protocol/codec.cpp.o" "gcc" "CMakeFiles/kvdb_core.dir/src/protocol/codec.cpp.o.d"
   "/home/av/Documents/projects/cpp/k_v_db/src/reactor/reactor.cpp" "CMakeFiles/kvdb_core.dir/src/reactor/reactor.cpp.o" "gcc" "CMakeFiles/kvdb_core.dir/src/reactor/reactor.cpp.o.d"
   )

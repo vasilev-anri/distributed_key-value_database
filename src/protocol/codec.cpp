@@ -15,9 +15,13 @@ bool is_known_type(std::uint8_t raw) noexcept {
         case MessageType::PutRequest:
         case MessageType::GetRequest:
         case MessageType::DeleteRequest:
+        case MessageType::StatusRequest:
+        case MessageType::LocateRequest:
         case MessageType::PutResponse:
         case MessageType::GetResponse:
         case MessageType::DeleteResponse:
+        case MessageType::StatusResponse:
+        case MessageType::LocateResponse:
         case MessageType::Hello:
         case MessageType::HelloAck:
         case MessageType::Ping:
@@ -64,6 +68,36 @@ std::expected<std::string, DecodeError> read_value(ByteReader& r) {
     const auto data = r.bytes(*len);
     if (!data) return std::unexpected(DecodeError::Malformed);
     return to_std_string(*data);
+}
+
+// node list = u8 count + per node: u64 id, u8 address length + bytes, u8 state
+void write_nodes(ByteWriter& w, const std::vector<NodeStatus>& nodes) {
+    if (nodes.size() > kMaxStatusNodes) throw std::length_error("too many nodes for one datagram");
+    w.u8(static_cast<std::uint8_t>(nodes.size()));
+    for (const NodeStatus& n : nodes) {
+        if (n.address.size() > kMaxAddressSize) throw std::length_error("address exceeds kMaxAddressSize");
+        w.u64(n.id);
+        w.u8(static_cast<std::uint8_t>(n.address.size()));
+        w.bytes(n.address);
+        w.u8(std::to_underlying(n.state));
+    }
+}
+
+std::expected<std::vector<NodeStatus>, DecodeError> read_nodes(ByteReader& r) {
+    const auto count = r.u8();
+    if (!count || *count > kMaxStatusNodes) return std::unexpected(DecodeError::Malformed);
+
+    std::vector<NodeStatus> nodes;
+    for (std::uint8_t i = 0; i < *count; ++i) {
+        const auto id = r.u64();
+        const auto len = r.u8();
+        if (!id || !len || *len > kMaxAddressSize) return std::unexpected(DecodeError::Malformed);
+        const auto address = r.bytes(*len);
+        const auto state = r.u8();
+        if (!address || !state || *state > kMaxNodeState) return std::unexpected(DecodeError::Malformed);
+        nodes.push_back({*id, to_std_string(*address), static_cast<NodeState>(*state)});
+    }
+    return nodes;
 }
 
 // A payload must be consumed completely; leftover bytes mean it's malformed.
@@ -204,6 +238,42 @@ std::expected<HelloPayload, DecodeError> decode_hello(std::span<const std::byte>
     return finish(r, HelloPayload{*udp, *tcp});
 }
 
+std::vector<std::byte> encode_payload(const StatusPayload& p) {
+    ByteWriter w;
+    w.u64(p.node_id);
+    w.u32(p.key_count);
+    w.u8(p.replication_factor);
+    write_nodes(w, p.nodes);
+    return w.take();
+}
+
+std::vector<std::byte> encode_payload(const LocatePayload& p) {
+    ByteWriter w;
+    w.u64(p.key_hash);
+    write_nodes(w, p.nodes);
+    return w.take();
+}
+
+std::expected<StatusPayload, DecodeError> decode_status(std::span<const std::byte> payload) {
+    ByteReader r(payload);
+    const auto node_id = r.u64();
+    const auto key_count = r.u32();
+    const auto rf = r.u8();
+    if (!node_id || !key_count || !rf) return std::unexpected(DecodeError::Malformed);
+    auto nodes = read_nodes(r);
+    if (!nodes) return std::unexpected(nodes.error());
+    return finish(r, StatusPayload{*node_id, *key_count, *rf, std::move(*nodes)});
+}
+
+std::expected<LocatePayload, DecodeError> decode_locate(std::span<const std::byte> payload) {
+    ByteReader r(payload);
+    const auto key_hash = r.u64();
+    if (!key_hash) return std::unexpected(DecodeError::Malformed);
+    auto nodes = read_nodes(r);
+    if (!nodes) return std::unexpected(nodes.error());
+    return finish(r, LocatePayload{*key_hash, std::move(*nodes)});
+}
+
 // ── Names for logs ──────────────────────────────────────────────────────
 
 std::string_view to_string(MessageType type) noexcept {
@@ -211,9 +281,13 @@ std::string_view to_string(MessageType type) noexcept {
         case MessageType::PutRequest: return "PUT";
         case MessageType::GetRequest: return "GET";
         case MessageType::DeleteRequest: return "DELETE";
+        case MessageType::StatusRequest: return "STATUS";
+        case MessageType::LocateRequest: return "LOCATE";
         case MessageType::PutResponse: return "PUT_RESPONSE";
         case MessageType::GetResponse: return "GET_RESPONSE";
         case MessageType::DeleteResponse: return "DELETE_RESPONSE";
+        case MessageType::StatusResponse: return "STATUS_RESPONSE";
+        case MessageType::LocateResponse: return "LOCATE_RESPONSE";
         case MessageType::Hello: return "HELLO";
         case MessageType::HelloAck: return "HELLO_ACK";
         case MessageType::Ping: return "PING";
@@ -235,6 +309,16 @@ std::string_view to_string(Status status) noexcept {
         case Status::ReplicationFailed: return "REPLICATION_FAILED";
         case Status::Unavailable: return "UNAVAILABLE";
         case Status::InternalError: return "INTERNAL_ERROR";
+    }
+    return "UNKNOWN";
+}
+
+std::string_view to_string(NodeState state) noexcept {
+    switch (state) {
+        case NodeState::Self: return "SELF";
+        case NodeState::Connected: return "CONNECTED";
+        case NodeState::Connecting: return "CONNECTING";
+        case NodeState::Disconnected: return "DISCONNECTED";
     }
     return "UNKNOWN";
 }

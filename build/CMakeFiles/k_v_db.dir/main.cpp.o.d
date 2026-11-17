@@ -288,6 +288,9 @@ CMakeFiles/k_v_db.dir/main.cpp.o: \
  /home/av/Documents/projects/cpp/k_v_db/src/handlers/udp_handler.h \
  /home/av/Documents/projects/cpp/k_v_db/src/node/replicator.h \
  /home/av/Documents/projects/cpp/k_v_db/src/node/request_handler.h \
+ /home/av/Documents/projects/cpp/k_v_db/src/node/status_service.h \
+ /home/av/Documents/projects/cpp/k_v_db/src/protocol/codec.h \
+ /usr/include/c++/14/expected \
  /home/av/Documents/projects/cpp/k_v_db/src/node/router.h \
  /usr/include/c++/14/unordered_set \
  /usr/include/c++/14/bits/unordered_set.h \

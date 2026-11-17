@@ -198,6 +198,20 @@ CMakeFiles/unit_tests.dir/tests/tcp_connection_test.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/tests/tcp_connection_test.cpp.s"
 	/usr/bin/g++-14 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/av/Documents/projects/cpp/k_v_db/tests/tcp_connection_test.cpp -o CMakeFiles/unit_tests.dir/tests/tcp_connection_test.cpp.s
 
+CMakeFiles/unit_tests.dir/tests/status_service_test.cpp.o: CMakeFiles/unit_tests.dir/flags.make
+CMakeFiles/unit_tests.dir/tests/status_service_test.cpp.o: /home/av/Documents/projects/cpp/k_v_db/tests/status_service_test.cpp
+CMakeFiles/unit_tests.dir/tests/status_service_test.cpp.o: CMakeFiles/unit_tests.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/av/Documents/projects/cpp/k_v_db/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/unit_tests.dir/tests/status_service_test.cpp.o"
+	/usr/bin/g++-14 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/unit_tests.dir/tests/status_service_test.cpp.o -MF CMakeFiles/unit_tests.dir/tests/status_service_test.cpp.o.d -o CMakeFiles/unit_tests.dir/tests/status_service_test.cpp.o -c /home/av/Documents/projects/cpp/k_v_db/tests/status_service_test.cpp
+
+CMakeFiles/unit_tests.dir/tests/status_service_test.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/tests/status_service_test.cpp.i"
+	/usr/bin/g++-14 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/av/Documents/projects/cpp/k_v_db/tests/status_service_test.cpp > CMakeFiles/unit_tests.dir/tests/status_service_test.cpp.i
+
+CMakeFiles/unit_tests.dir/tests/status_service_test.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/tests/status_service_test.cpp.s"
+	/usr/bin/g++-14 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/av/Documents/projects/cpp/k_v_db/tests/status_service_test.cpp -o CMakeFiles/unit_tests.dir/tests/status_service_test.cpp.s
+
 # Object files for target unit_tests
 unit_tests_OBJECTS = \
 "CMakeFiles/unit_tests.dir/tests/unique_fd_test.cpp.o" \
@@ -208,7 +222,8 @@ unit_tests_OBJECTS = \
 "CMakeFiles/unit_tests.dir/tests/router_test.cpp.o" \
 "CMakeFiles/unit_tests.dir/tests/peer_session_test.cpp.o" \
 "CMakeFiles/unit_tests.dir/tests/response_cache_test.cpp.o" \
-"CMakeFiles/unit_tests.dir/tests/tcp_connection_test.cpp.o"
+"CMakeFiles/unit_tests.dir/tests/tcp_connection_test.cpp.o" \
+"CMakeFiles/unit_tests.dir/tests/status_service_test.cpp.o"
 
 # External object files for target unit_tests
 unit_tests_EXTERNAL_OBJECTS =
@@ -222,6 +237,7 @@ unit_tests: CMakeFiles/unit_tests.dir/tests/router_test.cpp.o
 unit_tests: CMakeFiles/unit_tests.dir/tests/peer_session_test.cpp.o
 unit_tests: CMakeFiles/unit_tests.dir/tests/response_cache_test.cpp.o
 unit_tests: CMakeFiles/unit_tests.dir/tests/tcp_connection_test.cpp.o
+unit_tests: CMakeFiles/unit_tests.dir/tests/status_service_test.cpp.o
 unit_tests: CMakeFiles/unit_tests.dir/build.make
 unit_tests: libkvdb_core.a
 unit_tests: lib/libgtest_main.a
@@ -231,7 +247,7 @@ unit_tests: /usr/lib/x86_64-linux-gnu/libgnutls.so
 unit_tests: /usr/lib/x86_64-linux-gnu/libjsoncpp.so
 unit_tests: lib/libgtest.a
 unit_tests: CMakeFiles/unit_tests.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/av/Documents/projects/cpp/k_v_db/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable unit_tests"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/av/Documents/projects/cpp/k_v_db/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX executable unit_tests"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/unit_tests.dir/link.txt --verbose=$(VERBOSE)
 	/home/av/.local/lib/python3.10/site-packages/cmake/data/bin/cmake -P /home/av/Documents/projects/cpp/k_v_db/build/unit_tests_e3b0c442_discovery.cmake -- 
 

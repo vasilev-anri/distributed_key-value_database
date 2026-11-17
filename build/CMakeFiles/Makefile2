@@ -169,12 +169,12 @@ _deps/googletest-build/googletest/clean: _deps/googletest-build/googletest/CMake
 CMakeFiles/kvdb_core.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/kvdb_core.dir/build.make CMakeFiles/kvdb_core.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/kvdb_core.dir/build.make CMakeFiles/kvdb_core.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/av/Documents/projects/cpp/k_v_db/build/CMakeFiles --progress-num=17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32 "Built target kvdb_core"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/av/Documents/projects/cpp/k_v_db/build/CMakeFiles --progress-num=17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33 "Built target kvdb_core"
 .PHONY : CMakeFiles/kvdb_core.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/kvdb_core.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/av/Documents/projects/cpp/k_v_db/build/CMakeFiles 16
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/av/Documents/projects/cpp/k_v_db/build/CMakeFiles 17
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/kvdb_core.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/av/Documents/projects/cpp/k_v_db/build/CMakeFiles 0
 .PHONY : CMakeFiles/kvdb_core.dir/rule
@@ -186,7 +186,7 @@ kvdb_core: CMakeFiles/kvdb_core.dir/rule
 # codegen rule for target.
 CMakeFiles/kvdb_core.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/kvdb_core.dir/build.make CMakeFiles/kvdb_core.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/av/Documents/projects/cpp/k_v_db/build/CMakeFiles --progress-num=17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32 "Finished codegen for target kvdb_core"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/av/Documents/projects/cpp/k_v_db/build/CMakeFiles --progress-num=17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33 "Finished codegen for target kvdb_core"
 .PHONY : CMakeFiles/kvdb_core.dir/codegen
 
 # clean rule for target.
@@ -206,7 +206,7 @@ CMakeFiles/k_v_db.dir/all: CMakeFiles/kvdb_core.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/k_v_db.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/av/Documents/projects/cpp/k_v_db/build/CMakeFiles 18
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/av/Documents/projects/cpp/k_v_db/build/CMakeFiles 19
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/k_v_db.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/av/Documents/projects/cpp/k_v_db/build/CMakeFiles 0
 .PHONY : CMakeFiles/k_v_db.dir/rule
@@ -238,7 +238,7 @@ CMakeFiles/kvcli.dir/all: CMakeFiles/kvdb_core.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/kvcli.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/av/Documents/projects/cpp/k_v_db/build/CMakeFiles 18
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/av/Documents/projects/cpp/k_v_db/build/CMakeFiles 19
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/kvcli.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/av/Documents/projects/cpp/k_v_db/build/CMakeFiles 0
 .PHONY : CMakeFiles/kvcli.dir/rule
@@ -270,7 +270,7 @@ CMakeFiles/engine_demo.dir/all: CMakeFiles/kvdb_core.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/engine_demo.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/av/Documents/projects/cpp/k_v_db/build/CMakeFiles 18
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/av/Documents/projects/cpp/k_v_db/build/CMakeFiles 19
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/engine_demo.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/av/Documents/projects/cpp/k_v_db/build/CMakeFiles 0
 .PHONY : CMakeFiles/engine_demo.dir/rule
@@ -302,7 +302,7 @@ CMakeFiles/dht_spike.dir/all: CMakeFiles/kvdb_core.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/dht_spike.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/av/Documents/projects/cpp/k_v_db/build/CMakeFiles 18
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/av/Documents/projects/cpp/k_v_db/build/CMakeFiles 19
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/dht_spike.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/av/Documents/projects/cpp/k_v_db/build/CMakeFiles 0
 .PHONY : CMakeFiles/dht_spike.dir/rule
@@ -331,12 +331,12 @@ CMakeFiles/unit_tests.dir/all: _deps/googletest-build/googletest/CMakeFiles/gtes
 CMakeFiles/unit_tests.dir/all: _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/av/Documents/projects/cpp/k_v_db/build/CMakeFiles --progress-num=33,34,35,36,37,38,39,40,41,42 "Built target unit_tests"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/av/Documents/projects/cpp/k_v_db/build/CMakeFiles --progress-num=34,35,36,37,38,39,40,41,42,43,44 "Built target unit_tests"
 .PHONY : CMakeFiles/unit_tests.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/unit_tests.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/av/Documents/projects/cpp/k_v_db/build/CMakeFiles 30
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/av/Documents/projects/cpp/k_v_db/build/CMakeFiles 32
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/unit_tests.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/av/Documents/projects/cpp/k_v_db/build/CMakeFiles 0
 .PHONY : CMakeFiles/unit_tests.dir/rule
@@ -348,7 +348,7 @@ unit_tests: CMakeFiles/unit_tests.dir/rule
 # codegen rule for target.
 CMakeFiles/unit_tests.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/av/Documents/projects/cpp/k_v_db/build/CMakeFiles --progress-num=33,34,35,36,37,38,39,40,41,42 "Finished codegen for target unit_tests"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/av/Documents/projects/cpp/k_v_db/build/CMakeFiles --progress-num=34,35,36,37,38,39,40,41,42,43,44 "Finished codegen for target unit_tests"
 .PHONY : CMakeFiles/unit_tests.dir/codegen
 
 # clean rule for target.

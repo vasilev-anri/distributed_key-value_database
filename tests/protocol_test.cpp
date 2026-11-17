@@ -228,3 +228,56 @@ TEST(Codec, OversizedKeyIsRejectedWhenDecoding) {
     w.bytes(std::string(kMaxKeySize + 1, 'k'));
     EXPECT_EQ(decode_key(w.take()).error(), DecodeError::KeyTooLarge);
 }
+
+// ── STATUS / LOCATE ─────────────────────────────────────────────────────
+
+TEST(Codec, StatusRoundTrip) {
+    const StatusPayload p{.node_id = 0xbc1a4cd7bb26658f,
+                          .key_count = 42,
+                          .replication_factor = 2,
+                          .nodes = {{0xbc1a4cd7bb26658f, "[::1]:9001", NodeState::Self},
+                                    {0x5d464f8d10c03f04, "[::1]:9002", NodeState::Connected},
+                                    {0xf1dc4db431c88ced, "[::1]:9003", NodeState::Connecting}}};
+    const auto decoded = decode_status(encode_payload(p));
+    ASSERT_TRUE(decoded.has_value());
+    EXPECT_EQ(decoded->node_id, p.node_id);
+    EXPECT_EQ(decoded->key_count, 42u);
+    EXPECT_EQ(decoded->replication_factor, 2u);
+    EXPECT_EQ(decoded->nodes, p.nodes);
+}
+
+TEST(Codec, LocateRoundTrip) {
+    const LocatePayload p{.key_hash = 0x1234,
+                          .nodes = {{1, "[::1]:9003", NodeState::Disconnected},
+                                    {2, "[::1]:9001", NodeState::Self}}};
+    const auto decoded = decode_locate(encode_payload(p));
+    ASSERT_TRUE(decoded.has_value());
+    EXPECT_EQ(decoded->key_hash, 0x1234u);
+    EXPECT_EQ(decoded->nodes, p.nodes);
+}
+
+TEST(Codec, LargestStatusFitsInOneDatagram) {
+    StatusPayload p;
+    for (std::size_t i = 0; i < kMaxStatusNodes; ++i)
+        p.nodes.push_back({i, std::string(kMaxAddressSize, 'a'), NodeState::Connected});
+    const auto msg = encode_message({.type = MessageType::StatusResponse}, encode_payload(p));
+    EXPECT_LE(msg.size(), kMaxDatagramSize);
+    EXPECT_TRUE(parse_datagram(msg).has_value());
+
+    p.nodes.push_back({99, "[::1]:9999", NodeState::Connected});  // one too many
+    EXPECT_THROW((void)encode_payload(p), std::length_error);
+}
+
+TEST(Codec, StatusWithInvalidNodeStateIsMalformed) {
+    StatusPayload p{.nodes = {{1, "x", NodeState::Connected}}};
+    auto bytes = encode_payload(p);
+    bytes.back() = std::byte{9};  // the state byte: no such state
+    EXPECT_EQ(decode_status(bytes).error(), DecodeError::Malformed);
+}
+
+TEST(Codec, StatusWithTruncatedNodeListIsMalformed) {
+    StatusPayload p{.nodes = {{1, "[::1]:9001", NodeState::Self}}};
+    auto bytes = encode_payload(p);
+    bytes.pop_back();
+    EXPECT_EQ(decode_status(bytes).error(), DecodeError::Malformed);
+}

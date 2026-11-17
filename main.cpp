@@ -27,6 +27,7 @@
 #include <span>
 #include <string>
 #include <string_view>
+#include <system_error>
 #include <vector>
 
 #include <netinet/in.h>
@@ -39,7 +40,9 @@
 #include "handlers/udp_handler.h"
 #include "node/replicator.h"
 #include "node/request_handler.h"
+#include "node/status_service.h"
 #include "node/router.h"
+#include "protocol/codec.h"
 #include "protocol/protocol.h"
 #include "reactor/reactor.h"
 #include "storage/kv_store.h"
@@ -84,14 +87,13 @@ std::optional<Options> parse_args(int argc, char** argv) {
 
 }  // namespace
 
-int main(int argc, char** argv) {
-    const auto opts = parse_args(argc, argv);
-    if (!opts) return usage(argv[0]);
-
+// Builds the node and runs it until Ctrl+C / SIGTERM. Setup failures (e.g.
+// the port is already taken) throw std::system_error.
+int run(const Options& opts) {
     // ── Cluster membership (static list for now) ────────────────────────
-    cluster::Membership members(cluster::make_node(opts->listen));
+    cluster::Membership members(cluster::make_node(opts.listen));
     try {
-        for (const sockaddr_in6& peer : opts->peers) members.add(cluster::make_node(peer));
+        for (const sockaddr_in6& peer : opts.peers) members.add(cluster::make_node(peer));
     } catch (const std::exception& e) {
         std::fprintf(stderr, "error: %s\n", e.what());
         return 2;
@@ -150,7 +152,7 @@ int main(int argc, char** argv) {
     });
 
     // ── UDP data channel ────────────────────────────────────────────────
-    auto udp = std::make_unique<UDPHandler>(ntohs(opts->listen.sin6_port));
+    auto udp = std::make_unique<UDPHandler>(ntohs(opts.listen.sin6_port));
     UDPHandler* udp_ptr = udp.get();
 
     Router router(members, requests, replicator, *timers,
@@ -164,13 +166,32 @@ int main(int argc, char** argv) {
         return peers.state(node_id) == cluster::PeerManager::PeerState::Connected;
     });
 
-    udp->set_on_datagram([&router](std::span<const std::byte> data, const sockaddr_in6& from) {
-        router.on_datagram(data, from);
+    // ── STATUS / LOCATE (cluster information for the UI and kvcli) ──────
+    StatusService status(members, store, [&peers](std::uint64_t peer_id) {
+        switch (peers.state(peer_id)) {
+            case cluster::PeerManager::PeerState::Connected: return protocol::NodeState::Connected;
+            case cluster::PeerManager::PeerState::Connecting: return protocol::NodeState::Connecting;
+            case cluster::PeerManager::PeerState::Disconnected: break;
+        }
+        return protocol::NodeState::Disconnected;
+    });
+
+    // Every datagram: STATUS / LOCATE are answered right here, everything
+    // else (PUT / GET / DELETE and their responses) goes to the Router.
+    udp->set_on_datagram([&router, &status, udp_ptr](std::span<const std::byte> data,
+                                                     const sockaddr_in6& from) {
+        if (const auto frame = protocol::parse_datagram(data)) {
+            if (const auto reply = status.handle(*frame)) {
+                udp_ptr->send_to(*reply, from);
+                return;
+            }
+        }
+        router.on_datagram(data, from);  // also reports invalid datagrams
     });
     reactor.register_handler(std::move(udp));
 
     reactor.register_handler(std::make_unique<TCPListener>(
-        ntohs(opts->listen.sin6_port),
+        ntohs(opts.listen.sin6_port),
         [&peers](UniqueFD client, const sockaddr_in6& from) { peers.accept(std::move(client), from); }));
 
     // ── Startup summary ─────────────────────────────────────────────────
@@ -189,4 +210,20 @@ int main(int argc, char** argv) {
     peers.start();  // connect to the peers we're responsible for
     reactor.run();
     std::printf("stopped cleanly (%zu keys stored on this node)\n", store.size());
+    return 0;
+}
+
+int main(int argc, char** argv) {
+    const auto opts = parse_args(argc, argv);
+    if (!opts) return usage(argv[0]);
+
+    try {
+        return run(*opts);
+    } catch (const std::system_error& e) {
+        std::fprintf(stderr, "error: %s\n", e.what());
+        if (e.code() == std::errc::address_in_use)
+            std::fprintf(stderr, "  port %u is taken: is another node already running? (pgrep -af k_v_db)\n",
+                         static_cast<unsigned>(ntohs(opts->listen.sin6_port)));
+        return 1;
+    }
 }
