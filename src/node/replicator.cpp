@@ -148,7 +148,8 @@ void Replicator::send_sync_batch(std::uint64_t peer_id) {
         // request_id 0 + SYNC flag: the peer applies it and sends no ACK.
         if (!send_(peer_id, copy_of(sync.keys[sync.next], 0, flags::kSync))) {
             log("recovery: connection to " + hex_id(peer_id) + " lost after sending " +
-                std::to_string(sync.sent) + " entries, will resend on reconnect");
+                std::to_string(sync.sent) + (sync.sent == 1 ? " entry" : " entries") +
+                ", will resend on reconnect");
             syncs_.erase(it);
             return;
         }
@@ -161,7 +162,8 @@ void Replicator::send_sync_batch(std::uint64_t peer_id) {
         return;
     }
 
-    log("recovery: sent " + std::to_string(sync.sent) + " entries to " + hex_id(peer_id));
+    log("recovery: sent " + std::to_string(sync.sent) + (sync.sent == 1 ? " entry" : " entries") +
+        " to " + hex_id(peer_id));
     syncs_.erase(it);
 }
 

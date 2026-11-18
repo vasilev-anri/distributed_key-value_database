@@ -82,6 +82,7 @@ stop_node() {
 # A crash: no shutdown at all, memory lost.
 crash_node() {
     local port=$1
+    printf '%s$ kill -KILL %s   (node %s)%s\n' "$DIM" "${PID[$port]}" "$port" "$RESET"
     kill -KILL "${PID[$port]}" 2>/dev/null
     wait "${PID[$port]}" 2>/dev/null
     unset "PID[$port]"
@@ -173,10 +174,12 @@ step "4. A node freezes: heartbeats notice"
 say "SIGSTOP pauses 9002 without closing its sockets: TCP alone would never notice."
 say "Every node sends PING every 250 ms; 4 missed PONGs = down."
 pause
+printf '%s$ kill -STOP %s   (node 9002)%s\n' "$DIM" "${PID[9002]}" "$RESET"
 kill -STOP "${PID[9002]}"
 sleep 1.6
 run "$CLI" ::1 9001 status
 show_log 9001 "no heartbeat"
+printf '%s$ kill -CONT %s   (node 9002)%s\n' "$DIM" "${PID[9002]}" "$RESET"
 kill -CONT "${PID[9002]}"
 say "Unfrozen. Waiting for it to reconnect..."
 wait_connected 9001 1 10 && ok "9002 is back"
