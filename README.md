@@ -146,14 +146,3 @@ Deliberate simplifications for the scope of a course project:
 
 ---
 
-## Team
-
-| Member | Responsibility |
-|---|---|
-| Anri Vasilevi | |
-| Chamod Chirantha Dilshan | |
-| Imesh Samaraweera | |
-| Amr Mohamed Henidy Henidy Farh | |
-| Zakria Ibrahim Abukhattala | |
-
-*Course project, Riga Technical University.*
