@@ -1,10 +1,10 @@
-Start testing: Nov 17 15:24 EET
+Start testing: Nov 17 15:40 EET
 ----------------------------------------------------------
-1/122 Testing: UniqueFD.DefaultConstructedIsInvalid
-1/122 Test: UniqueFD.DefaultConstructedIsInvalid
+1/124 Testing: UniqueFD.DefaultConstructedIsInvalid
+1/124 Test: UniqueFD.DefaultConstructedIsInvalid
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=UniqueFD.DefaultConstructedIsInvalid" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"UniqueFD.DefaultConstructedIsInvalid" start time: Nov 17 15:24 EET
+"UniqueFD.DefaultConstructedIsInvalid" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -23,15 +23,15 @@ Note: Google Test filter = UniqueFD.DefaultConstructedIsInvalid
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"UniqueFD.DefaultConstructedIsInvalid" end time: Nov 17 15:24 EET
+"UniqueFD.DefaultConstructedIsInvalid" end time: Nov 17 15:40 EET
 "UniqueFD.DefaultConstructedIsInvalid" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-2/122 Testing: UniqueFD.WrapsDescriptor
-2/122 Test: UniqueFD.WrapsDescriptor
+2/124 Testing: UniqueFD.WrapsDescriptor
+2/124 Test: UniqueFD.WrapsDescriptor
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=UniqueFD.WrapsDescriptor" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"UniqueFD.WrapsDescriptor" start time: Nov 17 15:24 EET
+"UniqueFD.WrapsDescriptor" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -50,15 +50,15 @@ Note: Google Test filter = UniqueFD.WrapsDescriptor
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"UniqueFD.WrapsDescriptor" end time: Nov 17 15:24 EET
+"UniqueFD.WrapsDescriptor" end time: Nov 17 15:40 EET
 "UniqueFD.WrapsDescriptor" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-3/122 Testing: UniqueFD.DestructorClosesDescriptor
-3/122 Test: UniqueFD.DestructorClosesDescriptor
+3/124 Testing: UniqueFD.DestructorClosesDescriptor
+3/124 Test: UniqueFD.DestructorClosesDescriptor
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=UniqueFD.DestructorClosesDescriptor" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"UniqueFD.DestructorClosesDescriptor" start time: Nov 17 15:24 EET
+"UniqueFD.DestructorClosesDescriptor" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -77,15 +77,15 @@ Note: Google Test filter = UniqueFD.DestructorClosesDescriptor
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"UniqueFD.DestructorClosesDescriptor" end time: Nov 17 15:24 EET
+"UniqueFD.DestructorClosesDescriptor" end time: Nov 17 15:40 EET
 "UniqueFD.DestructorClosesDescriptor" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-4/122 Testing: UniqueFD.MoveConstructorTransfersOwnership
-4/122 Test: UniqueFD.MoveConstructorTransfersOwnership
+4/124 Testing: UniqueFD.MoveConstructorTransfersOwnership
+4/124 Test: UniqueFD.MoveConstructorTransfersOwnership
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=UniqueFD.MoveConstructorTransfersOwnership" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"UniqueFD.MoveConstructorTransfersOwnership" start time: Nov 17 15:24 EET
+"UniqueFD.MoveConstructorTransfersOwnership" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -104,15 +104,15 @@ Note: Google Test filter = UniqueFD.MoveConstructorTransfersOwnership
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"UniqueFD.MoveConstructorTransfersOwnership" end time: Nov 17 15:24 EET
+"UniqueFD.MoveConstructorTransfersOwnership" end time: Nov 17 15:40 EET
 "UniqueFD.MoveConstructorTransfersOwnership" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-5/122 Testing: UniqueFD.MoveAssignmentClosesOldAndTakesNew
-5/122 Test: UniqueFD.MoveAssignmentClosesOldAndTakesNew
+5/124 Testing: UniqueFD.MoveAssignmentClosesOldAndTakesNew
+5/124 Test: UniqueFD.MoveAssignmentClosesOldAndTakesNew
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=UniqueFD.MoveAssignmentClosesOldAndTakesNew" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"UniqueFD.MoveAssignmentClosesOldAndTakesNew" start time: Nov 17 15:24 EET
+"UniqueFD.MoveAssignmentClosesOldAndTakesNew" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -131,15 +131,15 @@ Note: Google Test filter = UniqueFD.MoveAssignmentClosesOldAndTakesNew
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"UniqueFD.MoveAssignmentClosesOldAndTakesNew" end time: Nov 17 15:24 EET
+"UniqueFD.MoveAssignmentClosesOldAndTakesNew" end time: Nov 17 15:40 EET
 "UniqueFD.MoveAssignmentClosesOldAndTakesNew" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-6/122 Testing: UniqueFD.SelfMoveAssignmentKeepsDescriptor
-6/122 Test: UniqueFD.SelfMoveAssignmentKeepsDescriptor
+6/124 Testing: UniqueFD.SelfMoveAssignmentKeepsDescriptor
+6/124 Test: UniqueFD.SelfMoveAssignmentKeepsDescriptor
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=UniqueFD.SelfMoveAssignmentKeepsDescriptor" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"UniqueFD.SelfMoveAssignmentKeepsDescriptor" start time: Nov 17 15:24 EET
+"UniqueFD.SelfMoveAssignmentKeepsDescriptor" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -158,15 +158,15 @@ Note: Google Test filter = UniqueFD.SelfMoveAssignmentKeepsDescriptor
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"UniqueFD.SelfMoveAssignmentKeepsDescriptor" end time: Nov 17 15:24 EET
+"UniqueFD.SelfMoveAssignmentKeepsDescriptor" end time: Nov 17 15:40 EET
 "UniqueFD.SelfMoveAssignmentKeepsDescriptor" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-7/122 Testing: UniqueFD.ReleaseGivesUpOwnershipWithoutClosing
-7/122 Test: UniqueFD.ReleaseGivesUpOwnershipWithoutClosing
+7/124 Testing: UniqueFD.ReleaseGivesUpOwnershipWithoutClosing
+7/124 Test: UniqueFD.ReleaseGivesUpOwnershipWithoutClosing
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=UniqueFD.ReleaseGivesUpOwnershipWithoutClosing" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"UniqueFD.ReleaseGivesUpOwnershipWithoutClosing" start time: Nov 17 15:24 EET
+"UniqueFD.ReleaseGivesUpOwnershipWithoutClosing" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -185,15 +185,15 @@ Note: Google Test filter = UniqueFD.ReleaseGivesUpOwnershipWithoutClosing
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"UniqueFD.ReleaseGivesUpOwnershipWithoutClosing" end time: Nov 17 15:24 EET
+"UniqueFD.ReleaseGivesUpOwnershipWithoutClosing" end time: Nov 17 15:40 EET
 "UniqueFD.ReleaseGivesUpOwnershipWithoutClosing" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-8/122 Testing: UniqueFD.ResetWithoutArgumentCloses
-8/122 Test: UniqueFD.ResetWithoutArgumentCloses
+8/124 Testing: UniqueFD.ResetWithoutArgumentCloses
+8/124 Test: UniqueFD.ResetWithoutArgumentCloses
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=UniqueFD.ResetWithoutArgumentCloses" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"UniqueFD.ResetWithoutArgumentCloses" start time: Nov 17 15:24 EET
+"UniqueFD.ResetWithoutArgumentCloses" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -212,15 +212,15 @@ Note: Google Test filter = UniqueFD.ResetWithoutArgumentCloses
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"UniqueFD.ResetWithoutArgumentCloses" end time: Nov 17 15:24 EET
+"UniqueFD.ResetWithoutArgumentCloses" end time: Nov 17 15:40 EET
 "UniqueFD.ResetWithoutArgumentCloses" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-9/122 Testing: UniqueFD.ResetWithNewDescriptorClosesOld
-9/122 Test: UniqueFD.ResetWithNewDescriptorClosesOld
+9/124 Testing: UniqueFD.ResetWithNewDescriptorClosesOld
+9/124 Test: UniqueFD.ResetWithNewDescriptorClosesOld
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=UniqueFD.ResetWithNewDescriptorClosesOld" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"UniqueFD.ResetWithNewDescriptorClosesOld" start time: Nov 17 15:24 EET
+"UniqueFD.ResetWithNewDescriptorClosesOld" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -239,15 +239,15 @@ Note: Google Test filter = UniqueFD.ResetWithNewDescriptorClosesOld
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"UniqueFD.ResetWithNewDescriptorClosesOld" end time: Nov 17 15:24 EET
+"UniqueFD.ResetWithNewDescriptorClosesOld" end time: Nov 17 15:40 EET
 "UniqueFD.ResetWithNewDescriptorClosesOld" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-10/122 Testing: UniqueFD.ResetWithSameDescriptorDoesNotClose
-10/122 Test: UniqueFD.ResetWithSameDescriptorDoesNotClose
+10/124 Testing: UniqueFD.ResetWithSameDescriptorDoesNotClose
+10/124 Test: UniqueFD.ResetWithSameDescriptorDoesNotClose
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=UniqueFD.ResetWithSameDescriptorDoesNotClose" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"UniqueFD.ResetWithSameDescriptorDoesNotClose" start time: Nov 17 15:24 EET
+"UniqueFD.ResetWithSameDescriptorDoesNotClose" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -266,15 +266,15 @@ Note: Google Test filter = UniqueFD.ResetWithSameDescriptorDoesNotClose
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"UniqueFD.ResetWithSameDescriptorDoesNotClose" end time: Nov 17 15:24 EET
+"UniqueFD.ResetWithSameDescriptorDoesNotClose" end time: Nov 17 15:40 EET
 "UniqueFD.ResetWithSameDescriptorDoesNotClose" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-11/122 Testing: ByteIO.WritesBigEndian
-11/122 Test: ByteIO.WritesBigEndian
+11/124 Testing: ByteIO.WritesBigEndian
+11/124 Test: ByteIO.WritesBigEndian
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=ByteIO.WritesBigEndian" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"ByteIO.WritesBigEndian" start time: Nov 17 15:24 EET
+"ByteIO.WritesBigEndian" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -293,15 +293,15 @@ Note: Google Test filter = ByteIO.WritesBigEndian
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"ByteIO.WritesBigEndian" end time: Nov 17 15:24 EET
+"ByteIO.WritesBigEndian" end time: Nov 17 15:40 EET
 "ByteIO.WritesBigEndian" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-12/122 Testing: ByteIO.ReaderNeverReadsPastEnd
-12/122 Test: ByteIO.ReaderNeverReadsPastEnd
+12/124 Testing: ByteIO.ReaderNeverReadsPastEnd
+12/124 Test: ByteIO.ReaderNeverReadsPastEnd
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=ByteIO.ReaderNeverReadsPastEnd" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"ByteIO.ReaderNeverReadsPastEnd" start time: Nov 17 15:24 EET
+"ByteIO.ReaderNeverReadsPastEnd" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -320,15 +320,15 @@ Note: Google Test filter = ByteIO.ReaderNeverReadsPastEnd
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"ByteIO.ReaderNeverReadsPastEnd" end time: Nov 17 15:24 EET
+"ByteIO.ReaderNeverReadsPastEnd" end time: Nov 17 15:40 EET
 "ByteIO.ReaderNeverReadsPastEnd" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-13/122 Testing: Codec.HeaderStartsWithMagicAndHasFixedSize
-13/122 Test: Codec.HeaderStartsWithMagicAndHasFixedSize
+13/124 Testing: Codec.HeaderStartsWithMagicAndHasFixedSize
+13/124 Test: Codec.HeaderStartsWithMagicAndHasFixedSize
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=Codec.HeaderStartsWithMagicAndHasFixedSize" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"Codec.HeaderStartsWithMagicAndHasFixedSize" start time: Nov 17 15:24 EET
+"Codec.HeaderStartsWithMagicAndHasFixedSize" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -347,15 +347,15 @@ Note: Google Test filter = Codec.HeaderStartsWithMagicAndHasFixedSize
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"Codec.HeaderStartsWithMagicAndHasFixedSize" end time: Nov 17 15:24 EET
+"Codec.HeaderStartsWithMagicAndHasFixedSize" end time: Nov 17 15:40 EET
 "Codec.HeaderStartsWithMagicAndHasFixedSize" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-14/122 Testing: Codec.PutRequestRoundTrip
-14/122 Test: Codec.PutRequestRoundTrip
+14/124 Testing: Codec.PutRequestRoundTrip
+14/124 Test: Codec.PutRequestRoundTrip
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=Codec.PutRequestRoundTrip" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"Codec.PutRequestRoundTrip" start time: Nov 17 15:24 EET
+"Codec.PutRequestRoundTrip" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -374,15 +374,15 @@ Note: Google Test filter = Codec.PutRequestRoundTrip
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"Codec.PutRequestRoundTrip" end time: Nov 17 15:24 EET
+"Codec.PutRequestRoundTrip" end time: Nov 17 15:40 EET
 "Codec.PutRequestRoundTrip" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-15/122 Testing: Codec.GetResponseWithStatusAndValue
-15/122 Test: Codec.GetResponseWithStatusAndValue
+15/124 Testing: Codec.GetResponseWithStatusAndValue
+15/124 Test: Codec.GetResponseWithStatusAndValue
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=Codec.GetResponseWithStatusAndValue" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"Codec.GetResponseWithStatusAndValue" start time: Nov 17 15:24 EET
+"Codec.GetResponseWithStatusAndValue" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -401,15 +401,15 @@ Note: Google Test filter = Codec.GetResponseWithStatusAndValue
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"Codec.GetResponseWithStatusAndValue" end time: Nov 17 15:24 EET
+"Codec.GetResponseWithStatusAndValue" end time: Nov 17 15:40 EET
 "Codec.GetResponseWithStatusAndValue" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-16/122 Testing: Codec.NotFoundResponseHasNoPayload
-16/122 Test: Codec.NotFoundResponseHasNoPayload
+16/124 Testing: Codec.NotFoundResponseHasNoPayload
+16/124 Test: Codec.NotFoundResponseHasNoPayload
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=Codec.NotFoundResponseHasNoPayload" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"Codec.NotFoundResponseHasNoPayload" start time: Nov 17 15:24 EET
+"Codec.NotFoundResponseHasNoPayload" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -428,15 +428,15 @@ Note: Google Test filter = Codec.NotFoundResponseHasNoPayload
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"Codec.NotFoundResponseHasNoPayload" end time: Nov 17 15:24 EET
+"Codec.NotFoundResponseHasNoPayload" end time: Nov 17 15:40 EET
 "Codec.NotFoundResponseHasNoPayload" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-17/122 Testing: Codec.ForwardedFlagSurvivesRoundTrip
-17/122 Test: Codec.ForwardedFlagSurvivesRoundTrip
+17/124 Testing: Codec.ForwardedFlagSurvivesRoundTrip
+17/124 Test: Codec.ForwardedFlagSurvivesRoundTrip
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=Codec.ForwardedFlagSurvivesRoundTrip" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"Codec.ForwardedFlagSurvivesRoundTrip" start time: Nov 17 15:24 EET
+"Codec.ForwardedFlagSurvivesRoundTrip" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -455,15 +455,15 @@ Note: Google Test filter = Codec.ForwardedFlagSurvivesRoundTrip
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"Codec.ForwardedFlagSurvivesRoundTrip" end time: Nov 17 15:24 EET
+"Codec.ForwardedFlagSurvivesRoundTrip" end time: Nov 17 15:40 EET
 "Codec.ForwardedFlagSurvivesRoundTrip" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-18/122 Testing: Codec.HelloRoundTrip
-18/122 Test: Codec.HelloRoundTrip
+18/124 Testing: Codec.HelloRoundTrip
+18/124 Test: Codec.HelloRoundTrip
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=Codec.HelloRoundTrip" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"Codec.HelloRoundTrip" start time: Nov 17 15:24 EET
+"Codec.HelloRoundTrip" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -482,15 +482,15 @@ Note: Google Test filter = Codec.HelloRoundTrip
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"Codec.HelloRoundTrip" end time: Nov 17 15:24 EET
+"Codec.HelloRoundTrip" end time: Nov 17 15:40 EET
 "Codec.HelloRoundTrip" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-19/122 Testing: Codec.LargestPutFitsInOneDatagram
-19/122 Test: Codec.LargestPutFitsInOneDatagram
+19/124 Testing: Codec.LargestPutFitsInOneDatagram
+19/124 Test: Codec.LargestPutFitsInOneDatagram
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=Codec.LargestPutFitsInOneDatagram" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"Codec.LargestPutFitsInOneDatagram" start time: Nov 17 15:24 EET
+"Codec.LargestPutFitsInOneDatagram" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -509,15 +509,15 @@ Note: Google Test filter = Codec.LargestPutFitsInOneDatagram
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"Codec.LargestPutFitsInOneDatagram" end time: Nov 17 15:24 EET
+"Codec.LargestPutFitsInOneDatagram" end time: Nov 17 15:40 EET
 "Codec.LargestPutFitsInOneDatagram" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-20/122 Testing: Codec.EncodingOversizedKeyThrows
-20/122 Test: Codec.EncodingOversizedKeyThrows
+20/124 Testing: Codec.EncodingOversizedKeyThrows
+20/124 Test: Codec.EncodingOversizedKeyThrows
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=Codec.EncodingOversizedKeyThrows" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"Codec.EncodingOversizedKeyThrows" start time: Nov 17 15:24 EET
+"Codec.EncodingOversizedKeyThrows" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -536,15 +536,15 @@ Note: Google Test filter = Codec.EncodingOversizedKeyThrows
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"Codec.EncodingOversizedKeyThrows" end time: Nov 17 15:24 EET
+"Codec.EncodingOversizedKeyThrows" end time: Nov 17 15:40 EET
 "Codec.EncodingOversizedKeyThrows" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-21/122 Testing: Codec.TcpWaitsForEveryMissingByte
-21/122 Test: Codec.TcpWaitsForEveryMissingByte
+21/124 Testing: Codec.TcpWaitsForEveryMissingByte
+21/124 Test: Codec.TcpWaitsForEveryMissingByte
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=Codec.TcpWaitsForEveryMissingByte" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"Codec.TcpWaitsForEveryMissingByte" start time: Nov 17 15:24 EET
+"Codec.TcpWaitsForEveryMissingByte" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -563,15 +563,15 @@ Note: Google Test filter = Codec.TcpWaitsForEveryMissingByte
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"Codec.TcpWaitsForEveryMissingByte" end time: Nov 17 15:24 EET
+"Codec.TcpWaitsForEveryMissingByte" end time: Nov 17 15:40 EET
 "Codec.TcpWaitsForEveryMissingByte" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-22/122 Testing: Codec.TcpParsesTwoMessagesFromOneBuffer
-22/122 Test: Codec.TcpParsesTwoMessagesFromOneBuffer
+22/124 Testing: Codec.TcpParsesTwoMessagesFromOneBuffer
+22/124 Test: Codec.TcpParsesTwoMessagesFromOneBuffer
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=Codec.TcpParsesTwoMessagesFromOneBuffer" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"Codec.TcpParsesTwoMessagesFromOneBuffer" start time: Nov 17 15:24 EET
+"Codec.TcpParsesTwoMessagesFromOneBuffer" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -590,15 +590,15 @@ Note: Google Test filter = Codec.TcpParsesTwoMessagesFromOneBuffer
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"Codec.TcpParsesTwoMessagesFromOneBuffer" end time: Nov 17 15:24 EET
+"Codec.TcpParsesTwoMessagesFromOneBuffer" end time: Nov 17 15:40 EET
 "Codec.TcpParsesTwoMessagesFromOneBuffer" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-23/122 Testing: Codec.RejectsBadMagicImmediately
-23/122 Test: Codec.RejectsBadMagicImmediately
+23/124 Testing: Codec.RejectsBadMagicImmediately
+23/124 Test: Codec.RejectsBadMagicImmediately
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=Codec.RejectsBadMagicImmediately" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"Codec.RejectsBadMagicImmediately" start time: Nov 17 15:24 EET
+"Codec.RejectsBadMagicImmediately" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -617,15 +617,15 @@ Note: Google Test filter = Codec.RejectsBadMagicImmediately
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"Codec.RejectsBadMagicImmediately" end time: Nov 17 15:24 EET
+"Codec.RejectsBadMagicImmediately" end time: Nov 17 15:40 EET
 "Codec.RejectsBadMagicImmediately" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-24/122 Testing: Codec.RejectsWrongVersion
-24/122 Test: Codec.RejectsWrongVersion
+24/124 Testing: Codec.RejectsWrongVersion
+24/124 Test: Codec.RejectsWrongVersion
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=Codec.RejectsWrongVersion" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"Codec.RejectsWrongVersion" start time: Nov 17 15:24 EET
+"Codec.RejectsWrongVersion" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -644,15 +644,15 @@ Note: Google Test filter = Codec.RejectsWrongVersion
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"Codec.RejectsWrongVersion" end time: Nov 17 15:24 EET
+"Codec.RejectsWrongVersion" end time: Nov 17 15:40 EET
 "Codec.RejectsWrongVersion" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-25/122 Testing: Codec.RejectsUnknownType
-25/122 Test: Codec.RejectsUnknownType
+25/124 Testing: Codec.RejectsUnknownType
+25/124 Test: Codec.RejectsUnknownType
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=Codec.RejectsUnknownType" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"Codec.RejectsUnknownType" start time: Nov 17 15:24 EET
+"Codec.RejectsUnknownType" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -671,15 +671,15 @@ Note: Google Test filter = Codec.RejectsUnknownType
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"Codec.RejectsUnknownType" end time: Nov 17 15:24 EET
+"Codec.RejectsUnknownType" end time: Nov 17 15:40 EET
 "Codec.RejectsUnknownType" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-26/122 Testing: Codec.RejectsInvalidStatus
-26/122 Test: Codec.RejectsInvalidStatus
+26/124 Testing: Codec.RejectsInvalidStatus
+26/124 Test: Codec.RejectsInvalidStatus
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=Codec.RejectsInvalidStatus" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"Codec.RejectsInvalidStatus" start time: Nov 17 15:24 EET
+"Codec.RejectsInvalidStatus" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -698,15 +698,15 @@ Note: Google Test filter = Codec.RejectsInvalidStatus
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"Codec.RejectsInvalidStatus" end time: Nov 17 15:24 EET
+"Codec.RejectsInvalidStatus" end time: Nov 17 15:40 EET
 "Codec.RejectsInvalidStatus" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-27/122 Testing: Codec.RejectsHugeLengthFromHeaderAlone
-27/122 Test: Codec.RejectsHugeLengthFromHeaderAlone
+27/124 Testing: Codec.RejectsHugeLengthFromHeaderAlone
+27/124 Test: Codec.RejectsHugeLengthFromHeaderAlone
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=Codec.RejectsHugeLengthFromHeaderAlone" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"Codec.RejectsHugeLengthFromHeaderAlone" start time: Nov 17 15:24 EET
+"Codec.RejectsHugeLengthFromHeaderAlone" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -725,15 +725,15 @@ Note: Google Test filter = Codec.RejectsHugeLengthFromHeaderAlone
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"Codec.RejectsHugeLengthFromHeaderAlone" end time: Nov 17 15:24 EET
+"Codec.RejectsHugeLengthFromHeaderAlone" end time: Nov 17 15:40 EET
 "Codec.RejectsHugeLengthFromHeaderAlone" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-28/122 Testing: Codec.DatagramMustNotBeTruncated
-28/122 Test: Codec.DatagramMustNotBeTruncated
+28/124 Testing: Codec.DatagramMustNotBeTruncated
+28/124 Test: Codec.DatagramMustNotBeTruncated
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=Codec.DatagramMustNotBeTruncated" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"Codec.DatagramMustNotBeTruncated" start time: Nov 17 15:24 EET
+"Codec.DatagramMustNotBeTruncated" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -752,15 +752,15 @@ Note: Google Test filter = Codec.DatagramMustNotBeTruncated
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"Codec.DatagramMustNotBeTruncated" end time: Nov 17 15:24 EET
+"Codec.DatagramMustNotBeTruncated" end time: Nov 17 15:40 EET
 "Codec.DatagramMustNotBeTruncated" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-29/122 Testing: Codec.DatagramMustNotHaveTrailingBytes
-29/122 Test: Codec.DatagramMustNotHaveTrailingBytes
+29/124 Testing: Codec.DatagramMustNotHaveTrailingBytes
+29/124 Test: Codec.DatagramMustNotHaveTrailingBytes
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=Codec.DatagramMustNotHaveTrailingBytes" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"Codec.DatagramMustNotHaveTrailingBytes" start time: Nov 17 15:24 EET
+"Codec.DatagramMustNotHaveTrailingBytes" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -779,15 +779,15 @@ Note: Google Test filter = Codec.DatagramMustNotHaveTrailingBytes
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"Codec.DatagramMustNotHaveTrailingBytes" end time: Nov 17 15:24 EET
+"Codec.DatagramMustNotHaveTrailingBytes" end time: Nov 17 15:40 EET
 "Codec.DatagramMustNotHaveTrailingBytes" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-30/122 Testing: Codec.PayloadWithTrailingBytesIsMalformed
-30/122 Test: Codec.PayloadWithTrailingBytesIsMalformed
+30/124 Testing: Codec.PayloadWithTrailingBytesIsMalformed
+30/124 Test: Codec.PayloadWithTrailingBytesIsMalformed
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=Codec.PayloadWithTrailingBytesIsMalformed" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"Codec.PayloadWithTrailingBytesIsMalformed" start time: Nov 17 15:24 EET
+"Codec.PayloadWithTrailingBytesIsMalformed" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -806,15 +806,15 @@ Note: Google Test filter = Codec.PayloadWithTrailingBytesIsMalformed
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"Codec.PayloadWithTrailingBytesIsMalformed" end time: Nov 17 15:24 EET
+"Codec.PayloadWithTrailingBytesIsMalformed" end time: Nov 17 15:40 EET
 "Codec.PayloadWithTrailingBytesIsMalformed" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-31/122 Testing: Codec.PayloadLengthLargerThanDataIsMalformed
-31/122 Test: Codec.PayloadLengthLargerThanDataIsMalformed
+31/124 Testing: Codec.PayloadLengthLargerThanDataIsMalformed
+31/124 Test: Codec.PayloadLengthLargerThanDataIsMalformed
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=Codec.PayloadLengthLargerThanDataIsMalformed" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"Codec.PayloadLengthLargerThanDataIsMalformed" start time: Nov 17 15:24 EET
+"Codec.PayloadLengthLargerThanDataIsMalformed" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -833,15 +833,15 @@ Note: Google Test filter = Codec.PayloadLengthLargerThanDataIsMalformed
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"Codec.PayloadLengthLargerThanDataIsMalformed" end time: Nov 17 15:24 EET
+"Codec.PayloadLengthLargerThanDataIsMalformed" end time: Nov 17 15:40 EET
 "Codec.PayloadLengthLargerThanDataIsMalformed" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-32/122 Testing: Codec.OversizedKeyIsRejectedWhenDecoding
-32/122 Test: Codec.OversizedKeyIsRejectedWhenDecoding
+32/124 Testing: Codec.OversizedKeyIsRejectedWhenDecoding
+32/124 Test: Codec.OversizedKeyIsRejectedWhenDecoding
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=Codec.OversizedKeyIsRejectedWhenDecoding" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"Codec.OversizedKeyIsRejectedWhenDecoding" start time: Nov 17 15:24 EET
+"Codec.OversizedKeyIsRejectedWhenDecoding" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -860,15 +860,15 @@ Note: Google Test filter = Codec.OversizedKeyIsRejectedWhenDecoding
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"Codec.OversizedKeyIsRejectedWhenDecoding" end time: Nov 17 15:24 EET
+"Codec.OversizedKeyIsRejectedWhenDecoding" end time: Nov 17 15:40 EET
 "Codec.OversizedKeyIsRejectedWhenDecoding" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-33/122 Testing: Codec.StatusRoundTrip
-33/122 Test: Codec.StatusRoundTrip
+33/124 Testing: Codec.StatusRoundTrip
+33/124 Test: Codec.StatusRoundTrip
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=Codec.StatusRoundTrip" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"Codec.StatusRoundTrip" start time: Nov 17 15:24 EET
+"Codec.StatusRoundTrip" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -887,15 +887,15 @@ Note: Google Test filter = Codec.StatusRoundTrip
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"Codec.StatusRoundTrip" end time: Nov 17 15:24 EET
+"Codec.StatusRoundTrip" end time: Nov 17 15:40 EET
 "Codec.StatusRoundTrip" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-34/122 Testing: Codec.LocateRoundTrip
-34/122 Test: Codec.LocateRoundTrip
+34/124 Testing: Codec.LocateRoundTrip
+34/124 Test: Codec.LocateRoundTrip
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=Codec.LocateRoundTrip" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"Codec.LocateRoundTrip" start time: Nov 17 15:24 EET
+"Codec.LocateRoundTrip" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -914,15 +914,15 @@ Note: Google Test filter = Codec.LocateRoundTrip
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"Codec.LocateRoundTrip" end time: Nov 17 15:24 EET
+"Codec.LocateRoundTrip" end time: Nov 17 15:40 EET
 "Codec.LocateRoundTrip" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-35/122 Testing: Codec.LargestStatusFitsInOneDatagram
-35/122 Test: Codec.LargestStatusFitsInOneDatagram
+35/124 Testing: Codec.LargestStatusFitsInOneDatagram
+35/124 Test: Codec.LargestStatusFitsInOneDatagram
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=Codec.LargestStatusFitsInOneDatagram" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"Codec.LargestStatusFitsInOneDatagram" start time: Nov 17 15:24 EET
+"Codec.LargestStatusFitsInOneDatagram" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -941,15 +941,15 @@ Note: Google Test filter = Codec.LargestStatusFitsInOneDatagram
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"Codec.LargestStatusFitsInOneDatagram" end time: Nov 17 15:24 EET
+"Codec.LargestStatusFitsInOneDatagram" end time: Nov 17 15:40 EET
 "Codec.LargestStatusFitsInOneDatagram" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-36/122 Testing: Codec.StatusWithInvalidNodeStateIsMalformed
-36/122 Test: Codec.StatusWithInvalidNodeStateIsMalformed
+36/124 Testing: Codec.StatusWithInvalidNodeStateIsMalformed
+36/124 Test: Codec.StatusWithInvalidNodeStateIsMalformed
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=Codec.StatusWithInvalidNodeStateIsMalformed" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"Codec.StatusWithInvalidNodeStateIsMalformed" start time: Nov 17 15:24 EET
+"Codec.StatusWithInvalidNodeStateIsMalformed" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -968,15 +968,15 @@ Note: Google Test filter = Codec.StatusWithInvalidNodeStateIsMalformed
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"Codec.StatusWithInvalidNodeStateIsMalformed" end time: Nov 17 15:24 EET
+"Codec.StatusWithInvalidNodeStateIsMalformed" end time: Nov 17 15:40 EET
 "Codec.StatusWithInvalidNodeStateIsMalformed" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-37/122 Testing: Codec.StatusWithTruncatedNodeListIsMalformed
-37/122 Test: Codec.StatusWithTruncatedNodeListIsMalformed
+37/124 Testing: Codec.StatusWithTruncatedNodeListIsMalformed
+37/124 Test: Codec.StatusWithTruncatedNodeListIsMalformed
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=Codec.StatusWithTruncatedNodeListIsMalformed" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"Codec.StatusWithTruncatedNodeListIsMalformed" start time: Nov 17 15:24 EET
+"Codec.StatusWithTruncatedNodeListIsMalformed" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -995,15 +995,15 @@ Note: Google Test filter = Codec.StatusWithTruncatedNodeListIsMalformed
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"Codec.StatusWithTruncatedNodeListIsMalformed" end time: Nov 17 15:24 EET
+"Codec.StatusWithTruncatedNodeListIsMalformed" end time: Nov 17 15:40 EET
 "Codec.StatusWithTruncatedNodeListIsMalformed" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-38/122 Testing: Codec.ReplicaPayloadsCarryTheVersion
-38/122 Test: Codec.ReplicaPayloadsCarryTheVersion
+38/124 Testing: Codec.ReplicaPayloadsCarryTheVersion
+38/124 Test: Codec.ReplicaPayloadsCarryTheVersion
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=Codec.ReplicaPayloadsCarryTheVersion" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"Codec.ReplicaPayloadsCarryTheVersion" start time: Nov 17 15:24 EET
+"Codec.ReplicaPayloadsCarryTheVersion" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -1022,15 +1022,15 @@ Note: Google Test filter = Codec.ReplicaPayloadsCarryTheVersion
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"Codec.ReplicaPayloadsCarryTheVersion" end time: Nov 17 15:24 EET
+"Codec.ReplicaPayloadsCarryTheVersion" end time: Nov 17 15:40 EET
 "Codec.ReplicaPayloadsCarryTheVersion" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-39/122 Testing: KeyValueStore.GetMissingKeyReturnsNothing
-39/122 Test: KeyValueStore.GetMissingKeyReturnsNothing
+39/124 Testing: KeyValueStore.GetMissingKeyReturnsNothing
+39/124 Test: KeyValueStore.GetMissingKeyReturnsNothing
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=KeyValueStore.GetMissingKeyReturnsNothing" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"KeyValueStore.GetMissingKeyReturnsNothing" start time: Nov 17 15:24 EET
+"KeyValueStore.GetMissingKeyReturnsNothing" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -1049,15 +1049,15 @@ Note: Google Test filter = KeyValueStore.GetMissingKeyReturnsNothing
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"KeyValueStore.GetMissingKeyReturnsNothing" end time: Nov 17 15:24 EET
+"KeyValueStore.GetMissingKeyReturnsNothing" end time: Nov 17 15:40 EET
 "KeyValueStore.GetMissingKeyReturnsNothing" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-40/122 Testing: KeyValueStore.PutThenGet
-40/122 Test: KeyValueStore.PutThenGet
+40/124 Testing: KeyValueStore.PutThenGet
+40/124 Test: KeyValueStore.PutThenGet
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=KeyValueStore.PutThenGet" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"KeyValueStore.PutThenGet" start time: Nov 17 15:24 EET
+"KeyValueStore.PutThenGet" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -1076,15 +1076,15 @@ Note: Google Test filter = KeyValueStore.PutThenGet
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"KeyValueStore.PutThenGet" end time: Nov 17 15:24 EET
+"KeyValueStore.PutThenGet" end time: Nov 17 15:40 EET
 "KeyValueStore.PutThenGet" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-41/122 Testing: KeyValueStore.PutOverwritesExistingValue
-41/122 Test: KeyValueStore.PutOverwritesExistingValue
+41/124 Testing: KeyValueStore.PutOverwritesExistingValue
+41/124 Test: KeyValueStore.PutOverwritesExistingValue
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=KeyValueStore.PutOverwritesExistingValue" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"KeyValueStore.PutOverwritesExistingValue" start time: Nov 17 15:24 EET
+"KeyValueStore.PutOverwritesExistingValue" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -1103,15 +1103,15 @@ Note: Google Test filter = KeyValueStore.PutOverwritesExistingValue
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"KeyValueStore.PutOverwritesExistingValue" end time: Nov 17 15:24 EET
+"KeyValueStore.PutOverwritesExistingValue" end time: Nov 17 15:40 EET
 "KeyValueStore.PutOverwritesExistingValue" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-42/122 Testing: KeyValueStore.RemoveReportsWhetherKeyExisted
-42/122 Test: KeyValueStore.RemoveReportsWhetherKeyExisted
+42/124 Testing: KeyValueStore.RemoveReportsWhetherKeyExisted
+42/124 Test: KeyValueStore.RemoveReportsWhetherKeyExisted
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=KeyValueStore.RemoveReportsWhetherKeyExisted" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"KeyValueStore.RemoveReportsWhetherKeyExisted" start time: Nov 17 15:24 EET
+"KeyValueStore.RemoveReportsWhetherKeyExisted" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -1130,15 +1130,15 @@ Note: Google Test filter = KeyValueStore.RemoveReportsWhetherKeyExisted
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"KeyValueStore.RemoveReportsWhetherKeyExisted" end time: Nov 17 15:24 EET
+"KeyValueStore.RemoveReportsWhetherKeyExisted" end time: Nov 17 15:40 EET
 "KeyValueStore.RemoveReportsWhetherKeyExisted" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-43/122 Testing: KeyValueStore.ValuesMayContainAnyBytes
-43/122 Test: KeyValueStore.ValuesMayContainAnyBytes
+43/124 Testing: KeyValueStore.ValuesMayContainAnyBytes
+43/124 Test: KeyValueStore.ValuesMayContainAnyBytes
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=KeyValueStore.ValuesMayContainAnyBytes" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"KeyValueStore.ValuesMayContainAnyBytes" start time: Nov 17 15:24 EET
+"KeyValueStore.ValuesMayContainAnyBytes" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -1157,15 +1157,15 @@ Note: Google Test filter = KeyValueStore.ValuesMayContainAnyBytes
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"KeyValueStore.ValuesMayContainAnyBytes" end time: Nov 17 15:24 EET
+"KeyValueStore.ValuesMayContainAnyBytes" end time: Nov 17 15:40 EET
 "KeyValueStore.ValuesMayContainAnyBytes" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-44/122 Testing: KeyValueStore.EveryWriteGetsAHigherVersion
-44/122 Test: KeyValueStore.EveryWriteGetsAHigherVersion
+44/124 Testing: KeyValueStore.EveryWriteGetsAHigherVersion
+44/124 Test: KeyValueStore.EveryWriteGetsAHigherVersion
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=KeyValueStore.EveryWriteGetsAHigherVersion" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"KeyValueStore.EveryWriteGetsAHigherVersion" start time: Nov 17 15:24 EET
+"KeyValueStore.EveryWriteGetsAHigherVersion" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -1184,15 +1184,15 @@ Note: Google Test filter = KeyValueStore.EveryWriteGetsAHigherVersion
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"KeyValueStore.EveryWriteGetsAHigherVersion" end time: Nov 17 15:24 EET
+"KeyValueStore.EveryWriteGetsAHigherVersion" end time: Nov 17 15:40 EET
 "KeyValueStore.EveryWriteGetsAHigherVersion" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-45/122 Testing: KeyValueStore.DeleteLeavesAnInvisibleTombstone
-45/122 Test: KeyValueStore.DeleteLeavesAnInvisibleTombstone
+45/124 Testing: KeyValueStore.DeleteLeavesAnInvisibleTombstone
+45/124 Test: KeyValueStore.DeleteLeavesAnInvisibleTombstone
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=KeyValueStore.DeleteLeavesAnInvisibleTombstone" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"KeyValueStore.DeleteLeavesAnInvisibleTombstone" start time: Nov 17 15:24 EET
+"KeyValueStore.DeleteLeavesAnInvisibleTombstone" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -1211,15 +1211,15 @@ Note: Google Test filter = KeyValueStore.DeleteLeavesAnInvisibleTombstone
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"KeyValueStore.DeleteLeavesAnInvisibleTombstone" end time: Nov 17 15:24 EET
+"KeyValueStore.DeleteLeavesAnInvisibleTombstone" end time: Nov 17 15:40 EET
 "KeyValueStore.DeleteLeavesAnInvisibleTombstone" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-46/122 Testing: KeyValueStore.DeletingAMissingKeyStillRecordsTheDelete
-46/122 Test: KeyValueStore.DeletingAMissingKeyStillRecordsTheDelete
+46/124 Testing: KeyValueStore.DeletingAMissingKeyStillRecordsTheDelete
+46/124 Test: KeyValueStore.DeletingAMissingKeyStillRecordsTheDelete
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=KeyValueStore.DeletingAMissingKeyStillRecordsTheDelete" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"KeyValueStore.DeletingAMissingKeyStillRecordsTheDelete" start time: Nov 17 15:24 EET
+"KeyValueStore.DeletingAMissingKeyStillRecordsTheDelete" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -1238,15 +1238,15 @@ Note: Google Test filter = KeyValueStore.DeletingAMissingKeyStillRecordsTheDelet
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"KeyValueStore.DeletingAMissingKeyStillRecordsTheDelete" end time: Nov 17 15:24 EET
+"KeyValueStore.DeletingAMissingKeyStillRecordsTheDelete" end time: Nov 17 15:40 EET
 "KeyValueStore.DeletingAMissingKeyStillRecordsTheDelete" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-47/122 Testing: KeyValueStore.ApplyKeepsTheNewerVersion
-47/122 Test: KeyValueStore.ApplyKeepsTheNewerVersion
+47/124 Testing: KeyValueStore.ApplyKeepsTheNewerVersion
+47/124 Test: KeyValueStore.ApplyKeepsTheNewerVersion
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=KeyValueStore.ApplyKeepsTheNewerVersion" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"KeyValueStore.ApplyKeepsTheNewerVersion" start time: Nov 17 15:24 EET
+"KeyValueStore.ApplyKeepsTheNewerVersion" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -1265,15 +1265,15 @@ Note: Google Test filter = KeyValueStore.ApplyKeepsTheNewerVersion
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"KeyValueStore.ApplyKeepsTheNewerVersion" end time: Nov 17 15:24 EET
+"KeyValueStore.ApplyKeepsTheNewerVersion" end time: Nov 17 15:40 EET
 "KeyValueStore.ApplyKeepsTheNewerVersion" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-48/122 Testing: KeyValueStore.NewerTombstoneBeatsValueAndOlderValueLosesToTombstone
-48/122 Test: KeyValueStore.NewerTombstoneBeatsValueAndOlderValueLosesToTombstone
+48/124 Testing: KeyValueStore.NewerTombstoneBeatsValueAndOlderValueLosesToTombstone
+48/124 Test: KeyValueStore.NewerTombstoneBeatsValueAndOlderValueLosesToTombstone
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=KeyValueStore.NewerTombstoneBeatsValueAndOlderValueLosesToTombstone" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"KeyValueStore.NewerTombstoneBeatsValueAndOlderValueLosesToTombstone" start time: Nov 17 15:24 EET
+"KeyValueStore.NewerTombstoneBeatsValueAndOlderValueLosesToTombstone" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -1292,15 +1292,15 @@ Note: Google Test filter = KeyValueStore.NewerTombstoneBeatsValueAndOlderValueLo
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"KeyValueStore.NewerTombstoneBeatsValueAndOlderValueLosesToTombstone" end time: Nov 17 15:24 EET
+"KeyValueStore.NewerTombstoneBeatsValueAndOlderValueLosesToTombstone" end time: Nov 17 15:40 EET
 "KeyValueStore.NewerTombstoneBeatsValueAndOlderValueLosesToTombstone" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-49/122 Testing: KeyValueStore.LocalWritesAfterApplyGetHigherVersions
-49/122 Test: KeyValueStore.LocalWritesAfterApplyGetHigherVersions
+49/124 Testing: KeyValueStore.LocalWritesAfterApplyGetHigherVersions
+49/124 Test: KeyValueStore.LocalWritesAfterApplyGetHigherVersions
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=KeyValueStore.LocalWritesAfterApplyGetHigherVersions" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"KeyValueStore.LocalWritesAfterApplyGetHigherVersions" start time: Nov 17 15:24 EET
+"KeyValueStore.LocalWritesAfterApplyGetHigherVersions" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -1319,15 +1319,15 @@ Note: Google Test filter = KeyValueStore.LocalWritesAfterApplyGetHigherVersions
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"KeyValueStore.LocalWritesAfterApplyGetHigherVersions" end time: Nov 17 15:24 EET
+"KeyValueStore.LocalWritesAfterApplyGetHigherVersions" end time: Nov 17 15:40 EET
 "KeyValueStore.LocalWritesAfterApplyGetHigherVersions" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-50/122 Testing: RequestHandlerTest.PutThenGetReturnsValue
-50/122 Test: RequestHandlerTest.PutThenGetReturnsValue
+50/124 Testing: RequestHandlerTest.PutThenGetReturnsValue
+50/124 Test: RequestHandlerTest.PutThenGetReturnsValue
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=RequestHandlerTest.PutThenGetReturnsValue" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"RequestHandlerTest.PutThenGetReturnsValue" start time: Nov 17 15:24 EET
+"RequestHandlerTest.PutThenGetReturnsValue" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -1346,15 +1346,15 @@ Note: Google Test filter = RequestHandlerTest.PutThenGetReturnsValue
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"RequestHandlerTest.PutThenGetReturnsValue" end time: Nov 17 15:24 EET
+"RequestHandlerTest.PutThenGetReturnsValue" end time: Nov 17 15:40 EET
 "RequestHandlerTest.PutThenGetReturnsValue" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-51/122 Testing: RequestHandlerTest.ResponseCopiesRequestIdentity
-51/122 Test: RequestHandlerTest.ResponseCopiesRequestIdentity
+51/124 Testing: RequestHandlerTest.ResponseCopiesRequestIdentity
+51/124 Test: RequestHandlerTest.ResponseCopiesRequestIdentity
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=RequestHandlerTest.ResponseCopiesRequestIdentity" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"RequestHandlerTest.ResponseCopiesRequestIdentity" start time: Nov 17 15:24 EET
+"RequestHandlerTest.ResponseCopiesRequestIdentity" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -1373,15 +1373,15 @@ Note: Google Test filter = RequestHandlerTest.ResponseCopiesRequestIdentity
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"RequestHandlerTest.ResponseCopiesRequestIdentity" end time: Nov 17 15:24 EET
+"RequestHandlerTest.ResponseCopiesRequestIdentity" end time: Nov 17 15:40 EET
 "RequestHandlerTest.ResponseCopiesRequestIdentity" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-52/122 Testing: RequestHandlerTest.GetMissingKeyIsNotFound
-52/122 Test: RequestHandlerTest.GetMissingKeyIsNotFound
+52/124 Testing: RequestHandlerTest.GetMissingKeyIsNotFound
+52/124 Test: RequestHandlerTest.GetMissingKeyIsNotFound
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=RequestHandlerTest.GetMissingKeyIsNotFound" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"RequestHandlerTest.GetMissingKeyIsNotFound" start time: Nov 17 15:24 EET
+"RequestHandlerTest.GetMissingKeyIsNotFound" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -1400,15 +1400,15 @@ Note: Google Test filter = RequestHandlerTest.GetMissingKeyIsNotFound
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"RequestHandlerTest.GetMissingKeyIsNotFound" end time: Nov 17 15:24 EET
+"RequestHandlerTest.GetMissingKeyIsNotFound" end time: Nov 17 15:40 EET
 "RequestHandlerTest.GetMissingKeyIsNotFound" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-53/122 Testing: RequestHandlerTest.PutOverwrites
-53/122 Test: RequestHandlerTest.PutOverwrites
+53/124 Testing: RequestHandlerTest.PutOverwrites
+53/124 Test: RequestHandlerTest.PutOverwrites
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=RequestHandlerTest.PutOverwrites" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"RequestHandlerTest.PutOverwrites" start time: Nov 17 15:24 EET
+"RequestHandlerTest.PutOverwrites" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -1427,15 +1427,15 @@ Note: Google Test filter = RequestHandlerTest.PutOverwrites
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"RequestHandlerTest.PutOverwrites" end time: Nov 17 15:24 EET
+"RequestHandlerTest.PutOverwrites" end time: Nov 17 15:40 EET
 "RequestHandlerTest.PutOverwrites" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-54/122 Testing: RequestHandlerTest.DeleteRemovesKey
-54/122 Test: RequestHandlerTest.DeleteRemovesKey
+54/124 Testing: RequestHandlerTest.DeleteRemovesKey
+54/124 Test: RequestHandlerTest.DeleteRemovesKey
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=RequestHandlerTest.DeleteRemovesKey" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"RequestHandlerTest.DeleteRemovesKey" start time: Nov 17 15:24 EET
+"RequestHandlerTest.DeleteRemovesKey" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -1454,15 +1454,15 @@ Note: Google Test filter = RequestHandlerTest.DeleteRemovesKey
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"RequestHandlerTest.DeleteRemovesKey" end time: Nov 17 15:24 EET
+"RequestHandlerTest.DeleteRemovesKey" end time: Nov 17 15:40 EET
 "RequestHandlerTest.DeleteRemovesKey" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-55/122 Testing: RequestHandlerTest.MalformedPayloadIsInvalidRequest
-55/122 Test: RequestHandlerTest.MalformedPayloadIsInvalidRequest
+55/124 Testing: RequestHandlerTest.MalformedPayloadIsInvalidRequest
+55/124 Test: RequestHandlerTest.MalformedPayloadIsInvalidRequest
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=RequestHandlerTest.MalformedPayloadIsInvalidRequest" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"RequestHandlerTest.MalformedPayloadIsInvalidRequest" start time: Nov 17 15:24 EET
+"RequestHandlerTest.MalformedPayloadIsInvalidRequest" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -1481,15 +1481,15 @@ Note: Google Test filter = RequestHandlerTest.MalformedPayloadIsInvalidRequest
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"RequestHandlerTest.MalformedPayloadIsInvalidRequest" end time: Nov 17 15:24 EET
+"RequestHandlerTest.MalformedPayloadIsInvalidRequest" end time: Nov 17 15:40 EET
 "RequestHandlerTest.MalformedPayloadIsInvalidRequest" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-56/122 Testing: RequestHandlerTest.OversizedValueIsReported
-56/122 Test: RequestHandlerTest.OversizedValueIsReported
+56/124 Testing: RequestHandlerTest.OversizedValueIsReported
+56/124 Test: RequestHandlerTest.OversizedValueIsReported
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=RequestHandlerTest.OversizedValueIsReported" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"RequestHandlerTest.OversizedValueIsReported" start time: Nov 17 15:24 EET
+"RequestHandlerTest.OversizedValueIsReported" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -1508,15 +1508,15 @@ Note: Google Test filter = RequestHandlerTest.OversizedValueIsReported
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"RequestHandlerTest.OversizedValueIsReported" end time: Nov 17 15:24 EET
+"RequestHandlerTest.OversizedValueIsReported" end time: Nov 17 15:40 EET
 "RequestHandlerTest.OversizedValueIsReported" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-57/122 Testing: RequestHandlerTest.NonRequestMessagesAreIgnored
-57/122 Test: RequestHandlerTest.NonRequestMessagesAreIgnored
+57/124 Testing: RequestHandlerTest.NonRequestMessagesAreIgnored
+57/124 Test: RequestHandlerTest.NonRequestMessagesAreIgnored
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=RequestHandlerTest.NonRequestMessagesAreIgnored" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"RequestHandlerTest.NonRequestMessagesAreIgnored" start time: Nov 17 15:24 EET
+"RequestHandlerTest.NonRequestMessagesAreIgnored" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -1535,15 +1535,15 @@ Note: Google Test filter = RequestHandlerTest.NonRequestMessagesAreIgnored
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"RequestHandlerTest.NonRequestMessagesAreIgnored" end time: Nov 17 15:24 EET
+"RequestHandlerTest.NonRequestMessagesAreIgnored" end time: Nov 17 15:40 EET
 "RequestHandlerTest.NonRequestMessagesAreIgnored" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-58/122 Testing: Hash.Fnv1aMatchesReferenceValues
-58/122 Test: Hash.Fnv1aMatchesReferenceValues
+58/124 Testing: Hash.Fnv1aMatchesReferenceValues
+58/124 Test: Hash.Fnv1aMatchesReferenceValues
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=Hash.Fnv1aMatchesReferenceValues" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"Hash.Fnv1aMatchesReferenceValues" start time: Nov 17 15:24 EET
+"Hash.Fnv1aMatchesReferenceValues" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -1562,15 +1562,15 @@ Note: Google Test filter = Hash.Fnv1aMatchesReferenceValues
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"Hash.Fnv1aMatchesReferenceValues" end time: Nov 17 15:24 EET
+"Hash.Fnv1aMatchesReferenceValues" end time: Nov 17 15:40 EET
 "Hash.Fnv1aMatchesReferenceValues" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-59/122 Testing: Hash.IsDeterministicAndSpreads
-59/122 Test: Hash.IsDeterministicAndSpreads
+59/124 Testing: Hash.IsDeterministicAndSpreads
+59/124 Test: Hash.IsDeterministicAndSpreads
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=Hash.IsDeterministicAndSpreads" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"Hash.IsDeterministicAndSpreads" start time: Nov 17 15:24 EET
+"Hash.IsDeterministicAndSpreads" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -1589,15 +1589,15 @@ Note: Google Test filter = Hash.IsDeterministicAndSpreads
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"Hash.IsDeterministicAndSpreads" end time: Nov 17 15:24 EET
+"Hash.IsDeterministicAndSpreads" end time: Nov 17 15:40 EET
 "Hash.IsDeterministicAndSpreads" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-60/122 Testing: Membership.NodeIdComesFromCanonicalAddress
-60/122 Test: Membership.NodeIdComesFromCanonicalAddress
+60/124 Testing: Membership.NodeIdComesFromCanonicalAddress
+60/124 Test: Membership.NodeIdComesFromCanonicalAddress
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=Membership.NodeIdComesFromCanonicalAddress" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"Membership.NodeIdComesFromCanonicalAddress" start time: Nov 17 15:24 EET
+"Membership.NodeIdComesFromCanonicalAddress" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -1616,15 +1616,15 @@ Note: Google Test filter = Membership.NodeIdComesFromCanonicalAddress
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"Membership.NodeIdComesFromCanonicalAddress" end time: Nov 17 15:24 EET
+"Membership.NodeIdComesFromCanonicalAddress" end time: Nov 17 15:40 EET
 "Membership.NodeIdComesFromCanonicalAddress" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-61/122 Testing: Membership.RejectsDuplicateNodes
-61/122 Test: Membership.RejectsDuplicateNodes
+61/124 Testing: Membership.RejectsDuplicateNodes
+61/124 Test: Membership.RejectsDuplicateNodes
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=Membership.RejectsDuplicateNodes" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"Membership.RejectsDuplicateNodes" start time: Nov 17 15:24 EET
+"Membership.RejectsDuplicateNodes" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -1643,15 +1643,15 @@ Note: Google Test filter = Membership.RejectsDuplicateNodes
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"Membership.RejectsDuplicateNodes" end time: Nov 17 15:24 EET
+"Membership.RejectsDuplicateNodes" end time: Nov 17 15:40 EET
 "Membership.RejectsDuplicateNodes" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-62/122 Testing: Membership.ClosestNodeUsesXorDistance
-62/122 Test: Membership.ClosestNodeUsesXorDistance
+62/124 Testing: Membership.ClosestNodeUsesXorDistance
+62/124 Test: Membership.ClosestNodeUsesXorDistance
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=Membership.ClosestNodeUsesXorDistance" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"Membership.ClosestNodeUsesXorDistance" start time: Nov 17 15:24 EET
+"Membership.ClosestNodeUsesXorDistance" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -1670,15 +1670,15 @@ Note: Google Test filter = Membership.ClosestNodeUsesXorDistance
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"Membership.ClosestNodeUsesXorDistance" end time: Nov 17 15:24 EET
+"Membership.ClosestNodeUsesXorDistance" end time: Nov 17 15:40 EET
 "Membership.ClosestNodeUsesXorDistance" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-63/122 Testing: Membership.AllNodesAgreeOnOwners
-63/122 Test: Membership.AllNodesAgreeOnOwners
+63/124 Testing: Membership.AllNodesAgreeOnOwners
+63/124 Test: Membership.AllNodesAgreeOnOwners
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=Membership.AllNodesAgreeOnOwners" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"Membership.AllNodesAgreeOnOwners" start time: Nov 17 15:24 EET
+"Membership.AllNodesAgreeOnOwners" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -1697,15 +1697,15 @@ Note: Google Test filter = Membership.AllNodesAgreeOnOwners
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"Membership.AllNodesAgreeOnOwners" end time: Nov 17 15:24 EET
+"Membership.AllNodesAgreeOnOwners" end time: Nov 17 15:40 EET
 "Membership.AllNodesAgreeOnOwners" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-64/122 Testing: Membership.KeysSpreadOverAllNodes
-64/122 Test: Membership.KeysSpreadOverAllNodes
+64/124 Testing: Membership.KeysSpreadOverAllNodes
+64/124 Test: Membership.KeysSpreadOverAllNodes
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=Membership.KeysSpreadOverAllNodes" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"Membership.KeysSpreadOverAllNodes" start time: Nov 17 15:24 EET
+"Membership.KeysSpreadOverAllNodes" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -1724,15 +1724,15 @@ Note: Google Test filter = Membership.KeysSpreadOverAllNodes
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"Membership.KeysSpreadOverAllNodes" end time: Nov 17 15:24 EET
+"Membership.KeysSpreadOverAllNodes" end time: Nov 17 15:40 EET
 "Membership.KeysSpreadOverAllNodes" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-65/122 Testing: Membership.ReplicaSetIsTheClosestNodesInOrder
-65/122 Test: Membership.ReplicaSetIsTheClosestNodesInOrder
+65/124 Testing: Membership.ReplicaSetIsTheClosestNodesInOrder
+65/124 Test: Membership.ReplicaSetIsTheClosestNodesInOrder
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=Membership.ReplicaSetIsTheClosestNodesInOrder" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"Membership.ReplicaSetIsTheClosestNodesInOrder" start time: Nov 17 15:24 EET
+"Membership.ReplicaSetIsTheClosestNodesInOrder" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -1751,15 +1751,15 @@ Note: Google Test filter = Membership.ReplicaSetIsTheClosestNodesInOrder
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"Membership.ReplicaSetIsTheClosestNodesInOrder" end time: Nov 17 15:24 EET
+"Membership.ReplicaSetIsTheClosestNodesInOrder" end time: Nov 17 15:40 EET
 "Membership.ReplicaSetIsTheClosestNodesInOrder" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-66/122 Testing: Membership.AllNodesAgreeOnReplicaSets
-66/122 Test: Membership.AllNodesAgreeOnReplicaSets
+66/124 Testing: Membership.AllNodesAgreeOnReplicaSets
+66/124 Test: Membership.AllNodesAgreeOnReplicaSets
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=Membership.AllNodesAgreeOnReplicaSets" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"Membership.AllNodesAgreeOnReplicaSets" start time: Nov 17 15:24 EET
+"Membership.AllNodesAgreeOnReplicaSets" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -1778,15 +1778,15 @@ Note: Google Test filter = Membership.AllNodesAgreeOnReplicaSets
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"Membership.AllNodesAgreeOnReplicaSets" end time: Nov 17 15:24 EET
+"Membership.AllNodesAgreeOnReplicaSets" end time: Nov 17 15:40 EET
 "Membership.AllNodesAgreeOnReplicaSets" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-67/122 Testing: Membership.SmallClusterHasFewerReplicas
-67/122 Test: Membership.SmallClusterHasFewerReplicas
+67/124 Testing: Membership.SmallClusterHasFewerReplicas
+67/124 Test: Membership.SmallClusterHasFewerReplicas
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=Membership.SmallClusterHasFewerReplicas" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"Membership.SmallClusterHasFewerReplicas" start time: Nov 17 15:24 EET
+"Membership.SmallClusterHasFewerReplicas" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -1805,15 +1805,15 @@ Note: Google Test filter = Membership.SmallClusterHasFewerReplicas
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"Membership.SmallClusterHasFewerReplicas" end time: Nov 17 15:24 EET
+"Membership.SmallClusterHasFewerReplicas" end time: Nov 17 15:40 EET
 "Membership.SmallClusterHasFewerReplicas" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-68/122 Testing: ClusterTest.RequestToOwnerIsHandledLocally
-68/122 Test: ClusterTest.RequestToOwnerIsHandledLocally
+68/124 Testing: ClusterTest.RequestToOwnerIsHandledLocally
+68/124 Test: ClusterTest.RequestToOwnerIsHandledLocally
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=ClusterTest.RequestToOwnerIsHandledLocally" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"ClusterTest.RequestToOwnerIsHandledLocally" start time: Nov 17 15:24 EET
+"ClusterTest.RequestToOwnerIsHandledLocally" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -1832,15 +1832,15 @@ Note: Google Test filter = ClusterTest.RequestToOwnerIsHandledLocally
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"ClusterTest.RequestToOwnerIsHandledLocally" end time: Nov 17 15:24 EET
+"ClusterTest.RequestToOwnerIsHandledLocally" end time: Nov 17 15:40 EET
 "ClusterTest.RequestToOwnerIsHandledLocally" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-69/122 Testing: ClusterTest.PutThroughNonOwnerLandsOnOwner
-69/122 Test: ClusterTest.PutThroughNonOwnerLandsOnOwner
+69/124 Testing: ClusterTest.PutThroughNonOwnerLandsOnOwner
+69/124 Test: ClusterTest.PutThroughNonOwnerLandsOnOwner
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=ClusterTest.PutThroughNonOwnerLandsOnOwner" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"ClusterTest.PutThroughNonOwnerLandsOnOwner" start time: Nov 17 15:24 EET
+"ClusterTest.PutThroughNonOwnerLandsOnOwner" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -1859,15 +1859,15 @@ Note: Google Test filter = ClusterTest.PutThroughNonOwnerLandsOnOwner
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"ClusterTest.PutThroughNonOwnerLandsOnOwner" end time: Nov 17 15:24 EET
+"ClusterTest.PutThroughNonOwnerLandsOnOwner" end time: Nov 17 15:40 EET
 "ClusterTest.PutThroughNonOwnerLandsOnOwner" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-70/122 Testing: ClusterTest.AnyNodeCanReadAnyKey
-70/122 Test: ClusterTest.AnyNodeCanReadAnyKey
+70/124 Testing: ClusterTest.AnyNodeCanReadAnyKey
+70/124 Test: ClusterTest.AnyNodeCanReadAnyKey
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=ClusterTest.AnyNodeCanReadAnyKey" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"ClusterTest.AnyNodeCanReadAnyKey" start time: Nov 17 15:24 EET
+"ClusterTest.AnyNodeCanReadAnyKey" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -1886,15 +1886,15 @@ Note: Google Test filter = ClusterTest.AnyNodeCanReadAnyKey
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"ClusterTest.AnyNodeCanReadAnyKey" end time: Nov 17 15:24 EET
+"ClusterTest.AnyNodeCanReadAnyKey" end time: Nov 17 15:40 EET
 "ClusterTest.AnyNodeCanReadAnyKey" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-71/122 Testing: ClusterTest.ForwardedRequestIsNeverForwardedAgain
-71/122 Test: ClusterTest.ForwardedRequestIsNeverForwardedAgain
+71/124 Testing: ClusterTest.ForwardedRequestIsNeverForwardedAgain
+71/124 Test: ClusterTest.ForwardedRequestIsNeverForwardedAgain
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=ClusterTest.ForwardedRequestIsNeverForwardedAgain" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"ClusterTest.ForwardedRequestIsNeverForwardedAgain" start time: Nov 17 15:24 EET
+"ClusterTest.ForwardedRequestIsNeverForwardedAgain" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -1913,15 +1913,15 @@ Note: Google Test filter = ClusterTest.ForwardedRequestIsNeverForwardedAgain
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"ClusterTest.ForwardedRequestIsNeverForwardedAgain" end time: Nov 17 15:24 EET
+"ClusterTest.ForwardedRequestIsNeverForwardedAgain" end time: Nov 17 15:40 EET
 "ClusterTest.ForwardedRequestIsNeverForwardedAgain" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-72/122 Testing: ClusterTest.ForwardedWriteToReplicaIsRefused
-72/122 Test: ClusterTest.ForwardedWriteToReplicaIsRefused
+72/124 Testing: ClusterTest.ForwardedWriteToReplicaIsRefused
+72/124 Test: ClusterTest.ForwardedWriteToReplicaIsRefused
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=ClusterTest.ForwardedWriteToReplicaIsRefused" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"ClusterTest.ForwardedWriteToReplicaIsRefused" start time: Nov 17 15:24 EET
+"ClusterTest.ForwardedWriteToReplicaIsRefused" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -1940,15 +1940,15 @@ Note: Google Test filter = ClusterTest.ForwardedWriteToReplicaIsRefused
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"ClusterTest.ForwardedWriteToReplicaIsRefused" end time: Nov 17 15:24 EET
+"ClusterTest.ForwardedWriteToReplicaIsRefused" end time: Nov 17 15:40 EET
 "ClusterTest.ForwardedWriteToReplicaIsRefused" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-73/122 Testing: ClusterTest.ForwardedReadToReplicaIsServed
-73/122 Test: ClusterTest.ForwardedReadToReplicaIsServed
+73/124 Testing: ClusterTest.ForwardedReadToReplicaIsServed
+73/124 Test: ClusterTest.ForwardedReadToReplicaIsServed
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=ClusterTest.ForwardedReadToReplicaIsServed" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"ClusterTest.ForwardedReadToReplicaIsServed" start time: Nov 17 15:24 EET
+"ClusterTest.ForwardedReadToReplicaIsServed" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -1967,15 +1967,15 @@ Note: Google Test filter = ClusterTest.ForwardedReadToReplicaIsServed
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"ClusterTest.ForwardedReadToReplicaIsServed" end time: Nov 17 15:24 EET
+"ClusterTest.ForwardedReadToReplicaIsServed" end time: Nov 17 15:40 EET
 "ClusterTest.ForwardedReadToReplicaIsServed" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-74/122 Testing: ClusterTest.DeadOwnerGivesUnavailableAfterTimeout
-74/122 Test: ClusterTest.DeadOwnerGivesUnavailableAfterTimeout
+74/124 Testing: ClusterTest.DeadOwnerGivesUnavailableAfterTimeout
+74/124 Test: ClusterTest.DeadOwnerGivesUnavailableAfterTimeout
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=ClusterTest.DeadOwnerGivesUnavailableAfterTimeout" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"ClusterTest.DeadOwnerGivesUnavailableAfterTimeout" start time: Nov 17 15:24 EET
+"ClusterTest.DeadOwnerGivesUnavailableAfterTimeout" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -1994,15 +1994,15 @@ Note: Google Test filter = ClusterTest.DeadOwnerGivesUnavailableAfterTimeout
 Test time =   0.02 sec
 ----------------------------------------------------------
 Test Passed.
-"ClusterTest.DeadOwnerGivesUnavailableAfterTimeout" end time: Nov 17 15:24 EET
+"ClusterTest.DeadOwnerGivesUnavailableAfterTimeout" end time: Nov 17 15:40 EET
 "ClusterTest.DeadOwnerGivesUnavailableAfterTimeout" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-75/122 Testing: ClusterTest.ClientRetryIsNotForwardedTwice
-75/122 Test: ClusterTest.ClientRetryIsNotForwardedTwice
+75/124 Testing: ClusterTest.ClientRetryIsNotForwardedTwice
+75/124 Test: ClusterTest.ClientRetryIsNotForwardedTwice
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=ClusterTest.ClientRetryIsNotForwardedTwice" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"ClusterTest.ClientRetryIsNotForwardedTwice" start time: Nov 17 15:24 EET
+"ClusterTest.ClientRetryIsNotForwardedTwice" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -2021,15 +2021,15 @@ Note: Google Test filter = ClusterTest.ClientRetryIsNotForwardedTwice
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"ClusterTest.ClientRetryIsNotForwardedTwice" end time: Nov 17 15:24 EET
+"ClusterTest.ClientRetryIsNotForwardedTwice" end time: Nov 17 15:40 EET
 "ClusterTest.ClientRetryIsNotForwardedTwice" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-76/122 Testing: ClusterTest.ResponseFromWrongNodeIsIgnored
-76/122 Test: ClusterTest.ResponseFromWrongNodeIsIgnored
+76/124 Testing: ClusterTest.ResponseFromWrongNodeIsIgnored
+76/124 Test: ClusterTest.ResponseFromWrongNodeIsIgnored
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=ClusterTest.ResponseFromWrongNodeIsIgnored" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"ClusterTest.ResponseFromWrongNodeIsIgnored" start time: Nov 17 15:24 EET
+"ClusterTest.ResponseFromWrongNodeIsIgnored" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -2048,15 +2048,15 @@ Note: Google Test filter = ClusterTest.ResponseFromWrongNodeIsIgnored
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"ClusterTest.ResponseFromWrongNodeIsIgnored" end time: Nov 17 15:24 EET
+"ClusterTest.ResponseFromWrongNodeIsIgnored" end time: Nov 17 15:40 EET
 "ClusterTest.ResponseFromWrongNodeIsIgnored" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-77/122 Testing: ClusterTest.InvalidDatagramsAreDropped
-77/122 Test: ClusterTest.InvalidDatagramsAreDropped
+77/124 Testing: ClusterTest.InvalidDatagramsAreDropped
+77/124 Test: ClusterTest.InvalidDatagramsAreDropped
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=ClusterTest.InvalidDatagramsAreDropped" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"ClusterTest.InvalidDatagramsAreDropped" start time: Nov 17 15:24 EET
+"ClusterTest.InvalidDatagramsAreDropped" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -2072,18 +2072,18 @@ Note: Google Test filter = ClusterTest.InvalidDatagramsAreDropped
 [==========] 1 test from 1 test suite ran. (0 ms total)
 [  PASSED  ] 1 test.
 <end of output>
-Test time =   0.00 sec
+Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"ClusterTest.InvalidDatagramsAreDropped" end time: Nov 17 15:24 EET
+"ClusterTest.InvalidDatagramsAreDropped" end time: Nov 17 15:40 EET
 "ClusterTest.InvalidDatagramsAreDropped" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-78/122 Testing: ClusterTest.PutIsStoredOnPrimaryAndReplica
-78/122 Test: ClusterTest.PutIsStoredOnPrimaryAndReplica
+78/124 Testing: ClusterTest.PutIsStoredOnPrimaryAndReplica
+78/124 Test: ClusterTest.PutIsStoredOnPrimaryAndReplica
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=ClusterTest.PutIsStoredOnPrimaryAndReplica" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"ClusterTest.PutIsStoredOnPrimaryAndReplica" start time: Nov 17 15:24 EET
+"ClusterTest.PutIsStoredOnPrimaryAndReplica" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -2099,18 +2099,18 @@ Note: Google Test filter = ClusterTest.PutIsStoredOnPrimaryAndReplica
 [==========] 1 test from 1 test suite ran. (0 ms total)
 [  PASSED  ] 1 test.
 <end of output>
-Test time =   0.01 sec
+Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"ClusterTest.PutIsStoredOnPrimaryAndReplica" end time: Nov 17 15:24 EET
+"ClusterTest.PutIsStoredOnPrimaryAndReplica" end time: Nov 17 15:40 EET
 "ClusterTest.PutIsStoredOnPrimaryAndReplica" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-79/122 Testing: ClusterTest.DeleteRemovesBothCopies
-79/122 Test: ClusterTest.DeleteRemovesBothCopies
+79/124 Testing: ClusterTest.DeleteRemovesBothCopies
+79/124 Test: ClusterTest.DeleteRemovesBothCopies
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=ClusterTest.DeleteRemovesBothCopies" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"ClusterTest.DeleteRemovesBothCopies" start time: Nov 17 15:24 EET
+"ClusterTest.DeleteRemovesBothCopies" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -2129,15 +2129,15 @@ Note: Google Test filter = ClusterTest.DeleteRemovesBothCopies
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"ClusterTest.DeleteRemovesBothCopies" end time: Nov 17 15:24 EET
+"ClusterTest.DeleteRemovesBothCopies" end time: Nov 17 15:40 EET
 "ClusterTest.DeleteRemovesBothCopies" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-80/122 Testing: ClusterTest.ReadSurvivesDeadPrimary
-80/122 Test: ClusterTest.ReadSurvivesDeadPrimary
+80/124 Testing: ClusterTest.ReadSurvivesDeadPrimary
+80/124 Test: ClusterTest.ReadSurvivesDeadPrimary
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=ClusterTest.ReadSurvivesDeadPrimary" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"ClusterTest.ReadSurvivesDeadPrimary" start time: Nov 17 15:24 EET
+"ClusterTest.ReadSurvivesDeadPrimary" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -2156,15 +2156,15 @@ Note: Google Test filter = ClusterTest.ReadSurvivesDeadPrimary
 Test time =   0.02 sec
 ----------------------------------------------------------
 Test Passed.
-"ClusterTest.ReadSurvivesDeadPrimary" end time: Nov 17 15:24 EET
+"ClusterTest.ReadSurvivesDeadPrimary" end time: Nov 17 15:40 EET
 "ClusterTest.ReadSurvivesDeadPrimary" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-81/122 Testing: ClusterTest.KnownDeadPrimaryIsSkippedForReads
-81/122 Test: ClusterTest.KnownDeadPrimaryIsSkippedForReads
+81/124 Testing: ClusterTest.KnownDeadPrimaryIsSkippedForReads
+81/124 Test: ClusterTest.KnownDeadPrimaryIsSkippedForReads
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=ClusterTest.KnownDeadPrimaryIsSkippedForReads" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"ClusterTest.KnownDeadPrimaryIsSkippedForReads" start time: Nov 17 15:24 EET
+"ClusterTest.KnownDeadPrimaryIsSkippedForReads" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -2180,18 +2180,18 @@ Note: Google Test filter = ClusterTest.KnownDeadPrimaryIsSkippedForReads
 [==========] 1 test from 1 test suite ran. (0 ms total)
 [  PASSED  ] 1 test.
 <end of output>
-Test time =   0.00 sec
+Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"ClusterTest.KnownDeadPrimaryIsSkippedForReads" end time: Nov 17 15:24 EET
+"ClusterTest.KnownDeadPrimaryIsSkippedForReads" end time: Nov 17 15:40 EET
 "ClusterTest.KnownDeadPrimaryIsSkippedForReads" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-82/122 Testing: ClusterTest.ReplicaAnswersFromItsOwnStoreWhenPrimaryKnownDown
-82/122 Test: ClusterTest.ReplicaAnswersFromItsOwnStoreWhenPrimaryKnownDown
+82/124 Testing: ClusterTest.ReplicaAnswersFromItsOwnStoreWhenPrimaryKnownDown
+82/124 Test: ClusterTest.ReplicaAnswersFromItsOwnStoreWhenPrimaryKnownDown
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=ClusterTest.ReplicaAnswersFromItsOwnStoreWhenPrimaryKnownDown" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"ClusterTest.ReplicaAnswersFromItsOwnStoreWhenPrimaryKnownDown" start time: Nov 17 15:24 EET
+"ClusterTest.ReplicaAnswersFromItsOwnStoreWhenPrimaryKnownDown" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -2210,15 +2210,15 @@ Note: Google Test filter = ClusterTest.ReplicaAnswersFromItsOwnStoreWhenPrimaryK
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"ClusterTest.ReplicaAnswersFromItsOwnStoreWhenPrimaryKnownDown" end time: Nov 17 15:24 EET
+"ClusterTest.ReplicaAnswersFromItsOwnStoreWhenPrimaryKnownDown" end time: Nov 17 15:40 EET
 "ClusterTest.ReplicaAnswersFromItsOwnStoreWhenPrimaryKnownDown" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-83/122 Testing: ClusterTest.WriteToKnownDeadPrimaryFailsFast
-83/122 Test: ClusterTest.WriteToKnownDeadPrimaryFailsFast
+83/124 Testing: ClusterTest.WriteToKnownDeadPrimaryFailsFast
+83/124 Test: ClusterTest.WriteToKnownDeadPrimaryFailsFast
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=ClusterTest.WriteToKnownDeadPrimaryFailsFast" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"ClusterTest.WriteToKnownDeadPrimaryFailsFast" start time: Nov 17 15:24 EET
+"ClusterTest.WriteToKnownDeadPrimaryFailsFast" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -2237,15 +2237,15 @@ Note: Google Test filter = ClusterTest.WriteToKnownDeadPrimaryFailsFast
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"ClusterTest.WriteToKnownDeadPrimaryFailsFast" end time: Nov 17 15:24 EET
+"ClusterTest.WriteToKnownDeadPrimaryFailsFast" end time: Nov 17 15:40 EET
 "ClusterTest.WriteToKnownDeadPrimaryFailsFast" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-84/122 Testing: ClusterTest.DisconnectedReplicaGivesReplicationFailed
-84/122 Test: ClusterTest.DisconnectedReplicaGivesReplicationFailed
+84/124 Testing: ClusterTest.DisconnectedReplicaGivesReplicationFailed
+84/124 Test: ClusterTest.DisconnectedReplicaGivesReplicationFailed
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=ClusterTest.DisconnectedReplicaGivesReplicationFailed" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"ClusterTest.DisconnectedReplicaGivesReplicationFailed" start time: Nov 17 15:24 EET
+"ClusterTest.DisconnectedReplicaGivesReplicationFailed" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -2264,15 +2264,15 @@ Note: Google Test filter = ClusterTest.DisconnectedReplicaGivesReplicationFailed
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"ClusterTest.DisconnectedReplicaGivesReplicationFailed" end time: Nov 17 15:24 EET
+"ClusterTest.DisconnectedReplicaGivesReplicationFailed" end time: Nov 17 15:40 EET
 "ClusterTest.DisconnectedReplicaGivesReplicationFailed" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-85/122 Testing: ClusterTest.SilentReplicaGivesReplicationFailedAfterTimeout
-85/122 Test: ClusterTest.SilentReplicaGivesReplicationFailedAfterTimeout
+85/124 Testing: ClusterTest.SilentReplicaGivesReplicationFailedAfterTimeout
+85/124 Test: ClusterTest.SilentReplicaGivesReplicationFailedAfterTimeout
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=ClusterTest.SilentReplicaGivesReplicationFailedAfterTimeout" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"ClusterTest.SilentReplicaGivesReplicationFailedAfterTimeout" start time: Nov 17 15:24 EET
+"ClusterTest.SilentReplicaGivesReplicationFailedAfterTimeout" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -2291,15 +2291,15 @@ Note: Google Test filter = ClusterTest.SilentReplicaGivesReplicationFailedAfterT
 Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"ClusterTest.SilentReplicaGivesReplicationFailedAfterTimeout" end time: Nov 17 15:24 EET
+"ClusterTest.SilentReplicaGivesReplicationFailedAfterTimeout" end time: Nov 17 15:40 EET
 "ClusterTest.SilentReplicaGivesReplicationFailedAfterTimeout" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-86/122 Testing: ClusterTest.ReplicaRejectsKeysItIsNotResponsibleFor
-86/122 Test: ClusterTest.ReplicaRejectsKeysItIsNotResponsibleFor
+86/124 Testing: ClusterTest.ReplicaRejectsKeysItIsNotResponsibleFor
+86/124 Test: ClusterTest.ReplicaRejectsKeysItIsNotResponsibleFor
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=ClusterTest.ReplicaRejectsKeysItIsNotResponsibleFor" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"ClusterTest.ReplicaRejectsKeysItIsNotResponsibleFor" start time: Nov 17 15:24 EET
+"ClusterTest.ReplicaRejectsKeysItIsNotResponsibleFor" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -2318,15 +2318,15 @@ Note: Google Test filter = ClusterTest.ReplicaRejectsKeysItIsNotResponsibleFor
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"ClusterTest.ReplicaRejectsKeysItIsNotResponsibleFor" end time: Nov 17 15:24 EET
+"ClusterTest.ReplicaRejectsKeysItIsNotResponsibleFor" end time: Nov 17 15:40 EET
 "ClusterTest.ReplicaRejectsKeysItIsNotResponsibleFor" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-87/122 Testing: ClusterTest.RetriedDeleteGetsTheSameAnswer
-87/122 Test: ClusterTest.RetriedDeleteGetsTheSameAnswer
+87/124 Testing: ClusterTest.RetriedDeleteGetsTheSameAnswer
+87/124 Test: ClusterTest.RetriedDeleteGetsTheSameAnswer
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=ClusterTest.RetriedDeleteGetsTheSameAnswer" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"ClusterTest.RetriedDeleteGetsTheSameAnswer" start time: Nov 17 15:24 EET
+"ClusterTest.RetriedDeleteGetsTheSameAnswer" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -2335,25 +2335,25 @@ Note: Google Test filter = ClusterTest.RetriedDeleteGetsTheSameAnswer
 [----------] Global test environment set-up.
 [----------] 1 test from ClusterTest
 [ RUN      ] ClusterTest.RetriedDeleteGetsTheSameAnswer
-[       OK ] ClusterTest.RetriedDeleteGetsTheSameAnswer (0 ms)
-[----------] 1 test from ClusterTest (0 ms total)
+[       OK ] ClusterTest.RetriedDeleteGetsTheSameAnswer (1 ms)
+[----------] 1 test from ClusterTest (1 ms total)
 
 [----------] Global test environment tear-down
-[==========] 1 test from 1 test suite ran. (0 ms total)
+[==========] 1 test from 1 test suite ran. (1 ms total)
 [  PASSED  ] 1 test.
 <end of output>
-Test time =   0.00 sec
+Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"ClusterTest.RetriedDeleteGetsTheSameAnswer" end time: Nov 17 15:24 EET
+"ClusterTest.RetriedDeleteGetsTheSameAnswer" end time: Nov 17 15:40 EET
 "ClusterTest.RetriedDeleteGetsTheSameAnswer" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-88/122 Testing: ClusterTest.RetryWhileReplicatingIsNotExecutedTwice
-88/122 Test: ClusterTest.RetryWhileReplicatingIsNotExecutedTwice
+88/124 Testing: ClusterTest.RetryWhileReplicatingIsNotExecutedTwice
+88/124 Test: ClusterTest.RetryWhileReplicatingIsNotExecutedTwice
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=ClusterTest.RetryWhileReplicatingIsNotExecutedTwice" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"ClusterTest.RetryWhileReplicatingIsNotExecutedTwice" start time: Nov 17 15:24 EET
+"ClusterTest.RetryWhileReplicatingIsNotExecutedTwice" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -2369,18 +2369,18 @@ Note: Google Test filter = ClusterTest.RetryWhileReplicatingIsNotExecutedTwice
 [==========] 1 test from 1 test suite ran. (0 ms total)
 [  PASSED  ] 1 test.
 <end of output>
-Test time =   0.00 sec
+Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"ClusterTest.RetryWhileReplicatingIsNotExecutedTwice" end time: Nov 17 15:24 EET
+"ClusterTest.RetryWhileReplicatingIsNotExecutedTwice" end time: Nov 17 15:40 EET
 "ClusterTest.RetryWhileReplicatingIsNotExecutedTwice" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-89/122 Testing: ClusterTest.RestartedNodeGetsItsKeysBack
-89/122 Test: ClusterTest.RestartedNodeGetsItsKeysBack
+89/124 Testing: ClusterTest.RestartedNodeGetsItsKeysBack
+89/124 Test: ClusterTest.RestartedNodeGetsItsKeysBack
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=ClusterTest.RestartedNodeGetsItsKeysBack" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"ClusterTest.RestartedNodeGetsItsKeysBack" start time: Nov 17 15:24 EET
+"ClusterTest.RestartedNodeGetsItsKeysBack" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -2389,25 +2389,25 @@ Note: Google Test filter = ClusterTest.RestartedNodeGetsItsKeysBack
 [----------] Global test environment set-up.
 [----------] 1 test from ClusterTest
 [ RUN      ] ClusterTest.RestartedNodeGetsItsKeysBack
-[       OK ] ClusterTest.RestartedNodeGetsItsKeysBack (4 ms)
-[----------] 1 test from ClusterTest (4 ms total)
+[       OK ] ClusterTest.RestartedNodeGetsItsKeysBack (2 ms)
+[----------] 1 test from ClusterTest (2 ms total)
 
 [----------] Global test environment tear-down
-[==========] 1 test from 1 test suite ran. (4 ms total)
+[==========] 1 test from 1 test suite ran. (2 ms total)
 [  PASSED  ] 1 test.
 <end of output>
 Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"ClusterTest.RestartedNodeGetsItsKeysBack" end time: Nov 17 15:24 EET
+"ClusterTest.RestartedNodeGetsItsKeysBack" end time: Nov 17 15:40 EET
 "ClusterTest.RestartedNodeGetsItsKeysBack" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-90/122 Testing: ClusterTest.DivergedCopiesConvergeToTheNewestValue
-90/122 Test: ClusterTest.DivergedCopiesConvergeToTheNewestValue
+90/124 Testing: ClusterTest.DivergedCopiesConvergeToTheNewestValue
+90/124 Test: ClusterTest.DivergedCopiesConvergeToTheNewestValue
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=ClusterTest.DivergedCopiesConvergeToTheNewestValue" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"ClusterTest.DivergedCopiesConvergeToTheNewestValue" start time: Nov 17 15:24 EET
+"ClusterTest.DivergedCopiesConvergeToTheNewestValue" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -2426,15 +2426,15 @@ Note: Google Test filter = ClusterTest.DivergedCopiesConvergeToTheNewestValue
 Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"ClusterTest.DivergedCopiesConvergeToTheNewestValue" end time: Nov 17 15:24 EET
+"ClusterTest.DivergedCopiesConvergeToTheNewestValue" end time: Nov 17 15:40 EET
 "ClusterTest.DivergedCopiesConvergeToTheNewestValue" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-91/122 Testing: ClusterTest.DeletedKeyIsNotResurrectedByAnOldCopy
-91/122 Test: ClusterTest.DeletedKeyIsNotResurrectedByAnOldCopy
+91/124 Testing: ClusterTest.DeletedKeyIsNotResurrectedByAnOldCopy
+91/124 Test: ClusterTest.DeletedKeyIsNotResurrectedByAnOldCopy
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=ClusterTest.DeletedKeyIsNotResurrectedByAnOldCopy" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"ClusterTest.DeletedKeyIsNotResurrectedByAnOldCopy" start time: Nov 17 15:24 EET
+"ClusterTest.DeletedKeyIsNotResurrectedByAnOldCopy" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -2450,18 +2450,18 @@ Note: Google Test filter = ClusterTest.DeletedKeyIsNotResurrectedByAnOldCopy
 [==========] 1 test from 1 test suite ran. (10 ms total)
 [  PASSED  ] 1 test.
 <end of output>
-Test time =   0.02 sec
+Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"ClusterTest.DeletedKeyIsNotResurrectedByAnOldCopy" end time: Nov 17 15:24 EET
+"ClusterTest.DeletedKeyIsNotResurrectedByAnOldCopy" end time: Nov 17 15:40 EET
 "ClusterTest.DeletedKeyIsNotResurrectedByAnOldCopy" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-92/122 Testing: ClusterTest.LargeSyncIsSentInBatches
-92/122 Test: ClusterTest.LargeSyncIsSentInBatches
+92/124 Testing: ClusterTest.LargeSyncIsSentInBatches
+92/124 Test: ClusterTest.LargeSyncIsSentInBatches
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=ClusterTest.LargeSyncIsSentInBatches" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"ClusterTest.LargeSyncIsSentInBatches" start time: Nov 17 15:24 EET
+"ClusterTest.LargeSyncIsSentInBatches" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -2470,25 +2470,25 @@ Note: Google Test filter = ClusterTest.LargeSyncIsSentInBatches
 [----------] Global test environment set-up.
 [----------] 1 test from ClusterTest
 [ RUN      ] ClusterTest.LargeSyncIsSentInBatches
-[       OK ] ClusterTest.LargeSyncIsSentInBatches (17 ms)
-[----------] 1 test from ClusterTest (17 ms total)
+[       OK ] ClusterTest.LargeSyncIsSentInBatches (20 ms)
+[----------] 1 test from ClusterTest (20 ms total)
 
 [----------] Global test environment tear-down
-[==========] 1 test from 1 test suite ran. (17 ms total)
+[==========] 1 test from 1 test suite ran. (20 ms total)
 [  PASSED  ] 1 test.
 <end of output>
 Test time =   0.02 sec
 ----------------------------------------------------------
 Test Passed.
-"ClusterTest.LargeSyncIsSentInBatches" end time: Nov 17 15:24 EET
+"ClusterTest.LargeSyncIsSentInBatches" end time: Nov 17 15:40 EET
 "ClusterTest.LargeSyncIsSentInBatches" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-93/122 Testing: ClusterTest.ReplicationAppliesOnlyNewerVersions
-93/122 Test: ClusterTest.ReplicationAppliesOnlyNewerVersions
+93/124 Testing: ClusterTest.ReplicationAppliesOnlyNewerVersions
+93/124 Test: ClusterTest.ReplicationAppliesOnlyNewerVersions
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=ClusterTest.ReplicationAppliesOnlyNewerVersions" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"ClusterTest.ReplicationAppliesOnlyNewerVersions" start time: Nov 17 15:24 EET
+"ClusterTest.ReplicationAppliesOnlyNewerVersions" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -2507,15 +2507,69 @@ Note: Google Test filter = ClusterTest.ReplicationAppliesOnlyNewerVersions
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"ClusterTest.ReplicationAppliesOnlyNewerVersions" end time: Nov 17 15:24 EET
+"ClusterTest.ReplicationAppliesOnlyNewerVersions" end time: Nov 17 15:40 EET
 "ClusterTest.ReplicationAppliesOnlyNewerVersions" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-94/122 Testing: PeerSession.HandshakeEstablishesBothSides
-94/122 Test: PeerSession.HandshakeEstablishesBothSides
+94/124 Testing: ClusterTest.NewNodeReceivesTheKeysItNowOwns
+94/124 Test: ClusterTest.NewNodeReceivesTheKeysItNowOwns
+Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=ClusterTest.NewNodeReceivesTheKeysItNowOwns" "--gtest_also_run_disabled_tests"
+Directory: /home/av/Documents/projects/cpp/k_v_db/build
+"ClusterTest.NewNodeReceivesTheKeysItNowOwns" start time: Nov 17 15:40 EET
+Output:
+----------------------------------------------------------
+Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = ClusterTest.NewNodeReceivesTheKeysItNowOwns
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from ClusterTest
+[ RUN      ] ClusterTest.NewNodeReceivesTheKeysItNowOwns
+[       OK ] ClusterTest.NewNodeReceivesTheKeysItNowOwns (14 ms)
+[----------] 1 test from ClusterTest (14 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (14 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"ClusterTest.NewNodeReceivesTheKeysItNowOwns" end time: Nov 17 15:40 EET
+"ClusterTest.NewNodeReceivesTheKeysItNowOwns" time elapsed: 00:00:00
+----------------------------------------------------------
+
+95/124 Testing: ClusterTest.WritesAfterAJoinUseTheNewReplicaSets
+95/124 Test: ClusterTest.WritesAfterAJoinUseTheNewReplicaSets
+Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=ClusterTest.WritesAfterAJoinUseTheNewReplicaSets" "--gtest_also_run_disabled_tests"
+Directory: /home/av/Documents/projects/cpp/k_v_db/build
+"ClusterTest.WritesAfterAJoinUseTheNewReplicaSets" start time: Nov 17 15:40 EET
+Output:
+----------------------------------------------------------
+Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = ClusterTest.WritesAfterAJoinUseTheNewReplicaSets
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from ClusterTest
+[ RUN      ] ClusterTest.WritesAfterAJoinUseTheNewReplicaSets
+[       OK ] ClusterTest.WritesAfterAJoinUseTheNewReplicaSets (1 ms)
+[----------] 1 test from ClusterTest (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (2 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"ClusterTest.WritesAfterAJoinUseTheNewReplicaSets" end time: Nov 17 15:40 EET
+"ClusterTest.WritesAfterAJoinUseTheNewReplicaSets" time elapsed: 00:00:00
+----------------------------------------------------------
+
+96/124 Testing: PeerSession.HandshakeEstablishesBothSides
+96/124 Test: PeerSession.HandshakeEstablishesBothSides
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=PeerSession.HandshakeEstablishesBothSides" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"PeerSession.HandshakeEstablishesBothSides" start time: Nov 17 15:24 EET
+"PeerSession.HandshakeEstablishesBothSides" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -2534,15 +2588,15 @@ Note: Google Test filter = PeerSession.HandshakeEstablishesBothSides
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"PeerSession.HandshakeEstablishesBothSides" end time: Nov 17 15:24 EET
+"PeerSession.HandshakeEstablishesBothSides" end time: Nov 17 15:40 EET
 "PeerSession.HandshakeEstablishesBothSides" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-95/122 Testing: PeerSession.MessagesAfterHandshakeAreDelivered
-95/122 Test: PeerSession.MessagesAfterHandshakeAreDelivered
+97/124 Testing: PeerSession.MessagesAfterHandshakeAreDelivered
+97/124 Test: PeerSession.MessagesAfterHandshakeAreDelivered
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=PeerSession.MessagesAfterHandshakeAreDelivered" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"PeerSession.MessagesAfterHandshakeAreDelivered" start time: Nov 17 15:24 EET
+"PeerSession.MessagesAfterHandshakeAreDelivered" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -2561,15 +2615,15 @@ Note: Google Test filter = PeerSession.MessagesAfterHandshakeAreDelivered
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"PeerSession.MessagesAfterHandshakeAreDelivered" end time: Nov 17 15:24 EET
+"PeerSession.MessagesAfterHandshakeAreDelivered" end time: Nov 17 15:40 EET
 "PeerSession.MessagesAfterHandshakeAreDelivered" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-96/122 Testing: PeerSession.HelloArrivingByteByByteStillWorks
-96/122 Test: PeerSession.HelloArrivingByteByByteStillWorks
+98/124 Testing: PeerSession.HelloArrivingByteByByteStillWorks
+98/124 Test: PeerSession.HelloArrivingByteByByteStillWorks
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=PeerSession.HelloArrivingByteByByteStillWorks" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"PeerSession.HelloArrivingByteByByteStillWorks" start time: Nov 17 15:24 EET
+"PeerSession.HelloArrivingByteByByteStillWorks" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -2588,15 +2642,15 @@ Note: Google Test filter = PeerSession.HelloArrivingByteByByteStillWorks
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"PeerSession.HelloArrivingByteByByteStillWorks" end time: Nov 17 15:24 EET
+"PeerSession.HelloArrivingByteByByteStillWorks" end time: Nov 17 15:40 EET
 "PeerSession.HelloArrivingByteByByteStillWorks" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-97/122 Testing: PeerSession.CannotSendBeforeHandshake
-97/122 Test: PeerSession.CannotSendBeforeHandshake
+99/124 Testing: PeerSession.CannotSendBeforeHandshake
+99/124 Test: PeerSession.CannotSendBeforeHandshake
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=PeerSession.CannotSendBeforeHandshake" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"PeerSession.CannotSendBeforeHandshake" start time: Nov 17 15:24 EET
+"PeerSession.CannotSendBeforeHandshake" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -2615,15 +2669,15 @@ Note: Google Test filter = PeerSession.CannotSendBeforeHandshake
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"PeerSession.CannotSendBeforeHandshake" end time: Nov 17 15:24 EET
+"PeerSession.CannotSendBeforeHandshake" end time: Nov 17 15:40 EET
 "PeerSession.CannotSendBeforeHandshake" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-98/122 Testing: PeerSession.UnknownPeerIsRejected
-98/122 Test: PeerSession.UnknownPeerIsRejected
+100/124 Testing: PeerSession.UnknownPeerIsRejected
+100/124 Test: PeerSession.UnknownPeerIsRejected
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=PeerSession.UnknownPeerIsRejected" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"PeerSession.UnknownPeerIsRejected" start time: Nov 17 15:24 EET
+"PeerSession.UnknownPeerIsRejected" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -2642,15 +2696,15 @@ Note: Google Test filter = PeerSession.UnknownPeerIsRejected
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"PeerSession.UnknownPeerIsRejected" end time: Nov 17 15:24 EET
+"PeerSession.UnknownPeerIsRejected" end time: Nov 17 15:40 EET
 "PeerSession.UnknownPeerIsRejected" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-99/122 Testing: PeerSession.PeerClaimingOurOwnIdIsRejected
-99/122 Test: PeerSession.PeerClaimingOurOwnIdIsRejected
+101/124 Testing: PeerSession.PeerClaimingOurOwnIdIsRejected
+101/124 Test: PeerSession.PeerClaimingOurOwnIdIsRejected
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=PeerSession.PeerClaimingOurOwnIdIsRejected" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"PeerSession.PeerClaimingOurOwnIdIsRejected" start time: Nov 17 15:24 EET
+"PeerSession.PeerClaimingOurOwnIdIsRejected" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -2669,15 +2723,15 @@ Note: Google Test filter = PeerSession.PeerClaimingOurOwnIdIsRejected
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"PeerSession.PeerClaimingOurOwnIdIsRejected" end time: Nov 17 15:24 EET
+"PeerSession.PeerClaimingOurOwnIdIsRejected" end time: Nov 17 15:40 EET
 "PeerSession.PeerClaimingOurOwnIdIsRejected" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-100/122 Testing: PeerSession.FirstMessageMustBeHello
-100/122 Test: PeerSession.FirstMessageMustBeHello
+102/124 Testing: PeerSession.FirstMessageMustBeHello
+102/124 Test: PeerSession.FirstMessageMustBeHello
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=PeerSession.FirstMessageMustBeHello" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"PeerSession.FirstMessageMustBeHello" start time: Nov 17 15:24 EET
+"PeerSession.FirstMessageMustBeHello" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -2696,15 +2750,15 @@ Note: Google Test filter = PeerSession.FirstMessageMustBeHello
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"PeerSession.FirstMessageMustBeHello" end time: Nov 17 15:24 EET
+"PeerSession.FirstMessageMustBeHello" end time: Nov 17 15:40 EET
 "PeerSession.FirstMessageMustBeHello" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-101/122 Testing: PeerSession.WrongNodeAnsweringIsRejected
-101/122 Test: PeerSession.WrongNodeAnsweringIsRejected
+103/124 Testing: PeerSession.WrongNodeAnsweringIsRejected
+103/124 Test: PeerSession.WrongNodeAnsweringIsRejected
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=PeerSession.WrongNodeAnsweringIsRejected" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"PeerSession.WrongNodeAnsweringIsRejected" start time: Nov 17 15:24 EET
+"PeerSession.WrongNodeAnsweringIsRejected" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -2723,15 +2777,15 @@ Note: Google Test filter = PeerSession.WrongNodeAnsweringIsRejected
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"PeerSession.WrongNodeAnsweringIsRejected" end time: Nov 17 15:24 EET
+"PeerSession.WrongNodeAnsweringIsRejected" end time: Nov 17 15:40 EET
 "PeerSession.WrongNodeAnsweringIsRejected" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-102/122 Testing: PeerSession.GarbageClosesTheConnection
-102/122 Test: PeerSession.GarbageClosesTheConnection
+104/124 Testing: PeerSession.GarbageClosesTheConnection
+104/124 Test: PeerSession.GarbageClosesTheConnection
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=PeerSession.GarbageClosesTheConnection" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"PeerSession.GarbageClosesTheConnection" start time: Nov 17 15:24 EET
+"PeerSession.GarbageClosesTheConnection" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -2750,15 +2804,15 @@ Note: Google Test filter = PeerSession.GarbageClosesTheConnection
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"PeerSession.GarbageClosesTheConnection" end time: Nov 17 15:24 EET
+"PeerSession.GarbageClosesTheConnection" end time: Nov 17 15:40 EET
 "PeerSession.GarbageClosesTheConnection" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-103/122 Testing: PeerSession.SecondHelloIsAProtocolError
-103/122 Test: PeerSession.SecondHelloIsAProtocolError
+105/124 Testing: PeerSession.SecondHelloIsAProtocolError
+105/124 Test: PeerSession.SecondHelloIsAProtocolError
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=PeerSession.SecondHelloIsAProtocolError" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"PeerSession.SecondHelloIsAProtocolError" start time: Nov 17 15:24 EET
+"PeerSession.SecondHelloIsAProtocolError" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -2777,15 +2831,15 @@ Note: Google Test filter = PeerSession.SecondHelloIsAProtocolError
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"PeerSession.SecondHelloIsAProtocolError" end time: Nov 17 15:24 EET
+"PeerSession.SecondHelloIsAProtocolError" end time: Nov 17 15:40 EET
 "PeerSession.SecondHelloIsAProtocolError" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-104/122 Testing: PeerSession.NothingIsProcessedAfterClose
-104/122 Test: PeerSession.NothingIsProcessedAfterClose
+106/124 Testing: PeerSession.NothingIsProcessedAfterClose
+106/124 Test: PeerSession.NothingIsProcessedAfterClose
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=PeerSession.NothingIsProcessedAfterClose" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"PeerSession.NothingIsProcessedAfterClose" start time: Nov 17 15:24 EET
+"PeerSession.NothingIsProcessedAfterClose" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -2804,15 +2858,15 @@ Note: Google Test filter = PeerSession.NothingIsProcessedAfterClose
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"PeerSession.NothingIsProcessedAfterClose" end time: Nov 17 15:24 EET
+"PeerSession.NothingIsProcessedAfterClose" end time: Nov 17 15:40 EET
 "PeerSession.NothingIsProcessedAfterClose" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-105/122 Testing: Heartbeat.PingIsAnsweredWithPongAndResetsTheCount
-105/122 Test: Heartbeat.PingIsAnsweredWithPongAndResetsTheCount
+107/124 Testing: Heartbeat.PingIsAnsweredWithPongAndResetsTheCount
+107/124 Test: Heartbeat.PingIsAnsweredWithPongAndResetsTheCount
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=Heartbeat.PingIsAnsweredWithPongAndResetsTheCount" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"Heartbeat.PingIsAnsweredWithPongAndResetsTheCount" start time: Nov 17 15:24 EET
+"Heartbeat.PingIsAnsweredWithPongAndResetsTheCount" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -2831,15 +2885,15 @@ Note: Google Test filter = Heartbeat.PingIsAnsweredWithPongAndResetsTheCount
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"Heartbeat.PingIsAnsweredWithPongAndResetsTheCount" end time: Nov 17 15:24 EET
+"Heartbeat.PingIsAnsweredWithPongAndResetsTheCount" end time: Nov 17 15:40 EET
 "Heartbeat.PingIsAnsweredWithPongAndResetsTheCount" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-106/122 Testing: Heartbeat.PongCarriesThePingsRequestId
-106/122 Test: Heartbeat.PongCarriesThePingsRequestId
+108/124 Testing: Heartbeat.PongCarriesThePingsRequestId
+108/124 Test: Heartbeat.PongCarriesThePingsRequestId
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=Heartbeat.PongCarriesThePingsRequestId" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"Heartbeat.PongCarriesThePingsRequestId" start time: Nov 17 15:24 EET
+"Heartbeat.PongCarriesThePingsRequestId" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -2858,15 +2912,15 @@ Note: Google Test filter = Heartbeat.PongCarriesThePingsRequestId
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"Heartbeat.PongCarriesThePingsRequestId" end time: Nov 17 15:24 EET
+"Heartbeat.PongCarriesThePingsRequestId" end time: Nov 17 15:40 EET
 "Heartbeat.PongCarriesThePingsRequestId" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-107/122 Testing: Heartbeat.SilentPeerIsDeclaredDead
-107/122 Test: Heartbeat.SilentPeerIsDeclaredDead
+109/124 Testing: Heartbeat.SilentPeerIsDeclaredDead
+109/124 Test: Heartbeat.SilentPeerIsDeclaredDead
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=Heartbeat.SilentPeerIsDeclaredDead" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"Heartbeat.SilentPeerIsDeclaredDead" start time: Nov 17 15:24 EET
+"Heartbeat.SilentPeerIsDeclaredDead" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -2885,15 +2939,15 @@ Note: Google Test filter = Heartbeat.SilentPeerIsDeclaredDead
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"Heartbeat.SilentPeerIsDeclaredDead" end time: Nov 17 15:24 EET
+"Heartbeat.SilentPeerIsDeclaredDead" end time: Nov 17 15:40 EET
 "Heartbeat.SilentPeerIsDeclaredDead" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-108/122 Testing: Heartbeat.LatePongStillCountsAsAlive
-108/122 Test: Heartbeat.LatePongStillCountsAsAlive
+110/124 Testing: Heartbeat.LatePongStillCountsAsAlive
+110/124 Test: Heartbeat.LatePongStillCountsAsAlive
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=Heartbeat.LatePongStillCountsAsAlive" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"Heartbeat.LatePongStillCountsAsAlive" start time: Nov 17 15:24 EET
+"Heartbeat.LatePongStillCountsAsAlive" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -2912,15 +2966,15 @@ Note: Google Test filter = Heartbeat.LatePongStillCountsAsAlive
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"Heartbeat.LatePongStillCountsAsAlive" end time: Nov 17 15:24 EET
+"Heartbeat.LatePongStillCountsAsAlive" end time: Nov 17 15:40 EET
 "Heartbeat.LatePongStillCountsAsAlive" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-109/122 Testing: Heartbeat.PongForAPingNeverSentIsIgnored
-109/122 Test: Heartbeat.PongForAPingNeverSentIsIgnored
+111/124 Testing: Heartbeat.PongForAPingNeverSentIsIgnored
+111/124 Test: Heartbeat.PongForAPingNeverSentIsIgnored
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=Heartbeat.PongForAPingNeverSentIsIgnored" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"Heartbeat.PongForAPingNeverSentIsIgnored" start time: Nov 17 15:24 EET
+"Heartbeat.PongForAPingNeverSentIsIgnored" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -2939,15 +2993,15 @@ Note: Google Test filter = Heartbeat.PongForAPingNeverSentIsIgnored
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"Heartbeat.PongForAPingNeverSentIsIgnored" end time: Nov 17 15:24 EET
+"Heartbeat.PongForAPingNeverSentIsIgnored" end time: Nov 17 15:40 EET
 "Heartbeat.PongForAPingNeverSentIsIgnored" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-110/122 Testing: Heartbeat.NothingIsSentBeforeTheHandshake
-110/122 Test: Heartbeat.NothingIsSentBeforeTheHandshake
+112/124 Testing: Heartbeat.NothingIsSentBeforeTheHandshake
+112/124 Test: Heartbeat.NothingIsSentBeforeTheHandshake
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=Heartbeat.NothingIsSentBeforeTheHandshake" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"Heartbeat.NothingIsSentBeforeTheHandshake" start time: Nov 17 15:24 EET
+"Heartbeat.NothingIsSentBeforeTheHandshake" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -2966,15 +3020,15 @@ Note: Google Test filter = Heartbeat.NothingIsSentBeforeTheHandshake
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"Heartbeat.NothingIsSentBeforeTheHandshake" end time: Nov 17 15:24 EET
+"Heartbeat.NothingIsSentBeforeTheHandshake" end time: Nov 17 15:40 EET
 "Heartbeat.NothingIsSentBeforeTheHandshake" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-111/122 Testing: Heartbeat.BothSidesCanMonitorEachOther
-111/122 Test: Heartbeat.BothSidesCanMonitorEachOther
+113/124 Testing: Heartbeat.BothSidesCanMonitorEachOther
+113/124 Test: Heartbeat.BothSidesCanMonitorEachOther
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=Heartbeat.BothSidesCanMonitorEachOther" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"Heartbeat.BothSidesCanMonitorEachOther" start time: Nov 17 15:24 EET
+"Heartbeat.BothSidesCanMonitorEachOther" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -2993,15 +3047,15 @@ Note: Google Test filter = Heartbeat.BothSidesCanMonitorEachOther
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"Heartbeat.BothSidesCanMonitorEachOther" end time: Nov 17 15:24 EET
+"Heartbeat.BothSidesCanMonitorEachOther" end time: Nov 17 15:40 EET
 "Heartbeat.BothSidesCanMonitorEachOther" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-112/122 Testing: ResponseCache.FindsWhatWasInserted
-112/122 Test: ResponseCache.FindsWhatWasInserted
+114/124 Testing: ResponseCache.FindsWhatWasInserted
+114/124 Test: ResponseCache.FindsWhatWasInserted
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=ResponseCache.FindsWhatWasInserted" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"ResponseCache.FindsWhatWasInserted" start time: Nov 17 15:24 EET
+"ResponseCache.FindsWhatWasInserted" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -3020,15 +3074,15 @@ Note: Google Test filter = ResponseCache.FindsWhatWasInserted
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"ResponseCache.FindsWhatWasInserted" end time: Nov 17 15:24 EET
+"ResponseCache.FindsWhatWasInserted" end time: Nov 17 15:40 EET
 "ResponseCache.FindsWhatWasInserted" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-113/122 Testing: ResponseCache.SenderAndRequestIdBothMatter
-113/122 Test: ResponseCache.SenderAndRequestIdBothMatter
+115/124 Testing: ResponseCache.SenderAndRequestIdBothMatter
+115/124 Test: ResponseCache.SenderAndRequestIdBothMatter
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=ResponseCache.SenderAndRequestIdBothMatter" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"ResponseCache.SenderAndRequestIdBothMatter" start time: Nov 17 15:24 EET
+"ResponseCache.SenderAndRequestIdBothMatter" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -3047,15 +3101,15 @@ Note: Google Test filter = ResponseCache.SenderAndRequestIdBothMatter
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"ResponseCache.SenderAndRequestIdBothMatter" end time: Nov 17 15:24 EET
+"ResponseCache.SenderAndRequestIdBothMatter" end time: Nov 17 15:40 EET
 "ResponseCache.SenderAndRequestIdBothMatter" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-114/122 Testing: ResponseCache.ForgetsTheOldestWhenFull
-114/122 Test: ResponseCache.ForgetsTheOldestWhenFull
+116/124 Testing: ResponseCache.ForgetsTheOldestWhenFull
+116/124 Test: ResponseCache.ForgetsTheOldestWhenFull
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=ResponseCache.ForgetsTheOldestWhenFull" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"ResponseCache.ForgetsTheOldestWhenFull" start time: Nov 17 15:24 EET
+"ResponseCache.ForgetsTheOldestWhenFull" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -3074,15 +3128,15 @@ Note: Google Test filter = ResponseCache.ForgetsTheOldestWhenFull
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"ResponseCache.ForgetsTheOldestWhenFull" end time: Nov 17 15:24 EET
+"ResponseCache.ForgetsTheOldestWhenFull" end time: Nov 17 15:40 EET
 "ResponseCache.ForgetsTheOldestWhenFull" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-115/122 Testing: ResponseCache.ReinsertingDoesNotGrowIt
-115/122 Test: ResponseCache.ReinsertingDoesNotGrowIt
+117/124 Testing: ResponseCache.ReinsertingDoesNotGrowIt
+117/124 Test: ResponseCache.ReinsertingDoesNotGrowIt
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=ResponseCache.ReinsertingDoesNotGrowIt" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"ResponseCache.ReinsertingDoesNotGrowIt" start time: Nov 17 15:24 EET
+"ResponseCache.ReinsertingDoesNotGrowIt" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -3101,15 +3155,15 @@ Note: Google Test filter = ResponseCache.ReinsertingDoesNotGrowIt
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"ResponseCache.ReinsertingDoesNotGrowIt" end time: Nov 17 15:24 EET
+"ResponseCache.ReinsertingDoesNotGrowIt" end time: Nov 17 15:40 EET
 "ResponseCache.ReinsertingDoesNotGrowIt" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-116/122 Testing: TCPConnection.DeliversData
-116/122 Test: TCPConnection.DeliversData
+118/124 Testing: TCPConnection.DeliversData
+118/124 Test: TCPConnection.DeliversData
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=TCPConnection.DeliversData" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"TCPConnection.DeliversData" start time: Nov 17 15:24 EET
+"TCPConnection.DeliversData" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -3128,15 +3182,15 @@ Note: Google Test filter = TCPConnection.DeliversData
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"TCPConnection.DeliversData" end time: Nov 17 15:24 EET
+"TCPConnection.DeliversData" end time: Nov 17 15:40 EET
 "TCPConnection.DeliversData" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-117/122 Testing: TCPConnection.DataFollowedByFinIsDeliveredThenCloses
-117/122 Test: TCPConnection.DataFollowedByFinIsDeliveredThenCloses
+119/124 Testing: TCPConnection.DataFollowedByFinIsDeliveredThenCloses
+119/124 Test: TCPConnection.DataFollowedByFinIsDeliveredThenCloses
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=TCPConnection.DataFollowedByFinIsDeliveredThenCloses" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"TCPConnection.DataFollowedByFinIsDeliveredThenCloses" start time: Nov 17 15:24 EET
+"TCPConnection.DataFollowedByFinIsDeliveredThenCloses" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -3155,15 +3209,15 @@ Note: Google Test filter = TCPConnection.DataFollowedByFinIsDeliveredThenCloses
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"TCPConnection.DataFollowedByFinIsDeliveredThenCloses" end time: Nov 17 15:24 EET
+"TCPConnection.DataFollowedByFinIsDeliveredThenCloses" end time: Nov 17 15:40 EET
 "TCPConnection.DataFollowedByFinIsDeliveredThenCloses" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-118/122 Testing: TCPConnection.FinWithoutRdhupFlagIsStillNoticed
-118/122 Test: TCPConnection.FinWithoutRdhupFlagIsStillNoticed
+120/124 Testing: TCPConnection.FinWithoutRdhupFlagIsStillNoticed
+120/124 Test: TCPConnection.FinWithoutRdhupFlagIsStillNoticed
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=TCPConnection.FinWithoutRdhupFlagIsStillNoticed" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"TCPConnection.FinWithoutRdhupFlagIsStillNoticed" start time: Nov 17 15:24 EET
+"TCPConnection.FinWithoutRdhupFlagIsStillNoticed" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -3182,15 +3236,15 @@ Note: Google Test filter = TCPConnection.FinWithoutRdhupFlagIsStillNoticed
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"TCPConnection.FinWithoutRdhupFlagIsStillNoticed" end time: Nov 17 15:24 EET
+"TCPConnection.FinWithoutRdhupFlagIsStillNoticed" end time: Nov 17 15:40 EET
 "TCPConnection.FinWithoutRdhupFlagIsStillNoticed" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-119/122 Testing: StatusServiceTest.StatusDescribesEveryNode
-119/122 Test: StatusServiceTest.StatusDescribesEveryNode
+121/124 Testing: StatusServiceTest.StatusDescribesEveryNode
+121/124 Test: StatusServiceTest.StatusDescribesEveryNode
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=StatusServiceTest.StatusDescribesEveryNode" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"StatusServiceTest.StatusDescribesEveryNode" start time: Nov 17 15:24 EET
+"StatusServiceTest.StatusDescribesEveryNode" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -3209,15 +3263,15 @@ Note: Google Test filter = StatusServiceTest.StatusDescribesEveryNode
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"StatusServiceTest.StatusDescribesEveryNode" end time: Nov 17 15:24 EET
+"StatusServiceTest.StatusDescribesEveryNode" end time: Nov 17 15:40 EET
 "StatusServiceTest.StatusDescribesEveryNode" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-120/122 Testing: StatusServiceTest.LocateReturnsTheReplicaSetPrimaryFirst
-120/122 Test: StatusServiceTest.LocateReturnsTheReplicaSetPrimaryFirst
+122/124 Testing: StatusServiceTest.LocateReturnsTheReplicaSetPrimaryFirst
+122/124 Test: StatusServiceTest.LocateReturnsTheReplicaSetPrimaryFirst
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=StatusServiceTest.LocateReturnsTheReplicaSetPrimaryFirst" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"StatusServiceTest.LocateReturnsTheReplicaSetPrimaryFirst" start time: Nov 17 15:24 EET
+"StatusServiceTest.LocateReturnsTheReplicaSetPrimaryFirst" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -3236,15 +3290,15 @@ Note: Google Test filter = StatusServiceTest.LocateReturnsTheReplicaSetPrimaryFi
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"StatusServiceTest.LocateReturnsTheReplicaSetPrimaryFirst" end time: Nov 17 15:24 EET
+"StatusServiceTest.LocateReturnsTheReplicaSetPrimaryFirst" end time: Nov 17 15:40 EET
 "StatusServiceTest.LocateReturnsTheReplicaSetPrimaryFirst" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-121/122 Testing: StatusServiceTest.LocateWithOversizedKeyIsRejected
-121/122 Test: StatusServiceTest.LocateWithOversizedKeyIsRejected
+123/124 Testing: StatusServiceTest.LocateWithOversizedKeyIsRejected
+123/124 Test: StatusServiceTest.LocateWithOversizedKeyIsRejected
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=StatusServiceTest.LocateWithOversizedKeyIsRejected" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"StatusServiceTest.LocateWithOversizedKeyIsRejected" start time: Nov 17 15:24 EET
+"StatusServiceTest.LocateWithOversizedKeyIsRejected" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -3263,15 +3317,15 @@ Note: Google Test filter = StatusServiceTest.LocateWithOversizedKeyIsRejected
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"StatusServiceTest.LocateWithOversizedKeyIsRejected" end time: Nov 17 15:24 EET
+"StatusServiceTest.LocateWithOversizedKeyIsRejected" end time: Nov 17 15:40 EET
 "StatusServiceTest.LocateWithOversizedKeyIsRejected" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-122/122 Testing: StatusServiceTest.OtherMessagesAreLeftToTheRouter
-122/122 Test: StatusServiceTest.OtherMessagesAreLeftToTheRouter
+124/124 Testing: StatusServiceTest.OtherMessagesAreLeftToTheRouter
+124/124 Test: StatusServiceTest.OtherMessagesAreLeftToTheRouter
 Command: "/home/av/Documents/projects/cpp/k_v_db/build/unit_tests" "--gtest_filter=StatusServiceTest.OtherMessagesAreLeftToTheRouter" "--gtest_also_run_disabled_tests"
 Directory: /home/av/Documents/projects/cpp/k_v_db/build
-"StatusServiceTest.OtherMessagesAreLeftToTheRouter" start time: Nov 17 15:24 EET
+"StatusServiceTest.OtherMessagesAreLeftToTheRouter" start time: Nov 17 15:40 EET
 Output:
 ----------------------------------------------------------
 Running main() from /home/av/Documents/projects/cpp/k_v_db/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -3290,8 +3344,8 @@ Note: Google Test filter = StatusServiceTest.OtherMessagesAreLeftToTheRouter
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"StatusServiceTest.OtherMessagesAreLeftToTheRouter" end time: Nov 17 15:24 EET
+"StatusServiceTest.OtherMessagesAreLeftToTheRouter" end time: Nov 17 15:40 EET
 "StatusServiceTest.OtherMessagesAreLeftToTheRouter" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: Nov 17 15:24 EET
+End testing: Nov 17 15:40 EET

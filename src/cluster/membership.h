@@ -45,7 +45,13 @@ public:
 
     // Adds a peer. Throws std::invalid_argument if a node with the same id
     // (i.e. the same address) is already known, including ourselves.
+    // Nodes can be added at any time (discovery). Ownership is recomputed
+    // from the node list on every lookup, so it changes immediately.
+    // References into nodes() are invalidated: never keep one across events.
     void add(NodeEntry peer);
+
+    // The node with this id, or nullptr.
+    [[nodiscard]] const NodeEntry* find(std::uint64_t id) const noexcept;
 
     [[nodiscard]] const NodeEntry& self() const noexcept { return nodes_.front(); }
 

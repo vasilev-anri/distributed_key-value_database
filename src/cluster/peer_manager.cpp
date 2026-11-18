@@ -57,11 +57,24 @@ const NodeEntry* PeerManager::node(std::uint64_t id) const {
 // ── Starting connections ────────────────────────────────────────────────
 
 void PeerManager::start() {
+    started_ = true;
     for (auto& [id, peer] : peers_) {
         if (peer.we_connect) connect(id);
     }
     if (heartbeat_timer_ == 0)
         heartbeat_timer_ = timers_.schedule_every(kHeartbeatInterval, [this] { send_heartbeats(); });
+}
+
+bool PeerManager::add_peer(std::uint64_t node_id) {
+    if (node_id == members_.self().id || peers_.contains(node_id) || !node(node_id)) return false;
+
+    Peer peer;
+    peer.id = node_id;
+    peer.we_connect = members_.self().id < node_id;  // the lower id connects
+    peers_.emplace(node_id, peer);
+
+    if (started_ && peer.we_connect) connect(node_id);
+    return true;
 }
 
 // One heartbeat round over every connection. A session that has missed too

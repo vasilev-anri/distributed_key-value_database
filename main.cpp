@@ -2,17 +2,27 @@
 //
 // Usage:
 //   k_v_db [--listen <endpoint>] [--peer <endpoint>]...
+//          [--dht <port> [--bootstrap <endpoint>] [--cluster <name>]]
 //
-//   --listen   this node's address, as other nodes and clients reach it
-//              (default [::1]:9000). The node listens on that port on all
-//              interfaces: UDP for data, TCP for the control channel (same
-//              port number). The full address also determines the node's id.
-//   --peer     another node of the cluster (repeat for each one). Every node
-//              must be started with the same set of nodes.
+//   --listen     this node's address, as other nodes and clients reach it
+//                (default [::1]:9000). The node listens on that port on all
+//                interfaces: UDP for data, TCP for the control channel (same
+//                port number). The full address also determines the node's id.
+//   --peer       another node of the cluster, known in advance (repeat for each).
+//   --dht        discover the other nodes automatically through OpenDHT, which
+//                uses this UDP port. Nodes found this way join at runtime.
+//   --bootstrap  an existing node's DHT endpoint to join through (omit on the
+//                first node).
+//   --cluster    nodes with the same cluster name find each other (default kvdb).
 //
 //   endpoint:  [::1]:9001  or  127.0.0.1:9001
 //
-// Example, a 3-node cluster on one machine:
+// Example, a 3-node cluster with discovery (no --peer lists needed):
+//   k_v_db --listen [::1]:9001 --dht 4001
+//   k_v_db --listen [::1]:9002 --dht 4002 --bootstrap [::1]:4001
+//   k_v_db --listen [::1]:9003 --dht 4003 --bootstrap [::1]:4001
+//
+// The same cluster with a static list:
 //   k_v_db --listen [::1]:9001 --peer [::1]:9002 --peer [::1]:9003
 //   k_v_db --listen [::1]:9002 --peer [::1]:9001 --peer [::1]:9003
 //   k_v_db --listen [::1]:9003 --peer [::1]:9001 --peer [::1]:9002
@@ -30,10 +40,13 @@
 #include <system_error>
 #include <vector>
 
+#include <arpa/inet.h>
 #include <netinet/in.h>
 
 #include "cluster/membership.h"
 #include "cluster/peer_manager.h"
+#include "dht/dht_node.h"
+#include "handlers/mailbox.h"
 #include "handlers/signal_handler.h"
 #include "handlers/tcp_listener.h"
 #include "handlers/timer_queue.h"
@@ -53,14 +66,37 @@ namespace {
 struct Options {
     sockaddr_in6 listen{};
     std::vector<sockaddr_in6> peers;
+    std::optional<std::uint16_t> dht_port;  // set: discovery through OpenDHT
+    std::string bootstrap_host;             // empty: first node of the DHT
+    std::string bootstrap_port;
+    std::string cluster = "kvdb";
 };
 
 int usage(const char* prog) {
     std::fprintf(stderr,
                  "usage: %s [--listen <endpoint>] [--peer <endpoint>]...\n"
+                 "          [--dht <port> [--bootstrap <endpoint>] [--cluster <name>]]\n"
                  "  endpoint: [::1]:9001 or 127.0.0.1:9001\n",
                  prog);
     return 2;
+}
+
+std::optional<std::uint16_t> parse_port(std::string_view text) {
+    if (text.empty() || text.size() > 5) return std::nullopt;
+    unsigned port = 0;
+    for (const char c : text) {
+        if (c < '0' || c > '9') return std::nullopt;
+        port = port * 10 + static_cast<unsigned>(c - '0');
+    }
+    if (port == 0 || port > 65535) return std::nullopt;
+    return static_cast<std::uint16_t>(port);
+}
+
+// The IP part of an address as text, e.g. "::1" or "::ffff:127.0.0.1".
+std::string ip_of(const sockaddr_in6& addr) {
+    char buf[INET6_ADDRSTRLEN];
+    ::inet_ntop(AF_INET6, &addr.sin6_addr, buf, sizeof buf);
+    return buf;
 }
 
 // Returns std::nullopt (after printing why) if the arguments are invalid.
@@ -78,9 +114,29 @@ std::optional<Options> parse_args(int argc, char** argv) {
             }
             if (arg == "--listen") opts.listen = *endpoint;
             else opts.peers.push_back(*endpoint);
+        } else if (arg == "--dht" && i + 1 < argc) {
+            opts.dht_port = parse_port(argv[++i]);
+            if (!opts.dht_port) {
+                std::fprintf(stderr, "invalid DHT port: %s\n", argv[i]);
+                return std::nullopt;
+            }
+        } else if (arg == "--bootstrap" && i + 1 < argc) {
+            const auto endpoint = parse_endpoint(argv[++i]);
+            if (!endpoint) {
+                std::fprintf(stderr, "invalid endpoint: %s\n", argv[i]);
+                return std::nullopt;
+            }
+            opts.bootstrap_host = ip_of(*endpoint);
+            opts.bootstrap_port = std::to_string(ntohs(endpoint->sin6_port));
+        } else if (arg == "--cluster" && i + 1 < argc) {
+            opts.cluster = argv[++i];
         } else {
             return std::nullopt;
         }
+    }
+    if (!opts.dht_port && (!opts.bootstrap_host.empty() || opts.cluster != "kvdb")) {
+        std::fprintf(stderr, "--bootstrap and --cluster need --dht\n");
+        return std::nullopt;
     }
     return opts;
 }
@@ -90,7 +146,7 @@ std::optional<Options> parse_args(int argc, char** argv) {
 // Builds the node and runs it until Ctrl+C / SIGTERM. Setup failures (e.g.
 // the port is already taken) throw std::system_error.
 int run(const Options& opts) {
-    // ── Cluster membership (static list for now) ────────────────────────
+    // ── Cluster membership: the static --peer list; discovery adds more ──
     cluster::Membership members(cluster::make_node(opts.listen));
     try {
         for (const sockaddr_in6& peer : opts.peers) members.add(cluster::make_node(peer));
@@ -199,6 +255,69 @@ int run(const Options& opts) {
     reactor.register_handler(std::make_unique<TCPListener>(
         ntohs(opts.listen.sin6_port),
         [&peers](UniqueFD client, const sockaddr_in6& from) { peers.accept(std::move(client), from); }));
+
+    // ── Joining at runtime ──────────────────────────────────────────────
+    // A node we didn't know yet: add it to the membership (ownership changes
+    // at once) and to the control channel. When its connection comes up, the
+    // sync in on_state() sends it the keys it is now responsible for.
+    auto join = [&members, &peers](const sockaddr_in6& addr) {
+        cluster::NodeEntry node = cluster::make_node(addr);
+        if (members.find(node.id)) return;  // already a member
+        const std::uint64_t id = node.id;
+        const std::string name = node.name;
+        members.add(std::move(node));
+        std::printf("discovery: %s joined, cluster now has %zu nodes\n", name.c_str(),
+                    members.nodes().size());
+        peers.add_peer(id);
+    };
+
+    // ── Discovery through OpenDHT (optional) ────────────────────────────
+    // Declared after everything `join` uses, so it is destroyed first: its
+    // destructor stops OpenDHT's threads, after which no task can be posted.
+    std::unique_ptr<DHTNode> dht;
+    if (opts.dht_port) {
+        auto mailbox = std::make_unique<Mailbox>();
+        Mailbox& mb = *mailbox;
+        reactor.register_handler(std::move(mailbox));
+
+        dht = std::make_unique<DHTNode>(mb);
+        dht->start({.port = *opts.dht_port,
+                    .bootstrap_host = opts.bootstrap_host,
+                    .bootstrap_port = opts.bootstrap_port,
+                    .cluster_name = opts.cluster});
+
+        const std::uint16_t port = ntohs(opts.listen.sin6_port);
+        dht->announce({.node_id = members.self().id, .ip = ip_of(opts.listen), .udp_port = port, .tcp_port = port});
+
+        // Both callbacks run on the reactor thread (DHTNode posts them to the Mailbox).
+        dht->discover(
+            [&join](const NodeInfo& info) {
+                const auto addr = make_address(info.ip, info.udp_port);
+                if (!addr) {
+                    std::printf("discovery: ignored invalid announcement (ip \"%s\")\n", info.ip.c_str());
+                    return;
+                }
+                // Never trust the network: the id must be the one its address gives.
+                if (cluster::make_node(*addr).id != info.node_id) {
+                    std::printf("discovery: ignored %s: announced id doesn't match its address\n",
+                                to_string(*addr).c_str());
+                    return;
+                }
+                join(*addr);
+            },
+            [](const NodeInfo& info) {
+                // Nodes are never removed: a node that is gone shows as down
+                // (heartbeats) and gets its keys back when it returns.
+                std::printf("discovery: announcement of [%s]:%u expired\n", info.ip.c_str(),
+                            static_cast<unsigned>(info.udp_port));
+            });
+
+        std::printf("discovery: OpenDHT on UDP port %u, cluster \"%s\", %s\n",
+                    static_cast<unsigned>(*opts.dht_port), opts.cluster.c_str(),
+                    opts.bootstrap_host.empty()
+                        ? "first node (others bootstrap from us)"
+                        : ("bootstrapping from [" + opts.bootstrap_host + "]:" + opts.bootstrap_port).c_str());
+    }
 
     // ── Startup summary ─────────────────────────────────────────────────
     std::printf("k_v_db node %s (id %016lx)\n", members.self().name.c_str(),

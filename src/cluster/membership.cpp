@@ -36,6 +36,12 @@ void Membership::add(NodeEntry peer) {
     nodes_.push_back(std::move(peer));
 }
 
+const NodeEntry* Membership::find(std::uint64_t id) const noexcept {
+    for (const NodeEntry& node : nodes_)
+        if (node.id == id) return &node;
+    return nullptr;
+}
+
 const NodeEntry& Membership::owner_of(std::string_view key) const {
     return closest_node(key_hash(key), nodes_);
 }

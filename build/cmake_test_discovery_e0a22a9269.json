@@ -1,5 +1,5 @@
 {
-  "tests": 122,
+  "tests": 124,
   "name": "AllTests",
   "testsuites": [
     {
@@ -381,137 +381,147 @@
     },
     {
       "name": "ClusterTest",
-      "tests": 26,
+      "tests": 28,
       "testsuite": [
         {
           "name": "RequestToOwnerIsHandledLocally",
           "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/router_test.cpp",
-          "line": 252
+          "line": 270
         },
         {
           "name": "PutThroughNonOwnerLandsOnOwner",
           "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/router_test.cpp",
-          "line": 264
+          "line": 282
         },
         {
           "name": "AnyNodeCanReadAnyKey",
           "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/router_test.cpp",
-          "line": 279
+          "line": 297
         },
         {
           "name": "ForwardedRequestIsNeverForwardedAgain",
           "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/router_test.cpp",
-          "line": 291
+          "line": 309
         },
         {
           "name": "ForwardedWriteToReplicaIsRefused",
           "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/router_test.cpp",
-          "line": 301
+          "line": 319
         },
         {
           "name": "ForwardedReadToReplicaIsServed",
           "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/router_test.cpp",
-          "line": 311
+          "line": 329
         },
         {
           "name": "DeadOwnerGivesUnavailableAfterTimeout",
           "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/router_test.cpp",
-          "line": 319
+          "line": 337
         },
         {
           "name": "ClientRetryIsNotForwardedTwice",
           "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/router_test.cpp",
-          "line": 334
+          "line": 352
         },
         {
           "name": "ResponseFromWrongNodeIsIgnored",
           "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/router_test.cpp",
-          "line": 349
+          "line": 367
         },
         {
           "name": "InvalidDatagramsAreDropped",
           "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/router_test.cpp",
-          "line": 365
+          "line": 383
         },
         {
           "name": "PutIsStoredOnPrimaryAndReplica",
           "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/router_test.cpp",
-          "line": 374
+          "line": 392
         },
         {
           "name": "DeleteRemovesBothCopies",
           "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/router_test.cpp",
-          "line": 386
+          "line": 404
         },
         {
           "name": "ReadSurvivesDeadPrimary",
           "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/router_test.cpp",
-          "line": 396
+          "line": 414
         },
         {
           "name": "KnownDeadPrimaryIsSkippedForReads",
           "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/router_test.cpp",
-          "line": 412
+          "line": 430
         },
         {
           "name": "ReplicaAnswersFromItsOwnStoreWhenPrimaryKnownDown",
           "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/router_test.cpp",
-          "line": 426
+          "line": 444
         },
         {
           "name": "WriteToKnownDeadPrimaryFailsFast",
           "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/router_test.cpp",
-          "line": 440
+          "line": 458
         },
         {
           "name": "DisconnectedReplicaGivesReplicationFailed",
           "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/router_test.cpp",
-          "line": 451
+          "line": 469
         },
         {
           "name": "SilentReplicaGivesReplicationFailedAfterTimeout",
           "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/router_test.cpp",
-          "line": 461
+          "line": 479
         },
         {
           "name": "ReplicaRejectsKeysItIsNotResponsibleFor",
           "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/router_test.cpp",
-          "line": 477
+          "line": 495
         },
         {
           "name": "RetriedDeleteGetsTheSameAnswer",
           "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/router_test.cpp",
-          "line": 493
+          "line": 511
         },
         {
           "name": "RetryWhileReplicatingIsNotExecutedTwice",
           "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/router_test.cpp",
-          "line": 515
+          "line": 533
         },
         {
           "name": "RestartedNodeGetsItsKeysBack",
           "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/router_test.cpp",
-          "line": 533
+          "line": 551
         },
         {
           "name": "DivergedCopiesConvergeToTheNewestValue",
           "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/router_test.cpp",
-          "line": 554
+          "line": 572
         },
         {
           "name": "DeletedKeyIsNotResurrectedByAnOldCopy",
           "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/router_test.cpp",
-          "line": 573
+          "line": 591
         },
         {
           "name": "LargeSyncIsSentInBatches",
           "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/router_test.cpp",
-          "line": 591
+          "line": 609
         },
         {
           "name": "ReplicationAppliesOnlyNewerVersions",
           "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/router_test.cpp",
-          "line": 616
+          "line": 634
+        },
+        {
+          "name": "NewNodeReceivesTheKeysItNowOwns",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/router_test.cpp",
+          "line": 651
+        },
+        {
+          "name": "WritesAfterAJoinUseTheNewReplicaSets",
+          "file": "\/home\/av\/Documents\/projects\/cpp\/k_v_db\/tests\/router_test.cpp",
+          "line": 680
         }
       ]
     },

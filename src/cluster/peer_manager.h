@@ -73,6 +73,11 @@ public:
     // Starts connecting to every peer we are responsible for connecting to.
     void start();
 
+    // A node that joined the cluster at runtime (discovery). Call AFTER adding
+    // it to Membership. Connects to it if we have the lower id (once started),
+    // otherwise waits for it to connect to us. False if it was already known.
+    bool add_peer(std::uint64_t node_id);
+
     // Hand every connection accepted by the TCPListener here.
     void accept(UniqueFD fd, const sockaddr_in6& from);
 
@@ -125,6 +130,7 @@ private:
     std::vector<std::unique_ptr<Link>> graveyard_;  // closed, destroyed after the current event
     TimerQueue::TimerId gc_timer_ = 0;
     TimerQueue::TimerId heartbeat_timer_ = 0;
+    bool started_ = false;
 
     StateCallback on_state_;
     MessageCallback on_message_;

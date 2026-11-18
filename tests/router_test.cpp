@@ -74,37 +74,55 @@ protected:
     std::uint64_t next_request_id = 1;
 
     void SetUp() override {
-        const char* endpoints[] = {"[::1]:9001", "[::1]:9002", "[::1]:9003"};
-        for (const char* self : endpoints) {
-            auto n = std::make_unique<Node>();
-            n->addr = *parse_endpoint(self);
-            n->members = std::make_unique<cluster::Membership>(cluster::make_node(n->addr));
-            for (const char* peer : endpoints)
-                if (std::string(peer) != self) n->members->add(cluster::make_node(*parse_endpoint(peer)));
-            n->requests = std::make_unique<RequestHandler>(n->store);
+        const std::vector<std::string> endpoints{"[::1]:9001", "[::1]:9002", "[::1]:9003"};
+        for (const auto& self : endpoints) nodes.push_back(build_node(self, endpoints));
+    }
 
-            // Control channel: "connected" to every live peer, like PeerManager.
-            const std::uint64_t self_id = n->members->self().id;
-            n->replicator = std::make_unique<Replicator>(
-                *n->members, n->store, timers,
-                [this, self_id](std::uint64_t peer, std::span<const std::byte> data) {
-                    if (!node_by_id(peer).alive || !node_by_id(self_id).alive) return false;
-                    control.push_back({{data.begin(), data.end()}, self_id, peer});
-                    ++control_sent;
-                    return true;
-                },
-                10ms);
+    // A complete node at `self` that knows the nodes in `known`.
+    std::unique_ptr<Node> build_node(const std::string& self, const std::vector<std::string>& known) {
+        auto n = std::make_unique<Node>();
+        n->addr = *parse_endpoint(self);
+        n->members = std::make_unique<cluster::Membership>(cluster::make_node(n->addr));
+        for (const auto& peer : known)
+            if (peer != self) n->members->add(cluster::make_node(*parse_endpoint(peer)));
+        n->requests = std::make_unique<RequestHandler>(n->store);
 
-            const sockaddr_in6 from = n->addr;
-            n->router = std::make_unique<Router>(
-                *n->members, *n->requests, *n->replicator, timers,
-                [this, from](std::span<const std::byte> data, const sockaddr_in6& to) {
-                    network.push_back({{data.begin(), data.end()}, from, to});
-                    return true;
-                },
-                20ms);
-            nodes.push_back(std::move(n));
+        // Control channel: "connected" to every live peer, like PeerManager.
+        const std::uint64_t self_id = n->members->self().id;
+        n->replicator = std::make_unique<Replicator>(
+            *n->members, n->store, timers,
+            [this, self_id](std::uint64_t peer, std::span<const std::byte> data) {
+                if (!node_by_id(peer).alive || !node_by_id(self_id).alive) return false;
+                control.push_back({{data.begin(), data.end()}, self_id, peer});
+                ++control_sent;
+                return true;
+            },
+            10ms);
+
+        const sockaddr_in6 from = n->addr;
+        n->router = std::make_unique<Router>(
+            *n->members, *n->requests, *n->replicator, timers,
+            [this, from](std::span<const std::byte> data, const sockaddr_in6& to) {
+                network.push_back({{data.begin(), data.end()}, from, to});
+                return true;
+            },
+            20ms);
+        return n;
+    }
+
+    // A new node joins the running cluster, as discovery would make happen:
+    // everyone adds it to their membership, it learns everyone, and every
+    // control connection to it comes up (which triggers the syncs).
+    std::size_t join(const std::string& endpoint) {
+        std::vector<std::string> known{endpoint};
+        for (auto& n : nodes) {
+            known.push_back(n->members->self().name);
+            n->members->add(cluster::make_node(*parse_endpoint(endpoint)));
         }
+        nodes.push_back(build_node(endpoint, known));
+        const std::size_t added = nodes.size() - 1;
+        for (std::size_t i = 0; i < added; ++i) reconnect(i, added);
+        return added;
     }
 
     Node& node_by_id(std::uint64_t id) {
@@ -626,4 +644,48 @@ TEST_F(ClusterTest, ReplicationAppliesOnlyNewerVersions) {
 
     EXPECT_EQ(nodes[replica]->store.get(key), "v1");
     EXPECT_TRUE(control.empty());  // SYNC messages are never ACKed
+}
+
+// ── Joining at runtime ──────────────────────────────────────────────────
+
+TEST_F(ClusterTest, NewNodeReceivesTheKeysItNowOwns) {
+    std::vector<std::string> keys;
+    for (int i = 0; i < 60; ++i) keys.push_back("key" + std::to_string(i));
+    for (const auto& k : keys) put(0, k, "v-" + k);
+
+    const std::size_t fresh = join("[::1]:9004");
+
+    // Some keys now have the new node in their replica set...
+    std::size_t moved = 0;
+    for (const auto& k : keys) {
+        for (const auto& n : nodes[0]->members->replicas_of(k)) {
+            if (n.id != nodes[fresh]->id()) continue;
+            ++moved;
+            EXPECT_EQ(nodes[fresh]->store.get(k), "v-" + k) << k << " didn't reach the new node";
+        }
+    }
+    EXPECT_GT(moved, 0u);
+    EXPECT_EQ(nodes[fresh]->store.size(), moved);  // ...and it got exactly those
+
+    // Every key is still readable through every node, old and new.
+    for (std::size_t entry = 0; entry < nodes.size(); ++entry) {
+        for (const auto& k : keys) {
+            get(entry, k);
+            ASSERT_EQ(last_response().header.status, Status::Ok) << k << " via node " << entry;
+            EXPECT_EQ(decode_value(last_response().payload)->value, "v-" + k);
+        }
+    }
+}
+
+TEST_F(ClusterTest, WritesAfterAJoinUseTheNewReplicaSets) {
+    const std::size_t fresh = join("[::1]:9004");
+    for (int i = 0; i < 40; ++i) {
+        const std::string k = "after" + std::to_string(i);
+        put(0, k, "x");
+        ASSERT_EQ(last_response().header.status, Status::Ok);
+        for (const auto& n : nodes[0]->members->replicas_of(k)) {
+            EXPECT_EQ(nodes[index_of(n.id)]->store.get(k), "x");  // both copies where they belong now
+        }
+    }
+    EXPECT_GT(nodes[fresh]->store.size(), 0u);
 }
